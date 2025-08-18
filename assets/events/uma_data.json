@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "UmaName": "Curren Chan",
     "UmaObjectives": [
@@ -139,7 +139,7 @@
       {
         "EventName": "Wanna Eat Together?",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -806,7 +806,7 @@
       {
         "EventName": "Secret to Strength",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -1485,7 +1485,7 @@
       {
         "EventName": "Attack of the Chestnut Feast!",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -2116,7 +2116,7 @@
       {
         "EventName": "Banana Fiend ♪",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -2813,7 +2813,7 @@
       {
         "EventName": "The Perfect Dessert",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -3456,7 +3456,7 @@
       {
         "EventName": "Battle of Kings: The Great Ramen War",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -4087,7 +4087,7 @@
       {
         "EventName": "Putting It Away at the Cafeteria",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -4694,7 +4694,7 @@
       {
         "EventName": "White Temptation",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -5349,7 +5349,7 @@
       {
         "EventName": "Secret to Strength",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -6064,7 +6064,7 @@
       {
         "EventName": "Nostalgia Fever ☆",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -6713,7 +6713,7 @@
       {
         "EventName": "Bottomless Pit",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -7368,7 +7368,7 @@
       {
         "EventName": "Meaty Heaven",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -8005,7 +8005,7 @@
       {
         "EventName": "Attack of the Chestnut Feast!",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -8672,7 +8672,7 @@
       {
         "EventName": "The Emperor's Satiation",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -9321,7 +9321,7 @@
       {
         "EventName": "A Page about Apples",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -9958,7 +9958,7 @@
       {
         "EventName": "Killer Appetite!",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -10601,7 +10601,7 @@
       {
         "EventName": "Awkward Honesty",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -11346,7 +11346,7 @@
       {
         "EventName": "Can't Lose Sight of Number One!",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -12019,7 +12019,7 @@
       {
         "EventName": "Together for Tea",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -12620,7 +12620,7 @@
       {
         "EventName": "Hot and Spicy!",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -13311,7 +13311,7 @@
       {
         "EventName": "A Taste of Effort",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -13936,7 +13936,7 @@
       {
         "EventName": "Hearty Chanko! ☆",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -14591,7 +14591,7 @@
       {
         "EventName": "For My Friends",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -15276,7 +15276,7 @@
       {
         "EventName": "Rest Day",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -15895,7 +15895,7 @@
       {
         "EventName": "Hamburger Helper!",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -16604,7 +16604,7 @@
       {
         "EventName": "Full-Power Eating!",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -17229,7 +17229,7 @@
       {
         "EventName": "Bakushin?! Class?!",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -17890,7 +17890,7 @@
       {
         "EventName": "The Final Boss... Spe!",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -18605,7 +18605,7 @@
       {
         "EventName": "Seven Gods of Fortune Fine Food Tour",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -19218,7 +19218,7 @@
       {
         "EventName": "A Little Can't Hurt",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {
@@ -19915,7 +19915,7 @@
       {
         "EventName": "Sweet Tooth Temptation",
         "EventOptions": {
-          "Bottom Option": "Randomly either\r\nEnergy +30\r\nSkill points +10\r\nor\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
+          "Bottom Option": "Randomly either (~90%)\r\nEnergy +30\r\nSkill points +10\r\nor (~10%)\r\nEnergy +30\r\nSkill points +10\r\nSpeed -5\r\nPower +5\r\nGet Slow Metabolism status"
         }
       },
       {

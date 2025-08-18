@@ -2,18 +2,33 @@ import json
 import os
 import time
 import pyautogui
+import re
 import tkinter as tk
 from tkinter import ttk
 from pyautogui import ImageNotFoundException
 from utils.screenshot import capture_region
 from core.ocr import extract_event_name_text
 
+import cv2
+import numpy as np
+from utils.match_template import is_match_template
+
+
+# Precompile regular expressions for better performance
+l_pattern = re.compile(r'l\b')
+l_exclamation_pattern = re.compile(r'l([!?.,])')
+double_exclamation_pattern = re.compile(r'[!l]{2,}')
+trailing_exclamation_pattern = re.compile(r'!+$')
+trailing_letter_pattern = re.compile(r'\s+[A-Za-z]\s*$')
+trailing_letter_pattern2 = re.compile(r'[A-Za-z]\s*$')
+
+
 class EventOverlay:
     def __init__(self):
-        self.event_region = (243, 201, 365, 45)
-        self.overlay_x = 964
+        self.event_region = (240, 200, 365, 45)
+        self.overlay_x = 958
         self.overlay_y = 810
-        self.overlay_width = 796
+        self.overlay_width = 798
         self.overlay_height = 269
         self.support_events = []
         self.uma_events = []
@@ -23,6 +38,15 @@ class EventOverlay:
         self.last_event_name = None
         self.event_displayed = False
         self.event_detection_start = None
+
+        self.left_screen_region = (0, 0, 1920//2, 1080)
+        self.support_card_event_region = (240, 160, 200, 70)
+        self.event_template = cv2.imread("assets/icons/event_choice_1.png")
+        self.support_card_event_template = cv2.imread("assets/icons/support_card_event.png")
+        self.tracked_support_event = []
+        self.tracker_window = None
+        self.tracker_button = None
+        self.always_on_top = False
 
     def load_databases(self):
         print("Loading event databases...")
@@ -48,7 +72,7 @@ class EventOverlay:
         self.root.title("Event Overlay")
         self.root.geometry(f"{self.overlay_width}x{self.overlay_height}+{self.overlay_x}+{self.overlay_y}")
         self.root.overrideredirect(True)
-        self.root.attributes('-topmost', True)
+        self.root.attributes('-topmost', False)
         self.root.attributes('-alpha', 0.9)
         style = ttk.Style()
         style.theme_use('clam')
@@ -65,17 +89,130 @@ class EventOverlay:
         scrollbar = ttk.Scrollbar(self.main_frame, orient="vertical", command=self.options_text.yview)
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.options_text.configure(yscrollcommand=scrollbar.set)
+
+        # Event Tracker button
+        button_frame = ttk.Frame(self.main_frame)
+        button_frame.pack(fill=tk.X)
+        style.configure('Bold.TButton', font=('Arial', 12, 'bold'))
+        self.tracker_button = ttk.Button(button_frame, text="Ʊ Tracker", style='Bold.TButton', command=self.toggle_tracker_window)
+        self.tracker_button.pack(side=tk.LEFT)
+
+        # Pushpin button
+        style.configure('Pushpin.TButton', font=('Arial', 8))
+        style.configure('Pushpin.Active.TButton', font=('Arial', 8, 'bold'))
+        self.pushpin_button = ttk.Button(self.main_frame, text="📌", width=3, style='Pushpin.TButton', command=self.toggle_always_on_top)
+        self.pushpin_button.place(relx=1.0, rely=0.0, anchor='ne')
+
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.monitor_events()
 
+    def toggle_always_on_top(self):
+        """Toggle the always on top state"""
+        self.always_on_top = not self.always_on_top
+
+        if self.always_on_top:
+            # Set to always on top
+            self.root.attributes('-topmost', True)
+            self.pushpin_button.config(text="📌", style='Pushpin.Active.TButton')  # 📍
+        else:
+            # Return to normal behavior
+            self.root.attributes('-topmost', False)
+            self.pushpin_button.config(text="📌", style='Pushpin.TButton')
+
+    def toggle_tracker_window(self):
+        """Toggle the event tracker window"""
+        if self.tracker_window and self.tracker_window.winfo_exists():
+            # If window exists, close it
+            self.tracker_window.destroy()
+            self.tracker_window = None
+        else:
+            # If window doesn't exist, create it
+            self.create_tracker_window()
+
+    def create_tracker_window(self):
+        """Create the event tracker window"""
+        self.tracker_window = tk.Toplevel(self.root)
+        self.tracker_window.title("Event Tracker")
+        self.tracker_window.geometry("400x300+950+478")
+        self.tracker_window.attributes('-topmost', True)
+
+        # Make sure to reset the button color when window is closed
+        self.tracker_window.protocol("WM_DELETE_WINDOW", self.close_tracker_window)
+
+        # Main frame
+        tracker_frame = ttk.Frame(self.tracker_window, padding="10")
+        tracker_frame.pack(fill=tk.BOTH, expand=True)
+
+        # Title
+        title_label = ttk.Label(tracker_frame, text="Ʊ Tracked Support Events", font=('Arial', 14, 'bold'))
+        title_label.pack(pady=(0, 10))
+
+        # Listbox with scrollbar for tracked events
+        list_frame = ttk.Frame(tracker_frame)
+        list_frame.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
+
+        self.tracked_listbox = tk.Listbox(list_frame, font=('Arial', 10))
+        scrollbar = ttk.Scrollbar(list_frame, orient="vertical", command=self.tracked_listbox.yview)
+        self.tracked_listbox.configure(yscrollcommand=scrollbar.set)
+
+        self.tracked_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+        # Update the listbox with current events
+        self.update_tracked_events_list()
+
+        # Button frame
+        button_frame = ttk.Frame(tracker_frame)
+        button_frame.pack(fill=tk.X)
+
+        # Clear button
+        clear_button = ttk.Button(button_frame, text="Clear", command=self.clear_tracked_events)
+        clear_button.pack(side=tk.LEFT, padx=(0, 10))
+
+        # Close button
+        close_button = ttk.Button(button_frame, text="Close", command=self.close_tracker_window)
+        close_button.pack(side=tk.LEFT)
+
+    def update_tracked_events_list(self):
+        """Update the listbox with tracked events"""
+        if hasattr(self, 'tracked_listbox') and self.tracker_window and self.tracker_window.winfo_exists():
+            self.tracked_listbox.delete(0, tk.END)
+            for event in self.tracked_support_event:
+                self.tracked_listbox.insert(tk.END, event)
+
+    def clear_tracked_events(self):
+        """Clear all tracked events"""
+        self.tracked_support_event.clear()
+        self.update_tracked_events_list()
+
+    def close_tracker_window(self):
+        """Close the tracker window"""
+        if self.tracker_window and self.tracker_window.winfo_exists():
+            self.tracker_window.destroy()
+        self.tracker_window = None
+
+    def highlight_tracker_button(self, duration=2000):
+        """Temporarily highlight the tracker button"""
+        if self.tracker_button:
+            # Store original style
+            style = ttk.Style()
+            original_background = style.configure('TButton', 'background')
+
+            # Apply highlight
+            style.configure('Highlight.TButton', background='#FFD700')
+            self.tracker_button.configure(style='Highlight.TButton')
+
+            # Reset after duration
+            self.root.after(duration, lambda: self.tracker_button.configure(style='TButton'))
+
     def generate_event_variations(self, event_name):
         event_variations = [event_name]
-        import re
+
         if 'l' in event_name:
-            variation = re.sub(r'l\b', '!', event_name)
+            variation = l_pattern.sub('!', event_name)
             if variation != event_name and variation not in event_variations:
                 event_variations.append(variation)
-            variation2 = re.sub(r'l([!?.,])', r'!\1', event_name)
+            variation2 = l_exclamation_pattern.sub(r'!\1', event_name)
             if variation2 != event_name and variation2 not in event_variations:
                 event_variations.append(variation2)
         if '!' in event_name:
@@ -92,18 +229,18 @@ class EventOverlay:
                 event_variations.append(variation)
         cleaned_variations = []
         for variation in event_variations:
-            cleaned = re.sub(r'[!l]{2,}', '!', variation)
+            cleaned = double_exclamation_pattern.sub('!', variation)
             if cleaned not in event_variations and cleaned != variation:
                 cleaned_variations.append(cleaned)
             # Add variation without trailing exclamation marks
-            no_exclamation = re.sub(r'!+$', '', variation).strip()
+            no_exclamation = trailing_exclamation_pattern.sub('', variation).strip()
             if no_exclamation not in event_variations and no_exclamation != variation and no_exclamation:
                 cleaned_variations.append(no_exclamation)
             # Add variation without trailing single letters (OCR artifacts)
-            no_trailing_letter = re.sub(r'\s+[A-Za-z]\s*$', '', variation).strip()
+            no_trailing_letter = trailing_letter_pattern.sub('', variation).strip()
             if no_trailing_letter not in event_variations and no_trailing_letter != variation and no_trailing_letter:
                 cleaned_variations.append(no_trailing_letter)
-            no_trailing_letter2 = re.sub(r'[A-Za-z]\s*$', '', variation).strip()
+            no_trailing_letter2 = trailing_letter_pattern2.sub('', variation).strip()
             if no_trailing_letter2 not in event_variations and no_trailing_letter2 != variation and no_trailing_letter2:
                 cleaned_variations.append(no_trailing_letter2)
         event_variations.extend(cleaned_variations)
@@ -282,27 +419,56 @@ class EventOverlay:
     def monitor_events(self):
         try:
             try:
-                event_icon = pyautogui.locateCenterOnScreen("assets/icons/event_choice_1.png", confidence=0.8, minSearchTime=0.1)
+                left_screenshot = capture_region(self.left_screen_region)
+                left_cv_image = np.array(left_screenshot)[:, :, ::-1]
+                event_icon = is_match_template(left_cv_image, self.event_template, threshold=0.8)
+
+                support_screenshot = capture_region(self.support_card_event_region)
+                support_cv_image = np.array(support_screenshot)[:, :, ::-1]
+                support_card_event = is_match_template(support_cv_image, self.support_card_event_template, threshold=0.8)
             except ImageNotFoundException:
                 event_icon = None
-            if event_icon and self.event_detection_start is None:
-                self.event_detection_start = time.time()
-                self.status_label.config(text="👁️ Event detected, waiting for stability...", foreground='#FFC107')
-            if event_icon and self.event_detection_start and not self.event_displayed:
-                time_present = time.time() - self.event_detection_start
-                if time_present >= 1.0:
-                    self.status_label.config(text="✅ Processing event...", foreground='#17A2B8')
-                    event_image = capture_region(self.event_region)
-                    event_name = extract_event_name_text(event_image)
-                    event_name = event_name.strip()
-                    if event_name and event_name != self.last_event_name:
-                        event_variations = self.generate_event_variations(event_name)
-                        found_events = self.search_events(event_variations)
-                        self.update_overlay(event_name, found_events)
-                        self.last_event_name = event_name
-                        self.event_displayed = True
+                support_card_event = None
+            if event_icon or support_card_event:
+                if not self.always_on_top:  # Only remove topmost if not in always-on-top mode
+                    self.root.attributes('-topmost', True)
+                self.root.lift()
+                if self.event_detection_start is None:
+                    self.event_detection_start = time.time()
+                    if support_card_event:
+                        self.status_label.config(text="👁️ Support event detected, waiting for stability...", foreground='#FFC107')
+                    else:  # event_icon only
+                        self.status_label.config(text="👁️ Event icon detected, waiting for stability...", foreground='#FFC107')
+                if self.event_detection_start and not self.event_displayed:
+                    time_present = time.time() - self.event_detection_start
+                    if time_present >= 0.05:
+                        self.status_label.config(text="✅ Processing event...", foreground='#17A2B8')
+                        event_image = capture_region(self.event_region)
+                        event_name = extract_event_name_text(event_image)
+                        event_name = event_name.strip()
+
+                        if support_card_event:
+                            if event_name and event_name not in self.tracked_support_event and event_name != "A Hint for Growth":
+                                event_variations = self.generate_event_variations(event_name)
+                                found_events = self.search_events(event_variations)
+                                if found_events:
+                                    found_event_name = list(found_events.keys())[0]
+                                    if found_event_name and found_event_name not in self.tracked_support_event:
+                                        self.tracked_support_event.append(found_event_name)
+                                        self.update_tracked_events_list()
+                                        self.highlight_tracker_button()
+                        if event_icon:
+                            if event_name and event_name != self.last_event_name:
+                                event_variations = self.generate_event_variations(event_name)
+                                found_events = self.search_events(event_variations)
+                                self.update_overlay(event_name, found_events)
+                                self.last_event_name = event_name
+                                self.event_displayed = True
+
                         self.event_detection_start = None
-            elif not event_icon:
+            elif not event_icon and not support_card_event:
+                if not self.always_on_top:  # Only remove topmost if not in always-on-top mode
+                    self.root.attributes('-topmost', False)
                 if self.event_displayed:
                     self.event_displayed = False
                     self.last_event_name = None
@@ -310,6 +476,7 @@ class EventOverlay:
                 elif self.event_detection_start:
                     self.event_detection_start = None
                     self.status_label.config(text="❌ Event disappeared too quickly", foreground='#DC3545')
+
             self.root.after(500, self.monitor_events)
         except Exception as e:
             self.status_label.config(text=f"❌ Error: {str(e)}", foreground='#DC3545')
@@ -335,4 +502,4 @@ def main():
     overlay.run()
 
 if __name__ == "__main__":
-    main() 
+    main()
