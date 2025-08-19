@@ -1,84 +1,67 @@
 # Uma Event Helper (Web)
 
-## What it does
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/daftuyda/Uma-Event-Helper-Web)
 
-- Captures the game window (via browser screen capture).
-- OCRs the event title with Tesseract.js.
-- Looks up the event in a FastAPI backend and renders the options.
-- Scores options (energy, stats, hints, statuses) and marks a recommendation.
+## Overview
+
+Uma Event Helper is a browser-based tool to assist with Uma Musume event choices. It:
+
+- Captures the game window using browser screen capture.
+- Uses Tesseract.js for OCR to read event titles.
+- Looks up events via a FastAPI backend.
+- Scores and recommends options based on stats, energy, hints, and statuses.
 
 ---
 
-## Project structure (recommended for Vercel)
+## Usage
 
-```text
+1. **Open the app** in your browser.
+2. Click **Capture Screen for OCR** and select your game window.
+3. Adjust **Scan Time** for OCR frequency (CPU vs. responsiveness).
+4. Enter or OCR an event name to search.
+5. The app will display event options, score them, and recommend the best choice.
+   - If multiple options tie, no recommendation badge is shown.
+   - Labeled options are preferred over unlabeled duplicates.
+
+---
+
+## Project Structure
+
+```
 /api/index.py
 /assets/events/
-  ├─ support_card.json
-  ├─ uma_data.json
-  └─ ura_finale.json
-index.html
-styles.css
-search.js
-ocr.js
-recommend.js
-requirements.txt
-```
-
-### Frontend → API base
-
-Use same-origin to avoid CORS/mixed-content issues:
-
-```html
-<script>
-  window.API_BASE = "/api";
-</script>
+/index.html
+/styles.css
+/search.js
+/ocr.js
+/recommend.js
+/requirements.txt
+/README.md
 ```
 
 ---
 
-## Backend (FastAPI on Vercel)
+## Local Development
 
-Vercel treats `api/*.py` as serverless Python functions. Export an ASGI `app` from `api/index.py`.
+- **Install dependencies**  
+  Make sure you have Node.js and the [Vercel CLI](https://vercel.com/download) installed:
 
----
+  ```bash
+   npm i -g vercel
+  ```
 
-## Frontend (static)
+- **Clone the repo**
+  
+  ```bash
+  git clone https://github.com/daftuyda/Uma-Event-Helper-Web.git
+  cd Uma-Event-Helper-Web
+  ```
 
-Serve the static files from the repo root. On Vercel this is automatic; locally you can run:
-
-```bash
-python -m http.server 5500
-# then open http://localhost:5500
-```
-
-Ensure `window.API_BASE = "/api"` in your HTML/JS.
-**Usage tips**
-
-- Click **Capture Screen for OCR** and select the game window.
-- Adjust **Scan Time** to balance CPU vs. responsiveness.
-- If multiple options tie, no recommendation badge is shown.
-- Labeled options are preferred over unlabeled duplicates.
-
----
-
-## Deploying to Vercel
-
-1. Commit the repo with the structure above (including `assets/events/*.json`).
-2. Add `requirements.txt` with the Python deps.
-3. (Optional) Add `vercel.json` to pin runtime/region and define routes.
-4. In your HTML/JS set `window.API_BASE = "/api"`.
-5. Deploy via:
-   - **Vercel Dashboard**: “Import Project” from GitHub, or
-   - **CLI**: `npm i -g vercel && vercel`
-     After deploy, your API is available at `/api/...` on the same domain as the UI.
-
----
-
-## Local development
-
-- **Backend**: `uvicorn api.index:app --reload` (will serve at `http://127.0.0.1:8000`).
-- **Frontend**: `python -m http.server 5500` and set `window.API_BASE="http://127.0.0.1:8000"` during local dev.
+- **Run with Vercel**
+  
+  ```bash
+  vercel dev --debug
+  ```
 
 ---
 
