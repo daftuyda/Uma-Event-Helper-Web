@@ -3,3 +3,4 @@ event_detection_test.py
 
 # Debug capture images
 debug_event_capture_*.png
+.vercel

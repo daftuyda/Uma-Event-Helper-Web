@@ -1,6 +1,3 @@
-pytesseract
-Pillow
-numpy
-opencv-python
-mss
-pyautogui 
+fastapi>=0.111
+rapidfuzz>=3.9
+uvicorn>=0.30   # for local dev only; Vercel doesn’t use it in production

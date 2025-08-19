@@ -1,0 +1,124 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f7fafc;
+  margin: 0;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  color: #222;
+}
+.container {
+  width: 600px;
+  max-width: 95vw;
+  background: #fff;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+h1 { margin-top: 0; margin-bottom: 1rem; font-weight: 700; color: #2b6cb0; text-align: center; }
+
+.search-panel { margin-bottom: 0.5rem; }
+#search-form { display: flex; gap: 10px; margin-bottom: 0.5rem; }
+input#query {
+  flex: 1; padding: 0.6rem 1rem; font-size: 1rem;
+  border: 2px solid #cbd5e0; border-radius: 6px; transition: border-color 0.2s ease;
+}
+input#query:focus {
+  outline: none; border-color: #3182ce; box-shadow: 0 0 8px rgba(49,130,206,0.4);
+}
+button#search-btn {
+  background-color: #3182ce; color: white; border: none;
+  padding: 0.6rem 1.2rem; font-size: 1rem; border-radius: 6px; cursor: pointer; transition: background-color 0.2s ease;
+}
+button#search-btn:hover { background-color: #2c5282; }
+
+.status { min-height: 1.2em; color: #555; font-style: italic; margin: 0.25rem 0 0.75rem; }
+.ocr-suggestions { font-style: italic; margin: 0.5rem 0 1rem; min-height: 1.4em; color: #555; }
+
+#captureVideo { display: block; margin: 0 auto; width: 350px; height: auto; border-radius: 6px; border: 1px solid #cbd5e0; }
+
+.result { margin-top: 1rem; }
+.choice {
+  background: #ebf4ff; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;
+  box-shadow: inset 0 0 4px rgba(49,130,206,0.3);
+}
+.choice h3 { margin: 0 0 0.5rem; color: #2c5282; font-weight: 600; }
+
+.reward-groups {
+  display: flex; flex-wrap: wrap; gap: 1rem; padding: 1rem;
+  background-color: #e6f0ff; border-radius: 10px;
+}
+.reward-group {
+  background: #f7fafc; border: 1px solid #cbd5e0; padding: 0.75rem 1rem; border-radius: 8px;
+  margin: 0.5rem; min-width: 140px; box-sizing: border-box; white-space: nowrap; box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+}
+.reward-group > div:first-child {
+  padding: 0.25rem 0.5rem; background-color: #f0e7c0; border-radius: 5px;
+  display: inline-block; margin-bottom: 0.75rem; color: #a67c00; font-weight: 700;
+}
+
+.recommended-badge { margin-left: 8px; background-color: #48bb78; color: white; font-size: 0.75em; padding: 2px 6px; border-radius: 12px; font-weight: 600; user-select: none; }
+
+.ocr-controls { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; justify-content: center; flex-wrap: wrap; }
+.capture-btn { background-color: #3182ce; color: white; border: none; padding: 0.6rem 1.2rem; font-size: 1rem; border-radius: 6px; cursor: pointer; transition: background-color 0.2s ease; }
+.capture-btn:hover { background-color: #2c5282; }
+.scan-time-label { font-weight: 600; color: #2c5282; white-space: nowrap; user-select: none; }
+.delay-buttons { display: flex; gap: 0.5rem; }
+.delay-btn {
+  padding: 0.4rem 0.75rem; border: 1px solid #3182ce; background-color: white; color: #3182ce;
+  border-radius: 6px; cursor: pointer; font-weight: 600; user-select: none; transition: background-color 0.2s ease, color 0.2s ease;
+}
+.delay-btn:hover { background-color: #bee3f8; }
+.delay-btn.active { background-color: #3182ce; color: white; }
+
+#modeToggleBtn {
+  background-color: #3182ce; color: white; border: none; padding: 0.5rem 1.2rem; font-size: 1rem; border-radius: 6px; cursor: pointer; transition: background-color 0.2s ease; user-select: none;
+}
+#modeToggleBtn:hover { background-color: #2c5282; }
+.mode-toggle-btn { position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; cursor: pointer; padding: 0; color: #3182ce; transition: color 0.3s ease; }
+.mode-toggle-btn:hover { color: #2c5282; }
+
+body.dark-mode { background: #121212; color: #ddd; }
+body.dark-mode .container { background: #1e1e1e; box-shadow: 0 0 20px rgba(255,255,255,0.1); }
+body.dark-mode h1 { color: #90cdf4; }
+body.dark-mode input#query { background-color: #2d2d2d; border-color: #555; color: #eee; }
+body.dark-mode input#query:focus { border-color: #63b3ed; box-shadow: 0 0 8px rgba(99,179,237,0.7); background-color: #2d2d2d; color: #eee; }
+body.dark-mode button#search-btn, body.dark-mode .capture-btn { background-color: #63b3ed; color: #222; }
+body.dark-mode button#search-btn:hover, body.dark-mode .capture-btn:hover { background-color: #4299e1; color: #fff; }
+body.dark-mode .choice { background: #333844; box-shadow: inset 0 0 4px rgba(99,179,237,0.5); color: #eee; }
+body.dark-mode .choice h3 { color: #63b3ed; }
+body.dark-mode .reward-groups { background-color: #2a2f4a; }
+body.dark-mode .reward-group { background: #232634; border-color: #444; color: #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+body.dark-mode .reward-group > div:first-child { background-color: #5a4f00; color: #ffd700; }
+body.dark-mode .mode-toggle-btn { color: #63b3ed; }
+body.dark-mode .mode-toggle-btn:hover { color: #4299e1; }
+body.dark-mode .scan-time-label { color: #63b3ed; }
+body.dark-mode .delay-btn { background-color: #121212; color: #63b3ed; border-color: #63b3ed; }
+body.dark-mode .delay-btn.active { background-color: #63b3ed; color: #222; }
+body.dark-mode .delay-btn:hover { background-color: #4299e1; color: #fff; }
+body.dark-mode .recommended-badge { background-color: #38a169; color: #d1fae5; }
+
+.result .reward-groups { display: block !important; }
+.result .outcome { display: block !important; width: 100%; margin: 0 0 12px 0; }
+.result .outcome .reward-group { width: 100%; min-width: 0; margin: 0; }
+
+.reward-group .outcome-alt {
+  width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 10px; margin: 8px 0;
+  background: rgba(0, 0, 0, var(--outcomeAOpacity, 0.06));
+}
+.reward-group .outcome-alt.alt-1 {
+  background: rgba(0, 0, 0, var(--outcomeBOpacity, 0.12));
+}
+.reward-group .outcome-title { font-weight: 700; margin-bottom: 6px; line-height: 1.5; }
+.reward-group .outcome-separator { width: 100%; box-sizing: border-box; padding: 2px 4px 2px 2px; margin: 2px 0 -2px; opacity: 0.9; font-size: 0.95em; }
+
+@media (prefers-color-scheme: dark) {
+  :root { --outcomeAOpacity: 0.10; --outcomeBOpacity: 0.18; }
+}
+
+.option-score {
+  margin: 4px 0 8px;
+  font-size: 0.9em;
+  color: #555;
+}
+body.dark-mode .option-score { color: #bbb; }
