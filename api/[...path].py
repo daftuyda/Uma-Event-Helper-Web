@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from typing import Dict, List
 from fastapi import FastAPI, HTTPException, Query
-from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.base import BaseHTTPMiddleware
 from rapidfuzz import process, fuzz
 
 BASE_DIR = Path(__file__).resolve().parents[1]
@@ -10,12 +10,19 @@ ASSETS = BASE_DIR / "assets" / "events"
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+class StripPathPrefix(BaseHTTPMiddleware):
+    def __init__(self, app, prefixes=()):
+        super().__init__(app)
+        self.prefixes = tuple(p.rstrip('/') for p in prefixes)
+    async def dispatch(self, request, call_next):
+        path = request.scope.get("path", "")
+        for p in self.prefixes:
+            if path == p or path.startswith(p + "/"):
+                request.scope["path"] = path[len(p):] or "/"
+                break
+        return await call_next(request)
+
+app.add_middleware(StripPathPrefix, prefixes=("/api", "/index", "/api/index"))
 
 def _json_load_bom_tolerant(path: Path):
     """
