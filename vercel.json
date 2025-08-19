@@ -2,8 +2,7 @@
   "version": 2,
   "functions": {
     "api/index.py": {
-      "runtime": "python3.12",
-      "regions": ["syd1"]
+      "runtime": "python3.12"
     }
   },
   "routes": [
