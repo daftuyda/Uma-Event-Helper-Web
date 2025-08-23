@@ -253,7 +253,7 @@ function renderEvent(evt, otherMatches) {
     otherMatches.forEach(m => {
       const name = scrubMarkers(m.event_name);
       const li = el("li");
-      const a = el("a"); a.href = "#"; a.textContent = `${name} (${Math.round(m.score)}%)`;
+      const a = el("a"); a.href = "#"; a.textContent = `${name} (${Math.round(m.score)}%)`; a.style.color = "#7999aa";
       a.addEventListener("click", e => {
         e.preventDefault();
         $("#query").value = name;

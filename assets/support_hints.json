@@ -1,0 +1,4181 @@
+[
+  {
+    "SupportName": "Sakura Chiyono O (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shifting Gears",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Yaeno Muteki (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tail Held High",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Winning Ticket (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Position Pilfer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slick Surge",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Yukino Bijin (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Winter Runner ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Kitasan Black (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Corner Recovery ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Recovery",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Extra Tank",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Adept ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Dodging Danger",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Focus",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Satono Diamond (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sunny Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "A Small Breather",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Studious",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tether",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Front Runners",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Matikanetannhauser (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Strategy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Deep Breaths",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fighter",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Mejiro Palmer (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sympathy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Moxie",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fast-Paced",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Pace Chasers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Twin Turbo (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Competitive Spirit ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Target in Sight ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Moxie",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fast-Paced",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Leader's Pride",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Oguri Cap (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Adept ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Acceleration ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Groundwork",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Focus",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Special Week (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rainy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Silence Suzuka (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Front Runner Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rosy Outlook",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fast-Paced",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Leader's Pride",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Final Push",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Focus",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Tokai Teio (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shrewd Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prudent Positioning",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Thunderbolt Step",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Gold Ship (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sympathy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "End Closer Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Standing By",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "After-School Stroll",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inside Scoop",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pressure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Uma Stan",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Spurt",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Highlander",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Groundwork",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "I Can See Right Through You",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Strategist",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Intense Gaze",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Smoke Screen",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Vodka (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Tokyo Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Recovery",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slick Surge",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Updrafters",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Grass Wonder (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Competitive Spirit ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Position Pilfer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slick Surge",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Updrafters",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tether",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Pace Chasers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "El Condor Pasa (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sunny Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hawkeye",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Seiun Sky (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inner Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tail Held High",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Front)",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Tamamo Cross (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Rosy Outlook",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "1,500,000 CC",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Thunderbolt Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Late Surgers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Fine Motion (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Right-Handed ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fall Runner ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Ines Fujin (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Moxie",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slipstream",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Playtime's Over!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Speed Eater",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Air Shakur (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Levelheaded",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pressure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Strategist",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Gold City (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sapporo Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Watchful Eye",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Acceleration",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Sakura Bakushin O (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sprint Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprint Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Huge Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprinting Gear",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Countermeasure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Intimidate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Front Runners",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Front Runners",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Super Creek (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Recovery ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Pace Chasers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Smart Falcon (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Outer Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Oi Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Recovery ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Second Wind",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Restart",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Nishino Flower (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Updrafters",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Haru Urara (SSR) Support Card",
+    "SupportHints": []
+  },
+  {
+    "SupportName": "Biko Pegasus (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Outer Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wait-and-See",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Gap Closer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Productive Plan",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Updrafters",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Meticulous Measures",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stop Right There!",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Tazuna Hayakawa (SSR) Support Card",
+    "SupportHints": []
+  },
+  {
+    "SupportName": "Mejiro McQueen (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Kyoto Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rainy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Deep Breaths",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Extra Tank",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Adept ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inside Scoop",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Rice Shower (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Maverick ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Kyoto Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Deep Breaths",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straight Descent",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Highlander",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Subdued Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Disorient",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Seeking the Pearl (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Strategy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Watchful Eye",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprint Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Unyielding Spirit",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprinting Gear",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Zenno Rob Roy (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shrewd Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prudent Positioning",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Studious",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Nishino Flower (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Updrafters",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Nice Nature (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Kokura Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "A Small Breather",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Acceleration ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Murmur",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sharp Gaze",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Ikuno Dictus (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hawkeye",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Studious",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sharp Gaze",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Daitaku Helios (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sympathy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shifting Gears",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slipstream",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Speed Eater",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Sweep Tosho (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "After-School Stroll",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slipstream",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prudent Positioning",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "I Can See Right Through You",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Front)",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Rear)",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Murmur",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Fuji Kiseki (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Summer Runner ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Unyielding Spirit",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Front)",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Daiwa Scarlet (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Competitive Spirit ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rosy Outlook",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shifting Gears",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Hishi Amazon (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "End Closer Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "End Closer Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Spurt",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Air Groove (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Pace Strategy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Groundwork",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant End Closers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered End Closers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Agnes Digital (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Opening Gambit",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Biwa Hayahide (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Outer Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied End Closers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Mayano Top Gun (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Non-Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Recovery",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Adept ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Manhattan Cafe (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rainy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Passing Pro",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Highlander",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina Eater",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Mihono Bourbon (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Snowy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Mejiro Ryan (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rainy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Yukino Bijin (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Winter Runner ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Agnes Tachyon (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tether",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Eishin Flash (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fighter",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Narita Taishin (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Lone Wolf",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Standing By",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Masterful Gambit",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "End Closer Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Intense Gaze",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Marvelous Sunday (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tail Held High",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Front Runners",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Pace Chasers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Matikanefukukitaru (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Hakodate Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lucky Seven",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "A Small Breather",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Triple 7s",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Rear)",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Meisho Doto (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Non-Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inner Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shake It Out",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hawkeye",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Mejiro Dober (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Kyoto Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sunny Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "King Halo (SR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Outer Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Recovery ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wait-and-See",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Gap Closer",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Aoi Kiryuin (SR) Support Card",
+    "SupportHints": []
+  },
+  {
+    "SupportName": "Seeking the Pearl (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Strategy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Watchful Eye",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprint Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Unyielding Spirit",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprinting Gear",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Sakura Chiyono O (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shifting Gears",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Yaeno Muteki (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tail Held High",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Zenno Rob Roy (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shrewd Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prudent Positioning",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Studious",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Kitasan Black (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Corner Recovery ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Recovery",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Extra Tank",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Adept ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Dodging Danger",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Focus",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Satono Diamond (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sunny Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "A Small Breather",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Studious",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tether",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Front Runners",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Matikanetannhauser (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Strategy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Deep Breaths",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fighter",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Ikuno Dictus (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hawkeye",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Studious",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sharp Gaze",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Mejiro Palmer (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sympathy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Moxie",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fast-Paced",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Pace Chasers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Twin Turbo (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Competitive Spirit ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Target in Sight ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Moxie",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fast-Paced",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Leader's Pride",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Daitaku Helios (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sympathy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shifting Gears",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slipstream",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Speed Eater",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Sweep Tosho (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "After-School Stroll",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slipstream",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prudent Positioning",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "I Can See Right Through You",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Front)",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Rear)",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Murmur",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Special Week (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rainy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Silence Suzuka (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Front Runner Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rosy Outlook",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fast-Paced",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Leader's Pride",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Final Push",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Focus",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Tokai Teio (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shrewd Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prudent Positioning",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Thunderbolt Step",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Maruzensky (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Productive Plan",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shifting Gears",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Acceleration",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Oguri Cap (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Adept ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Acceleration ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Groundwork",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Focus",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Gold Ship (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sympathy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "End Closer Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Standing By",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "After-School Stroll",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inside Scoop",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pressure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Uma Stan",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Spurt",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Highlander",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Groundwork",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "I Can See Right Through You",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Strategist",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Intense Gaze",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Smoke Screen",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Vodka (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Tokyo Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Recovery",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slick Surge",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Updrafters",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Taiki Shuttle (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Productive Plan",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shifting Gears",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Updrafters",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Grass Wonder (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Competitive Spirit ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Position Pilfer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slick Surge",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Updrafters",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tether",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Pace Chasers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Mejiro McQueen (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Spring Runner ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Kyoto Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Deep Breaths",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Keeping the Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Disorient",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "El Condor Pasa (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sunny Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hawkeye",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "TM Opera O (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tactical Tweak",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Studious",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Symboli Rudolf (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Groundwork",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tether",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Subdued Front Runners",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Subdued Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Subdued Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Subdued End Closers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Seiun Sky (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inner Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tail Held High",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Front)",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Rice Shower (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Maverick ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Kyoto Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Deep Breaths",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straight Descent",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Highlander",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Subdued Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Disorient",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Winning Ticket (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Position Pilfer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slick Surge",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Gold City (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sapporo Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Watchful Eye",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Acceleration",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Sakura Bakushin O (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sprint Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprint Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Huge Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprinting Gear",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Countermeasure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Intimidate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Front Runners",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Front Runners",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Super Creek (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Recovery ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Pace Chasers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Haru Urara (R) Support Card",
+    "SupportHints": []
+  },
+  {
+    "SupportName": "Tazuna Hayakawa (R) Support Card",
+    "SupportHints": []
+  },
+  {
+    "SupportName": "Aoi Kiryuin (R) Support Card",
+    "SupportHints": []
+  },
+  {
+    "SupportName": "Daiwa Scarlet (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Competitive Spirit ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rosy Outlook",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shifting Gears",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Hishi Amazon (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "End Closer Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "End Closer Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Spurt",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Air Groove (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Pace Strategy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Groundwork",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant End Closers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered End Closers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Agnes Digital (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Opening Gambit",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Tamamo Cross (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Rosy Outlook",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "1,500,000 CC",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Thunderbolt Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Late Surgers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Fine Motion (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Right-Handed ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fall Runner ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Biwa Hayahide (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Outer Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied End Closers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Mayano Top Gun (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Non-Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Recovery",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Adept ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Manhattan Cafe (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rainy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Passing Pro",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Highlander",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina Eater",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Mihono Bourbon (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Snowy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Mejiro Ryan (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rainy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Yukino Bijin (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Winter Runner ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Ines Fujin (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Moxie",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slipstream",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Playtime's Over!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Speed Eater",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Agnes Tachyon (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tether",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Air Shakur (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Levelheaded",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pressure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Strategist",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Eishin Flash (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fighter",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Smart Falcon (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Outer Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Oi Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Recovery ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Second Wind",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Restart",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Narita Taishin (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Lone Wolf",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Standing By",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Masterful Gambit",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "End Closer Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Intense Gaze",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Nishino Flower (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Updrafters",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Biko Pegasus (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Outer Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wait-and-See",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Gap Closer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Productive Plan",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Updrafters",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Meticulous Measures",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stop Right There!",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Marvelous Sunday (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tail Held High",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Front Runners",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Pace Chasers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Matikanefukukitaru (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Hakodate Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lucky Seven",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "A Small Breather",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Triple 7s",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Rear)",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Meisho Doto (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Non-Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inner Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shake It Out",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hawkeye",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Mejiro Dober (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Kyoto Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sunny Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Nice Nature (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Kokura Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "A Small Breather",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Acceleration ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Murmur",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sharp Gaze",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "King Halo (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Outer Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Recovery ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wait-and-See",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Gap Closer",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Fuji Kiseki (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Summer Runner ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Unyielding Spirit",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Front)",
+        "HintLevel": null
+      }
+    ]
+  }
+]

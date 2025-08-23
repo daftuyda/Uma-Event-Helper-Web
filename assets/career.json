@@ -34,5 +34,23 @@
     "EventOptions": {
       "Bottom Option": "Energy +30\nStamina +20\nBreath of Fresh Air hint +1"
     }
+  },
+  {
+    "EventName": "A Three-Legged Race",
+    "EventOptions": {
+      "": "※ Classic Class, Early November\n※ At least 50000 fans\n\n\nWisdom +20\nSkill points +20\nIron Will hint +1\n\n\n※ If Aoi Kiryuin is scenario-linked:\nWisdom +20\nSkill points +20\nIron Will hint +3"
+    }
+  },
+  {
+    "EventName": "Happy Shoe Shopping",
+    "EventOptions": {
+      "": "Power +10"
+    }
+  },
+  {
+    "EventName": "Kiryuin's Day Off",
+    "EventOptions": {
+      "": "Speed +10"
+    }
   }
 ]

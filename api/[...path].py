@@ -6,7 +6,7 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from rapidfuzz import process, fuzz
 
 BASE_DIR = Path(__file__).resolve().parents[1]
-ASSETS = BASE_DIR / "assets" / "events"
+ASSETS = BASE_DIR / "assets"
 
 app = FastAPI()
 
@@ -86,11 +86,11 @@ def _first_existing(paths: List[Path]) -> Path:
     raise FileNotFoundError("None of the candidate paths exist:\n" + "\n".join(str(p) for p in paths))
 
 def load_all_events() -> List[Dict]:
-    assets_root = ASSETS  # /<repo>/assets/events
+    assets_root = ASSETS  # /<repo>/assets
 
     support_file = assets_root / "support_card.json"
     uma_file     = assets_root / "uma_data.json"
-    ura_file     = assets_root / "ura_finale.json"
+    ura_file     = assets_root / "career.json"
 
     for p in (support_file, uma_file, ura_file):
         if not p.exists():
@@ -140,4 +140,4 @@ async def get_event_by_name(
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=3000)
