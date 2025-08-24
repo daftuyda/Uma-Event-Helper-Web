@@ -25,22 +25,6 @@ Uma Event Helper is a browser-based tool to assist with Uma Musume event choices
 
 ---
 
-## Project Structure
-
-```
-/api/index.py
-/assets/events/
-/index.html
-/styles.css
-/search.js
-/ocr.js
-/recommend.js
-/requirements.txt
-/README.md
-```
-
----
-
 ## Local Development
 
 - **Install dependencies**  
