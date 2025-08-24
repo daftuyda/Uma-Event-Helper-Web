@@ -1,101 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Uma Event Helper</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Uma Event Helper</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Uma Event Helper</h1>
 
-<div class="container">
-  <h1>Uma Event Helper</h1>
+      <button
+        id="modeToggleBtn"
+        aria-label="Toggle dark/light mode"
+        class="mode-toggle-btn"
+        title="Toggle dark/light mode"
+      >
+        <svg
+          id="iconSun"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-sun"
+        >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg
+          id="iconMoon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-moon"
+          style="display: none"
+        >
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+        </svg>
+      </button>
 
-  
-  <button id="modeToggleBtn" aria-label="Toggle dark/light mode" class="mode-toggle-btn" title="Toggle dark/light mode">
-    <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-    <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon" style="display:none;">
-      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-    </svg>
-  </button>
+      <section class="search-panel">
+        <form id="search-form" class="search-form">
+          <input
+            id="query"
+            type="text"
+            placeholder="Search an event name…"
+            autocomplete="off"
+          />
+          <button id="search-btn" type="submit">Search</button>
+        </form>
+        <div id="status" class="status"></div>
+      </section>
 
-  <section class="search-panel">
-    <form id="search-form" class="search-form">
-      <input id="query" type="text" placeholder="Search an event name…" autocomplete="off" />
-      <button id="search-btn" type="submit">Search</button>
-    </form>
-    <div id="status" class="status"></div>
-  </section>
+      <div class="ocr-controls">
+        <button id="captureBtn" class="capture-btn">
+          Capture Screen for OCR
+        </button>
+        <label class="scan-time-label" for="searchDelayButtons"
+          >Scan Time:</label
+        >
+        <div
+          id="searchDelayButtons"
+          class="delay-buttons"
+          role="group"
+          aria-label="Select OCR scan time"
+        >
+          <button data-delay="3000" class="delay-btn active" type="button">
+            3s
+          </button>
+          <button data-delay="5000" class="delay-btn" type="button">5s</button>
+          <button data-delay="10000" class="delay-btn" type="button">
+            10s
+          </button>
+        </div>
+      </div>
 
-  <div class="ocr-controls">
-    <button id="captureBtn" class="capture-btn">Capture Screen for OCR</button>
-    <label class="scan-time-label" for="searchDelayButtons">Scan Time:</label>
-    <div id="searchDelayButtons" class="delay-buttons" role="group" aria-label="Select OCR scan time">
-      <button data-delay="3000" class="delay-btn active" type="button">3s</button>
-      <button data-delay="5000" class="delay-btn" type="button">5s</button>
-      <button data-delay="10000" class="delay-btn" type="button">10s</button>
+      <div id="suggestions" class="ocr-suggestions"></div>
+      <video id="captureVideo" autoplay muted></video>
+      <div id="result" class="result"></div>
     </div>
-  </div>
 
-  <div id="suggestions" class="ocr-suggestions"></div>
-  <video id="captureVideo" autoplay muted></video>
-  <div id="result" class="result"></div>
-</div>
+    <script>
+      window.API_BASE = "/api";
 
-<script>
-  window.API_BASE = "/api";
+      document.addEventListener("DOMContentLoaded", () => {
+        const modeToggleBtn = document.getElementById("modeToggleBtn");
+        const body = document.body;
+        const iconSun = document.getElementById("iconSun");
+        const iconMoon = document.getElementById("iconMoon");
+        const DARK_MODE_KEY = "umasearch-darkmode";
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const modeToggleBtn = document.getElementById('modeToggleBtn');
-    const body = document.body;
-    const iconSun = document.getElementById('iconSun');
-    const iconMoon = document.getElementById('iconMoon');
-    const DARK_MODE_KEY = 'umasearch-darkmode';
+        function updateIcons(isDark) {
+          iconSun.style.display = isDark ? "none" : "inline";
+          iconMoon.style.display = isDark ? "inline" : "none";
+        }
+        const savedMode = localStorage.getItem(DARK_MODE_KEY);
+        if (savedMode === "dark") {
+          body.classList.add("dark-mode");
+          updateIcons(true);
+        } else {
+          updateIcons(false);
+        }
 
-    function updateIcons(isDark) {
-      iconSun.style.display = isDark ? 'none' : 'inline';
-      iconMoon.style.display = isDark ? 'inline' : 'none';
-    }
-    const savedMode = localStorage.getItem(DARK_MODE_KEY);
-    if (savedMode === 'dark') { body.classList.add('dark-mode'); updateIcons(true); } else { updateIcons(false); }
+        modeToggleBtn.addEventListener("click", () => {
+          body.classList.toggle("dark-mode");
+          const isDark = body.classList.contains("dark-mode");
+          localStorage.setItem(DARK_MODE_KEY, isDark ? "dark" : "light");
+          updateIcons(isDark);
+        });
 
-    modeToggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      const isDark = body.classList.contains('dark-mode');
-      localStorage.setItem(DARK_MODE_KEY, isDark ? 'dark' : 'light');
-      updateIcons(isDark);
-    });
-
-    // Scan-time persistence
-    const SCAN_TIME_KEY = 'umasearch-scantime';
-    const delayButtons = document.querySelectorAll('.delay-btn');
-    const savedScanTime = localStorage.getItem(SCAN_TIME_KEY) || '3000';
-    delayButtons.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.delay === savedScanTime);
-      btn.addEventListener('click', () => {
-        delayButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        localStorage.setItem(SCAN_TIME_KEY, btn.dataset.delay);
+        // Scan-time persistence
+        const SCAN_TIME_KEY = "umasearch-scantime";
+        const delayButtons = document.querySelectorAll(".delay-btn");
+        const savedScanTime = localStorage.getItem(SCAN_TIME_KEY) || "3000";
+        delayButtons.forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.delay === savedScanTime);
+          btn.addEventListener("click", () => {
+            delayButtons.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            localStorage.setItem(SCAN_TIME_KEY, btn.dataset.delay);
+          });
+        });
       });
-    });
-  });
-</script>
 
-<script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
-<script src="ocr.js" defer data-cfasync="false"></script>
-<script type="module" src="search.js"></script>
-<script type="module" src="recommend.js"></script>
+    window.NAV_ROUTES = [
+      { label: "Events",        path: "/",       file: "/index.html" },
+      { label: "Support Hints", path: "/hints",  file: "/hints.html" }
+    ];
+    </script>
 
-</body>
+    <script src="nav.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+    <script src="ocr.js" defer data-cfasync="false"></script>
+    <script type="module" src="search.js"></script>
+    <script type="module" src="recommend.js"></script>
+  </body>
 </html>

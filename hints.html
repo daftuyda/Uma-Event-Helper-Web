@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Uma Support Hint Finder</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Uma Support Hint Finder</h1>
+
+      <button
+        id="modeToggleBtn"
+        aria-label="Toggle dark/light mode"
+        class="mode-toggle-btn"
+        title="Toggle dark/light mode"
+      >
+        <svg
+          id="iconSun"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-sun"
+        >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg
+          id="iconMoon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-moon"
+          style="display: none"
+        >
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+        </svg>
+      </button>
+
+      <p class="subtle">
+        Type a skill hint (e.g., <em>Medium Corners</em>), press Enter to add
+        it.
+      </p>
+
+      <div class="toolbar">
+        <div class="controls" style="flex: 1">
+          <input
+            id="hintInput"
+            list="hintList"
+            type="text"
+            placeholder="Add a hint (e.g., Medium Corners ○, Corner Adept ○, Focus, …)"
+          />
+          <button id="addBtn" class="primary">Add</button>
+          <select id="modeSelect" aria-label="Match mode">
+            <option value="AND">Match ALL (AND)</option>
+            <option value="OR">Match ANY (OR)</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label><input type="checkbox" id="fSSR" checked /> SSR</label>
+          <label><input type="checkbox" id="fSR" checked /> SR</label>
+          <label><input type="checkbox" id="fR" checked /> R</label>
+        </div>
+
+        <div class="row">
+          <button id="clearBtn">Clear</button>
+          <button id="copyLinkBtn">Copy link</button>
+          <button id="exportBtn">Export JSON</button>
+        </div>
+      </div>
+
+      <datalist id="hintList"></datalist>
+
+      <div class="chips" id="chips"></div>
+      <div class="inline-note muted" id="counts"></div>
+      <div class="spacer"></div>
+
+      <div id="results" class="grid"></div>
+    </div>
+
+    <script src="nav.js" defer></script>
+    <script src="hints.js"></script>
+    <script>
+      (function () {
+        const btn = document.getElementById("modeToggleBtn");
+        const body = document.body;
+        const iconSun = document.getElementById("iconSun");
+        const iconMoon = document.getElementById("iconMoon");
+        const KEY = "umasearch-darkmode";
+        function setIcons(dark) {
+          iconSun.style.display = dark ? "none" : "inline";
+          iconMoon.style.display = dark ? "inline" : "none";
+        }
+        const saved = localStorage.getItem(KEY);
+        if (saved === "dark") {
+          body.classList.add("dark-mode");
+          setIcons(true);
+        } else {
+          setIcons(false);
+        }
+        btn.addEventListener("click", () => {
+          const dark = body.classList.toggle("dark-mode");
+          localStorage.setItem(KEY, dark ? "dark" : "light");
+          setIcons(dark);
+        });
+      })();
+
+      window.NAV_ROUTES = [
+        { label: "Events", path: "/", file: "/index.html" },
+        { label: "Support Hints", path: "/hints", file: "/hints.html" },
+      ];
+    </script>
+  </body>
+</html>
