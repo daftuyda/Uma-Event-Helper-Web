@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <script>
+    (function () {
+      try {
+        var pref = localStorage.getItem("umasearch-darkmode");
+        var dark = pref ? (pref === "dark")
+                        : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("dark-mode", dark);
+        document.body.classList.toggle("dark-mode", dark);
+        document.documentElement.style.colorScheme = dark ? "dark" : "light";
+      } catch (e) {}
+    })();
+    </script>
     <div class="container">
       <h1>Uma Event Helper</h1>
 
@@ -104,31 +116,6 @@
       window.API_BASE = "/api";
 
       document.addEventListener("DOMContentLoaded", () => {
-        const modeToggleBtn = document.getElementById("modeToggleBtn");
-        const body = document.body;
-        const iconSun = document.getElementById("iconSun");
-        const iconMoon = document.getElementById("iconMoon");
-        const DARK_MODE_KEY = "umasearch-darkmode";
-
-        function updateIcons(isDark) {
-          iconSun.style.display = isDark ? "none" : "inline";
-          iconMoon.style.display = isDark ? "inline" : "none";
-        }
-        const savedMode = localStorage.getItem(DARK_MODE_KEY);
-        if (savedMode === "dark") {
-          body.classList.add("dark-mode");
-          updateIcons(true);
-        } else {
-          updateIcons(false);
-        }
-
-        modeToggleBtn.addEventListener("click", () => {
-          body.classList.toggle("dark-mode");
-          const isDark = body.classList.contains("dark-mode");
-          localStorage.setItem(DARK_MODE_KEY, isDark ? "dark" : "light");
-          updateIcons(isDark);
-        });
-
         // Scan-time persistence
         const SCAN_TIME_KEY = "umasearch-scantime";
         const delayButtons = document.querySelectorAll(".delay-btn");
@@ -143,10 +130,41 @@
         });
       });
 
-    window.NAV_ROUTES = [
-      { label: "Events",        path: "/",       file: "/index.html" },
-      { label: "Support Hints", path: "/hints",  file: "/hints.html" }
-    ];
+      (function () {
+        function applyTheme(dark, persist) {
+          document.documentElement.classList.toggle("dark-mode", dark);
+          document.body.classList.toggle("dark-mode", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+          if (persist) {
+            try { localStorage.setItem("umasearch-darkmode", dark ? "dark" : "light"); } catch(e) {}
+          }
+          var sun = document.getElementById("iconSun");
+          var moon = document.getElementById("iconMoon");
+          if (sun && moon) { sun.style.display = dark ? "none" : "inline"; moon.style.display = dark ? "inline" : "none"; }
+        }
+
+        // On load: reflect the class set by the no-flash script (no write)
+        applyTheme(document.documentElement.classList.contains("dark-mode"), false);
+
+        // Toggle: apply + persist
+        var btn = document.getElementById("modeToggleBtn");
+        if (btn) btn.addEventListener("click", function () {
+          applyTheme(!document.documentElement.classList.contains("dark-mode"), true);
+        });
+
+        // Optional: keep tabs/windows in sync
+        window.addEventListener("storage", function (e) {
+          if (e.key === "umasearch-darkmode") {
+            applyTheme(e.newValue === "dark", false);
+          }
+        });
+      })();
+
+      window.NAV_ROUTES = [
+        { label: "Events", path: "/", file: "/index.html" },
+        { label: "Support Hints", path: "/hints", file: "/hints.html" },
+        { label: "Umadle", path: "/umadle", file: "/umadle.html" }
+      ];
     </script>
 
     <script src="nav.js" defer></script>

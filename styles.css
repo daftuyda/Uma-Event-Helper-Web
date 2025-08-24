@@ -1,3 +1,5 @@
+:root { color-scheme: light dark; }
+
 body {
   display: flex;
   flex-direction: column;
@@ -9,10 +11,11 @@ body {
   color: #222;
 }
 .container {
-  width: 600px;
-  max-width: 95vw;
+  min-width: 700px;
+  max-width: 80vw;
   background: #fff;
   padding: 1.5rem 2rem;
+  margin: 1rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
@@ -107,7 +110,7 @@ body.dark-mode .site-nav .nav-link.active {
   color: #90cdf4;
 }
 
-/* Index page styles */
+/* Index styles */
 .search-panel {
   margin-bottom: 0.5rem;
 }
@@ -434,7 +437,7 @@ body.dark-mode .option-score {
   color: #bbb;
 }
 
-/* Hints page styles */
+/* Hints styles */
 .subtle {
   color: #555;
   font-style: italic;
@@ -652,3 +655,117 @@ body.dark-mode .chip button:hover {
 body.dark-mode .chips {
   color: #e5e7eb;
 }
+
+/* Umadle styles */
+.umadle-grid {
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+
+/* Tip text above the rows */
+.tips {
+  margin-top: .35rem;
+  font-size: .95rem;
+  color: #4b5563;
+}
+body.dark-mode .tips { color: #cbd5e1; }
+
+/* Each guess card */
+.umadle-grid .row.card {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  border-radius: 10px;
+  padding: .8rem .9rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+body.dark-mode .umadle-grid .row.card {
+  background: #1e1e1e;
+  border-color: #334155;
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+
+.umadle-grid .uma-name { font-weight: 700; font-size: 1.05rem; }
+.umadle-grid .uma-nick { font-size: .95rem; opacity: .85; }
+
+/* Sections and group rows */
+.section { display: flex; flex-direction: column; gap: .35rem; }
+.section-title { font-weight: 600; font-size: .95rem; color: #1f2937; }
+body.dark-mode .section-title { color: #e5e7eb; }
+.section, .group{ min-width:0; }
+
+.group-title { font-weight: 500; font-size: .9rem; color: #374151; margin-top: .2rem; }
+body.dark-mode .group-title { color: #cbd5e1; }
+
+/* SINGLE-ROW groups with horizontal scroll if overflow */
+.group {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: .35rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: .1rem; /* gives a tiny space for scrollbar */
+}
+
+/* Cells: keep arrows inside with flex; prevent shrinking; keep in one row */
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  background: #f7fafc;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  padding: .35rem .55rem;
+  font-size: .95rem;
+  white-space: nowrap;
+  flex: 0 0 auto;          /* do not shrink, keep on one line */
+  min-width: 160px;
+}
+.cell .k { overflow: hidden; text-overflow: ellipsis; }
+.cell .sym { flex: 0 0 auto; font-weight: 700; }
+
+/* Color semantics */
+.cell.match { background: #d1fae5; border-color: #16a34a; color: #065f46; }
+.cell.up    { background: #fff7ed; border-color: #fb923c; color: #9a3412; }
+.cell.down  { background: #eef2ff; border-color: #818cf8; color: #3730a3; }
+
+/* Dark mode polish */
+body.dark-mode .cell { background:#232634; border-color:#3b4556; color:#ddd; }
+body.dark-mode .cell.up { background:#3b2f24; border-color:#eab308; color:#fbbf24; }
+body.dark-mode .cell.down { background:#2a2f4a; border-color:#6b7280; color:#c7d2fe; }
+body.dark-mode .cell.match { background:#14532d; border-color:#16a34a; color:#d1fae5; }
+
+.modal-backdrop {
+  position: fixed; inset: 0; display: none; align-items: center; justify-content: center;
+  background: rgba(0,0,0,.35); z-index: 80; padding: 1rem;
+}
+.modal-backdrop.open { display: flex; }
+.modal {
+  background: #fff; color: #111827; width: min(520px, 92vw);
+  border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem 1.1rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,.18);
+}
+.modal h3 { margin: 0 0 .25rem 0; font-size: 1.15rem; }
+.modal .muted { color: #6b7280; margin-bottom: .6rem; }
+
+.btn-row { display: flex; gap: .5rem; justify-content: flex-end; }
+.btn {
+  border: 1px solid #cbd5e0; background: #fff; color: #111;
+  padding: .45rem .8rem; border-radius: 8px; cursor: pointer;
+}
+.btn:hover { filter: brightness(.96); }
+.btn.primary { background: #3182ce; color: #fff; border-color: #3182ce; }
+.btn.primary:hover { filter: brightness(.98); }
+
+body.dark-mode .modal { background:#1e1e1e; color:#e5e7eb; border-color:#334155; }
+body.dark-mode .modal .muted { color:#cbd5e1; }
+body.dark-mode .btn { background:#2b2f36; color:#e5e7eb; border-color:#3b4556; }
+body.dark-mode .btn.primary { background:#4299e1; border-color:#4299e1; color:#fff; }

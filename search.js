@@ -1,9 +1,12 @@
-import { chooseRecommendedOption, renderRecommendationBadge } from "./recommend.js";
+import {
+  chooseRecommendedOption,
+  renderRecommendationBadge,
+} from "./recommend.js";
 
 const API_BASE = window.API_BASE || `${location.protocol}//${location.host}`;
 
-let LAST_QUERY_KEY = null;   // normalized key for last query
-let LAST_PAYLOAD = null;     // optional cache (if you decide to reuse it later)
+let LAST_QUERY_KEY = null; // normalized key for last query
+let LAST_PAYLOAD = null; // optional cache (if you decide to reuse it later)
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const el = (tag, className, text) => {
@@ -12,7 +15,10 @@ const el = (tag, className, text) => {
   if (text != null) n.textContent = String(text);
   return n;
 };
-const clear = (node) => { while (node.firstChild) node.removeChild(node.firstChild); return node; };
+const clear = (node) => {
+  while (node.firstChild) node.removeChild(node.firstChild);
+  return node;
+};
 
 function scrubMarkers(s) {
   const str = String(s ?? "");
@@ -28,7 +34,7 @@ function preferLabeledOptions(optionsObj) {
   const labels = Object.keys(optionsObj);
   if (labels.length === 0) return optionsObj;
 
-  const hasLabeled = labels.some(l => String(l || "").trim() !== "");
+  const hasLabeled = labels.some((l) => String(l || "").trim() !== "");
   if (!hasLabeled) return optionsObj; // only unlabeled -> keep as-is
 
   const cleaned = {};
@@ -66,22 +72,25 @@ function renderLine(raw) {
 function splitChanceOutcomes(lines) {
   const outcomes = [];
   let current = null;
-  const isEither = (s) => /^randomly either(?:\s*\([^)]+\))?$/i.test(String(s).trim());
-  const isOr     = (s) => /^or(?:\s*\([^)]+\))?$/i.test(String(s).trim());
+  const isEither = (s) =>
+    /^randomly either(?:\s*\([^)]+\))?$/i.test(String(s).trim());
+  const isOr = (s) => /^or(?:\s*\([^)]+\))?$/i.test(String(s).trim());
 
-  for (const raw of (lines || [])) {
+  for (const raw of lines || []) {
     const rawStr = String(raw);
     const line = scrubMarkers(rawStr).trim();
     if (!line) continue;
     if (isEither(line) || isOr(line)) {
-      if (current && (current.header || current.bodyLines.length)) outcomes.push(current);
+      if (current && (current.header || current.bodyLines.length))
+        outcomes.push(current);
       current = { header: line, bodyLines: [] };
     } else {
       if (!current) return null; // no header yet → not a chance pattern
       current.bodyLines.push(rawStr);
     }
   }
-  if (current && (current.header || current.bodyLines.length)) outcomes.push(current);
+  if (current && (current.header || current.bodyLines.length))
+    outcomes.push(current);
   return outcomes.length >= 2 ? outcomes : null;
 }
 
@@ -90,7 +99,10 @@ function renderRewardGroup(lines) {
   const outcomes = splitChanceOutcomes(lines);
 
   if (outcomes) {
-    if (outcomes[0] && /^randomly either(?:\s*\([^)]+\))?$/i.test(outcomes[0].header || "")) {
+    if (
+      outcomes[0] &&
+      /^randomly either(?:\s*\([^)]+\))?$/i.test(outcomes[0].header || "")
+    ) {
       outcomes[0].header = "";
     }
 
@@ -105,7 +117,7 @@ function renderRewardGroup(lines) {
 
       const wrap = el("div", `outcome-alt alt-${idx % 2}`);
 
-      (oc.bodyLines || []).forEach(line => {
+      (oc.bodyLines || []).forEach((line) => {
         const node = renderLine(line);
         if (node) wrap.appendChild(node);
       });
@@ -115,7 +127,7 @@ function renderRewardGroup(lines) {
     return groupDiv;
   }
 
-  (lines || []).forEach(line => {
+  (lines || []).forEach((line) => {
     const s = String(line).trim();
     if (/^randomly either(?:\s*\([^)]+\))?$/i.test(s)) return;
     const node = renderLine(line);
@@ -127,7 +139,7 @@ function renderRewardGroup(lines) {
 
 function renderRewardGroups(groups) {
   const container = el("div", "reward-groups");
-  (groups || []).forEach(lines => {
+  (groups || []).forEach((lines) => {
     const arr = Array.isArray(lines) ? lines : [String(lines)];
     container.appendChild(renderRewardGroup(arr));
   });
@@ -135,12 +147,17 @@ function renderRewardGroups(groups) {
 }
 
 const normalizeLine = (s) =>
-  scrubMarkers(s).replace(/\r\n/g, "\n").replace(/\s+/g, " ").trim().toLowerCase();
-const groupKey = (lines) => (lines || []).map(normalizeLine).filter(Boolean).join(" | ");
+  scrubMarkers(s)
+    .replace(/\r\n/g, "\n")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+const groupKey = (lines) =>
+  (lines || []).map(normalizeLine).filter(Boolean).join(" | ");
 function dedupeGroups(groups) {
   const seen = new Set();
   const out = [];
-  for (const g of (groups || [])) {
+  for (const g of groups || []) {
     const arr = Array.isArray(g) ? g : [String(g)];
     const key = groupKey(arr);
     if (!key || seen.has(key)) continue;
@@ -152,9 +169,16 @@ function dedupeGroups(groups) {
 
 async function fetchEventByName(q, { limit = 5, min_score = 0 } = {}) {
   const cleanQ = scrubMarkers(q);
-  const url = `${API_BASE}/event_by_name?event_name=${encodeURIComponent(cleanQ)}&limit=${limit}&min_score=${min_score}`;
+  const url = `${API_BASE}/event_by_name?event_name=${encodeURIComponent(
+    cleanQ
+  )}&limit=${limit}&min_score=${min_score}`;
   const res = await fetch(url);
-  if (!res.ok) throw new Error(`API error ${res.status}: ${(await res.text().catch(() => "")) || res.statusText}`);
+  if (!res.ok)
+    throw new Error(
+      `API error ${res.status}: ${
+        (await res.text().catch(() => "")) || res.statusText
+      }`
+    );
   return res.json();
 }
 
@@ -167,10 +191,14 @@ async function performSearch(q) {
     return; // silently skip re-rendering
   }
 
-  clear(status); clear(result);
+  clear(status);
+  clear(result);
 
   const qClean = scrubMarkers(q);
-  if (!qClean) { status.textContent = "Type an event name and press Search."; return; }
+  if (!qClean) {
+    status.textContent = "Type an event name and press Search.";
+    return;
+  }
   status.textContent = "Searching…";
 
   let payload;
@@ -185,7 +213,10 @@ async function performSearch(q) {
   clear(status);
 
   const match = payload?.match?.data;
-  if (!match || !match.options) { status.textContent = "No event found."; return; }
+  if (!match || !match.options) {
+    status.textContent = "No event found.";
+    return;
+  }
 
   const options = {};
   for (const [label, groups] of Object.entries(match.options)) {
@@ -234,9 +265,9 @@ function renderEvent(evt, otherMatches) {
     choice.appendChild(h3);
     choice.appendChild(renderRewardGroups(groups));
     const total = rec?.byLabel?.[label]?.score;
-    if (typeof total === 'number') {
-      const scoreTag = document.createElement('div');
-      scoreTag.className = 'option-score';
+    if (typeof total === "number") {
+      const scoreTag = document.createElement("div");
+      scoreTag.className = "option-score";
       scoreTag.textContent = `Score: ${total.toFixed(1)}`;
       choice.appendChild(scoreTag);
     }
@@ -247,14 +278,18 @@ function renderEvent(evt, otherMatches) {
   if (Array.isArray(otherMatches) && otherMatches.length) {
     const wrap = el("div");
     wrap.style.marginTop = "12px";
-    const cap = el("div", null, "Other matches:"); cap.style.fontWeight = "600";
+    const cap = el("div", null, "Other matches:");
+    cap.style.fontWeight = "600";
     wrap.appendChild(cap);
     const ul = el("ul");
-    otherMatches.forEach(m => {
+    otherMatches.forEach((m) => {
       const name = scrubMarkers(m.event_name);
       const li = el("li");
-      const a = el("a"); a.href = "#"; a.textContent = `${name} (${Math.round(m.score)}%)`; a.style.color = "#7999aa";
-      a.addEventListener("click", e => {
+      const a = el("a");
+      a.href = "#";
+      a.textContent = `${name} (${Math.round(m.score)}%)`;
+      a.style.color = "#7999aa";
+      a.addEventListener("click", (e) => {
         e.preventDefault();
         $("#query").value = name;
         performSearch(name);
@@ -270,11 +305,17 @@ function renderEvent(evt, otherMatches) {
 function attachUI() {
   const form = $("#search-form");
   const input = $("#query");
-  form.addEventListener("submit", e => { e.preventDefault(); performSearch(input.value); });
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    performSearch(input.value);
+  });
 
   try {
     const q = new URLSearchParams(location.search).get("q");
-    if (q) { input.value = scrubMarkers(q); performSearch(q); }
+    if (q) {
+      input.value = scrubMarkers(q);
+      performSearch(q);
+    }
   } catch {}
 }
 document.addEventListener("DOMContentLoaded", attachUI);

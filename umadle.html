@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Uma Support Hint Finder</title>
+    <title>Umadle</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
       rel="stylesheet"
@@ -13,18 +13,18 @@
   <body>
     <script>
     (function () {
-      try {
+    try {
         var pref = localStorage.getItem("umasearch-darkmode");
         var dark = pref ? (pref === "dark")
                         : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
         document.documentElement.classList.toggle("dark-mode", dark);
         document.body.classList.toggle("dark-mode", dark);
         document.documentElement.style.colorScheme = dark ? "dark" : "light";
-      } catch (e) {}
+    } catch (e) {}
     })();
     </script>
     <div class="container">
-      <h1>Uma Support Hint Finder</h1>
+      <h1>Umadle</h1>
 
       <button
         id="modeToggleBtn"
@@ -42,7 +42,6 @@
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="feather feather-sun"
         >
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -64,92 +63,93 @@
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="feather feather-moon"
           style="display: none"
         >
           <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
         </svg>
       </button>
 
-      <p class="subtle">
-        Type a skill hint (e.g., <em>Medium Corners</em>), press Enter to add
-        it.
-      </p>
-
-      <div class="toolbar">
-        <div class="controls" style="flex: 1">
+      <section class="search-panel">
+        <form
+          class="controls"
+          id="guess-form"
+          class="search-form"
+          autocomplete="off"
+        >
           <input
-            id="hintInput"
-            list="hintList"
+            id="guess"
+            list="umaList"
             type="text"
-            placeholder="Add hint (e.g., Medium Corners ○)"
+            placeholder="Type an UMA (e.g. Narita Brian — Maverick)"
           />
-          <button id="addBtn" class="primary">Add</button>
-          <select id="modeSelect" aria-label="Match mode">
-            <option value="AND">Match ALL (AND)</option>
-            <option value="OR">Match ANY (OR)</option>
-          </select>
+          <datalist id="umaList"></datalist>
+          <button class="primary" id="guess-btn" type="submit">Guess</button>
+        </form>
+        <div id="legend" class="status">
+          Legend: <b>✓</b> exact match, <span class="sym up">▲</span> your guess
+          is lower (go up), <span class="sym down">▼</span> your guess is higher
+          (go down)
         </div>
+      </section>
 
-        <div class="row">
-          <label><input type="checkbox" id="fSSR" checked /> SSR</label>
-          <label><input type="checkbox" id="fSR" checked /> SR</label>
-          <label><input type="checkbox" id="fR" checked /> R</label>
-        </div>
-
-        <div class="row">
-          <button id="clearBtn">Clear</button>
-        </div>
-      </div>
-
-      <datalist id="hintList"></datalist>
-
-      <div class="chips" id="chips"></div>
-      <div class="inline-note muted" id="counts"></div>
-      <div class="spacer"></div>
-
-      <div id="results" class="grid"></div>
+      <div id="rows" class="umadle-grid"></div>
+      <div id="footer" class="status"></div>
     </div>
 
-    <script src="nav.js" defer></script>
-    <script src="hints.js"></script>
-    <script>
-    (function () {
-      function applyTheme(dark, persist) {
-        document.documentElement.classList.toggle("dark-mode", dark);
-        document.body.classList.toggle("dark-mode", dark);
-        document.documentElement.style.colorScheme = dark ? "dark" : "light";
-        if (persist) {
-          try { localStorage.setItem("umasearch-darkmode", dark ? "dark" : "light"); } catch(e) {}
-        }
-        var sun = document.getElementById("iconSun");
-        var moon = document.getElementById("iconMoon");
-        if (sun && moon) { sun.style.display = dark ? "none" : "inline"; moon.style.display = dark ? "inline" : "none"; }
-      }
+    <!-- WIN MODAL -->
+    <div id="winModal" class="modal-backdrop" aria-hidden="true">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="winTitle"
+      >
+        <h3 id="winTitle">You got it! 🎉</h3>
+        <p id="winMsg" class="muted"></p>
+        <div class="btn-row">
+          <button id="winNewBtn" class="btn primary">New UMA</button>
+          <button id="winCloseBtn" class="btn">Keep Board</button>
+        </div>
+      </div>
+    </div>
 
-      // On load: reflect the class set by the no-flash script (no write)
-      applyTheme(document.documentElement.classList.contains("dark-mode"), false);
-
-      // Toggle: apply + persist
-      var btn = document.getElementById("modeToggleBtn");
-      if (btn) btn.addEventListener("click", function () {
-        applyTheme(!document.documentElement.classList.contains("dark-mode"), true);
-      });
-
-      // Optional: keep tabs/windows in sync
-      window.addEventListener("storage", function (e) {
-        if (e.key === "umasearch-darkmode") {
-          applyTheme(e.newValue === "dark", false);
-        }
-      });
-    })();
-    </script>
     <script>
       window.NAV_ROUTES = [
         { label: "Events", path: "/", file: "/index.html" },
         { label: "Support Hints", path: "/hints", file: "/hints.html" },
-        { label: "Umadle", path: "/umadle", file: "/umadle.html" }
+        { label: "Umadle", path: "/umadle", file: "/umadle.html" },
       ];
+    </script>
+    <script src="nav.js" defer></script>
+    <script type="module" src="umadle.js"></script>
+
+    <script>
+    (function () {
+    function applyTheme(dark, persist) {
+        document.documentElement.classList.toggle("dark-mode", dark);
+        document.body.classList.toggle("dark-mode", dark);
+        document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        if (persist) {
+        try { localStorage.setItem("umasearch-darkmode", dark ? "dark" : "light"); } catch(e) {}
+        }
+        var sun = document.getElementById("iconSun");
+        var moon = document.getElementById("iconMoon");
+        if (sun && moon) { sun.style.display = dark ? "none" : "inline"; moon.style.display = dark ? "inline" : "none"; }
+    }
+
+    applyTheme(document.documentElement.classList.contains("dark-mode"), false);
+
+    var btn = document.getElementById("modeToggleBtn");
+    if (btn) btn.addEventListener("click", function () {
+        applyTheme(!document.documentElement.classList.contains("dark-mode"), true);
+    });
+
+    window.addEventListener("storage", function (e) {
+        if (e.key === "umasearch-darkmode") {
+        applyTheme(e.newValue === "dark", false);
+        }
+    });
+    })();
     </script>
   </body>
 </html>

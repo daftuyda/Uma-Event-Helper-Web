@@ -1,5 +1,6 @@
 import argparse, json, os, sys, time, re
 from typing import Any, Dict, List, Optional, Tuple
+from urllib.parse import urlparse
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -60,6 +61,161 @@ def upsert_json_item(path: str, match_key: str, match_value: str, patch: Dict[st
             return
     data.append({match_key: match_value, **patch})
     _atomic_write(path, data)
+
+def _make_uma_key(name: str, nickname: str | None, slug: str | None) -> str:
+    """Stable key to disambiguate variants."""
+    if nickname:
+        return f"{name} :: {nickname}"
+    if slug:
+        return f"{name} :: {slug}"
+    return name
+
+def _slug_and_id_from_url(url: str) -> tuple[str | None, int | None]:
+    """
+    Returns (slug, id) for /umamusume/characters/<slug>.
+    If slug begins with digits-..., id is returned as int.
+    """
+    try:
+        path = urlparse(url).path
+        slug = path.rsplit("/", 1)[-1].strip("/") if path else None
+    except Exception:
+        slug = None
+    uma_id = None
+    if slug:
+        m = re.match(r"^(\d+)-(.+)$", slug)
+        if m:
+            uma_id = int(m.group(1))
+            slug = m.group(2)
+    return slug, uma_id
+
+def _count_stars(text: str) -> int:
+    t = (text or "")
+    return t.count("⭐") or t.count("★") or 0
+
+def _get_caption_el(d, caption_text: str):
+    """Find a caption div by text, regardless of hashed class suffix."""
+    return safe_find(
+        d, By.XPATH,
+        "//div[contains(@class,'characters_infobox_caption')][contains(translate(normalize-space(.),"
+        "'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),"
+        f"'{caption_text.lower()}')]"
+    )
+
+def _stats_blocks_after_caption(d, cap_el):
+    """Collect consecutive stats blocks after caption until the next caption."""
+    if not cap_el:
+        return []
+    try:
+        blocks = d.execute_script("""
+            const cap = arguments[0];
+            const isCaption = n => n && n.classList && [...n.classList].some(c => c.startsWith('characters_infobox_caption__'));
+            const isStats   = n => n && n.classList && [...n.classList].some(c => c.startsWith('characters_infobox_stats__'));
+            const out = [];
+            let el = cap.nextElementSibling;
+            while (el && !isCaption(el)) {
+              if (isStats(el)) out.push(el);
+              el = el.nextElementSibling;
+            }
+            return out;
+        """, cap_el) or []
+        # keep only visible nodes
+        return [b for b in blocks if is_visible(d, b)]
+    except Exception:
+        return []
+
+def _label_value(d, label_text: str) -> str:
+    el = safe_find(d, By.XPATH,
+        f"//div[contains(@class,'characters_infobox_bold_text')][normalize-space()='{label_text}']/following-sibling::div[1]")
+    return txt(el)
+
+def _parse_three_sizes(s: str):
+    m = re.search(r"(\d+)\s*-\s*(\d+)\s*-\s*(\d+)", s or "")
+    if not m: return {}
+    return {"B": int(m.group(1)), "W": int(m.group(2)), "H": int(m.group(3))}
+
+def _parse_base_stats_from_block(block) -> dict:
+    """Given a single 'characters_infobox_stats' block, return {'stars': 3|5, 'stats': {...}} or {}."""
+    stars = 0
+    try:
+        star_el = block.find_element(By.CSS_SELECTOR, 'div[class*="characters_infobox_row__"] span')
+        stars = _count_stars(txt(star_el))
+    except Exception:
+        pass
+    stats = {}
+    for split in safe_find_all(block, By.CSS_SELECTOR, 'div[class*="characters_infobox_row_split"]'):
+        img = safe_find(split, By.CSS_SELECTOR, 'img[alt]')
+        stat_name = img.get_attribute("alt") if img else ""
+        if not stat_name: continue
+        # last numeric-looking div is the value
+        val = None
+        for dv in split.find_elements(By.CSS_SELECTOR, "div"):
+            m = re.search(r"\d+", txt(dv))
+            if m: val = int(m.group(0))
+        if val is not None:
+            stats[stat_name] = val
+    if stars and stats:
+        return {"stars": stars, "stats": stats}
+    return {}
+
+def _parse_stat_bonuses(block) -> dict:
+    """Parse the 'Stat bonuses' single block."""
+    out = {}
+    for split in safe_find_all(block, By.CSS_SELECTOR, 'div[class*="characters_infobox_row_split"]'):
+        img = safe_find(split, By.CSS_SELECTOR, 'img[alt]')
+        name = img.get_attribute("alt") if img else ""
+        if not name: continue
+        raw = ""
+        # value sits in a sibling <div>
+        for dv in split.find_elements(By.CSS_SELECTOR, "div"):
+            t = txt(dv)
+            if "%" in t or t == "-" or re.search(r"\d", t): raw = t
+        if raw == "-":
+            out[name] = 0
+        else:
+            m = re.search(r"(-?\d+)", raw)
+            out[name] = int(m.group(1)) if m else 0
+    return out
+
+def _parse_aptitudes(blocks) -> dict:
+    """Given blocks after 'Aptitude' and before next caption, return nested dict."""
+    apt = {}
+    for b in blocks:
+        title = txt(safe_find(b, By.CSS_SELECTOR, 'div[class*="characters_infobox_bold_text"]'))
+        if not title:  # sometimes the title is on its own row; try again
+            try:
+                title = b.find_element(By.XPATH, ".//div[contains(@class,'characters_infobox_bold_text')]").text
+            except Exception:
+                title = ""
+        title = title.strip()
+        if not title: continue
+
+        sec = {}
+        for row in safe_find_all(b, By.CSS_SELECTOR, 'div[class*="characters_infobox_row__"]'):
+            for split in safe_find_all(row, By.CSS_SELECTOR, 'div[class*="characters_infobox_row_split"]'):
+                cells = split.find_elements(By.CSS_SELECTOR, "div")
+                if len(cells) >= 2:
+                    key = txt(cells[0])
+                    val = txt(cells[-1])
+                    if key and val: sec[key] = val
+        if sec:
+            apt[title] = sec
+    return apt
+
+def _parse_top_meta(d) -> tuple[str, int]:
+    """Return (nickname, base_stars) from the top infobox area."""
+    nickname = ""
+    base_stars = 0
+    top = safe_find(d, By.CSS_SELECTOR, 'div[class*="characters_infobox_top"]')
+    if top:
+        # nickname is usually the first italic 'item' text that is not stars
+        for it in safe_find_all(top, By.CSS_SELECTOR, 'div[class*="characters_infobox_item"]'):
+            t = txt(it)
+            if not t: continue
+            if "⭐" in t or "★" in t:
+                base_stars = max(base_stars, _count_stars(t))
+            elif not nickname:
+                nickname = t
+    return nickname, base_stars
 
 
 def new_driver(headless: bool = True) -> webdriver.Chrome:
@@ -469,13 +625,58 @@ def scrape_characters(save_path: str, server: str, headless: bool = True):
             for attempt in range(RETRIES + 1):
                 try:
                     ok = nav(d, url, "body")
+                    slug, uma_id = _slug_and_id_from_url(url)
                     if not ok: raise TimeoutException("no body")
+
+                    # --- Core identity ---
                     wait_css(d, 'div[class*=characters_infobox_character_name] > a', 8)
                     name_el = safe_find(d, By.CSS_SELECTOR, 'div[class*=characters_infobox_character_name] > a')
                     name = (txt(name_el) or "").replace("\n","")
-                    if not name: raise WebDriverException("Missing character name")
+                    if not name:
+                        raise WebDriverException("Missing character name")
 
-                    # Objectives
+                    # top meta: nickname + base-stars
+                    nickname, base_stars = _parse_top_meta(d)
+                    uma_key = _make_uma_key(name, nickname, slug)
+
+                    # height + three sizes
+                    height_cm = None
+                    try:
+                        h_raw = _label_value(d, "Height")
+                        m = re.search(r"(\d+)", h_raw or "")
+                        height_cm = int(m.group(1)) if m else None
+                    except Exception:
+                        pass
+                    sizes_raw = _label_value(d, "Three sizes")
+                    sizes = _parse_three_sizes(sizes_raw)
+
+                    # --- Base stats (3★ / 5★) ---
+                    base_stats: dict = {}
+                    cap_base = _get_caption_el(d, "Base stats")
+                    base_blocks = _stats_blocks_after_caption(d, cap_base)
+
+                    for idx, blk in enumerate(base_blocks[:2]):  # usually two blocks: 3★ then 5★
+                        parsed = _parse_base_stats_from_block(blk)  # {'stars': 3|5, 'stats': {...}} or {}
+                        stars = parsed.get("stars") or (3 if idx == 0 else 5)
+                        stats = parsed.get("stats", {})
+                        if stats:
+                            base_stats[f"{stars}★"] = stats
+
+                    # --- Stat bonuses ---
+                    stat_bonuses: dict = {}
+                    cap_bonus = _get_caption_el(d, "Stat bonuses")
+                    bonus_blocks = _stats_blocks_after_caption(d, cap_bonus)
+                    if bonus_blocks:
+                        stat_bonuses = _parse_stat_bonuses(bonus_blocks[0])
+
+                    # --- Aptitudes (Surface / Distance / Strategy) ---
+                    aptitudes: dict = {}
+                    cap_apt = _get_caption_el(d, "Aptitude")
+                    apt_blocks = _stats_blocks_after_caption(d, cap_apt)
+                    if apt_blocks:
+                        aptitudes = _parse_aptitudes(apt_blocks)
+
+                    # --- Objectives ---
                     objectives = []
                     for card in safe_find_all(d, By.CSS_SELECTOR,
                         'div[class*=characters_objective_box] > div[class*=characters_objective]'):
@@ -488,9 +689,11 @@ def scrape_characters(save_path: str, server: str, headless: bool = True):
                             'div[class*=characters_objective_text] > div:nth-of-type(3)'))
                         cond = txt(safe_find(card, By.CSS_SELECTOR,
                             'div[class*=characters_objective_text] > div:nth-of-type(4)'))
-                        objectives.append({"ObjectiveName": objective_name, "Turn": turn, "Time": tim, "ObjectiveCondition": cond})
+                        objectives.append({
+                            "ObjectiveName": objective_name, "Turn": turn, "Time": tim, "ObjectiveCondition": cond
+                        })
 
-                    # Events (via tippy)
+                    # --- Events ---
                     events: List[Dict[str, Any]] = []
                     for elist in safe_find_all(d, By.CSS_SELECTOR, 'div[class*=eventhelper_elist]'):
                         if not is_visible(d, elist): continue
@@ -505,13 +708,29 @@ def scrape_characters(save_path: str, server: str, headless: bool = True):
                             finally:
                                 tippy_hide(d, it)
 
-                    upsert_json_item(save_path, "UmaName", name, {
+                    # --- Upsert record ---
+                    upsert_json_item(save_path, "UmaKey", uma_key, {
+                        "UmaKey": uma_key,
                         "UmaName": name,
+                        "UmaNickname": nickname or None,
+                        "UmaSlug": slug,
+                        "UmaId": uma_id,
+                        "UmaBaseStars": base_stars or None,
+                        "UmaBaseStats": base_stats,
+                        "UmaStatBonuses": stat_bonuses,
+                        "UmaAptitudes": aptitudes,
+                        "UmaHeightCm": height_cm,
+                        "UmaThreeSizes": sizes,
                         "UmaObjectives": objectives,
                         "UmaEvents": events
                     })
-                    print(f"[{i}/{total}] UMA ✓ {name}  (+{len(objectives)} objectives, {len(events)} events)")
+
+                    print(f"[{i}/{total}] UMA ✓ {name} ({nickname or slug or 'default'})  "
+                        f"(★{base_stars} | base:{'/'.join(base_stats.keys()) or '-'} "
+                        f"| bonuses:{len(stat_bonuses)} | apt:{len(aptitudes)} "
+                        f"| {len(objectives)} objectives, {len(events)} events)")
                     break
+
                 except (TimeoutException, WebDriverException, StaleElementReferenceException) as e:
                     if attempt < RETRIES:
                         try: d.quit()
