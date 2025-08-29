@@ -4177,5 +4177,155 @@
         "HintLevel": null
       }
     ]
+  },
+  {
+    "SupportName": "Kawakami Princess (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tactical Tweak",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Hishi Akebono (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sunny Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprint Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Final Push",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Countermeasure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Meticulous Measures",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Mejiro Dober (SSR) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Kyoto Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sunny Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Kawakami Princess (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tactical Tweak",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportName": "Hishi Akebono (R) Support Card",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sunny Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprint Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Final Push",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Countermeasure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Meticulous Measures",
+        "HintLevel": null
+      }
+    ]
   }
 ]
