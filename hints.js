@@ -13,16 +13,54 @@
       .replace(/\s+/g, " ")
       .trim();
 
+  function cleanCardName(full){
+    return String(full || "")
+      .replace(/\s*\((?:SSR|SR|R)\)\s*/i, " ") // drop rarity tag
+      .replace(/Support\s*Card/i, "")          // drop suffix
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function initialsOf(title){
+    const cleaned = String(title || "")
+      .replace(/\(.*?\)/g, "")
+      .replace(/Support\s*Card/i, "")
+      .trim();
+
+    const tokens = cleaned
+      .split(/\s+/)
+      .map(t => t.replace(/[^A-Za-z]/g, ""))   // letters only for initials
+      .filter(Boolean);
+
+    if (tokens.length >= 2) return (tokens[0][0] + tokens[1][0]).toUpperCase();
+    if (tokens.length === 1) {
+      const t = tokens[0];
+      return (t.slice(0, 2) || t[0] || "?").toUpperCase();  // e.g., “Vo” for “Vodka”
+    }
+    return "?";
+  }
+
   // Parse raw data
-  const cards = (data || []).map((c) => ({
-    name: c.SupportName || "",
-    rarity: /\((SSR|SR|R)\)/i.test(c.SupportName || "")
-      ? c.SupportName.match(/\((SSR|SR|R)\)/i)[1].toUpperCase()
-      : "UNKNOWN",
-    hints: (c.SupportHints || [])
-      .map((h) => (h && h.Name ? String(h.Name) : ""))
-      .filter(Boolean),
-  }));
+  const cards = (data ?? []).map((c) => {
+    const rawName = c?.SupportName ?? "";
+    const name = cleanCardName(rawName); // assumes you added cleanCardName()
+    const rarity =
+      (c?.SupportRarity ||
+        (/\((SSR|SR|R)\)/i.exec(rawName)?.[1]) ||
+        "UNKNOWN").toUpperCase();
+
+    const hints = Array.isArray(c?.SupportHints)
+      ? c.SupportHints
+          .map(h => (typeof h === "string" ? h : h?.Name || ""))
+          .filter(Boolean)
+      : [];
+
+    const img  = c?.SupportImage || c?.Image || c?.Thumb || null;  // thumbnail if present
+    const slug = c?.SupportSlug || c?.slug || null;                 // unique key per card
+    const id   = c?.SupportId ?? null;
+
+    return { name, rawName, rarity, hints, img, slug, id };
+  });
 
   const allHints = Array.from(new Set(cards.flatMap((c) => c.hints))).sort(
     (a, b) => a.localeCompare(b)
@@ -127,19 +165,30 @@
     return `<span class="pill ${isMatch ? "match" : ""}">${hint}</span>`;
   }
 
+  function initialsOf(name){
+    const parts = String(name).trim().split(/\s+/);
+    return (parts[0]?.[0] || "") + (parts[1]?.[0] || "");
+  }
+
   function renderResults(list) {
-    results.innerHTML = list
-      .map(
-        (card) => `
-      <div class="card">
-        <div class="badges">
-          <span class="badge">${card.rarity}</span>
+    results.innerHTML = list.map((card) => {
+      const rarityClass = `badge-${card.rarity}`; // badge-SSR | badge-SR | badge-R
+      const thumb = card.img
+        ? `<img src="${card.img}" alt="${card.name}" loading="lazy">`
+        : `<span>${initialsOf(card.name)}</span>`;
+      return `
+        <div class="card card-support">
+          <div class="card-thumb">${thumb}</div>
+          <div class="card-title">
+            <h3>${card.name}</h3>
+            <span class="badge ${rarityClass}">${card.rarity}</span>
+          </div>
+          <div style="grid-column: 1 / -1;">
+            ${card.hints.map(highlightMatches).join("")}
+          </div>
         </div>
-        <h3>${card.name}</h3>
-        <div>${card.hints.map(highlightMatches).join("")}</div>
-      </div>`
-      )
-      .join("");
+      `;
+    }).join("");
   }
 
   function updateCounts(list) {

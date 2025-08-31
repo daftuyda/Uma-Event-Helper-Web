@@ -1,6 +1,112 @@
 [
   {
+    "SupportSlug": "30039-kawakami-princess",
+    "SupportId": "30039",
+    "SupportName": "Kawakami Princess (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30039-kawakami-princess.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tactical Tweak",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30040-hishi-akebono",
+    "SupportId": "30040",
+    "SupportName": "Hishi Akebono (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30040-hishi-akebono.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sunny Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprint Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Final Push",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Countermeasure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Meticulous Measures",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30041-mejiro-dober",
+    "SupportId": "30041",
+    "SupportName": "Mejiro Dober (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30041-mejiro-dober.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Kyoto Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sunny Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30038-sakura-chiyono-o",
+    "SupportId": "30038",
     "SupportName": "Sakura Chiyono O (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30038-sakura-chiyono-o.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -25,7 +131,11 @@
     ]
   },
   {
+    "SupportSlug": "30032-yaeno-muteki",
+    "SupportId": "30032",
     "SupportName": "Yaeno Muteki (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30032-yaeno-muteki.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -55,7 +165,11 @@
     ]
   },
   {
+    "SupportSlug": "30033-winning-ticket",
+    "SupportId": "30033",
     "SupportName": "Winning Ticket (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30033-winning-ticket.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -85,7 +199,11 @@
     ]
   },
   {
+    "SupportSlug": "30031-yukino-bijin",
+    "SupportId": "30031",
     "SupportName": "Yukino Bijin (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30031-yukino-bijin.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -110,7 +228,11 @@
     ]
   },
   {
+    "SupportSlug": "30028-kitasan-black",
+    "SupportId": "30028",
     "SupportName": "Kitasan Black (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30028-kitasan-black.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -155,7 +277,11 @@
     ]
   },
   {
+    "SupportSlug": "30029-satono-diamond",
+    "SupportId": "30029",
     "SupportName": "Satono Diamond (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30029-satono-diamond.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -195,7 +321,11 @@
     ]
   },
   {
+    "SupportSlug": "30030-matikanetannhauser",
+    "SupportId": "30030",
     "SupportName": "Matikanetannhauser (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30030-matikanetannhauser.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -225,7 +355,11 @@
     ]
   },
   {
+    "SupportSlug": "30027-mejiro-palmer",
+    "SupportId": "30027",
     "SupportName": "Mejiro Palmer (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30027-mejiro-palmer.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -265,7 +399,11 @@
     ]
   },
   {
+    "SupportSlug": "30026-twin-turbo",
+    "SupportId": "30026",
     "SupportName": "Twin Turbo (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30026-twin-turbo.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -300,7 +438,11 @@
     ]
   },
   {
+    "SupportSlug": "30024-oguri-cap",
+    "SupportId": "30024",
     "SupportName": "Oguri Cap (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30024-oguri-cap.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -355,7 +497,11 @@
     ]
   },
   {
+    "SupportSlug": "30025-special-week",
+    "SupportId": "30025",
     "SupportName": "Special Week (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30025-special-week.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -395,7 +541,55 @@
     ]
   },
   {
+    "SupportSlug": "30001-special-week",
+    "SupportId": "30001",
+    "SupportName": "Special Week (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30001-special-week.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rainy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30002-silence-suzuka",
+    "SupportId": "30002",
     "SupportName": "Silence Suzuka (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30002-silence-suzuka.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -445,7 +639,11 @@
     ]
   },
   {
+    "SupportSlug": "30003-tokai-teio",
+    "SupportId": "30003",
     "SupportName": "Tokai Teio (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30003-tokai-teio.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -480,7 +678,11 @@
     ]
   },
   {
+    "SupportSlug": "30004-gold-ship",
+    "SupportId": "30004",
     "SupportName": "Gold Ship (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30004-gold-ship.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -555,7 +757,11 @@
     ]
   },
   {
+    "SupportSlug": "30005-vodka",
+    "SupportId": "30005",
     "SupportName": "Vodka (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30005-vodka.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -605,7 +811,11 @@
     ]
   },
   {
+    "SupportSlug": "30006-grass-wonder",
+    "SupportId": "30006",
     "SupportName": "Grass Wonder (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30006-grass-wonder.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -650,7 +860,11 @@
     ]
   },
   {
+    "SupportSlug": "30007-el-condor-pasa",
+    "SupportId": "30007",
     "SupportName": "El Condor Pasa (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30007-el-condor-pasa.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -690,7 +904,11 @@
     ]
   },
   {
+    "SupportSlug": "30008-seiun-sky",
+    "SupportId": "30008",
     "SupportName": "Seiun Sky (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30008-seiun-sky.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -725,7 +943,11 @@
     ]
   },
   {
+    "SupportSlug": "30009-tamamo-cross",
+    "SupportId": "30009",
     "SupportName": "Tamamo Cross (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30009-tamamo-cross.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -765,7 +987,11 @@
     ]
   },
   {
+    "SupportSlug": "30010-fine-motion",
+    "SupportId": "30010",
     "SupportName": "Fine Motion (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30010-fine-motion.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -795,7 +1021,11 @@
     ]
   },
   {
+    "SupportSlug": "30011-ines-fujin",
+    "SupportId": "30011",
     "SupportName": "Ines Fujin (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30011-ines-fujin.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -825,7 +1055,45 @@
     ]
   },
   {
+    "SupportSlug": "30012-winning-ticket",
+    "SupportId": "30012",
+    "SupportName": "Winning Ticket (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30012-winning-ticket.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Position Pilfer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slick Surge",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30013-air-shakur",
+    "SupportId": "30013",
     "SupportName": "Air Shakur (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30013-air-shakur.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -845,7 +1113,11 @@
     ]
   },
   {
+    "SupportSlug": "30014-gold-city",
+    "SupportId": "30014",
     "SupportName": "Gold City (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30014-gold-city.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -865,7 +1137,11 @@
     ]
   },
   {
+    "SupportSlug": "30015-sakura-bakushin-o",
+    "SupportId": "30015",
     "SupportName": "Sakura Bakushin O (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30015-sakura-bakushin-o.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -910,7 +1186,11 @@
     ]
   },
   {
+    "SupportSlug": "30016-super-creek",
+    "SupportId": "30016",
     "SupportName": "Super Creek (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30016-super-creek.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -940,7 +1220,11 @@
     ]
   },
   {
+    "SupportSlug": "30017-smart-falcon",
+    "SupportId": "30017",
     "SupportName": "Smart Falcon (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30017-smart-falcon.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -985,7 +1269,11 @@
     ]
   },
   {
+    "SupportSlug": "30018-nishino-flower",
+    "SupportId": "30018",
     "SupportName": "Nishino Flower (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30018-nishino-flower.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1015,11 +1303,19 @@
     ]
   },
   {
+    "SupportSlug": "30019-haru-urara",
+    "SupportId": "30019",
     "SupportName": "Haru Urara (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30019-haru-urara.png",
     "SupportHints": []
   },
   {
+    "SupportSlug": "30020-biko-pegasus",
+    "SupportId": "30020",
     "SupportName": "Biko Pegasus (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30020-biko-pegasus.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1059,11 +1355,19 @@
     ]
   },
   {
+    "SupportSlug": "30021-tazuna-hayakawa",
+    "SupportId": "30021",
     "SupportName": "Tazuna Hayakawa (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30021-tazuna-hayakawa.png",
     "SupportHints": []
   },
   {
+    "SupportSlug": "30022-mejiro-mcqueen",
+    "SupportId": "30022",
     "SupportName": "Mejiro McQueen (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30022-mejiro-mcqueen.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1118,7 +1422,11 @@
     ]
   },
   {
+    "SupportSlug": "30023-rice-shower",
+    "SupportId": "30023",
     "SupportName": "Rice Shower (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30023-rice-shower.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1168,7 +1476,11 @@
     ]
   },
   {
+    "SupportSlug": "20029-seeking-the-pearl",
+    "SupportId": "20029",
     "SupportName": "Seeking the Pearl (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20029-seeking-the-pearl.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1203,7 +1515,11 @@
     ]
   },
   {
+    "SupportSlug": "20028-zenno-rob-roy",
+    "SupportId": "20028",
     "SupportName": "Zenno Rob Roy (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20028-zenno-rob-roy.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1248,7 +1564,11 @@
     ]
   },
   {
+    "SupportSlug": "20027-nishino-flower",
+    "SupportId": "20027",
     "SupportName": "Nishino Flower (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20027-nishino-flower.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1278,7 +1598,11 @@
     ]
   },
   {
+    "SupportSlug": "20026-nice-nature",
+    "SupportId": "20026",
     "SupportName": "Nice Nature (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20026-nice-nature.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1323,7 +1647,11 @@
     ]
   },
   {
+    "SupportSlug": "20025-ikuno-dictus",
+    "SupportId": "20025",
     "SupportName": "Ikuno Dictus (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20025-ikuno-dictus.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1353,7 +1681,11 @@
     ]
   },
   {
+    "SupportSlug": "20024-daitaku-helios",
+    "SupportId": "20024",
     "SupportName": "Daitaku Helios (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20024-daitaku-helios.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1393,7 +1725,11 @@
     ]
   },
   {
+    "SupportSlug": "20023-sweep-tosho",
+    "SupportId": "20023",
     "SupportName": "Sweep Tosho (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20023-sweep-tosho.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1433,7 +1769,11 @@
     ]
   },
   {
+    "SupportSlug": "20001-fuji-kiseki",
+    "SupportId": "20001",
     "SupportName": "Fuji Kiseki (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20001-fuji-kiseki.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1463,7 +1803,11 @@
     ]
   },
   {
+    "SupportSlug": "20002-daiwa-scarlet",
+    "SupportId": "20002",
     "SupportName": "Daiwa Scarlet (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20002-daiwa-scarlet.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1498,7 +1842,11 @@
     ]
   },
   {
+    "SupportSlug": "20003-hishi-amazon",
+    "SupportId": "20003",
     "SupportName": "Hishi Amazon (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20003-hishi-amazon.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1528,7 +1876,11 @@
     ]
   },
   {
+    "SupportSlug": "20004-air-groove",
+    "SupportId": "20004",
     "SupportName": "Air Groove (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20004-air-groove.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1563,7 +1915,11 @@
     ]
   },
   {
+    "SupportSlug": "20005-agnes-digital",
+    "SupportId": "20005",
     "SupportName": "Agnes Digital (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20005-agnes-digital.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1598,7 +1954,11 @@
     ]
   },
   {
+    "SupportSlug": "20006-biwa-hayahide",
+    "SupportId": "20006",
     "SupportName": "Biwa Hayahide (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20006-biwa-hayahide.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1628,7 +1988,11 @@
     ]
   },
   {
+    "SupportSlug": "20007-mayano-top-gun",
+    "SupportId": "20007",
     "SupportName": "Mayano Top Gun (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20007-mayano-top-gun.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1663,7 +2027,11 @@
     ]
   },
   {
+    "SupportSlug": "20008-manhattan-cafe",
+    "SupportId": "20008",
     "SupportName": "Manhattan Cafe (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20008-manhattan-cafe.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1698,7 +2066,11 @@
     ]
   },
   {
+    "SupportSlug": "20009-mihono-bourbon",
+    "SupportId": "20009",
     "SupportName": "Mihono Bourbon (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20009-mihono-bourbon.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1723,7 +2095,11 @@
     ]
   },
   {
+    "SupportSlug": "20010-mejiro-ryan",
+    "SupportId": "20010",
     "SupportName": "Mejiro Ryan (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20010-mejiro-ryan.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1748,7 +2124,11 @@
     ]
   },
   {
+    "SupportSlug": "20011-yukino-bijin",
+    "SupportId": "20011",
     "SupportName": "Yukino Bijin (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20011-yukino-bijin.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1773,7 +2153,11 @@
     ]
   },
   {
+    "SupportSlug": "20012-agnes-tachyon",
+    "SupportId": "20012",
     "SupportName": "Agnes Tachyon (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20012-agnes-tachyon.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1798,7 +2182,11 @@
     ]
   },
   {
+    "SupportSlug": "20013-eishin-flash",
+    "SupportId": "20013",
     "SupportName": "Eishin Flash (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20013-eishin-flash.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1828,7 +2216,11 @@
     ]
   },
   {
+    "SupportSlug": "20014-narita-taishin",
+    "SupportId": "20014",
     "SupportName": "Narita Taishin (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20014-narita-taishin.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1868,7 +2260,11 @@
     ]
   },
   {
+    "SupportSlug": "20015-marvelous-sunday",
+    "SupportId": "20015",
     "SupportName": "Marvelous Sunday (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20015-marvelous-sunday.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1898,7 +2294,11 @@
     ]
   },
   {
+    "SupportSlug": "20016-matikanefukukitaru",
+    "SupportId": "20016",
     "SupportName": "Matikanefukukitaru (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20016-matikanefukukitaru.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1938,7 +2338,11 @@
     ]
   },
   {
+    "SupportSlug": "20017-meisho-doto",
+    "SupportId": "20017",
     "SupportName": "Meisho Doto (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20017-meisho-doto.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -1978,7 +2382,11 @@
     ]
   },
   {
+    "SupportSlug": "20018-mejiro-dober",
+    "SupportId": "20018",
     "SupportName": "Mejiro Dober (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20018-mejiro-dober.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2008,7 +2416,60 @@
     ]
   },
   {
+    "SupportSlug": "20019-nice-nature",
+    "SupportId": "20019",
+    "SupportName": "Nice Nature (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20019-nice-nature.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Kokura Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "A Small Breather",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Acceleration ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Murmur",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sharp Gaze",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "20020-king-halo",
+    "SupportId": "20020",
     "SupportName": "King Halo (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20020-king-halo.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2043,11 +2504,87 @@
     ]
   },
   {
+    "SupportSlug": "20021-aoi-kiryuin",
+    "SupportId": "20021",
     "SupportName": "Aoi Kiryuin (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20021-aoi-kiryuin.png",
     "SupportHints": []
   },
   {
+    "SupportSlug": "10063-kawakami-princess",
+    "SupportId": "10063",
+    "SupportName": "Kawakami Princess (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10063-kawakami-princess.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tactical Tweak",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "10064-hishi-akebono",
+    "SupportId": "10064",
+    "SupportName": "Hishi Akebono (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10064-hishi-akebono.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sunny Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprint Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Final Push",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Countermeasure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Meticulous Measures",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "10061-seeking-the-pearl",
+    "SupportId": "10061",
     "SupportName": "Seeking the Pearl (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10061-seeking-the-pearl.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2082,7 +2619,11 @@
     ]
   },
   {
+    "SupportSlug": "10062-sakura-chiyono-o",
+    "SupportId": "10062",
     "SupportName": "Sakura Chiyono O (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10062-sakura-chiyono-o.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2107,7 +2648,11 @@
     ]
   },
   {
+    "SupportSlug": "10058-yaeno-muteki",
+    "SupportId": "10058",
     "SupportName": "Yaeno Muteki (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10058-yaeno-muteki.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2137,7 +2682,11 @@
     ]
   },
   {
+    "SupportSlug": "10059-zenno-rob-roy",
+    "SupportId": "10059",
     "SupportName": "Zenno Rob Roy (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10059-zenno-rob-roy.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2182,7 +2731,11 @@
     ]
   },
   {
+    "SupportSlug": "10055-kitasan-black",
+    "SupportId": "10055",
     "SupportName": "Kitasan Black (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10055-kitasan-black.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2227,7 +2780,11 @@
     ]
   },
   {
+    "SupportSlug": "10056-satono-diamond",
+    "SupportId": "10056",
     "SupportName": "Satono Diamond (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10056-satono-diamond.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2267,7 +2824,11 @@
     ]
   },
   {
+    "SupportSlug": "10057-matikanetannhauser",
+    "SupportId": "10057",
     "SupportName": "Matikanetannhauser (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10057-matikanetannhauser.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2297,7 +2858,11 @@
     ]
   },
   {
+    "SupportSlug": "10053-ikuno-dictus",
+    "SupportId": "10053",
     "SupportName": "Ikuno Dictus (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10053-ikuno-dictus.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2327,7 +2892,11 @@
     ]
   },
   {
+    "SupportSlug": "10054-mejiro-palmer",
+    "SupportId": "10054",
     "SupportName": "Mejiro Palmer (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10054-mejiro-palmer.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2367,7 +2936,11 @@
     ]
   },
   {
+    "SupportSlug": "10051-twin-turbo",
+    "SupportId": "10051",
     "SupportName": "Twin Turbo (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10051-twin-turbo.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2402,7 +2975,11 @@
     ]
   },
   {
+    "SupportSlug": "10052-daitaku-helios",
+    "SupportId": "10052",
     "SupportName": "Daitaku Helios (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10052-daitaku-helios.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2442,7 +3019,11 @@
     ]
   },
   {
+    "SupportSlug": "10050-sweep-tosho",
+    "SupportId": "10050",
     "SupportName": "Sweep Tosho (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10050-sweep-tosho.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2482,7 +3063,11 @@
     ]
   },
   {
+    "SupportSlug": "10001-special-week",
+    "SupportId": "10001",
     "SupportName": "Special Week (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10001-special-week.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2522,7 +3107,11 @@
     ]
   },
   {
+    "SupportSlug": "10002-silence-suzuka",
+    "SupportId": "10002",
     "SupportName": "Silence Suzuka (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10002-silence-suzuka.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2572,7 +3161,11 @@
     ]
   },
   {
+    "SupportSlug": "10003-tokai-teio",
+    "SupportId": "10003",
     "SupportName": "Tokai Teio (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10003-tokai-teio.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2607,7 +3200,11 @@
     ]
   },
   {
+    "SupportSlug": "10004-maruzensky",
+    "SupportId": "10004",
     "SupportName": "Maruzensky (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10004-maruzensky.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2637,7 +3234,11 @@
     ]
   },
   {
+    "SupportSlug": "10005-oguri-cap",
+    "SupportId": "10005",
     "SupportName": "Oguri Cap (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10005-oguri-cap.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2692,7 +3293,11 @@
     ]
   },
   {
+    "SupportSlug": "10006-gold-ship",
+    "SupportId": "10006",
     "SupportName": "Gold Ship (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10006-gold-ship.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2767,7 +3372,11 @@
     ]
   },
   {
+    "SupportSlug": "10007-vodka",
+    "SupportId": "10007",
     "SupportName": "Vodka (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10007-vodka.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2817,7 +3426,11 @@
     ]
   },
   {
+    "SupportSlug": "10008-taiki-shuttle",
+    "SupportId": "10008",
     "SupportName": "Taiki Shuttle (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10008-taiki-shuttle.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2852,7 +3465,11 @@
     ]
   },
   {
+    "SupportSlug": "10009-grass-wonder",
+    "SupportId": "10009",
     "SupportName": "Grass Wonder (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10009-grass-wonder.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2897,7 +3514,11 @@
     ]
   },
   {
+    "SupportSlug": "10010-mejiro-mcqueen",
+    "SupportId": "10010",
     "SupportName": "Mejiro McQueen (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10010-mejiro-mcqueen.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2942,7 +3563,11 @@
     ]
   },
   {
+    "SupportSlug": "10011-el-condor-pasa",
+    "SupportId": "10011",
     "SupportName": "El Condor Pasa (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10011-el-condor-pasa.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -2982,7 +3607,11 @@
     ]
   },
   {
+    "SupportSlug": "10012-tm-opera-o",
+    "SupportId": "10012",
     "SupportName": "TM Opera O (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10012-tm-opera-o.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3022,7 +3651,11 @@
     ]
   },
   {
+    "SupportSlug": "10013-symboli-rudolf",
+    "SupportId": "10013",
     "SupportName": "Symboli Rudolf (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10013-symboli-rudolf.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3067,7 +3700,11 @@
     ]
   },
   {
+    "SupportSlug": "10014-seiun-sky",
+    "SupportId": "10014",
     "SupportName": "Seiun Sky (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10014-seiun-sky.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3102,7 +3739,11 @@
     ]
   },
   {
+    "SupportSlug": "10015-rice-shower",
+    "SupportId": "10015",
     "SupportName": "Rice Shower (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10015-rice-shower.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3152,7 +3793,11 @@
     ]
   },
   {
+    "SupportSlug": "10016-winning-ticket",
+    "SupportId": "10016",
     "SupportName": "Winning Ticket (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10016-winning-ticket.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3182,7 +3827,11 @@
     ]
   },
   {
+    "SupportSlug": "10017-gold-city",
+    "SupportId": "10017",
     "SupportName": "Gold City (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10017-gold-city.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3202,7 +3851,11 @@
     ]
   },
   {
+    "SupportSlug": "10018-sakura-bakushin-o",
+    "SupportId": "10018",
     "SupportName": "Sakura Bakushin O (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10018-sakura-bakushin-o.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3247,7 +3900,11 @@
     ]
   },
   {
+    "SupportSlug": "10019-super-creek",
+    "SupportId": "10019",
     "SupportName": "Super Creek (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10019-super-creek.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3277,19 +3934,35 @@
     ]
   },
   {
+    "SupportSlug": "10020-haru-urara",
+    "SupportId": "10020",
     "SupportName": "Haru Urara (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10020-haru-urara.png",
     "SupportHints": []
   },
   {
+    "SupportSlug": "10021-tazuna-hayakawa",
+    "SupportId": "10021",
     "SupportName": "Tazuna Hayakawa (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10021-tazuna-hayakawa.png",
     "SupportHints": []
   },
   {
+    "SupportSlug": "10022-aoi-kiryuin",
+    "SupportId": "10022",
     "SupportName": "Aoi Kiryuin (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10022-aoi-kiryuin.png",
     "SupportHints": []
   },
   {
+    "SupportSlug": "10023-daiwa-scarlet",
+    "SupportId": "10023",
     "SupportName": "Daiwa Scarlet (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10023-daiwa-scarlet.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3324,7 +3997,11 @@
     ]
   },
   {
+    "SupportSlug": "10024-hishi-amazon",
+    "SupportId": "10024",
     "SupportName": "Hishi Amazon (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10024-hishi-amazon.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3354,7 +4031,11 @@
     ]
   },
   {
+    "SupportSlug": "10025-air-groove",
+    "SupportId": "10025",
     "SupportName": "Air Groove (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10025-air-groove.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3389,7 +4070,11 @@
     ]
   },
   {
+    "SupportSlug": "10026-agnes-digital",
+    "SupportId": "10026",
     "SupportName": "Agnes Digital (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10026-agnes-digital.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3424,7 +4109,11 @@
     ]
   },
   {
+    "SupportSlug": "10027-tamamo-cross",
+    "SupportId": "10027",
     "SupportName": "Tamamo Cross (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10027-tamamo-cross.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3464,7 +4153,11 @@
     ]
   },
   {
+    "SupportSlug": "10028-fine-motion",
+    "SupportId": "10028",
     "SupportName": "Fine Motion (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10028-fine-motion.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3494,7 +4187,11 @@
     ]
   },
   {
+    "SupportSlug": "10029-biwa-hayahide",
+    "SupportId": "10029",
     "SupportName": "Biwa Hayahide (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10029-biwa-hayahide.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3524,42 +4221,45 @@
     ]
   },
   {
-    "SupportName": "Mayano Top Gun (R) Support Card",
+    "SupportSlug": "10030-mayano-top-gun",
+    "SupportId": "10030",
+    "SupportName": "Biwa Hayahide (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10030-mayano-top-gun.png",
     "SupportHints": [
       {
         "SkillId": "",
-        "Name": "Non-Standard Distance ○",
+        "Name": "Outer Post Proficiency ○",
         "HintLevel": null
       },
       {
         "SkillId": "",
-        "Name": "Straightaway Recovery",
+        "Name": "Hanshin Racecourse ○",
         "HintLevel": null
       },
       {
         "SkillId": "",
-        "Name": "Corner Adept ○",
+        "Name": "Wet Conditions ○",
         "HintLevel": null
       },
       {
         "SkillId": "",
-        "Name": "Straightaway Adept",
+        "Name": "Cloudy Days ○",
         "HintLevel": null
       },
       {
         "SkillId": "",
-        "Name": "Nimble Navigator",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Go with the Flow",
+        "Name": "Frenzied End Closers",
         "HintLevel": null
       }
     ]
   },
   {
+    "SupportSlug": "10031-manhattan-cafe",
+    "SupportId": "10031",
     "SupportName": "Manhattan Cafe (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10031-manhattan-cafe.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3594,7 +4294,11 @@
     ]
   },
   {
+    "SupportSlug": "10032-mihono-bourbon",
+    "SupportId": "10032",
     "SupportName": "Mihono Bourbon (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10032-mihono-bourbon.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3619,7 +4323,11 @@
     ]
   },
   {
+    "SupportSlug": "10033-mejiro-ryan",
+    "SupportId": "10033",
     "SupportName": "Mejiro Ryan (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10033-mejiro-ryan.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3644,7 +4352,11 @@
     ]
   },
   {
+    "SupportSlug": "10034-yukino-bijin",
+    "SupportId": "10034",
     "SupportName": "Yukino Bijin (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10034-yukino-bijin.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3669,7 +4381,11 @@
     ]
   },
   {
+    "SupportSlug": "10035-ines-fujin",
+    "SupportId": "10035",
     "SupportName": "Ines Fujin (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10035-ines-fujin.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3699,7 +4415,11 @@
     ]
   },
   {
+    "SupportSlug": "10036-agnes-tachyon",
+    "SupportId": "10036",
     "SupportName": "Agnes Tachyon (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10036-agnes-tachyon.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3724,7 +4444,11 @@
     ]
   },
   {
+    "SupportSlug": "10037-air-shakur",
+    "SupportId": "10037",
     "SupportName": "Air Shakur (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10037-air-shakur.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3744,7 +4468,11 @@
     ]
   },
   {
+    "SupportSlug": "10038-eishin-flash",
+    "SupportId": "10038",
     "SupportName": "Eishin Flash (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10038-eishin-flash.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3774,7 +4502,11 @@
     ]
   },
   {
+    "SupportSlug": "10039-smart-falcon",
+    "SupportId": "10039",
     "SupportName": "Smart Falcon (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10039-smart-falcon.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3819,7 +4551,11 @@
     ]
   },
   {
+    "SupportSlug": "10040-narita-taishin",
+    "SupportId": "10040",
     "SupportName": "Narita Taishin (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10040-narita-taishin.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3859,7 +4595,11 @@
     ]
   },
   {
+    "SupportSlug": "10041-nishino-flower",
+    "SupportId": "10041",
     "SupportName": "Nishino Flower (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10041-nishino-flower.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3889,7 +4629,11 @@
     ]
   },
   {
+    "SupportSlug": "10042-biko-pegasus",
+    "SupportId": "10042",
     "SupportName": "Biko Pegasus (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10042-biko-pegasus.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3929,7 +4673,11 @@
     ]
   },
   {
+    "SupportSlug": "10043-marvelous-sunday",
+    "SupportId": "10043",
     "SupportName": "Marvelous Sunday (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10043-marvelous-sunday.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3959,7 +4707,11 @@
     ]
   },
   {
+    "SupportSlug": "10044-matikanefukukitaru",
+    "SupportId": "10044",
     "SupportName": "Matikanefukukitaru (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10044-matikanefukukitaru.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -3999,7 +4751,11 @@
     ]
   },
   {
+    "SupportSlug": "10045-meisho-doto",
+    "SupportId": "10045",
     "SupportName": "Meisho Doto (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10045-meisho-doto.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -4039,7 +4795,11 @@
     ]
   },
   {
+    "SupportSlug": "10046-mejiro-dober",
+    "SupportId": "10046",
     "SupportName": "Mejiro Dober (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10046-mejiro-dober.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -4069,7 +4829,11 @@
     ]
   },
   {
+    "SupportSlug": "10047-nice-nature",
+    "SupportId": "10047",
     "SupportName": "Nice Nature (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10047-nice-nature.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -4114,7 +4878,11 @@
     ]
   },
   {
+    "SupportSlug": "10048-king-halo",
+    "SupportId": "10048",
     "SupportName": "King Halo (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10048-king-halo.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -4149,7 +4917,11 @@
     ]
   },
   {
+    "SupportSlug": "10049-fuji-kiseki",
+    "SupportId": "10049",
     "SupportName": "Fuji Kiseki (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10049-fuji-kiseki.png",
     "SupportHints": [
       {
         "SkillId": "",
@@ -4174,156 +4946,6 @@
       {
         "SkillId": "",
         "Name": "Trick (Front)",
-        "HintLevel": null
-      }
-    ]
-  },
-  {
-    "SupportName": "Kawakami Princess (SSR) Support Card",
-    "SupportHints": [
-      {
-        "SkillId": "",
-        "Name": "Standard Distance ○",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Preferred Position",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Soft Step",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Tactical Tweak",
-        "HintLevel": null
-      }
-    ]
-  },
-  {
-    "SupportName": "Hishi Akebono (SSR) Support Card",
-    "SupportHints": [
-      {
-        "SkillId": "",
-        "Name": "Sunny Days ○",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Hydrate",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Sprint Corners ○",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Final Push",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Countermeasure",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Meticulous Measures",
-        "HintLevel": null
-      }
-    ]
-  },
-  {
-    "SupportName": "Mejiro Dober (SSR) Support Card",
-    "SupportHints": [
-      {
-        "SkillId": "",
-        "Name": "Kyoto Racecourse ○",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Sunny Days ○",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Late Surger Savvy ○",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Up-Tempo",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Steadfast",
-        "HintLevel": null
-      }
-    ]
-  },
-  {
-    "SupportName": "Kawakami Princess (R) Support Card",
-    "SupportHints": [
-      {
-        "SkillId": "",
-        "Name": "Standard Distance ○",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Preferred Position",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Soft Step",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Tactical Tweak",
-        "HintLevel": null
-      }
-    ]
-  },
-  {
-    "SupportName": "Hishi Akebono (R) Support Card",
-    "SupportHints": [
-      {
-        "SkillId": "",
-        "Name": "Sunny Days ○",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Hydrate",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Sprint Corners ○",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Final Push",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Countermeasure",
-        "HintLevel": null
-      },
-      {
-        "SkillId": "",
-        "Name": "Meticulous Measures",
         "HintLevel": null
       }
     ]

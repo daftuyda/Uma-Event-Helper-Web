@@ -25,6 +25,11 @@ Uma Event Helper is a browser-based tool to assist with Uma Musume event choices
 
 ---
 
+## Acknowledgements
+
+- Project initially inspired by [Kisegami's Event Helper](https://github.com/Kisegami/Uma-Event-Helper)
+- Resources and Data from [GameTora](https://gametora.com)
+
 ## Local Development
 
 - **Install dependencies**  

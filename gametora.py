@@ -1,6 +1,7 @@
-import argparse, json, os, sys, time, re
+import argparse, json, os, sys, time, re, requests
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urlparse
+from pathlib import Path
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -216,6 +217,71 @@ def _parse_top_meta(d) -> tuple[str, int]:
             elif not nickname:
                 nickname = t
     return nickname, base_stars
+
+def _abs_url(driver, src: str) -> str:
+    if not src: return ""
+    if src.startswith("http://") or src.startswith("https://"): return src
+    origin = driver.execute_script("return location.origin;") or "https://gametora.com"
+    if src.startswith("/"): return origin + src
+    return origin + "/" + src
+
+def _slug_and_id_from_url(url: str) -> tuple[str, Optional[str]]:
+    path = urlparse(url).path.rstrip("/")
+    parts = [p for p in path.split("/") if p]
+    slug = parts[-1] if parts else ""
+    m = re.search(r"(\d{4,})", slug)
+    sup_id = m.group(1) if m else None
+    return slug, sup_id
+
+def _id_from_img_src(src: str) -> Optional[str]:
+    m = re.search(r"support_card_[a-z]_(\d+)\.(?:png|jpg|jpeg|webp)$", src)
+    return m.group(1) if m else None
+
+def _ensure_dir(p: str) -> Path:
+    d = Path(p)
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+def _save_thumb(url: str, thumbs_dir: str, slug: Optional[str], sup_id: Optional[str]) -> str:
+    if not url: return ""
+    _ensure_dir(thumbs_dir)
+    ext = Path(urlparse(url).path).suffix or ".png"
+    base = slug or sup_id or _id_from_img_src(url) or "support"
+    # keep it filesystem-safe
+    safe = re.sub(r"[^a-z0-9\-_.]", "-", base.lower())
+    fname = f"{safe}{ext}"
+    dest = Path(thumbs_dir) / fname
+    if not dest.exists() or dest.stat().st_size == 0:
+        try:
+            r = requests.get(url, timeout=20)
+            r.raise_for_status()
+            dest.write_bytes(r.content)
+            time.sleep(0.05)  # be polite
+        except Exception as e:
+            print(f"[thumb] failed {url}: {e}")
+            return ""
+    # return site-relative path for the front-end
+    rel = "/" + str(dest.as_posix()).lstrip("/")
+    # normalize to your site’s assets folder form:
+    rel = rel.replace("//", "/")
+    return rel
+
+def collect_support_previews(driver, thumbs_dir: str) -> dict[str, dict]:
+    previews: dict[str, dict] = {}
+    anchors = filter_visible(
+        driver,
+        safe_find_all(driver, By.CSS_SELECTOR, "main main div:last-child a[href*='/umamusume/supports/']")
+    )
+    for a in anchors:
+        href = a.get_attribute("href") or ""
+        slug, sid = _slug_and_id_from_url(href)
+        if not slug:
+            continue
+        img = safe_find(a, By.CSS_SELECTOR, "img[src*='/images/umamusume/supports/']")
+        src = _abs_url(driver, img.get_attribute("src") or "") if img else ""
+        local = _save_thumb(src, thumbs_dir, slug, sid)
+        previews[slug] = {"SupportImage": local or src, "SupportId": sid or _id_from_img_src(src)}
+    return previews
 
 
 def new_driver(headless: bool = True) -> webdriver.Chrome:
@@ -747,11 +813,14 @@ def scrape_characters(save_path: str, server: str, headless: bool = True):
         except Exception: pass
 
 
-def scrape_supports(out_events_path: str, out_hints_path: str, server: str, headless: bool = True):
+def scrape_supports(out_events_path: str, out_hints_path: str, server: str, headless: bool = True, thumbs_dir: str = "assets/support_thumbs"):
     d = new_driver(headless=headless)
     try:
         with_retries(nav, d, "https://gametora.com/umamusume/supports", "main main")
         ensure_server(d, server=server, keep_raw_en=True)
+
+        # NEW: collect preview thumbnails by slug/id once
+        previews = collect_support_previews(d, thumbs_dir)
 
         cards = filter_visible(d, safe_find_all(d, By.CSS_SELECTOR, "main main div:last-child a[href*='/umamusume/supports/']"))
         urls = []
@@ -759,48 +828,82 @@ def scrape_supports(out_events_path: str, out_hints_path: str, server: str, head
             try:
                 inner = a.find_element(By.CSS_SELECTOR, "div")
                 if not is_visible(d, inner): continue
-            except Exception: pass
+            except Exception:
+                pass
             href = a.get_attribute("href") or ""
-            if href and href not in urls: urls.append(href)
+            if href and href not in urls:
+                urls.append(href)
 
         total = len(urls)
         for i, url in enumerate(urls, 1):
             for attempt in range(RETRIES + 1):
                 try:
                     ok = nav(d, url, "body")
-                    if not ok: raise TimeoutException("no body")
+                    if not ok:
+                        raise TimeoutException("no body")
 
-                    # support name (fallback to slug)
+                    slug, sup_id = _slug_and_id_from_url(url)
+
                     name_el = safe_find(d, By.CSS_SELECTOR, 'h1, div[class*=supports_infobox_] [class*="name"], [class*="support_name"]')
                     sname = txt(name_el) or url.rstrip("/").split("/")[-1]
 
-                    # Event helper blocks
+                    m = re.search(r"\((SSR|SR|R)\)", sname, flags=re.I)
+                    rarity = m.group(1).upper() if m else "UNKNOWN"
+
+                    # Always define this before event parsing so the print never errors
                     added = 0
+
+                    # ----- parse hints (as before) -----
+                    hints = parse_support_hints_on_page(d)
+
+                    # ----- choose/download image (as before) -----
+                    img_url = ""
+                    if slug in previews:
+                        img_url = previews[slug].get("SupportImage", "") or ""
+                        if not sup_id:
+                            sup_id = previews[slug].get("SupportId", None)
+                    if not img_url:
+                        big = safe_find(d, By.CSS_SELECTOR, "img[src*='/images/umamusume/supports/']")
+                        src = _abs_url(d, big.get_attribute("src") or "") if big else ""
+                        img_url = _save_thumb(src, thumbs_dir, slug, sup_id)
+
+                    # ----- parse events (optional) -----
                     for elist in safe_find_all(d, By.CSS_SELECTOR, 'div[class*=eventhelper_elist]'):
-                        if not is_visible(d, elist): continue
+                        if not is_visible(d, elist):
+                            continue
                         for it in elist.find_elements(By.CSS_SELECTOR, 'div[class*=compatibility_viewer_item]'):
-                            if not is_visible(d, it): continue
+                            if not is_visible(d, it):
+                                continue
                             ev_name = txt(it)
-                            if not ev_name: continue
+                            if not ev_name:
+                                continue
                             pop = tippy_show_and_get_popper(d, it)
                             try:
                                 rows = parse_event_from_tippy_popper(pop)
                                 for kv in rows:
-                                    if append_json_item(out_events_path, make_support_card(ev_name, kv),
-                                                        dedup_key=("EventName","EventOptions")):
+                                    if append_json_item(
+                                        out_events_path,
+                                        make_support_card(ev_name, kv),
+                                        dedup_key=("EventName", "EventOptions")
+                                    ):
                                         added += 1
                             finally:
                                 tippy_hide(d, it)
 
-                    # Support hints (from the "Support hints" block)
-                    hints = parse_support_hints_on_page(d)
-                    upsert_json_item(out_hints_path, "SupportName", sname, {
+                    # ----- upsert hints (slug-keyed) -----
+                    upsert_json_item(out_hints_path, "SupportSlug", slug or sname, {
+                        "SupportSlug": slug or sname,
+                        "SupportId": sup_id,
                         "SupportName": sname,
-                        "SupportHints": hints
+                        "SupportRarity": rarity,
+                        "SupportImage": img_url,
+                        "SupportHints": hints,
                     })
 
-                    print(f"[{i}/{total}] SUPPORT ✓ {sname}  (+{added} events, {len(hints)} hints)")
+                    print(f"[{i}/{total}] SUPPORT ✓ {sname} (slug:{slug or '-'} id:{sup_id or '-'} "
+                        f"+{added} events, {len(hints)} hints)")
                     break
+
                 except (TimeoutException, WebDriverException, StaleElementReferenceException) as e:
                     if attempt < RETRIES:
                         try: d.quit()
@@ -808,6 +911,8 @@ def scrape_supports(out_events_path: str, out_hints_path: str, server: str, head
                         d = new_driver(headless=headless)
                         with_retries(nav, d, "https://gametora.com/umamusume/supports", "main main")
                         ensure_server(d, server=server, keep_raw_en=True)
+                        # rebuild previews after driver restart
+                        previews = collect_support_previews(d)
                         continue
                     else:
                         print(f"[{i}/{total}] SUPPORT ERROR {url}: {e}")
@@ -981,6 +1086,7 @@ def main():
     ap.add_argument("--out-support-hints", default="Assets/support_hints.json", help="Output JSON for support hint skills")
     ap.add_argument("--out-career", default="Assets/career.json", help="Output JSON for career events")
     ap.add_argument("--out-races", default="Assets/races.json", help="Output JSON for races")
+    ap.add_argument("--thumb-dir", default="assets/support_thumbs", help="Where to save support thumbnails")
     ap.add_argument("--what", choices=["uma","supports","career","races","all"], default="all")
     ap.add_argument("--server", choices=["global","japan"], default="global")
     ap.add_argument("--headful", action="store_true")
