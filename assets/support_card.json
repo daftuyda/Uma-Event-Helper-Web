@@ -2992,5 +2992,11 @@
     "EventOptions": {
       "": "Energy -10\nGuts +5\nWisdom +5\nThe Bigger Picture hint +1"
     }
+  },
+  {
+    "EventName": "(❯❯) Bloom by the Oak",
+    "EventOptions": {
+      "": "Randomly either\nEnergy -20\nPower +5\nStraightaway Acceleration hint +1\nor\nEnergy -20\nPower +5\nGuts +5\nStraightaway Acceleration hint +1\nAir Groove bond +5\nor\nEnergy -10\nStamina +5\nPower +5\nGuts +10\nStraightaway Acceleration hint +3\nAir Groove bond +5"
+    }
   }
 ]

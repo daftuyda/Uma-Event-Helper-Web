@@ -3,8 +3,8 @@
     "UmaKey": "Narita Brian :: Maverick",
     "UmaName": "Narita Brian",
     "UmaNickname": "Maverick",
-    "UmaSlug": "narita-brian",
-    "UmaId": 101601,
+    "UmaSlug": "101601-narita-brian",
+    "UmaId": "101601",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -707,7 +707,7 @@
       {
         "EventName": "Perfect Weather",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -716,8 +716,8 @@
     "UmaKey": "Smart Falcon :: Absolute ☆ LOVE",
     "UmaName": "Smart Falcon",
     "UmaNickname": "Absolute ☆ LOVE",
-    "UmaSlug": "smart-falcon",
-    "UmaId": 104601,
+    "UmaSlug": "104601-smart-falcon",
+    "UmaId": "104601",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -986,6 +986,12 @@
         }
       },
       {
+        "EventName": "Coming to a City Near You ☆",
+        "EventOptions": {
+          "": "Randomly either\nGet Fan Promise (Hokkaido) status\nor\nGet Fan Promise (Hokuto) status\nor\nGet Fan Promise (Nakayama) status\nor\nGet Fan Promise (Kansai) status\nor\nGet Fan Promise (Kokura) status"
+        }
+      },
+      {
         "EventName": "Connecting ☆ Inspiration",
         "EventOptions": {
           "": "Mood +1\n2 stats +10\nSkill points +10\nRelevant track skill hint +5"
@@ -995,12 +1001,6 @@
         "EventName": "Center of Everyone's Heart ☆",
         "EventOptions": {
           "": "Mood +1\nGuts +20\nTop Pick hint +3"
-        }
-      },
-      {
-        "EventName": "川崎記念の後に・ぎゅるるん！",
-        "EventOptions": {
-          "": "Energy -15\nPower +20\n1 random stat +10\nSkill points +45\nKawasaki Racetrack ○ hint +1\nPromising Omen hint +1"
         }
       },
       {
@@ -1366,7 +1366,7 @@
       {
         "EventName": "Full of Cuteness ☆",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -1375,8 +1375,8 @@
     "UmaKey": "Narita Taishin :: Nevertheless",
     "UmaName": "Narita Taishin",
     "UmaNickname": "Nevertheless",
-    "UmaSlug": "narita-taishin",
-    "UmaId": 105001,
+    "UmaSlug": "105001-narita-taishin",
+    "UmaId": "105001",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -1671,7 +1671,7 @@
       {
         "EventName": "After the Nikkei Sho: Here Is Fine",
         "EventOptions": {
-          "": "※ Practice Poor was healed\nMood +4\nAll stats +20\nSkill points +70\nGet Practice Perfect ◎ status\n\n\n※ Practice Poor was not healed\nMood +1\nAll stats +15\nSkill points +70\nHeal Practice Poor"
+          "": "※ Practice Poor was healed\nMood +4\nAll stats +20\nSkill points +70\nGet Practice Perfect ◎ status\n\n\n※ Practice Poor was not healed\nMood +4\nAll stats +15\nSkill points +70\nHeal Practice Poor"
         }
       },
       {
@@ -2043,7 +2043,7 @@
       {
         "EventName": "Tranquil Time with Taishin",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -2052,8 +2052,8 @@
     "UmaKey": "Curren Chan :: Fille Éclair",
     "UmaName": "Curren Chan",
     "UmaNickname": "Fille Éclair",
-    "UmaSlug": "curren-chan",
-    "UmaId": 103801,
+    "UmaSlug": "103801-curren-chan",
+    "UmaId": "103801",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -2690,7 +2690,7 @@
       {
         "EventName": "Conveying Cuteness",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -2699,8 +2699,8 @@
     "UmaKey": "Tokai Teio :: Beyond the Horizon",
     "UmaName": "Tokai Teio",
     "UmaNickname": "Beyond the Horizon",
-    "UmaSlug": "tokai-teio",
-    "UmaId": 100302,
+    "UmaSlug": "100302-tokai-teio",
+    "UmaId": "100302",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -3361,7 +3361,7 @@
       {
         "EventName": "Teio's Got This ♪",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -3370,8 +3370,8 @@
     "UmaKey": "Mejiro McQueen :: End of Sky",
     "UmaName": "Mejiro McQueen",
     "UmaNickname": "End of Sky",
-    "UmaSlug": "mejiro-mcqueen",
-    "UmaId": 101302,
+    "UmaSlug": "101302-mejiro-mcqueen",
+    "UmaId": "101302",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -4002,7 +4002,7 @@
       {
         "EventName": "Attack of the Space Baseball Zombies!",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -4011,8 +4011,8 @@
     "UmaKey": "Biwa Hayahide :: pf.Victory Formula...",
     "UmaName": "Biwa Hayahide",
     "UmaNickname": "pf.Victory Formula...",
-    "UmaSlug": "biwa-hayahide",
-    "UmaId": 102301,
+    "UmaSlug": "102301-biwa-hayahide",
+    "UmaId": "102301",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -4643,7 +4643,7 @@
       {
         "EventName": "Optimal Glasses",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -4652,8 +4652,8 @@
     "UmaKey": "Mihono Bourbon :: MB-19890425",
     "UmaName": "Mihono Bourbon",
     "UmaNickname": "MB-19890425",
-    "UmaSlug": "mihono-bourbon",
-    "UmaId": 102601,
+    "UmaSlug": "102601-mihono-bourbon",
+    "UmaId": "102601",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -5302,7 +5302,7 @@
       {
         "EventName": "Cheerful Shopping",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -5311,8 +5311,8 @@
     "UmaKey": "TM Opera O :: O Sole So",
     "UmaName": "TM Opera O",
     "UmaNickname": "O Sole So",
-    "UmaSlug": "tm-opera-o",
-    "UmaId": 101501,
+    "UmaSlug": "101501-tm-opera-o",
+    "UmaId": "101501",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -5949,7 +5949,7 @@
       {
         "EventName": "Floral Dialogue",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -5958,8 +5958,8 @@
     "UmaKey": "Special Week :: Special Dreamer",
     "UmaName": "Special Week",
     "UmaNickname": "Special Dreamer",
-    "UmaSlug": "special-week",
-    "UmaId": 100101,
+    "UmaSlug": "100101-special-week",
+    "UmaId": "100101",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -6572,7 +6572,7 @@
       {
         "EventName": "A Place I Miss...",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -6581,8 +6581,8 @@
     "UmaKey": "Silence Suzuka :: Silent Innocence",
     "UmaName": "Silence Suzuka",
     "UmaNickname": "Silent Innocence",
-    "UmaSlug": "silence-suzuka",
-    "UmaId": 100201,
+    "UmaSlug": "100201-silence-suzuka",
+    "UmaId": "100201",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -7219,7 +7219,7 @@
       {
         "EventName": "Naptime Escape",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -7228,8 +7228,8 @@
     "UmaKey": "Tokai Teio :: Top of Joyful",
     "UmaName": "Tokai Teio",
     "UmaNickname": "Top of Joyful",
-    "UmaSlug": "tokai-teio",
-    "UmaId": 100301,
+    "UmaSlug": "100301-tokai-teio",
+    "UmaId": "100301",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -7890,7 +7890,7 @@
       {
         "EventName": "Teio's Got This ♪",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -7899,8 +7899,8 @@
     "UmaKey": "Maruzensky :: Rouge Formula",
     "UmaName": "Maruzensky",
     "UmaNickname": "Rouge Formula",
-    "UmaSlug": "maruzensky",
-    "UmaId": 100401,
+    "UmaSlug": "100401-maruzensky",
+    "UmaId": "100401",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -8567,7 +8567,7 @@
       {
         "EventName": "Shockingly Careless",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -8576,8 +8576,8 @@
     "UmaKey": "Oguri Cap :: Starlight Beat",
     "UmaName": "Oguri Cap",
     "UmaNickname": "Starlight Beat",
-    "UmaSlug": "oguri-cap",
-    "UmaId": 100601,
+    "UmaSlug": "100601-oguri-cap",
+    "UmaId": "100601",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -9220,7 +9220,7 @@
       {
         "EventName": "Oguri and the Fluffy Feline",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -9229,8 +9229,8 @@
     "UmaKey": "Taiki Shuttle :: Wild Frontier",
     "UmaName": "Taiki Shuttle",
     "UmaNickname": "Wild Frontier",
-    "UmaSlug": "taiki-shuttle",
-    "UmaId": 101001,
+    "UmaSlug": "101001-taiki-shuttle",
+    "UmaId": "101001",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -9897,7 +9897,7 @@
       {
         "EventName": "Friendly Distraction",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -9906,8 +9906,8 @@
     "UmaKey": "Mejiro McQueen :: Elegance Line",
     "UmaName": "Mejiro McQueen",
     "UmaNickname": "Elegance Line",
-    "UmaSlug": "mejiro-mcqueen",
-    "UmaId": 101301,
+    "UmaSlug": "101301-mejiro-mcqueen",
+    "UmaId": "101301",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -10538,7 +10538,7 @@
       {
         "EventName": "Attack of the Space Baseball Zombies!",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -10547,8 +10547,8 @@
     "UmaKey": "Symboli Rudolf :: Road of Emperor",
     "UmaName": "Symboli Rudolf",
     "UmaNickname": "Road of Emperor",
-    "UmaSlug": "symboli-rudolf",
-    "UmaId": 101701,
+    "UmaSlug": "101701-symboli-rudolf",
+    "UmaId": "101701",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -11239,7 +11239,7 @@
       {
         "EventName": "The Emperor's Blunder",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -11248,8 +11248,8 @@
     "UmaKey": "Rice Shower :: Rose Dream",
     "UmaName": "Rice Shower",
     "UmaNickname": "Rose Dream",
-    "UmaSlug": "rice-shower",
-    "UmaId": 103001,
+    "UmaSlug": "103001-rice-shower",
+    "UmaId": "103001",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -11868,7 +11868,7 @@
       {
         "EventName": "A Page about Books",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -11877,8 +11877,8 @@
     "UmaKey": "Gold Ship :: Red Strife",
     "UmaName": "Gold Ship",
     "UmaNickname": "Red Strife",
-    "UmaSlug": "gold-ship",
-    "UmaId": 100701,
+    "UmaSlug": "100701-gold-ship",
+    "UmaId": "100701",
     "UmaBaseStars": 2,
     "UmaBaseStats": {
       "2★": {
@@ -12551,7 +12551,7 @@
       {
         "EventName": "Into the Sky?",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -12560,8 +12560,8 @@
     "UmaKey": "Vodka :: Wild Top Gear",
     "UmaName": "Vodka",
     "UmaNickname": "Wild Top Gear",
-    "UmaSlug": "vodka",
-    "UmaId": 100801,
+    "UmaSlug": "100801-vodka",
+    "UmaId": "100801",
     "UmaBaseStars": 2,
     "UmaBaseStats": {
       "2★": {
@@ -12824,66 +12824,6 @@
         }
       },
       {
-        "EventName": "After the Tulip Sho: Preliminary Victory",
-        "EventOptions": {
-          "": "Standard race rewards"
-        }
-      },
-      {
-        "EventName": "After the Tulip Sho: Preliminary Defeat",
-        "EventOptions": {
-          "": "Standard race rewards"
-        }
-      },
-      {
-        "EventName": "After the Oka Sho: Red-Hot Afterglow",
-        "EventOptions": {
-          "": "Standard race rewards"
-        }
-      },
-      {
-        "EventName": "After the Oka Sho: A Lost Loser",
-        "EventOptions": {
-          "": "Standard race rewards"
-        }
-      },
-      {
-        "EventName": "After the Shuka Sho: Drunk on Victory",
-        "EventOptions": {
-          "": "Standard race rewards"
-        }
-      },
-      {
-        "EventName": "After the Shuka Sho: Bad Dreamin'",
-        "EventOptions": {
-          "": "Standard race rewards"
-        }
-      },
-      {
-        "EventName": "After the Queen Elizabeth II Cup: Tyrannical Queen!",
-        "EventOptions": {
-          "": "Standard race rewards\nMood +1"
-        }
-      },
-      {
-        "EventName": "After the Queen Elizabeth II Cup: Tsundere Queen",
-        "EventOptions": {
-          "": "Standard race rewards"
-        }
-      },
-      {
-        "EventName": "After the Arima Kinen: Hollow Victory",
-        "EventOptions": {
-          "": "Standard race rewards"
-        }
-      },
-      {
-        "EventName": "After the Arima Kinen: Veering off Course",
-        "EventOptions": {
-          "": "Standard race rewards"
-        }
-      },
-      {
         "EventName": "After the Yasuda Kinen: Pedal to the Metal!",
         "EventOptions": {
           "": "Standard race rewards\nNimble Navigator hint +1"
@@ -12892,7 +12832,7 @@
       {
         "EventName": "After the Yasuda Kinen: Consecutive Celebration",
         "EventOptions": {
-          "": "Standard race rewards\nPower +20\nSkill points +20\nNimble Navigator hint +1\nGet Practice Perfect ○ status"
+          "": "All stats +3\nSkill points +45\nNimble Navigator hint +1\nGet Practice Perfect ○ status\nYayoi Akikawa bond +4"
         }
       },
       {
@@ -13264,7 +13204,7 @@
       {
         "EventName": "Hot Ride",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -13273,8 +13213,8 @@
     "UmaKey": "Daiwa Scarlet :: Top of Blue",
     "UmaName": "Daiwa Scarlet",
     "UmaNickname": "Top of Blue",
-    "UmaSlug": "daiwa-scarlet",
-    "UmaId": 100901,
+    "UmaSlug": "100901-daiwa-scarlet",
+    "UmaId": "100901",
     "UmaBaseStars": 2,
     "UmaBaseStats": {
       "2★": {
@@ -13929,7 +13869,7 @@
       {
         "EventName": "Enthusiastic Reading",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -13938,8 +13878,8 @@
     "UmaKey": "Grass Wonder :: Rock-piercing Blue",
     "UmaName": "Grass Wonder",
     "UmaNickname": "Rock-piercing Blue",
-    "UmaSlug": "grass-wonder",
-    "UmaId": 101101,
+    "UmaSlug": "101101-grass-wonder",
+    "UmaId": "101101",
     "UmaBaseStars": 2,
     "UmaBaseStats": {
       "2★": {
@@ -14564,7 +14504,7 @@
       {
         "EventName": "Help! Pre-Test Panic",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -14573,8 +14513,8 @@
     "UmaKey": "El Condor Pasa :: El ☆ Numero 1",
     "UmaName": "El Condor Pasa",
     "UmaNickname": "El ☆ Numero 1",
-    "UmaSlug": "el-condor-pasa",
-    "UmaId": 101401,
+    "UmaSlug": "101401-el-condor-pasa",
+    "UmaId": "101401",
     "UmaBaseStars": 2,
     "UmaBaseStats": {
       "2★": {
@@ -15199,7 +15139,7 @@
       {
         "EventName": "Forget Something?",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -15208,8 +15148,8 @@
     "UmaKey": "Air Groove :: Empress Road",
     "UmaName": "Air Groove",
     "UmaNickname": "Empress Road",
-    "UmaSlug": "air-groove",
-    "UmaId": 101801,
+    "UmaSlug": "101801-air-groove",
+    "UmaId": "101801",
     "UmaBaseStars": 2,
     "UmaBaseStats": {
       "2★": {
@@ -15876,7 +15816,7 @@
       {
         "EventName": "Of Storms and Flowers",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -15885,8 +15825,8 @@
     "UmaKey": "Mayano Top Gun :: Scramble ☆ Zone",
     "UmaName": "Mayano Top Gun",
     "UmaNickname": "Scramble ☆ Zone",
-    "UmaSlug": "mayano-top-gun",
-    "UmaId": 102401,
+    "UmaSlug": "102401-mayano-top-gun",
+    "UmaId": "102401",
     "UmaBaseStars": 2,
     "UmaBaseStats": {
       "2★": {
@@ -16487,7 +16427,7 @@
       {
         "EventName": "Get Me in the Mood ☆",
         "EventOptions": {
-          "": "Randomly either\nMood +1\nor\nMood -1"
+          "": "Randomly either\nMood +2\nor\nMood +1\nor\nMood -1"
         }
       },
       {
@@ -16523,7 +16463,7 @@
       {
         "EventName": "Chase Me ☆",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -16532,8 +16472,8 @@
     "UmaKey": "Super Creek :: Murmuring Stream",
     "UmaName": "Super Creek",
     "UmaNickname": "Murmuring Stream",
-    "UmaSlug": "super-creek",
-    "UmaId": 104501,
+    "UmaSlug": "104501-super-creek",
+    "UmaId": "104501",
     "UmaBaseStars": 2,
     "UmaBaseStats": {
       "2★": {
@@ -17182,7 +17122,7 @@
       {
         "EventName": "I Feel Like Cooking",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -17191,8 +17131,8 @@
     "UmaKey": "Mejiro Ryan :: Straight Line",
     "UmaName": "Mejiro Ryan",
     "UmaNickname": "Straight Line",
-    "UmaSlug": "mejiro-ryan",
-    "UmaId": 102701,
+    "UmaSlug": "102701-mejiro-ryan",
+    "UmaId": "102701",
     "UmaBaseStars": 1,
     "UmaBaseStats": {
       "1★": {
@@ -17817,7 +17757,7 @@
       {
         "EventName": "Training for... Love Stories?!",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -17826,8 +17766,8 @@
     "UmaKey": "Agnes Tachyon :: Tach-nology",
     "UmaName": "Agnes Tachyon",
     "UmaNickname": "Tach-nology",
-    "UmaSlug": "agnes-tachyon",
-    "UmaId": 103201,
+    "UmaSlug": "103201-agnes-tachyon",
+    "UmaId": "103201",
     "UmaBaseStars": 1,
     "UmaBaseStats": {
       "1★": {
@@ -18434,7 +18374,7 @@
       {
         "EventName": "Midnight Pool",
         "EventOptions": {
-          "": "(random) Mood -1\nEnergy -15\nPower +25"
+          "": "Randomly either\nMood -1\nPower +25\nor\nEnergy -15\nPower +25"
         }
       },
       {
@@ -18476,7 +18416,7 @@
       {
         "EventName": "Engrossed in Research!",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -18485,8 +18425,8 @@
     "UmaKey": "Winning Ticket :: Go To Winning!",
     "UmaName": "Winning Ticket",
     "UmaNickname": "Go To Winning!",
-    "UmaSlug": "winning-ticket",
-    "UmaId": 103501,
+    "UmaSlug": "103501-winning-ticket",
+    "UmaId": "103501",
     "UmaBaseStars": 1,
     "UmaBaseStats": {
       "1★": {
@@ -19111,7 +19051,7 @@
       {
         "EventName": "Perfect Weather for Tinkering?",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -19120,8 +19060,8 @@
     "UmaKey": "Sakura Bakushin O :: Sakura, Forward!",
     "UmaName": "Sakura Bakushin O",
     "UmaNickname": "Sakura, Forward!",
-    "UmaSlug": "sakura-bakushin-o",
-    "UmaId": 104101,
+    "UmaSlug": "104101-sakura-bakushin-o",
+    "UmaId": "104101",
     "UmaBaseStars": 1,
     "UmaBaseStats": {
       "1★": {
@@ -19776,7 +19716,7 @@
       {
         "EventName": "The Class Rep Is Very Busy!",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -19785,8 +19725,8 @@
     "UmaKey": "Haru Urara :: Uraran First Prize ♪",
     "UmaName": "Haru Urara",
     "UmaNickname": "Uraran First Prize ♪",
-    "UmaSlug": "haru-urara",
-    "UmaId": 105201,
+    "UmaSlug": "105201-haru-urara",
+    "UmaId": "105201",
     "UmaBaseStars": 1,
     "UmaBaseStats": {
       "1★": {
@@ -20429,7 +20369,7 @@
       {
         "EventName": "Mmm-Mmm Temptation!",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -20438,8 +20378,8 @@
     "UmaKey": "Matikanefukukitaru :: Rising Luck ☆ Flood of Happiness",
     "UmaName": "Matikanefukukitaru",
     "UmaNickname": "Rising Luck ☆ Flood of Happiness",
-    "UmaSlug": "matikanefukukitaru",
-    "UmaId": 105601,
+    "UmaSlug": "105601-matikanefukukitaru",
+    "UmaId": "105601",
     "UmaBaseStars": 1,
     "UmaBaseStats": {
       "1★": {
@@ -21064,7 +21004,7 @@
       {
         "EventName": "A Rush at Luck",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -21073,8 +21013,8 @@
     "UmaKey": "Nice Nature :: Poinsettia Ribbon",
     "UmaName": "Nice Nature",
     "UmaNickname": "Poinsettia Ribbon",
-    "UmaSlug": "nice-nature",
-    "UmaId": 106001,
+    "UmaSlug": "106001-nice-nature",
+    "UmaId": "106001",
     "UmaBaseStars": 1,
     "UmaBaseStats": {
       "1★": {
@@ -21729,7 +21669,7 @@
       {
         "EventName": "The Bronze Collector's Target",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -21738,8 +21678,8 @@
     "UmaKey": "King Halo :: King of Emeralds",
     "UmaName": "King Halo",
     "UmaNickname": "King of Emeralds",
-    "UmaSlug": "king-halo",
-    "UmaId": 106101,
+    "UmaSlug": "106101-king-halo",
+    "UmaId": "106101",
     "UmaBaseStars": 1,
     "UmaBaseStats": {
       "1★": {
@@ -22394,7 +22334,7 @@
       {
         "EventName": "First-Rate... Predictions?",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -22403,8 +22343,8 @@
     "UmaKey": "Air Groove :: Quercus Civilis",
     "UmaName": "Air Groove",
     "UmaNickname": "Quercus Civilis",
-    "UmaSlug": "air-groove",
-    "UmaId": 101802,
+    "UmaSlug": "101802-air-groove",
+    "UmaId": "101802",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -23071,7 +23011,7 @@
       {
         "EventName": "Of Storms and Flowers",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]
@@ -23080,8 +23020,8 @@
     "UmaKey": "Mayano Top Gun :: Sunlight Bouquet",
     "UmaName": "Mayano Top Gun",
     "UmaNickname": "Sunlight Bouquet",
-    "UmaSlug": "mayano-top-gun",
-    "UmaId": 102402,
+    "UmaSlug": "102402-mayano-top-gun",
+    "UmaId": "102402",
     "UmaBaseStars": 3,
     "UmaBaseStats": {
       "3★": {
@@ -23682,7 +23622,7 @@
       {
         "EventName": "Get Me in the Mood ☆",
         "EventOptions": {
-          "": "Randomly either\nMood +1\nor\nMood -1"
+          "": "Randomly either\nMood +2\nor\nMood +1\nor\nMood -1"
         }
       },
       {
@@ -23718,7 +23658,690 @@
       {
         "EventName": "Chase Me ☆",
         "EventOptions": {
-          "": "Randomly either\nEnergy +15\nGuts -5\nMood -1\nor\nEnergy +15\nGuts -5\nGet Slacker status"
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
+        }
+      }
+    ]
+  },
+  {
+    "UmaKey": "Seiun Sky :: Blue Cloud Thumbing",
+    "UmaName": "Seiun Sky",
+    "UmaNickname": "Blue Cloud Thumbing",
+    "UmaSlug": "102001-seiun-sky",
+    "UmaId": "102001",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 98,
+        "Stamina": 98,
+        "Power": 88,
+        "Guts": 83,
+        "Wit": 83
+      },
+      "5★": {
+        "Speed": 120,
+        "Stamina": 120,
+        "Power": 108,
+        "Guts": 101,
+        "Wit": 101
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 0,
+      "Stamina": 10,
+      "Power": 0,
+      "Guts": 0,
+      "Wit": 20
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "G"
+      },
+      "Distance": {
+        "Short": "G",
+        "Mile": "C",
+        "Medium": "A",
+        "Long": "A"
+      },
+      "Strategy": {
+        "Front": "A",
+        "Pace": "B",
+        "Late": "D",
+        "End": "E"
+      }
+    },
+    "UmaHeightCm": 155,
+    "UmaThreeSizes": {
+      "B": 77,
+      "W": 55,
+      "H": 80
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "2. Have at least 3000 fans",
+        "Turn": "Turn 25 (previous + 12)",
+        "Time": "Classic Class, Early January",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "3. Place 5th or better in the Satsuki Sho",
+        "Turn": "Turn 31 (previous + 5)",
+        "Time": "Classic Class, Early April",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "4. Place 5th or better in the Tokyo Yushun (Japanese Derby)",
+        "Turn": "Turn 34 (previous + 2)",
+        "Time": "Classic Class, Late May",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "5. Place 3rd or better in the Kikuka Sho",
+        "Turn": "Turn 44 (previous + 9)",
+        "Time": "Classic Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 3000m – Long"
+      },
+      {
+        "ObjectiveName": "6. Place 3rd or better in the Arima Kinen",
+        "Turn": "Turn 48 (previous + 3)",
+        "Time": "Classic Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      },
+      {
+        "ObjectiveName": "7. Place 3rd or better in the Tenno Sho (Spring)",
+        "Turn": "Turn 56 (previous + 7)",
+        "Time": "Senior Class, Late April",
+        "ObjectiveCondition": "G1 – Turf – 3200m – Long"
+      },
+      {
+        "ObjectiveName": "8. Place 3rd or better in the Takarazuka Kinen",
+        "Turn": "Turn 60 (previous + 3)",
+        "Time": "Senior Class, Late June",
+        "ObjectiveCondition": "G1 – Turf – 2200m – Medium"
+      },
+      {
+        "ObjectiveName": "9. Place 1st in the Tenno Sho (Autumn)",
+        "Turn": "Turn 68 (previous + 7)",
+        "Time": "Senior Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "10. Place 1st in the Arima Kinen",
+        "Turn": "Turn 72 (previous + 3)",
+        "Time": "Senior Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      }
+    ],
+    "UmaEvents": [
+      {
+        "EventName": "Sleepy Time Incense",
+        "EventOptions": {
+          "Top Option": "Wisdom +20"
+        }
+      },
+      {
+        "EventName": "Sleepy Time Incense",
+        "EventOptions": {
+          "Bottom Option": "Stamina +20"
+        }
+      },
+      {
+        "EventName": "Tactician vs. King",
+        "EventOptions": {
+          "Top Option": "Guts +20"
+        }
+      },
+      {
+        "EventName": "Tactician vs. King",
+        "EventOptions": {
+          "Bottom Option": "Speed +20"
+        }
+      },
+      {
+        "EventName": "Who Do You Run For?",
+        "EventOptions": {
+          "Top Option": "Stamina +20\n(random) Get Charming ○ status"
+        }
+      },
+      {
+        "EventName": "Who Do You Run For?",
+        "EventOptions": {
+          "Bottom Option": "Power +20\n(random) Get Charming ○ status"
+        }
+      },
+      {
+        "EventName": "Is Cat Language Real?",
+        "EventOptions": {
+          "Top Option": "Stamina +10"
+        }
+      },
+      {
+        "EventName": "Is Cat Language Real?",
+        "EventOptions": {
+          "Bottom Option": "Wisdom +10"
+        }
+      },
+      {
+        "EventName": "Shady Dealings",
+        "EventOptions": {
+          "Top Option": "Speed +10"
+        }
+      },
+      {
+        "EventName": "Shady Dealings",
+        "EventOptions": {
+          "Bottom Option": "Power +10"
+        }
+      },
+      {
+        "EventName": "Sei's Escape Plan",
+        "EventOptions": {
+          "Top Option": "Speed +10\nSkill points +15"
+        }
+      },
+      {
+        "EventName": "Sei's Escape Plan",
+        "EventOptions": {
+          "Bottom Option": "Subdued Late Surgers hint +1"
+        }
+      },
+      {
+        "EventName": "Sunny Day Standoff",
+        "EventOptions": {
+          "Top Option": "Randomly either\nSpeed +20\nor\nSpeed +5\nMood -1"
+        }
+      },
+      {
+        "EventName": "Sunny Day Standoff",
+        "EventOptions": {
+          "Middle Option": "Randomly either\nEnergy +20\nDeep Breaths hint +1\nor\nEnergy +10\nGet Slacker status"
+        }
+      },
+      {
+        "EventName": "Sunny Day Standoff",
+        "EventOptions": {
+          "Bottom Option": "Energy +5\nSpeed +5"
+        }
+      },
+      {
+        "EventName": "I Can Unwind Outdoors Too",
+        "EventOptions": {
+          "Top Option": "Energy +10\nSkill points +5"
+        }
+      },
+      {
+        "EventName": "I Can Unwind Outdoors Too",
+        "EventOptions": {
+          "Bottom Option": "Randomly either (~90%)\nEnergy +30\nSkill points +10\nor (~10%)\nEnergy +30\nSkill points +10\nSpeed -5\nPower +5\nGet Slow Metabolism status"
+        }
+      },
+      {
+        "EventName": "Cat Expert",
+        "EventOptions": {
+          "Top Option": "Wisdom +10"
+        }
+      },
+      {
+        "EventName": "Cat Expert",
+        "EventOptions": {
+          "Bottom Option": "Speed +10"
+        }
+      },
+      {
+        "EventName": "Cat Patrol",
+        "EventOptions": {
+          "Top Option": "Stamina +10"
+        }
+      },
+      {
+        "EventName": "Cat Patrol",
+        "EventOptions": {
+          "Bottom Option": "Guts +10"
+        }
+      },
+      {
+        "EventName": "Goodbye, Cat",
+        "EventOptions": {
+          "Top Option": "Wisdom +10"
+        }
+      },
+      {
+        "EventName": "Goodbye, Cat",
+        "EventOptions": {
+          "Middle Option": "Stamina +10"
+        }
+      },
+      {
+        "EventName": "Goodbye, Cat",
+        "EventOptions": {
+          "Bottom Option": "Power +10"
+        }
+      },
+      {
+        "EventName": "Nap Master",
+        "EventOptions": {
+          "Top Option": "Stamina +10"
+        }
+      },
+      {
+        "EventName": "Nap Master",
+        "EventOptions": {
+          "Bottom Option": "Wisdom +10"
+        }
+      },
+      {
+        "EventName": "Cloudy, Followed By...",
+        "EventOptions": {
+          "Top Option": "Guts +10"
+        }
+      },
+      {
+        "EventName": "Cloudy, Followed By...",
+        "EventOptions": {
+          "Bottom Option": "Speed +10"
+        }
+      },
+      {
+        "EventName": "Landed That Triple Crown!",
+        "EventOptions": {
+          "": "Mood +1\nSpeed +5\nPower +5\nFast-Paced hint +2"
+        }
+      },
+      {
+        "EventName": "Bonus at start",
+        "EventOptions": {
+          "": "Skill points +120"
+        }
+      },
+      {
+        "EventName": "Failed training (Get Well Soon!)",
+        "EventOptions": {
+          "Top Option": "Mood -1\nLast trained stat -5\n(random) Get Practice Poor status"
+        }
+      },
+      {
+        "EventName": "Failed training (Get Well Soon!)",
+        "EventOptions": {
+          "Bottom Option": "Randomly either\nMood -1\nLast trained stat -10\n(random) Get Practice Poor status\nor\nGet Practice Perfect ○ status"
+        }
+      },
+      {
+        "EventName": "Failed training (Don't Overdo It!)",
+        "EventOptions": {
+          "Top Option": "Energy +10\nMood -2\nLast trained stat -10\n2 random stats -10\n(random) Get Practice Poor status"
+        }
+      },
+      {
+        "EventName": "Failed training (Don't Overdo It!)",
+        "EventOptions": {
+          "Bottom Option": "Randomly either\nMood -3\nLast trained stat -10\n2 random stats -10\nGet Practice Poor status\nor\nEnergy +10\nGet Practice Perfect ○ status"
+        }
+      },
+      {
+        "EventName": "Extra Training",
+        "EventOptions": {
+          "Top Option": "Energy -5\nLast trained stat +5\n(random) Heal a negative status effect\nYayoi Akikawa bond +5"
+        }
+      },
+      {
+        "EventName": "Extra Training",
+        "EventOptions": {
+          "Bottom Option": "Energy +5"
+        }
+      },
+      {
+        "EventName": "At Summer Camp (Year 2)",
+        "EventOptions": {
+          "Top Option": "Power +10"
+        }
+      },
+      {
+        "EventName": "At Summer Camp (Year 2)",
+        "EventOptions": {
+          "Bottom Option": "Guts +10"
+        }
+      },
+      {
+        "EventName": "Fan Letter",
+        "EventOptions": {
+          "": "Mood +1\nSkill points +30"
+        }
+      },
+      {
+        "EventName": "Dance Lesson",
+        "EventOptions": {
+          "Top Option": "Guts +10"
+        }
+      },
+      {
+        "EventName": "Dance Lesson",
+        "EventOptions": {
+          "Bottom Option": "Stamina +10"
+        }
+      },
+      {
+        "EventName": "New Year's Resolutions",
+        "EventOptions": {
+          "Top Option": "Speed +10"
+        }
+      },
+      {
+        "EventName": "New Year's Resolutions",
+        "EventOptions": {
+          "Middle Option": "Energy +20"
+        }
+      },
+      {
+        "EventName": "New Year's Resolutions",
+        "EventOptions": {
+          "Bottom Option": "Skill points +20"
+        }
+      },
+      {
+        "EventName": "New Year's Shrine Visit",
+        "EventOptions": {
+          "Top Option": "Energy +30"
+        }
+      },
+      {
+        "EventName": "New Year's Shrine Visit",
+        "EventOptions": {
+          "Middle Option": "All stats +5"
+        }
+      },
+      {
+        "EventName": "New Year's Shrine Visit",
+        "EventOptions": {
+          "Bottom Option": "Skill points +35"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 1": "Randomly either (~30%)\nAll stats +20\nor (~70%)\nMood -2\nAll stats -15\nGet Night Owl status"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 2": "Randomly either (~45%)\nObtain Corner Recovery ○ skill\nObtain Straightaway Recovery skill\nor (~55%)\nEnergy -20\nMood -2"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 3": "Randomly either (~70%)\nMaximum Energy +12\nEnergy +40\nHeal all negative status effects\nor (~30%)\nEnergy -20\nMood -2\nGet Practice Poor status"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 4": "Randomly either (~85%)\nEnergy +20\nMood +1\nGet Charming ○ status\nor (~15%)\nEnergy -10/-20\nMood -1\n(random) Get Practice Poor status"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 5": "Energy +10"
+        }
+      },
+      {
+        "EventName": "Victory! (G1)",
+        "EventOptions": {
+          "Top Option": "Energy -15\n1 random stat +10\nSkill points +45\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (G1)",
+        "EventOptions": {
+          "Bottom Option": "Energy -5/-20\n1 random stat +10\nSkill points +45\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (G2/G3)",
+        "EventOptions": {
+          "Top Option": "Energy -15\n1 random stat +8\nSkill points +35\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (G2/G3)",
+        "EventOptions": {
+          "Bottom Option": "Energy -5/-20\n1 random stat +8\nSkill points +35\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (Pre/OP)",
+        "EventOptions": {
+          "Top Option": "Energy -15\n1 random stat +5\nSkill points +30\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (Pre/OP)",
+        "EventOptions": {
+          "Bottom Option": "Energy -5/-20\n1 random stat +5\nSkill points +30\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (G1)",
+        "EventOptions": {
+          "Top Option": "Energy -20\n1 random stat +8\nSkill points +45\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (G1)",
+        "EventOptions": {
+          "Bottom Option": "Energy -10/-30\n1 random stat +8\nSkill points +45\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (G2/G3)",
+        "EventOptions": {
+          "Top Option": "Energy -20\n1 random stat +5\nSkill points +35\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (G2/G3)",
+        "EventOptions": {
+          "Bottom Option": "Energy -10/-30\n1 random stat +5\nSkill points +35\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (Pre/OP)",
+        "EventOptions": {
+          "Top Option": "Energy -20\n1 random stat +3\nSkill points +30\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (Pre/OP)",
+        "EventOptions": {
+          "Bottom Option": "Energy -10/-30\n1 random stat +3\nSkill points +30\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (G1)",
+        "EventOptions": {
+          "Top Option": "Energy -25\n1 random stat +4\nSkill points +25\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (G1)",
+        "EventOptions": {
+          "Bottom Option": "Energy -15/-35\n1 random stat +4\nSkill points +25\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (G2/G3)",
+        "EventOptions": {
+          "Top Option": "Energy -25\n1 random stat +3\nSkill points +20\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (G2/G3)",
+        "EventOptions": {
+          "Bottom Option": "Energy -15/-35\n1 random stat +3\nSkill points +20\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (Pre/OP)",
+        "EventOptions": {
+          "Top Option": "Energy -25\nSkill points +10\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (Pre/OP)",
+        "EventOptions": {
+          "Bottom Option": "Energy -15/-35\nSkill points +10\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Etsuko's Elated Coverage (G1)",
+        "EventOptions": {
+          "": "Energy -15\nMood +1\n1 random stat +10\nSkill points +45\nFans +500\n(random) Hint for a skill related to the race\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Elated Coverage (G2/G3)",
+        "EventOptions": {
+          "": "Energy -15\nMood +1\n1 random stat +8\nSkill points +35\nFans +500\n(random) Hint for a skill related to the race\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Elated Coverage (Pre/OP)",
+        "EventOptions": {
+          "": "Energy -15\nMood +1\n1 random stat +5\nSkill points +30\nFans +500\n(random) Hint for a skill related to the race\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (G1)",
+        "EventOptions": {
+          "Top Option": "Randomly either\nEnergy -25\nMood -1\n1 random stat +4\nSkill points +25\nEtsuko Otonashi bond -10\nor\nEnergy -15\nMood +1\n1 random stat +4\nSkill points +25\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (G1)",
+        "EventOptions": {
+          "Bottom Option": "Energy -20\n1 random stat +4\nSkill points +25\nEtsuko Otonashi bond +10"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (G2/G3)",
+        "EventOptions": {
+          "Top Option": "Randomly either\nEnergy -25\nMood -1\n1 random stat +3\nSkill points +20\nEtsuko Otonashi bond -10\nor\nEnergy -15\nMood +1\n1 random stat +3\nSkill points +20\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (G2/G3)",
+        "EventOptions": {
+          "Bottom Option": "Energy -20\n1 random stat +3\nSkill points +20\nEtsuko Otonashi bond +10"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (Pre/OP)",
+        "EventOptions": {
+          "Top Option": "Randomly either\nEnergy -25\nMood -1\nSkill points +10\nEtsuko Otonashi bond -10\nor\nEnergy -15\nMood +1\nSkill points +10\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (Pre/OP)",
+        "EventOptions": {
+          "Bottom Option": "Energy -20\nSkill points +10\nEtsuko Otonashi bond +10"
+        }
+      },
+      {
+        "EventName": "The Ultimate Generation",
+        "EventOptions": {
+          "": "Stamina +5"
+        }
+      },
+      {
+        "EventName": "East vs. West",
+        "EventOptions": {
+          "": "Nothing happens"
+        }
+      },
+      {
+        "EventName": "Facing the Otherworldly Front-Runner",
+        "EventOptions": {
+          "": "Nothing happens"
+        }
+      },
+      {
+        "EventName": "A Shadow on the Trickster's Path",
+        "EventOptions": {
+          "": "Power +5"
+        }
+      },
+      {
+        "EventName": "Zero Bites",
+        "EventOptions": {
+          "": "Nothing happens"
+        }
+      },
+      {
+        "EventName": "Zero Bites +1",
+        "EventOptions": {
+          "": "Guts +5"
+        }
+      },
+      {
+        "EventName": "Got a Bite",
+        "EventOptions": {
+          "": "Randomly either\n※ The outcome depends on which training facility has the highest level (ties decided at random)\n\n\nSpeed +10\nFront Runner Straightaways ○ hint +1\nor\nStamina +10\nShake It Out hint +1\nor\nPower +10\nHighlander hint +1\nor\nGuts +10\nSteadfast hint +1\nor\nWisdom +10\nHesitant Late Surgers hint +1"
+        }
+      },
+      {
+        "EventName": "The Sweetest Storm",
+        "EventOptions": {
+          "": "Guts +5"
+        }
+      },
+      {
+        "EventName": "A Trap Unsprung...",
+        "EventOptions": {
+          "": "Mood -1\nStamina -5"
+        }
+      },
+      {
+        "EventName": "Master Trainer",
+        "EventOptions": {
+          "": "Power +10\n(random) Get Practice Perfect ○ status"
+        }
+      },
+      {
+        "EventName": "Happily Ever After?",
+        "EventOptions": {
+          "": "All stats +5\nSkill points +5"
+        }
+      },
+      {
+        "EventName": "I Hate Tight Spaces",
+        "EventOptions": {
+          "": "Mood -1"
+        }
+      },
+      {
+        "EventName": "The Nap Master's Blunder",
+        "EventOptions": {
+          "": "Energy -10\nMood -1"
+        }
+      },
+      {
+        "EventName": "Luck Is a Talent?",
+        "EventOptions": {
+          "": "All stats +5\nSkill points +30\nMood +2\n(random) Get Fast Learner status"
+        }
+      },
+      {
+        "EventName": "An Angler's Disgrace",
+        "EventOptions": {
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
         }
       }
     ]

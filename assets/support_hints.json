@@ -4223,33 +4223,38 @@
   {
     "SupportSlug": "10030-mayano-top-gun",
     "SupportId": "10030",
-    "SupportName": "Biwa Hayahide (R) Support Card",
+    "SupportName": "Mayano Top Gun (R) Support Card",
     "SupportRarity": "R",
     "SupportImage": "/assets/support_thumbs/10030-mayano-top-gun.png",
     "SupportHints": [
       {
         "SkillId": "",
-        "Name": "Outer Post Proficiency ○",
+        "Name": "Non-Standard Distance ○",
         "HintLevel": null
       },
       {
         "SkillId": "",
-        "Name": "Hanshin Racecourse ○",
+        "Name": "Straightaway Recovery",
         "HintLevel": null
       },
       {
         "SkillId": "",
-        "Name": "Wet Conditions ○",
+        "Name": "Corner Adept ○",
         "HintLevel": null
       },
       {
         "SkillId": "",
-        "Name": "Cloudy Days ○",
+        "Name": "Straightaway Adept",
         "HintLevel": null
       },
       {
         "SkillId": "",
-        "Name": "Frenzied End Closers",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
         "HintLevel": null
       }
     ]
