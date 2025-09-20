@@ -1,5 +1,44 @@
 [
   {
+    "SupportSlug": "30042-bamboo-memory",
+    "SupportId": "30042",
+    "SupportName": "Bamboo Memory (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30042-bamboo-memory.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Target in Sight ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Gap Closer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Acceleration",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
     "SupportSlug": "30039-kawakami-princess",
     "SupportId": "30039",
     "SupportName": "Kawakami Princess (SSR) Support Card",
@@ -1476,6 +1515,35 @@
     ]
   },
   {
+    "SupportSlug": "20031-shinko-windy",
+    "SupportId": "20031",
+    "SupportName": "Shinko Windy (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20031-shinko-windy.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Competitive Spirit ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Front Runners",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
     "SupportSlug": "20029-seeking-the-pearl",
     "SupportId": "20029",
     "SupportName": "Seeking the Pearl (SR) Support Card",
@@ -2510,6 +2578,74 @@
     "SupportRarity": "SR",
     "SupportImage": "/assets/support_thumbs/20021-aoi-kiryuin.png",
     "SupportHints": []
+  },
+  {
+    "SupportSlug": "10065-bamboo-memory",
+    "SupportId": "10065",
+    "SupportName": "Bamboo Memory (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10065-bamboo-memory.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Target in Sight ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Gap Closer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Acceleration",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "10066-shinko-windy",
+    "SupportId": "10066",
+    "SupportName": "Shinko Windy (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10066-shinko-windy.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Competitive Spirit ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Front Runners",
+        "HintLevel": null
+      }
+    ]
   },
   {
     "SupportSlug": "10063-kawakami-princess",
