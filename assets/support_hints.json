@@ -5090,5 +5090,162 @@
         "HintLevel": null
       }
     ]
+  },
+  {
+    "SupportSlug": "30055-seiun-sky",
+    "SupportId": "30055",
+    "SupportName": "Seiun Sky (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30055-seiun-sky.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inner Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tail Held High",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Front)",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30056-king-halo",
+    "SupportId": "30056",
+    "SupportName": "King Halo (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30056-king-halo.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Outer Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Recovery ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wait-and-See",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Gap Closer",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30057-gold-ship",
+    "SupportId": "30057",
+    "SupportName": "Gold Ship (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30057-gold-ship.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sympathy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "End Closer Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Standing By",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "After-School Stroll",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inside Scoop",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pressure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Uma Stan",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Spurt",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Highlander",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Groundwork",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "I Can See Right Through You",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Strategist",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Intense Gaze",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Smoke Screen",
+        "HintLevel": null
+      }
+    ]
   }
 ]

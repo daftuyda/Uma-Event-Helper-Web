@@ -3088,5 +3088,101 @@
     "EventOptions": {
       "Top Option": "Energy +26\nSkill points +18\nMood +1\nAoi Kiryuin bond +5\nCan start dating"
     }
+  },
+  {
+    "EventName": "(❯) Sudden Murder Mystery! Part 1",
+    "EventOptions": {
+      "Top Option": "Wit +5\nSkill points +10\nSeiun Sky bond +5"
+    }
+  },
+  {
+    "EventName": "(❯) Sudden Murder Mystery! Part 1",
+    "EventOptions": {
+      "Bottom Option": "Energy +10\nSeiun Sky bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯) Sudden Murder Mystery! Part 2",
+    "EventOptions": {
+      "Top Option": "Wit +5\nFrenzied Pace Chasers hint +1\nSeiun Sky bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯) Sudden Murder Mystery! Part 2",
+    "EventOptions": {
+      "Bottom Option": "Energy +5\nSkill points +10\nSeiun Sky bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) Sudden Murder Mystery! Part 3",
+    "EventOptions": {
+      "Top Option": "Wit +5/+10\nVanguard Spirit hint +1/+3\nSeiun Sky bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) Sudden Murder Mystery! Part 3",
+    "EventOptions": {
+      "Bottom Option": "Energy +10\nStamina +10\nSkill points +15"
+    }
+  },
+  {
+    "EventName": "(❯) A Captivating Invitation",
+    "EventOptions": {
+      "Top Option": "Power +10\nKing Halo bond +5"
+    }
+  },
+  {
+    "EventName": "(❯) A Captivating Invitation",
+    "EventOptions": {
+      "Bottom Option": "Guts +10\nKing Halo bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯) Dancer's Pride",
+    "EventOptions": {
+      "Top Option": "Energy -5\nStamina +10\nPower +5\nSkill points +5\nKing Halo bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯) Dancer's Pride",
+    "EventOptions": {
+      "Bottom Option": "Energy +15\nSkill points +5\nKing Halo bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) Glittering Star of the Ball",
+    "EventOptions": {
+      "": "Randomly either\nEnergy -10\nPower +25\nBlinding Flash hint +3\nor\nEnergy -10\nPower +20\nGap Closer hint +3"
+    }
+  },
+  {
+    "EventName": "(❯) Raising the Uma Lord's Castle",
+    "EventOptions": {
+      "Top Option": "Maximum Energy +4\nGold Ship bond +5"
+    }
+  },
+  {
+    "EventName": "(❯) Raising the Uma Lord's Castle",
+    "EventOptions": {
+      "Bottom Option": "Speed +10\nGold Ship bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯) Plotting the Uma Lord's Dungeon",
+    "EventOptions": {
+      "": "Energy -15\nSpeed +5\nStamina +5\nLong Straightaways ○ hint +1"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) Assembling the Uma Lord's Minions",
+    "EventOptions": {
+      "Top Option": "Randomly either\nEnergy -10\nSpeed +5\nStamina +5\nInside Scoop hint +3\nGold Ship bond +5\nor\nEnergy -10\nSpeed +10\nStamina +10\nInnate Experience hint +3\nGold Ship bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) Assembling the Uma Lord's Minions",
+    "EventOptions": {
+      "Bottom Option": "Energy +10\nMaverick ○ hint +1"
+    }
   }
 ]
