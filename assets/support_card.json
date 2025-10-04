@@ -3184,5 +3184,71 @@
     "EventOptions": {
       "Bottom Option": "Energy +10\nMaverick ○ hint +1"
     }
+  },
+  {
+    "EventName": "(❯) Flustered Afternoon Tea!",
+    "EventOptions": {
+      "Top Option": "Energy +10\nMood +1"
+    }
+  },
+  {
+    "EventName": "(❯) Flustered Afternoon Tea!",
+    "EventOptions": {
+      "Bottom Option": "Wit +10\nSkill points +15\nPace Chaser Savvy ○ hint +3"
+    }
+  },
+  {
+    "EventName": "(❯❯) Home Run Derby!",
+    "EventOptions": {
+      "": "Power +10\nGuts +5"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) Indomitable Hearts on Fire!",
+    "EventOptions": {
+      "": "Power +10\nGuts +5\nUnyielding hint +1"
+    }
+  },
+  {
+    "EventName": "(❯) Special Drinks Made with Friends ♪",
+    "EventOptions": {
+      "Top Option": "Randomly either\nEnergy +10\nSpeed +5\nWit +5\nSkill points +10\nor\nWit +10"
+    }
+  },
+  {
+    "EventName": "(❯) Special Drinks Made with Friends ♪",
+    "EventOptions": {
+      "Bottom Option": "Mood +1\nSpeed +10"
+    }
+  },
+  {
+    "EventName": "(❯❯) The Place I Wish to Stand",
+    "EventOptions": {
+      "": "Energy +30\nMood +1"
+    }
+  },
+  {
+    "EventName": "The Glass Girl Wants to Study",
+    "EventOptions": {
+      "Top Option": "Speed +10\nMejiro Ardan bond +5"
+    }
+  },
+  {
+    "EventName": "The Glass Girl Wants to Study",
+    "EventOptions": {
+      "Bottom Option": "Energy +10\nWit +5\nMejiro Ardan bond +5"
+    }
+  },
+  {
+    "EventName": "The Glass Girl Wants to Play",
+    "EventOptions": {
+      "Top Option": "Speed +10\nWit +10\nMejiro Ardan bond +5"
+    }
+  },
+  {
+    "EventName": "The Glass Girl Wants to Play",
+    "EventOptions": {
+      "Bottom Option": "Hesitant Pace Chasers hint +1\nMejiro Ardan bond +5"
+    }
   }
 ]

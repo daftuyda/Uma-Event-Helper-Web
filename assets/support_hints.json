@@ -5247,5 +5247,102 @@
         "HintLevel": null
       }
     ]
+  },
+  {
+    "SupportSlug": "30048-mejiro-ryan",
+    "SupportId": "30048",
+    "SupportName": "Mejiro Ryan (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30048-mejiro-ryan.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rainy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "20034-mejiro-ardan",
+    "SupportId": "20034",
+    "SupportName": "Mejiro Ardan (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20034-mejiro-ardan.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Left-Handed ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Corners ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "10069-mejiro-ardan",
+    "SupportId": "10069",
+    "SupportName": "Mejiro Ardan (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10069-mejiro-ardan.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Left-Handed ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Corners ○",
+        "HintLevel": null
+      }
+    ]
   }
 ]
