@@ -5344,5 +5344,54 @@
         "HintLevel": null
       }
     ]
+  },
+  {
+    "SupportSlug": "30044-narita-brian",
+    "SupportId": "30044",
+    "SupportName": "Narita Brian (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30044-narita-brian.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Right-Handed ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inside Scoop",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Straightaways ○",
+        "HintLevel": null
+      }
+    ]
   }
 ]

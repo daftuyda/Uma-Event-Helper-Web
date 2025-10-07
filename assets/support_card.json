@@ -3250,5 +3250,47 @@
     "EventOptions": {
       "Bottom Option": "Hesitant Pace Chasers hint +1\nMejiro Ardan bond +5"
     }
+  },
+  {
+    "EventName": "(❯) Brian, the Race Planner",
+    "EventOptions": {
+      "": "Maximum Energy +4\nSpeed +5"
+    }
+  },
+  {
+    "EventName": "(❯❯) Only a Sister Knows",
+    "EventOptions": {
+      "": "Energy -10\nSpeed +20"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) Running for the Dream",
+    "EventOptions": {
+      "": "Energy -10\nSpeed +20\nShatterproof hint +1"
+    }
+  },
+  {
+    "EventName": "Student Council Member!",
+    "EventOptions": {
+      "Top Option": "Mood +1\nSpeed +5\nNarita Brian bond +5"
+    }
+  },
+  {
+    "EventName": "Student Council Member!",
+    "EventOptions": {
+      "Bottom Option": "Maximum Energy +4\nNarita Brian bond +5"
+    }
+  },
+  {
+    "EventName": "Lone Wolf",
+    "EventOptions": {
+      "Top Option": "Speed +3\nStamina +3\nPower +3\nNarita Brian bond +5"
+    }
+  },
+  {
+    "EventName": "Lone Wolf",
+    "EventOptions": {
+      "Bottom Option": "Lone Wolf hint +1\nNarita Brian bond +5"
+    }
   }
 ]
