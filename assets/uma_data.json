@@ -27616,5 +27616,1305 @@
         }
       }
     ]
+  },
+  {
+    "UmaKey": "Special Week :: Hopping ♪ Vitamin Heart",
+    "UmaName": "Special Week",
+    "UmaNickname": "Hopping ♪ Vitamin Heart",
+    "UmaSlug": "100102-special-week",
+    "UmaId": "100102",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 77,
+        "Stamina": 90,
+        "Power": 103,
+        "Guts": 98,
+        "Wit": 82
+      },
+      "5★": {
+        "Speed": 94,
+        "Stamina": 110,
+        "Power": 125,
+        "Guts": 119,
+        "Wit": 102
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 0,
+      "Stamina": 10,
+      "Power": 10,
+      "Guts": 10,
+      "Wit": 0
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "G"
+      },
+      "Distance": {
+        "Short": "F",
+        "Mile": "C",
+        "Medium": "A",
+        "Long": "A"
+      },
+      "Strategy": {
+        "Front": "G",
+        "Pace": "A",
+        "Late": "A",
+        "End": "C"
+      }
+    },
+    "UmaHeightCm": 158,
+    "UmaThreeSizes": {
+      "B": 81,
+      "W": 56,
+      "H": 81
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "2. Place 5th or better in the Kisaragi Sho",
+        "Turn": "Turn 27 (previous + 14)",
+        "Time": "Classic Class, Early February",
+        "ObjectiveCondition": "G3 – Turf – 1800m – Mile"
+      },
+      {
+        "ObjectiveName": "3. Place 5th or better in the Tokyo Yushun (Japanese Derby)",
+        "Turn": "Turn 34 (previous + 6)",
+        "Time": "Classic Class, Late May",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "4. Place 3rd or better in the Kikuka Sho",
+        "Turn": "Turn 44 (previous + 9)",
+        "Time": "Classic Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 3000m – Long"
+      },
+      {
+        "ObjectiveName": "5. Place 3rd or better in the Tenno Sho (Spring)",
+        "Turn": "Turn 56 (previous + 11)",
+        "Time": "Senior Class, Late April",
+        "ObjectiveCondition": "G1 – Turf – 3200m – Long"
+      },
+      {
+        "ObjectiveName": "6. Place 2nd or better in the Japan Cup",
+        "Turn": "Turn 70 (previous + 13)",
+        "Time": "Senior Class, Late November",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "7. Place 1st in the Arima Kinen",
+        "Turn": "Turn 72 (previous + 1)",
+        "Time": "Senior Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      }
+    ],
+    "UmaEvents": [
+      {
+        "EventName": "Swimsuit Power Unlocked!",
+        "EventOptions": {
+          "Top Option": "Speed +10\nSkill points +15"
+        }
+      },
+      {
+        "EventName": "Swimsuit Power Unlocked!",
+        "EventOptions": {
+          "Bottom Option": "Wit +20"
+        }
+      },
+      {
+        "EventName": "The Best Summer Ever!",
+        "EventOptions": {
+          "Top Option": "Stamina +10\nPower +10"
+        }
+      },
+      {
+        "EventName": "The Best Summer Ever!",
+        "EventOptions": {
+          "Bottom Option": "Energy +10\nAll stats +2"
+        }
+      },
+      {
+        "EventName": "Meet My Other Mom",
+        "EventOptions": {
+          "Top Option": "Fighter hint +2\n(random) Get Practice Perfect ○ status"
+        }
+      },
+      {
+        "EventName": "Meet My Other Mom",
+        "EventOptions": {
+          "Bottom Option": "Guts +20\n(random) Get Practice Perfect ○ status"
+        }
+      },
+      {
+        "EventName": "A Beautiful Day for Tennis",
+        "EventOptions": {
+          "Top Option": "Speed +10"
+        }
+      },
+      {
+        "EventName": "A Beautiful Day for Tennis",
+        "EventOptions": {
+          "Bottom Option": "Stamina +10"
+        }
+      },
+      {
+        "EventName": "Karaoke Connoisseur ♪",
+        "EventOptions": {
+          "Top Option": "Energy +10"
+        }
+      },
+      {
+        "EventName": "Karaoke Connoisseur ♪",
+        "EventOptions": {
+          "Bottom Option": "Power +10"
+        }
+      },
+      {
+        "EventName": "Early Afternoon Payback",
+        "EventOptions": {
+          "Top Option": "Energy +5\nWit +5"
+        }
+      },
+      {
+        "EventName": "Early Afternoon Payback",
+        "EventOptions": {
+          "Bottom Option": "Pace Strategy hint +1"
+        }
+      },
+      {
+        "EventName": "Putting It Away at the Cafeteria",
+        "EventOptions": {
+          "Top Option": "Energy +10\nSkill points +5"
+        }
+      },
+      {
+        "EventName": "Putting It Away at the Cafeteria",
+        "EventOptions": {
+          "Bottom Option": "Randomly either (~90%)\nEnergy +30\nSkill points +10\nor (~10%)\nEnergy +30\nSkill points +10\nSpeed -5\nPower +5\nGet Slow Metabolism status"
+        }
+      },
+      {
+        "EventName": "Because It's Special",
+        "EventOptions": {
+          "Top Option": "Stamina +10"
+        }
+      },
+      {
+        "EventName": "Because It's Special",
+        "EventOptions": {
+          "Bottom Option": "Speed +10"
+        }
+      },
+      {
+        "EventName": "A Place I Want to Take You",
+        "EventOptions": {
+          "Top Option": "Wit +10"
+        }
+      },
+      {
+        "EventName": "A Place I Want to Take You",
+        "EventOptions": {
+          "Bottom Option": "Stamina +10"
+        }
+      },
+      {
+        "EventName": "Someone I Respect",
+        "EventOptions": {
+          "Top Option": "Skill points +30"
+        }
+      },
+      {
+        "EventName": "Someone I Respect",
+        "EventOptions": {
+          "Middle Option": "Stamina +5\nGuts +5"
+        }
+      },
+      {
+        "EventName": "Someone I Respect",
+        "EventOptions": {
+          "Bottom Option": "Speed +5\nPower +5"
+        }
+      },
+      {
+        "EventName": "Just a Little More",
+        "EventOptions": {
+          "Top Option": "Homestretch Haste hint +1"
+        }
+      },
+      {
+        "EventName": "Just a Little More",
+        "EventOptions": {
+          "Bottom Option": "Corner Adept ○ hint +1"
+        }
+      },
+      {
+        "EventName": "Research Fanatic",
+        "EventOptions": {
+          "Top Option": "Tokyo Racecourse ○ hint +1"
+        }
+      },
+      {
+        "EventName": "Research Fanatic",
+        "EventOptions": {
+          "Bottom Option": "Nakayama Racecourse ○ hint +1"
+        }
+      },
+      {
+        "EventName": "Bonus at start",
+        "EventOptions": {
+          "": "Skill points +120"
+        }
+      },
+      {
+        "EventName": "Failed training (Get Well Soon!)",
+        "EventOptions": {
+          "Top Option": "Mood -1\nLast trained stat -5\n(random) Get Practice Poor status"
+        }
+      },
+      {
+        "EventName": "Failed training (Get Well Soon!)",
+        "EventOptions": {
+          "Bottom Option": "Randomly either\nMood -1\nLast trained stat -10\n(random) Get Practice Poor status\nor\nGet Practice Perfect ○ status"
+        }
+      },
+      {
+        "EventName": "Failed training (Don't Overdo It!)",
+        "EventOptions": {
+          "Top Option": "Energy +10\nMood -2\nLast trained stat -10\n2 random stats -10\n(random) Get Practice Poor status"
+        }
+      },
+      {
+        "EventName": "Failed training (Don't Overdo It!)",
+        "EventOptions": {
+          "Bottom Option": "Randomly either\nMood -3\nLast trained stat -10\n2 random stats -10\nGet Practice Poor status\nor\nEnergy +10\nGet Practice Perfect ○ status"
+        }
+      },
+      {
+        "EventName": "Extra Training",
+        "EventOptions": {
+          "Top Option": "Energy -5\nLast trained stat +5\n(random) Heal a negative status effect\nYayoi Akikawa bond +5"
+        }
+      },
+      {
+        "EventName": "Extra Training",
+        "EventOptions": {
+          "Bottom Option": "Energy +5"
+        }
+      },
+      {
+        "EventName": "At Summer Camp (Year 2)",
+        "EventOptions": {
+          "Top Option": "Power +10"
+        }
+      },
+      {
+        "EventName": "At Summer Camp (Year 2)",
+        "EventOptions": {
+          "Bottom Option": "Guts +10"
+        }
+      },
+      {
+        "EventName": "Fan Letter",
+        "EventOptions": {
+          "": "Mood +1\nSkill points +30"
+        }
+      },
+      {
+        "EventName": "Dance Lesson",
+        "EventOptions": {
+          "Top Option": "Guts +10"
+        }
+      },
+      {
+        "EventName": "Dance Lesson",
+        "EventOptions": {
+          "Bottom Option": "Stamina +10"
+        }
+      },
+      {
+        "EventName": "New Year's Resolutions",
+        "EventOptions": {
+          "Top Option": "Stamina +10"
+        }
+      },
+      {
+        "EventName": "New Year's Resolutions",
+        "EventOptions": {
+          "Middle Option": "Energy +20"
+        }
+      },
+      {
+        "EventName": "New Year's Resolutions",
+        "EventOptions": {
+          "Bottom Option": "Skill points +20"
+        }
+      },
+      {
+        "EventName": "New Year's Shrine Visit",
+        "EventOptions": {
+          "Top Option": "Energy +30"
+        }
+      },
+      {
+        "EventName": "New Year's Shrine Visit",
+        "EventOptions": {
+          "Middle Option": "All stats +5"
+        }
+      },
+      {
+        "EventName": "New Year's Shrine Visit",
+        "EventOptions": {
+          "Bottom Option": "Skill points +35"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 1": "Randomly either (~30%)\nAll stats +20\nor (~70%)\nMood -2\nAll stats -15\nGet Night Owl status"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 2": "Randomly either (~45%)\nObtain Corner Recovery ○ skill\nObtain Straightaway Recovery skill\nor (~55%)\nEnergy -20\nMood -2"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 3": "Randomly either (~70%)\nMaximum Energy +12\nEnergy +40\nHeal all negative status effects\nor (~30%)\nEnergy -20\nMood -2\nGet Practice Poor status"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 4": "Randomly either (~85%)\nEnergy +20\nMood +1\nGet Charming ○ status\nor (~15%)\nEnergy -10/-20\nMood -1\n(random) Get Practice Poor status"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 5": "Energy +10"
+        }
+      },
+      {
+        "EventName": "Victory! (G1)",
+        "EventOptions": {
+          "Top Option": "Energy -15\n1 random stat +10\nSkill points +45\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (G1)",
+        "EventOptions": {
+          "Bottom Option": "Energy -5/-20\n1 random stat +10\nSkill points +45\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (G2/G3)",
+        "EventOptions": {
+          "Top Option": "Energy -15\n1 random stat +8\nSkill points +35\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (G2/G3)",
+        "EventOptions": {
+          "Bottom Option": "Energy -5/-20\n1 random stat +8\nSkill points +35\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (Pre/OP)",
+        "EventOptions": {
+          "Top Option": "Energy -15\n1 random stat +5\nSkill points +30\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (Pre/OP)",
+        "EventOptions": {
+          "Bottom Option": "Energy -5/-20\n1 random stat +5\nSkill points +30\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (G1)",
+        "EventOptions": {
+          "Top Option": "Energy -20\n1 random stat +8\nSkill points +45\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (G1)",
+        "EventOptions": {
+          "Bottom Option": "Energy -10/-30\n1 random stat +8\nSkill points +45\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (G2/G3)",
+        "EventOptions": {
+          "Top Option": "Energy -20\n1 random stat +5\nSkill points +35\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (G2/G3)",
+        "EventOptions": {
+          "Bottom Option": "Energy -10/-30\n1 random stat +5\nSkill points +35\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (Pre/OP)",
+        "EventOptions": {
+          "Top Option": "Energy -20\n1 random stat +3\nSkill points +30\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (Pre/OP)",
+        "EventOptions": {
+          "Bottom Option": "Energy -10/-30\n1 random stat +3\nSkill points +30\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (G1)",
+        "EventOptions": {
+          "Top Option": "Energy -25\n1 random stat +4\nSkill points +25\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (G1)",
+        "EventOptions": {
+          "Bottom Option": "Energy -15/-35\n1 random stat +4\nSkill points +25\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (G2/G3)",
+        "EventOptions": {
+          "Top Option": "Energy -25\n1 random stat +3\nSkill points +20\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (G2/G3)",
+        "EventOptions": {
+          "Bottom Option": "Energy -15/-35\n1 random stat +3\nSkill points +20\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (Pre/OP)",
+        "EventOptions": {
+          "Top Option": "Energy -25\nSkill points +10\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (Pre/OP)",
+        "EventOptions": {
+          "Bottom Option": "Energy -15/-35\nSkill points +10\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Etsuko's Elated Coverage (G1)",
+        "EventOptions": {
+          "": "Energy -15\nMood +1\n1 random stat +10\nSkill points +45\nFans +500\n(random) Hint for a skill related to the race\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Elated Coverage (G2/G3)",
+        "EventOptions": {
+          "": "Energy -15\nMood +1\n1 random stat +8\nSkill points +35\nFans +500\n(random) Hint for a skill related to the race\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Elated Coverage (Pre/OP)",
+        "EventOptions": {
+          "": "Energy -15\nMood +1\n1 random stat +5\nSkill points +30\nFans +500\n(random) Hint for a skill related to the race\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (G1)",
+        "EventOptions": {
+          "Top Option": "Randomly either\nEnergy -25\nMood -1\n1 random stat +4\nSkill points +25\nEtsuko Otonashi bond -10\nor\nEnergy -15\nMood +1\n1 random stat +4\nSkill points +25\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (G1)",
+        "EventOptions": {
+          "Bottom Option": "Energy -20\n1 random stat +4\nSkill points +25\nEtsuko Otonashi bond +10"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (G2/G3)",
+        "EventOptions": {
+          "Top Option": "Randomly either\nEnergy -25\nMood -1\n1 random stat +3\nSkill points +20\nEtsuko Otonashi bond -10\nor\nEnergy -15\nMood +1\n1 random stat +3\nSkill points +20\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (G2/G3)",
+        "EventOptions": {
+          "Bottom Option": "Energy -20\n1 random stat +3\nSkill points +20\nEtsuko Otonashi bond +10"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (Pre/OP)",
+        "EventOptions": {
+          "Top Option": "Randomly either\nEnergy -25\nMood -1\nSkill points +10\nEtsuko Otonashi bond -10\nor\nEnergy -15\nMood +1\nSkill points +10\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (Pre/OP)",
+        "EventOptions": {
+          "Bottom Option": "Energy -20\nSkill points +10\nEtsuko Otonashi bond +10"
+        }
+      },
+      {
+        "EventName": "Derby Trainer",
+        "EventOptions": {
+          "": "Wit +5"
+        }
+      },
+      {
+        "EventName": "Derby Press Conference!",
+        "EventOptions": {
+          "": "Guts +5"
+        }
+      },
+      {
+        "EventName": "A Rival Named...",
+        "EventOptions": {
+          "": "Stamina +5"
+        }
+      },
+      {
+        "EventName": "Bird and the Beast",
+        "EventOptions": {
+          "": "Speed +5"
+        }
+      },
+      {
+        "EventName": "Fire in Your Eyes",
+        "EventOptions": {
+          "": "Stamina +5\nGuts +5"
+        }
+      },
+      {
+        "EventName": "A Dangerous Drink",
+        "EventOptions": {
+          "": "Mood -1\nGuts -5"
+        }
+      },
+      {
+        "EventName": "Master Trainer",
+        "EventOptions": {
+          "": "Stamina +10\n(random) Get Practice Perfect ○ status"
+        }
+      },
+      {
+        "EventName": "I'm Home!",
+        "EventOptions": {
+          "": "All stats +5\nSkill points +5"
+        }
+      },
+      {
+        "EventName": "Forecast: Gloomy",
+        "EventOptions": {
+          "": "Mood -1"
+        }
+      },
+      {
+        "EventName": "Invasion of the Giant Carrots?",
+        "EventOptions": {
+          "": "Energy -10\nMood -1"
+        }
+      },
+      {
+        "EventName": "Could I Be a Genius?!",
+        "EventOptions": {
+          "": "All stats +5\nSkill points +30\nMood +2\n(random) Get Fast Learner status"
+        }
+      },
+      {
+        "EventName": "A Place I Miss...",
+        "EventOptions": {
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
+        }
+      }
+    ]
+  },
+  {
+    "UmaKey": "Maruzensky :: Blasting Off ☆ Summer Night",
+    "UmaName": "Maruzensky",
+    "UmaNickname": "Blasting Off ☆ Summer Night",
+    "UmaSlug": "100402-maruzensky",
+    "UmaId": "100402",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 100,
+        "Stamina": 69,
+        "Power": 93,
+        "Guts": 87,
+        "Wit": 101
+      },
+      "5★": {
+        "Speed": 122,
+        "Stamina": 85,
+        "Power": 114,
+        "Guts": 107,
+        "Wit": 122
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 15,
+      "Stamina": 0,
+      "Power": 0,
+      "Guts": 0,
+      "Wit": 15
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "D"
+      },
+      "Distance": {
+        "Short": "B",
+        "Mile": "A",
+        "Medium": "B",
+        "Long": "C"
+      },
+      "Strategy": {
+        "Front": "A",
+        "Pace": "E",
+        "Late": "G",
+        "End": "G"
+      }
+    },
+    "UmaHeightCm": 164,
+    "UmaThreeSizes": {
+      "B": 92,
+      "W": 58,
+      "H": 88
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 1200m – Short"
+      },
+      {
+        "ObjectiveName": "2. Place 5th or better in the Asahi Hai Futurity Stakes",
+        "Turn": "Turn 23 (previous + 10)",
+        "Time": "Junior Class, Early December",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "3. Place 3rd or better in the Spring Stakes",
+        "Turn": "Turn 30 (previous + 6)",
+        "Time": "Classic Class, Late March",
+        "ObjectiveCondition": "G2 – Turf – 1800m – Mile"
+      },
+      {
+        "ObjectiveName": "4. Place 5th or better in the Satsuki Sho",
+        "Turn": "Turn 31",
+        "Time": "Classic Class, Early April",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "5. Place 5th or better in the Tokyo Yushun (Japanese Derby)",
+        "Turn": "Turn 34 (previous + 2)",
+        "Time": "Classic Class, Late May",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "6. Participate in the Arima Kinen",
+        "Turn": "Turn 48 (previous + 13)",
+        "Time": "Classic Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      },
+      {
+        "ObjectiveName": "7. Place 1st in the Osaka Hai",
+        "Turn": "Turn 54 (previous + 5)",
+        "Time": "Senior Class, Late March",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "8. Place 1st in the Yasuda Kinen",
+        "Turn": "Turn 59 (previous + 4)",
+        "Time": "Senior Class, Early June",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "9. Place 1st in the Tenno Sho (Autumn)",
+        "Turn": "Turn 68 (previous + 8)",
+        "Time": "Senior Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      }
+    ],
+    "UmaEvents": [
+      {
+        "EventName": "I Want to Be like Maruzen",
+        "EventOptions": {
+          "Top Option": "Speed +10\nPower +10"
+        }
+      },
+      {
+        "EventName": "I Want to Be like Maruzen",
+        "EventOptions": {
+          "Bottom Option": "Energy +15"
+        }
+      },
+      {
+        "EventName": "Welcome to Bubblyland",
+        "EventOptions": {
+          "Top Option": "Guts +20"
+        }
+      },
+      {
+        "EventName": "Welcome to Bubblyland",
+        "EventOptions": {
+          "Bottom Option": "Wit +20"
+        }
+      },
+      {
+        "EventName": "Maruzensky's Treasure",
+        "EventOptions": {
+          "Top Option": "Fast-Paced hint +2\n(random) Get Charming ○ status"
+        }
+      },
+      {
+        "EventName": "Maruzensky's Treasure",
+        "EventOptions": {
+          "Bottom Option": "Stamina +20\n(random) Get Charming ○ status"
+        }
+      },
+      {
+        "EventName": "Hot Rod",
+        "EventOptions": {
+          "Top Option": "Speed +10"
+        }
+      },
+      {
+        "EventName": "Hot Rod",
+        "EventOptions": {
+          "Bottom Option": "Wit +10"
+        }
+      },
+      {
+        "EventName": "Let's Play ♪",
+        "EventOptions": {
+          "Top Option": "Energy +10"
+        }
+      },
+      {
+        "EventName": "Let's Play ♪",
+        "EventOptions": {
+          "Bottom Option": "Energy -5\nPower +10\nGuts +5"
+        }
+      },
+      {
+        "EventName": "A Lady's Style ☆",
+        "EventOptions": {
+          "Top Option": "Speed +5\nSkill points +10\nMood +1"
+        }
+      },
+      {
+        "EventName": "A Lady's Style ☆",
+        "EventOptions": {
+          "Bottom Option": "Huge Lead hint +1"
+        }
+      },
+      {
+        "EventName": "Let's Cook!",
+        "EventOptions": {
+          "Top Option": "Speed +10"
+        }
+      },
+      {
+        "EventName": "Let's Cook!",
+        "EventOptions": {
+          "Bottom Option": "Guts +10"
+        }
+      },
+      {
+        "EventName": "The Road to a Rad Victory!",
+        "EventOptions": {
+          "Top Option": "Stamina +10"
+        }
+      },
+      {
+        "EventName": "The Road to a Rad Victory!",
+        "EventOptions": {
+          "Bottom Option": "Wit +10"
+        }
+      },
+      {
+        "EventName": "Down to Dance!",
+        "EventOptions": {
+          "Top Option": "Speed +10"
+        }
+      },
+      {
+        "EventName": "Down to Dance!",
+        "EventOptions": {
+          "Bottom Option": "Power +10"
+        }
+      },
+      {
+        "EventName": "Nostalgia Fever ☆",
+        "EventOptions": {
+          "Top Option": "Energy +10\nSkill points +5"
+        }
+      },
+      {
+        "EventName": "Nostalgia Fever ☆",
+        "EventOptions": {
+          "Bottom Option": "Randomly either (~90%)\nEnergy +30\nSkill points +10\nor (~10%)\nEnergy +30\nSkill points +10\nSpeed -5\nPower +5\nGet Slow Metabolism status"
+        }
+      },
+      {
+        "EventName": "The Secret to Supporting Each Other",
+        "EventOptions": {
+          "Top Option": "Speed +10"
+        }
+      },
+      {
+        "EventName": "The Secret to Supporting Each Other",
+        "EventOptions": {
+          "Bottom Option": "Power +10"
+        }
+      },
+      {
+        "EventName": "Even Role Models Get Lonely",
+        "EventOptions": {
+          "Top Option": "Stamina +5\nGuts +5"
+        }
+      },
+      {
+        "EventName": "Even Role Models Get Lonely",
+        "EventOptions": {
+          "Bottom Option": "Speed +5\nPower +5"
+        }
+      },
+      {
+        "EventName": "Take the Wheel",
+        "EventOptions": {
+          "Top Option": "Power +10"
+        }
+      },
+      {
+        "EventName": "Take the Wheel",
+        "EventOptions": {
+          "Middle Option": "Guts +10"
+        }
+      },
+      {
+        "EventName": "Take the Wheel",
+        "EventOptions": {
+          "Bottom Option": "Wit +10"
+        }
+      },
+      {
+        "EventName": "Meeting New People Is Trendy ☆",
+        "EventOptions": {
+          "Top Option": "Guts +10"
+        }
+      },
+      {
+        "EventName": "Meeting New People Is Trendy ☆",
+        "EventOptions": {
+          "Bottom Option": "Wit +10"
+        }
+      },
+      {
+        "EventName": "The Fun Never Stops ♪",
+        "EventOptions": {
+          "Top Option": "Speed +5\nWit +5"
+        }
+      },
+      {
+        "EventName": "The Fun Never Stops ♪",
+        "EventOptions": {
+          "Bottom Option": "Stamina +5\nPower +5"
+        }
+      },
+      {
+        "EventName": "Fukushima in Summer",
+        "EventOptions": {
+          "": "Energy -15\nAll stats +3\nSkill points +60\nMood +1\nGet Hot Topic status"
+        }
+      },
+      {
+        "EventName": "Bonus at start",
+        "EventOptions": {
+          "": "Skill points +120"
+        }
+      },
+      {
+        "EventName": "Failed training (Get Well Soon!)",
+        "EventOptions": {
+          "Top Option": "Mood -1\nLast trained stat -5\n(random) Get Practice Poor status"
+        }
+      },
+      {
+        "EventName": "Failed training (Get Well Soon!)",
+        "EventOptions": {
+          "Bottom Option": "Randomly either\nMood -1\nLast trained stat -10\n(random) Get Practice Poor status\nor\nGet Practice Perfect ○ status"
+        }
+      },
+      {
+        "EventName": "Failed training (Don't Overdo It!)",
+        "EventOptions": {
+          "Top Option": "Energy +10\nMood -2\nLast trained stat -10\n2 random stats -10\n(random) Get Practice Poor status"
+        }
+      },
+      {
+        "EventName": "Failed training (Don't Overdo It!)",
+        "EventOptions": {
+          "Bottom Option": "Randomly either\nMood -3\nLast trained stat -10\n2 random stats -10\nGet Practice Poor status\nor\nEnergy +10\nGet Practice Perfect ○ status"
+        }
+      },
+      {
+        "EventName": "Extra Training",
+        "EventOptions": {
+          "Top Option": "Energy -5\nLast trained stat +5\n(random) Heal a negative status effect\nYayoi Akikawa bond +5"
+        }
+      },
+      {
+        "EventName": "Extra Training",
+        "EventOptions": {
+          "Bottom Option": "Energy +5"
+        }
+      },
+      {
+        "EventName": "At Summer Camp (Year 2)",
+        "EventOptions": {
+          "Top Option": "Power +10"
+        }
+      },
+      {
+        "EventName": "At Summer Camp (Year 2)",
+        "EventOptions": {
+          "Bottom Option": "Guts +10"
+        }
+      },
+      {
+        "EventName": "Fan Letter",
+        "EventOptions": {
+          "": "Mood +1\nSkill points +30"
+        }
+      },
+      {
+        "EventName": "Dance Lesson",
+        "EventOptions": {
+          "Top Option": "Speed +10"
+        }
+      },
+      {
+        "EventName": "Dance Lesson",
+        "EventOptions": {
+          "Bottom Option": "Wit +10"
+        }
+      },
+      {
+        "EventName": "New Year's Resolutions",
+        "EventOptions": {
+          "Top Option": "Speed +10"
+        }
+      },
+      {
+        "EventName": "New Year's Resolutions",
+        "EventOptions": {
+          "Middle Option": "Energy +20"
+        }
+      },
+      {
+        "EventName": "New Year's Resolutions",
+        "EventOptions": {
+          "Bottom Option": "Skill points +20"
+        }
+      },
+      {
+        "EventName": "New Year's Shrine Visit",
+        "EventOptions": {
+          "Top Option": "Energy +30"
+        }
+      },
+      {
+        "EventName": "New Year's Shrine Visit",
+        "EventOptions": {
+          "Middle Option": "All stats +5"
+        }
+      },
+      {
+        "EventName": "New Year's Shrine Visit",
+        "EventOptions": {
+          "Bottom Option": "Skill points +35"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 1": "Randomly either (~30%)\nAll stats +20\nor (~70%)\nMood -2\nAll stats -15\nGet Night Owl status"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 2": "Randomly either (~45%)\nObtain Corner Recovery ○ skill\nObtain Straightaway Recovery skill\nor (~55%)\nEnergy -20\nMood -2"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 3": "Randomly either (~70%)\nMaximum Energy +12\nEnergy +40\nHeal all negative status effects\nor (~30%)\nEnergy -20\nMood -2\nGet Practice Poor status"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 4": "Randomly either (~85%)\nEnergy +20\nMood +1\nGet Charming ○ status\nor (~15%)\nEnergy -10/-20\nMood -1\n(random) Get Practice Poor status"
+        }
+      },
+      {
+        "EventName": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+        "EventOptions": {
+          "Option 5": "Energy +10"
+        }
+      },
+      {
+        "EventName": "Victory! (G1)",
+        "EventOptions": {
+          "Top Option": "Energy -15\n1 random stat +10\nSkill points +45\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (G1)",
+        "EventOptions": {
+          "Bottom Option": "Energy -5/-20\n1 random stat +10\nSkill points +45\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (G2/G3)",
+        "EventOptions": {
+          "Top Option": "Energy -15\n1 random stat +8\nSkill points +35\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (G2/G3)",
+        "EventOptions": {
+          "Bottom Option": "Energy -5/-20\n1 random stat +8\nSkill points +35\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (Pre/OP)",
+        "EventOptions": {
+          "Top Option": "Energy -15\n1 random stat +5\nSkill points +30\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Victory! (Pre/OP)",
+        "EventOptions": {
+          "Bottom Option": "Energy -5/-20\n1 random stat +5\nSkill points +30\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (G1)",
+        "EventOptions": {
+          "Top Option": "Energy -20\n1 random stat +8\nSkill points +45\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (G1)",
+        "EventOptions": {
+          "Bottom Option": "Energy -10/-30\n1 random stat +8\nSkill points +45\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (G2/G3)",
+        "EventOptions": {
+          "Top Option": "Energy -20\n1 random stat +5\nSkill points +35\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (G2/G3)",
+        "EventOptions": {
+          "Bottom Option": "Energy -10/-30\n1 random stat +5\nSkill points +35\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (Pre/OP)",
+        "EventOptions": {
+          "Top Option": "Energy -20\n1 random stat +3\nSkill points +30\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Solid Showing (Pre/OP)",
+        "EventOptions": {
+          "Bottom Option": "Energy -10/-30\n1 random stat +3\nSkill points +30\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (G1)",
+        "EventOptions": {
+          "Top Option": "Energy -25\n1 random stat +4\nSkill points +25\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (G1)",
+        "EventOptions": {
+          "Bottom Option": "Energy -15/-35\n1 random stat +4\nSkill points +25\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (G2/G3)",
+        "EventOptions": {
+          "Top Option": "Energy -25\n1 random stat +3\nSkill points +20\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (G2/G3)",
+        "EventOptions": {
+          "Bottom Option": "Energy -15/-35\n1 random stat +3\nSkill points +20\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (Pre/OP)",
+        "EventOptions": {
+          "Top Option": "Energy -25\nSkill points +10\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Defeat (Pre/OP)",
+        "EventOptions": {
+          "Bottom Option": "Energy -15/-35\nSkill points +10\n(random) Hint for a skill related to the race"
+        }
+      },
+      {
+        "EventName": "Etsuko's Elated Coverage (G1)",
+        "EventOptions": {
+          "": "Energy -15\nMood +1\n1 random stat +10\nSkill points +45\nFans +500\n(random) Hint for a skill related to the race\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Elated Coverage (G2/G3)",
+        "EventOptions": {
+          "": "Energy -15\nMood +1\n1 random stat +8\nSkill points +35\nFans +500\n(random) Hint for a skill related to the race\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Elated Coverage (Pre/OP)",
+        "EventOptions": {
+          "": "Energy -15\nMood +1\n1 random stat +5\nSkill points +30\nFans +500\n(random) Hint for a skill related to the race\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (G1)",
+        "EventOptions": {
+          "Top Option": "Randomly either\nEnergy -25\nMood -1\n1 random stat +4\nSkill points +25\nEtsuko Otonashi bond -10\nor\nEnergy -15\nMood +1\n1 random stat +4\nSkill points +25\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (G1)",
+        "EventOptions": {
+          "Bottom Option": "Energy -20\n1 random stat +4\nSkill points +25\nEtsuko Otonashi bond +10"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (G2/G3)",
+        "EventOptions": {
+          "Top Option": "Randomly either\nEnergy -25\nMood -1\n1 random stat +3\nSkill points +20\nEtsuko Otonashi bond -10\nor\nEnergy -15\nMood +1\n1 random stat +3\nSkill points +20\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (G2/G3)",
+        "EventOptions": {
+          "Bottom Option": "Energy -20\n1 random stat +3\nSkill points +20\nEtsuko Otonashi bond +10"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (Pre/OP)",
+        "EventOptions": {
+          "Top Option": "Randomly either\nEnergy -25\nMood -1\nSkill points +10\nEtsuko Otonashi bond -10\nor\nEnergy -15\nMood +1\nSkill points +10\nEtsuko Otonashi bond +15"
+        }
+      },
+      {
+        "EventName": "Etsuko's Exhaustive Coverage (Pre/OP)",
+        "EventOptions": {
+          "Bottom Option": "Energy -20\nSkill points +10\nEtsuko Otonashi bond +10"
+        }
+      },
+      {
+        "EventName": "Feeling Top Gear",
+        "EventOptions": {
+          "": "Speed +5"
+        }
+      },
+      {
+        "EventName": "Walk the Walk",
+        "EventOptions": {
+          "": "Speed +5"
+        }
+      },
+      {
+        "EventName": "To New Heights",
+        "EventOptions": {
+          "": "Power +5"
+        }
+      },
+      {
+        "EventName": "A Fun Race",
+        "EventOptions": {
+          "": "Wit +5"
+        }
+      },
+      {
+        "EventName": "Bring It",
+        "EventOptions": {
+          "": "Speed +5\nGuts +5"
+        }
+      },
+      {
+        "EventName": "Virtual Car Race",
+        "EventOptions": {
+          "": "Speed -5\nMood -1"
+        }
+      },
+      {
+        "EventName": "Master Trainer",
+        "EventOptions": {
+          "": "Speed +10\n(random) Get Practice Perfect ○ status"
+        }
+      },
+      {
+        "EventName": "The Coolest Spot",
+        "EventOptions": {
+          "": "All stats +5\nSkill points +5"
+        }
+      },
+      {
+        "EventName": "Golden Oldies?",
+        "EventOptions": {
+          "": "Mood -1"
+        }
+      },
+      {
+        "EventName": "Big Trouble!",
+        "EventOptions": {
+          "": "Energy -10\nMood -1"
+        }
+      },
+      {
+        "EventName": "A Totally Bomb ☆ New Feeling",
+        "EventOptions": {
+          "": "All stats +5\nSkill points +30\nMood +2\n(random) Get Fast Learner status"
+        }
+      },
+      {
+        "EventName": "Shockingly Careless",
+        "EventOptions": {
+          "": "Randomly either\nEnergy +15\nMood -1\nGuts -5\nor\nEnergy +15\nGuts -5\nGet Slacker status\nor\nEnergy +15\nMood -1\nGuts -5\nGet Slacker status"
+        }
+      }
+    ]
   }
 ]

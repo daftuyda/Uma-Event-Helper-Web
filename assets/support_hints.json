@@ -5393,5 +5393,122 @@
         "HintLevel": null
       }
     ]
+  },
+  {
+    "SupportSlug": "30045-sweep-tosho",
+    "SupportId": "30045",
+    "SupportName": "Sweep Tosho (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30045-sweep-tosho.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "After-School Stroll",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slipstream",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prudent Positioning",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "I Can See Right Through You",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Front)",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Rear)",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Murmur",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30046-winning-ticket",
+    "SupportId": "30046",
+    "SupportName": "Winning Ticket (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30046-winning-ticket.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Position Pilfer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slick Surge",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30047-daiwa-scarlet",
+    "SupportId": "30047",
+    "SupportName": "Daiwa Scarlet (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30047-daiwa-scarlet.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Competitive Spirit ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rosy Outlook",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shifting Gears",
+        "HintLevel": null
+      }
+    ]
   }
 ]

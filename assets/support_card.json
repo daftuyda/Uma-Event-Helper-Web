@@ -3292,5 +3292,83 @@
     "EventOptions": {
       "Bottom Option": "Lone Wolf hint +1\nNarita Brian bond +5"
     }
+  },
+  {
+    "EventName": "(❯) Fickle Genius Magical Girl Sweepy ☆",
+    "EventOptions": {
+      "Top Option": "Randomly either\nMood +1\nStraightaway Spurt hint +2\nSweep Tosho bond +5\nor\nMood -1\nWit +5\nSweep Tosho bond +5"
+    }
+  },
+  {
+    "EventName": "(❯) Fickle Genius Magical Girl Sweepy ☆",
+    "EventOptions": {
+      "Bottom Option": "Skill points +15\nSweep Tosho bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯) A Drop of Black Magic ☆",
+    "EventOptions": {
+      "Top Option": "Randomly either\nEnergy +10\nSkill points +20\nSweep Tosho bond +5\nor\nEnergy -10\nSkill points +15\nSweep Tosho bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯) A Drop of Black Magic ☆",
+    "EventOptions": {
+      "Bottom Option": "Wit +10\nSweep Tosho bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) Her Mood Like a Flower ☆",
+    "EventOptions": {
+      "": "Speed +5\nWit +5\nCrusader hint +1"
+    }
+  },
+  {
+    "EventName": "(❯) Tickezo☆Expedition!",
+    "EventOptions": {
+      "": "Speed +5\nStamina +5"
+    }
+  },
+  {
+    "EventName": "(❯❯) Tickezo☆Friendship!",
+    "EventOptions": {
+      "Top Option": "Stamina +3\nGuts +3\n1,500,000 CC hint +1\nWinning Ticket bond +10"
+    }
+  },
+  {
+    "EventName": "(❯❯) Tickezo☆Friendship!",
+    "EventOptions": {
+      "Bottom Option": "Energy +10\nMaverick ○ hint +3\nWinning Ticket bond -5\nEvent chain ended"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) Tickezo☆Night Fever!",
+    "EventOptions": {
+      "": "Speed +8\nStamina +8\nGuts +8\nHard Worker hint +1"
+    }
+  },
+  {
+    "EventName": "(❯) Number One Reactions?",
+    "EventOptions": {
+      "Top Option": "Speed +3\nPower +3\nWit +3\nDaiwa Scarlet bond +5"
+    }
+  },
+  {
+    "EventName": "(❯) Number One Reactions?",
+    "EventOptions": {
+      "Bottom Option": "Energy +15\nEvent chain ended"
+    }
+  },
+  {
+    "EventName": "(❯❯) Learning to Look Scared",
+    "EventOptions": {
+      "": "Power +5\nWit +5"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) Poolside Fun",
+    "EventOptions": {
+      "": "Randomly either\nEnergy -5\nPower +10\nRace Planner hint +3\nor\nEnergy -5\nPower +5\nPreferred Position hint +3"
+    }
   }
 ]
