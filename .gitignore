@@ -1,3 +1,5 @@
 .vercel
 /__pycache__
 /.vscode
+/.cache_gametora
+/cards
