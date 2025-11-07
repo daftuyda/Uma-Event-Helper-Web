@@ -3370,5 +3370,107 @@
     "EventOptions": {
       "": "Randomly either\nEnergy -5\nPower +10\nRace Planner hint +3\nor\nEnergy -5\nPower +5\nPreferred Position hint +3"
     }
+  },
+  {
+    "EventName": "(❯) A Winning Vocalist",
+    "EventOptions": {
+      "Top Option": "Guts +10\nHydrate hint +1"
+    }
+  },
+  {
+    "EventName": "(❯) A Winning Vocalist",
+    "EventOptions": {
+      "Bottom Option": "Speed +10\nSoft Step hint +1"
+    }
+  },
+  {
+    "EventName": "(❯❯) A Dream Dance",
+    "EventOptions": {
+      "": "Stamina +10\nSkill points +10"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) A Stage to Remember",
+    "EventOptions": {
+      "": "Speed +5\nStamina +5\nConcentration hint +1"
+    }
+  },
+  {
+    "EventName": "(❯) The Extraordinary Nature",
+    "EventOptions": {
+      "": "Mood +1\nGuts +5\nWit +5\nNice Nature bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯) Irrepressible Feelings",
+    "EventOptions": {
+      "Top Option": "Energy +10\nNice Nature bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯) Irrepressible Feelings",
+    "EventOptions": {
+      "Bottom Option": "Energy -5\nSpeed +5\nPower +5\nNice Nature bond +5\nHeal all negative status effects"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) Revenge with a Quiz!",
+    "EventOptions": {
+      "": "Energy +10\nSpeed +5\nWit +5\nOn Your Left! hint +1\nNice Nature bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯❯) Turbo Is Strong!",
+    "EventOptions": {
+      "Bottom Option": "Energy +15\nWatchful Eye hint +3"
+    }
+  },
+  {
+    "EventName": "(❯) Nail Artist on the Turf",
+    "EventOptions": {
+      "Top Option": "Randomly either\nSkill points +40\nTosen Jordan bond +5\nor\nSkill points +10\nMood -1"
+    }
+  },
+  {
+    "EventName": "(❯) Nail Artist on the Turf",
+    "EventOptions": {
+      "Bottom Option": "Stamina +10\nTosen Jordan bond +5"
+    }
+  },
+  {
+    "EventName": "(❯❯) Not Just for Show",
+    "EventOptions": {
+      "Top Option": "Randomly either\nEnergy +10\nRamp Up hint +3\nTosen Jordan bond +5\nor\nRamp Up hint +1"
+    }
+  },
+  {
+    "EventName": "(❯❯) Not Just for Show",
+    "EventOptions": {
+      "Bottom Option": "Energy -5\nStamina +20\nTosen Jordan bond +5"
+    }
+  },
+  {
+    "EventName": "Doomscrolling the Time Away",
+    "EventOptions": {
+      "Top Option": "Mood +1\nSpeed +5\nTosen Jordan bond +5"
+    }
+  },
+  {
+    "EventName": "Doomscrolling the Time Away",
+    "EventOptions": {
+      "Bottom Option": "Stamina +10\nTosen Jordan bond +5"
+    }
+  },
+  {
+    "EventName": "Sponsored Posts Can Be Low-Key Sus",
+    "EventOptions": {
+      "Top Option": "Energy +10\nMood +1\nTosen Jordan bond +5"
+    }
+  },
+  {
+    "EventName": "Sponsored Posts Can Be Low-Key Sus",
+    "EventOptions": {
+      "Bottom Option": "Lucky Seven hint +1\nTosen Jordan bond +5"
+    }
   }
 ]
