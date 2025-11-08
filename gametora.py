@@ -1,6 +1,7 @@
 import argparse, json, os, sys, time, re, requests
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urlparse
+from urllib3.exceptions import ReadTimeoutError
 from pathlib import Path
 
 from selenium import webdriver
@@ -15,9 +16,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 DELAY = 0.25
-NAV_TIMEOUT = 20
-JS_TIMEOUT = 20
-RETRIES = 2
+RETRIES = 3
+NAV_TIMEOUT = 45
+JS_TIMEOUT  = 45
 
 
 def _read_json_list(path: str) -> List[Any]:
@@ -70,24 +71,6 @@ def _make_uma_key(name: str, nickname: str | None, slug: str | None) -> str:
     if slug:
         return f"{name} :: {slug}"
     return name
-
-def _slug_and_id_from_url(url: str) -> tuple[str | None, int | None]:
-    """
-    Returns (slug, id) for /umamusume/characters/<slug>.
-    If slug begins with digits-..., id is returned as int.
-    """
-    try:
-        path = urlparse(url).path
-        slug = path.rsplit("/", 1)[-1].strip("/") if path else None
-    except Exception:
-        slug = None
-    uma_id = None
-    if slug:
-        m = re.match(r"^(\d+)-(.+)$", slug)
-        if m:
-            uma_id = int(m.group(1))
-            slug = m.group(2)
-    return slug, uma_id
 
 def _count_stars(text: str) -> int:
     t = (text or "")
@@ -309,6 +292,12 @@ def new_driver(headless: bool = True) -> webdriver.Chrome:
     d = webdriver.Chrome(service=service, options=opts)
     d.set_page_load_timeout(NAV_TIMEOUT)
     d.set_script_timeout(JS_TIMEOUT)
+    
+    try:
+        d.command_executor._client_config.timeout = 300
+    except Exception:
+        pass
+    
     return d
 
 def safe_find(driver, by, sel):
@@ -320,15 +309,21 @@ def safe_find_all(driver, by, sel) -> List[Any]:
     except NoSuchElementException: return []
 
 def wait_css(driver, css: str, timeout: int = 8):
-    try: return WebDriverWait(driver, timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, css)))
-    except TimeoutException: return None
+    try:
+        return WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, css))
+        )
+    except (TimeoutException, WebDriverException, ReadTimeoutError):
+        return None
 
 def nav(driver, url: str, wait_for_css: Optional[str] = None) -> bool:
     try:
         driver.get(url)
-    except TimeoutException:
-        try: driver.execute_script("window.stop();")
-        except Exception: pass
+    except (TimeoutException, ReadTimeoutError, WebDriverException):
+        try:
+            driver.execute_script("window.stop();")
+        except Exception:
+            pass
     if wait_for_css:
         return wait_css(driver, wait_for_css, timeout=10) is not None
     return True
@@ -661,7 +656,7 @@ def with_retries(func, *args, **kwargs):
     for attempt in range(RETRIES + 1):
         try:
             return func(*args, **kwargs)
-        except (TimeoutException, WebDriverException, StaleElementReferenceException) as e:
+        except (TimeoutException, WebDriverException, StaleElementReferenceException, ReadTimeoutError) as e:
             last_exc = e
             time.sleep(0.6 + attempt * 0.4)
             continue
@@ -690,7 +685,7 @@ def scrape_characters(save_path: str, server: str, headless: bool = True):
         for i, url in enumerate(urls, 1):
             for attempt in range(RETRIES + 1):
                 try:
-                    ok = nav(d, url, "body")
+                    ok = with_retries(nav, d, url, "body")
                     slug, uma_id = _slug_and_id_from_url(url)
                     if not ok: raise TimeoutException("no body")
 
@@ -797,7 +792,7 @@ def scrape_characters(save_path: str, server: str, headless: bool = True):
                         f"| {len(objectives)} objectives, {len(events)} events)")
                     break
 
-                except (TimeoutException, WebDriverException, StaleElementReferenceException) as e:
+                except (TimeoutException, WebDriverException, StaleElementReferenceException, ReadTimeoutError) as e:
                     if attempt < RETRIES:
                         try: d.quit()
                         except Exception: pass
@@ -838,7 +833,7 @@ def scrape_supports(out_events_path: str, out_hints_path: str, server: str, head
         for i, url in enumerate(urls, 1):
             for attempt in range(RETRIES + 1):
                 try:
-                    ok = nav(d, url, "body")
+                    ok = with_retries(nav, d, url, "body")
                     if not ok:
                         raise TimeoutException("no body")
 
@@ -904,7 +899,7 @@ def scrape_supports(out_events_path: str, out_hints_path: str, server: str, head
                         f"+{added} events, {len(hints)} hints)")
                     break
 
-                except (TimeoutException, WebDriverException, StaleElementReferenceException) as e:
+                except (TimeoutException, WebDriverException, StaleElementReferenceException, ReadTimeoutError) as e:
                     if attempt < RETRIES:
                         try: d.quit()
                         except Exception: pass
@@ -912,7 +907,7 @@ def scrape_supports(out_events_path: str, out_hints_path: str, server: str, head
                         with_retries(nav, d, "https://gametora.com/umamusume/supports", "main main")
                         ensure_server(d, server=server, keep_raw_en=True)
                         # rebuild previews after driver restart
-                        previews = collect_support_previews(d)
+                        previews = collect_support_previews(d, thumbs_dir)
                         continue
                     else:
                         print(f"[{i}/{total}] SUPPORT ERROR {url}: {e}")
@@ -920,8 +915,7 @@ def scrape_supports(out_events_path: str, out_hints_path: str, server: str, head
     finally:
         try: d.quit()
         except Exception: pass
-
-
+        
 def scrape_career(save_path: str, server: str, headless: bool = True):
     d = new_driver(headless=headless)
     try:
