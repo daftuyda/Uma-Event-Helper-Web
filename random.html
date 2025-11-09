@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Uma Tools — Randomizer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- No-flash dark mode: pre-apply saved theme before paint -->
+    <script>
+      (function () {
+        try {
+          var pref = localStorage.getItem("umasearch-darkmode");
+          var dark = pref
+            ? pref === "dark"
+            : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark-mode", dark);
+          if (document.body && document.body.classList) {
+            document.body.classList.toggle("dark-mode", dark);
+          }
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <button
+      id="modeToggleBtn"
+      aria-label="Toggle dark/light mode"
+      class="mode-toggle-btn"
+      title="Toggle dark/light mode"
+    >
+      <svg
+        id="iconSun"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-sun"
+      >
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg
+        id="iconMoon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-moon"
+        style="display: none"
+      >
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+      </svg>
+    </button>
+
+    <main class="container">
+      <h1>Randomizer</h1>
+
+      <!-- Support Deck Randomizer -->
+      <section id="supportRandomizer" class="result">
+        <div class="choice">
+          <h3>Support Deck (5 cards)</h3>
+          <div class="toolbar" role="group" aria-label="Support filters">
+            <label><input type="checkbox" id="fSSR" checked /> SSR</label>
+            <label><input type="checkbox" id="fSR" checked /> SR</label>
+            <label><input type="checkbox" id="fR" checked /> R</label>
+
+            <div style="flex: 1 1 220px"></div>
+
+            <label class="toggle" style="margin-right:.75rem"><input type="checkbox" id="speed2x"> 2× speed</label>
+<button class="btn primary" id="rollBtn" type="button">
+              Roll 5
+            </button>
+            <button class="btn" id="clearExBtn" type="button">
+              Clear Exclusions
+            </button>
+          </div>
+
+          <div class="toolbar" role="group" aria-label="Exclude cards">
+            <input
+              list="supportList"
+              id="excludeInput"
+              placeholder="Exclude a support (choose from list)"
+            />
+            <datalist id="supportList"></datalist>
+            <button class="btn" id="addExBtn" type="button">
+              Add to Exclusions
+            </button>
+          </div>
+
+          <div id="excludeChips" class="chips" aria-live="polite"></div>
+        </div>
+
+        <div id="deckResults" class="grid" aria-live="polite"></div>
+      </section>
+
+      <div class="spacer"></div>
+
+      <!-- Uma Randomizer -->
+      <section id="umaRandomizer" class="result">
+        <div class="choice">
+          <h3>Random Uma</h3>
+          <div class="toolbar">
+            <label class="toggle" style="margin-right:.75rem"><input type="checkbox" id="speed2xUma"> 2× speed</label>
+<button class="btn primary" id="pickUmaBtn" type="button">
+              Pick Random Uma
+            </button>
+          </div>
+        </div>
+
+        <div id="umaResult" class="grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="nav.js" defer></script>
+    <script src="random.js" defer></script>
+    <script>
+      (function () {
+        function applyTheme(dark, persist) {
+          document.documentElement.classList.toggle("dark-mode", dark);
+          document.body.classList.toggle("dark-mode", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+          if (persist) {
+            try {
+              localStorage.setItem(
+                "umasearch-darkmode",
+                dark ? "dark" : "light"
+              );
+            } catch (e) {}
+          }
+          var sun = document.getElementById("iconSun");
+          var moon = document.getElementById("iconMoon");
+          if (sun && moon) {
+            sun.style.display = dark ? "none" : "inline";
+            moon.style.display = dark ? "inline" : "none";
+          }
+        }
+
+        // On load: reflect the class set by the no-flash script (no write)
+        applyTheme(
+          document.documentElement.classList.contains("dark-mode"),
+          false
+        );
+
+        // Toggle: apply + persist
+        var btn = document.getElementById("modeToggleBtn");
+        if (btn)
+          btn.addEventListener("click", function () {
+            applyTheme(
+              !document.documentElement.classList.contains("dark-mode"),
+              true
+            );
+          });
+
+        // Optional: keep tabs/windows in sync
+        window.addEventListener("storage", function (e) {
+          if (e.key === "umasearch-darkmode") {
+            applyTheme(e.newValue === "dark", false);
+          }
+        });
+      })();
+    </script>
+    <script>
+      window.NAV_ROUTES = [
+        { label: "Events", path: "/", file: "/index.html" },
+        { label: "Support Hints", path: "/hints", file: "/hints.html" },
+        { label: "Umadle", path: "/umadle", file: "/umadle.html" },
+        { label: "Randomizer", path: "/random", file: "/random.html" },
+        { label: "Optimizer", path: "/optimizer", file: "/optimizer.html" },
+      ];
+    </script>
+  </body>
+</html>

@@ -1,0 +1,345 @@
+skill_type,name,base_value,S_A,B_C,D_E_F,G,affinity_role
+green,Right-Handed ◎,174,,,,,
+green,Right-Handed ○,129,,,,,
+green,Left-Handed ◎,174,,,,,
+green,Left-Handed ○,129,,,,,
+green,Spring Runner ◎,174,,,,,
+green,Spring Runner ○,129,,,,,
+green,Summer Runner ◎,174,,,,,
+green,Summer Runner ○,129,,,,,
+green,Fall Runner ◎,174,,,,,
+green,Fall Runner ○,129,,,,,
+green,Winter Runner ◎,174,,,,,
+green,Winter Runner ○,129,,,,,
+green,Outer Post Proficiency ◎,174,,,,,
+green,Outer Post Proficiency ○,129,,,,,
+green,Maverick ◎,174,,,,,
+green,Maverick ○,129,,,,,
+green,Long Shot ◎,174,,,,,
+green,Long Shot ○,129,,,,,
+green,Sympathy,129,,,,,
+green,Lone Wolf,129,,,,,
+green,Tokyo Racecourse ◎,174,,,,,
+green,Tokyo Racecourse ○,129,,,,,
+green,Nakayama Racecourse ◎,174,,,,,
+green,Nakayama Racecourse ○,129,,,,,
+green,Hanshin Racecourse ◎,174,,,,,
+green,Hanshin Racecourse ○,129,,,,,
+green,Kyoto Racecourse ◎,174,,,,,
+green,Kyoto Racecourse ○,129,,,,,
+green,Chukyo Racecourse ◎,174,,,,,
+green,Chukyo Racecourse ○,129,,,,,
+green,Sapporo Racecourse ◎,174,,,,,
+green,Sapporo Racecourse ○,129,,,,,
+green,Hakodate Racecourse ◎,174,,,,,
+green,Hakodate Racecourse ○,129,,,,,
+green,Fukushima Racecourse ◎,174,,,,,
+green,Fukushima Racecourse ○,129,,,,,
+green,Niigata Racecourse ◎,174,,,,,
+green,Niigata Racecourse ○,129,,,,,
+green,Kokura Racecourse ◎,174,,,,,
+green,Kokura Racecourse ○,129,,,,,
+green,Standard Distance ◎,174,,,,,
+green,Standard Distance ○,129,,,,,
+green,Non-Standard Distance ◎,174,,,,,
+green,Non-Standard Distance ○,129,,,,,
+green,Oi Racecourse ◎,174,,,,,
+green,Oi Racecourse ○,129,,,,,
+green,Firm Conditions ◎,174,,,,,
+green,Firm Conditions ○,129,,,,,
+green,Wet Conditions ◎,174,,,,,
+green,Wet Conditions ○,129,,,,,
+green,Competitive Spirit ◎,174,,,,,
+green,Competitive Spirit ○,129,,,,,
+green,Sunny Days ◎,174,,,,,
+green,Sunny Days ○,129,,,,,
+green,Cloudy Days ◎,174,,,,,
+green,Cloudy Days ○,129,,,,,
+green,Rainy Days ◎,174,,,,,
+green,Rainy Days ○,129,,,,,
+green,Snowy Days ◎,174,,,,,
+green,Snowy Days ○,129,,,,,
+green,Target in Sight ◎,174,,,,,
+green,Target in Sight ○,129,,,,,
+green,Inner Post Proficiency ◎,174,,,,,
+green,Inner Post Proficiency ○,129,,,,,
+green,Lucky Seven,174,,,,,
+green,Front Runner Savvy ◎,195,239,195,174,152,Front
+green,Front Runner Savvy ○,157,191,157,139,122,Front
+green,Pace Chaser Savvy ◎,239,239,195,174,152,Pace
+green,Pace Chaser Savvy ○,191,191,157,139,122,Pace
+green,Late Surger Savvy ◎,195,239,195,174,152,Late
+green,Late Surger Savvy ○,157,191,157,139,122,Late
+green,End Closer Savvy ◎,152,239,195,174,152,End
+green,End Closer Savvy ○,122,191,157,139,122,End
+blue,Ignited Spirit STA,263,,,,,
+blue,Corner Recovery ○,217,,,,,
+blue,Straightaway Recovery,217,,,,,
+blue,Lay Low,217,,,,,
+blue,Pace Strategy,217,,,,,
+blue,Calm in a Crowd,217,,,,,
+blue,Triple 7s,217,,,,,
+blue,Shake It Out,217,,,,,
+blue,Stamina to Spare,239,239,195,174,152,Pace
+blue,Preferred Position,239,239,195,174,152,Pace
+blue,Standing By,152,239,195,174,152,End
+blue,Wait-and-See,239,239,195,174,152,Sprint
+blue,Watchful Eye,195,239,195,174,152,Mile
+blue,Rosy Outlook,174,239,195,174,152,Medium
+blue,Deep Breaths,152,239,195,174,152,Long
+blue,Extra Tank,217,239,195,174,152,Long
+blue,Soft Step,174,239,195,174,152,Medium
+blue,Passing Pro,152,239,195,174,152,Long
+blue,Moxie,195,239,195,174,152,Front
+blue,Hydrate,239,239,195,174,152,Pace
+blue,A Small Breather,195,239,195,174,152,Late
+blue,After-School Stroll,152,239,195,174,152,End
+blue,Levelheaded,152,239,195,174,152,End
+yellow,Ignited Spirit SPD,263,,,,,
+yellow,Ignited Spirit PWR,263,,,,,
+yellow,Ignited Spirit GUT,263,,,,,
+yellow,Ignited Spirit WIT,263,,,,,
+yellow,Corner Adept ○,217,,,,,
+yellow,Straightaway Adept,217,,,,,
+yellow,Ramp Up,217,,,,,
+yellow,Homestretch Haste,217,,,,,
+yellow,Uma Stan,217,,,,,
+yellow,Tail Held High,217,,,,,
+yellow,Slipstream,217,,,,,
+yellow,Playtime's Over!,217,,,,,
+yellow,Top Pick,217,,,,,
+yellow,Corner Acceleration ○,217,,,,,
+yellow,Straightaway Acceleration,217,,,,,
+yellow,Nimble Navigator,174,,,,,
+yellow,Highlander,217,,,,,
+yellow,Groundwork,217,,,,,
+yellow,Prudent Positioning,129,,,,,
+yellow,Go with the Flow,129,,,,,
+yellow,Focus,129,,,,,
+yellow,Fast-Paced,195,239,195,174,152,Front
+yellow,Prepared to Pass,239,239,195,174,152,Pace
+yellow,Position Pilfer,195,239,195,174,152,Late
+yellow,Outer Swell,195,239,195,174,152,Late
+yellow,Masterful Gambit,152,239,195,174,152,End
+yellow,Gap Closer,239,239,195,174,152,Sprint
+yellow,Productive Plan,195,239,195,174,152,Mile
+yellow,Up-Tempo,174,239,195,174,152,Medium
+yellow,Steadfast,174,239,195,174,152,Medium
+yellow,Inside Scoop,152,239,195,174,152,Long
+yellow,Sprint Straightaways ◎,288,288,236,210,183,Sprint
+yellow,Sprint Straightaways ○,239,239,195,174,152,Sprint
+yellow,Sprint Corners ◎,288,288,236,210,183,Sprint
+yellow,Sprint Corners ○,239,239,195,174,152,Sprint
+yellow,Huge Lead,288,288,236,210,183,Sprint
+yellow,Mile Straightaways ◎,236,288,236,210,183,Mile
+yellow,Mile Straightaways ○,195,239,195,174,152,Mile
+yellow,Mile Corners ◎,236,288,236,210,183,Mile
+yellow,Mile Corners ○,195,239,195,174,152,Mile
+yellow,Shifting Gears,195,239,195,174,152,Mile
+yellow,Unyielding Spirit,195,239,195,174,152,Mile
+yellow,Medium Straightaways ◎,210,288,236,210,183,Medium
+yellow,Medium Straightaways ○,174,239,195,174,152,Medium
+yellow,Medium Corners ◎,210,288,236,210,183,Medium
+yellow,Medium Corners ○,174,239,195,174,152,Medium
+yellow,Long Straightaways ◎,183,288,236,210,183,Long
+yellow,Long Straightaways ○,152,239,195,174,152,Long
+yellow,Long Corners ◎,183,288,236,210,183,Long
+yellow,Long Corners ○,152,239,195,174,152,Long
+yellow,Keeping the Lead,152,239,195,174,152,Long
+yellow,Pressure,152,239,195,174,152,Long
+yellow,Front Runner Straightaways ◎,236,288,236,210,183,Front
+yellow,Front Runner Straightaways ○,195,239,195,174,152,Front
+yellow,Front Runner Corners ◎,236,288,236,210,183,Front
+yellow,Front Runner Corners ○,195,239,195,174,152,Front
+yellow,Leader's Pride,195,239,195,174,152,Front
+yellow,Pace Chaser Straightaways ◎,288,288,236,210,183,Pace
+yellow,Pace Chaser Straightaways ○,239,239,195,174,152,Pace
+yellow,Pace Chaser Corners ◎,288,288,236,210,183,Pace
+yellow,Pace Chaser Corners ○,239,239,195,174,152,Pace
+yellow,Late Surger Straightaways ◎,236,288,236,210,183,Late
+yellow,Late Surger Straightaways ○,195,239,195,174,152,Late
+yellow,Later Surger Corners ◎,236,288,236,210,183,Late
+yellow,Late Surger Corners ○,195,239,195,174,152,Late
+yellow,"1,500,000 CC",195,239,195,174,152,Late
+yellow,End Closer Straightaways ◎,183,288,236,210,183,End
+yellow,End Closer Straightaways ○,152,239,195,174,152,End
+yellow,End Closer Corners ◎,183,288,236,210,183,End
+yellow,End Closer Corners ○,152,239,195,174,152,End
+yellow,Early Lead,195,239,195,174,152,Front
+yellow,Final Push,195,239,195,174,152,Front
+yellow,Slick Surge,195,239,195,174,152,Late
+yellow,Straightaway Spurt,217,239,195,174,152,End
+yellow,Sprinting Gear,239,239,195,174,152,Sprint
+yellow,Updrafters,195,239,195,174,152,Mile
+yellow,Countermeasure,239,239,195,174,152,Sprint
+yellow,Acceleration,195,239,195,174,152,Mile
+yellow,Second Wind,195,239,195,174,152,Front
+yellow,Shrewd Step,239,239,195,174,152,Pace
+yellow,Straight Descent,239,239,195,174,152,Pace
+yellow,Tactical Tweak,239,239,195,174,152,Pace
+yellow,Fighter,195,239,195,174,152,Late
+yellow,Meticulous Measures,191,191,157,139,122,Sprint
+yellow,Thunderbolt Step,139,191,157,139,122,Medium
+yellow,Dodging Danger,116,143,116,103,90,Front
+yellow,Hawkeye,103,142,116,103,90,Medium
+yellow,Studious,77,94,77,68,60,Late
+yellow,I Can See Right Through You,60,94,77,68,60,End
+yellow,Strategist,60,94,77,68,60,End
+red,Hesitant Front Runners,217,,,,,
+red,Hesitant Pace Chasers,217,,,,,
+red,Hesitant Late Surgers,217,,,,,
+red,Hesitant End Closers,217,,,,,
+red,Frenzied Front Runners,174,,,,,
+red,Frenzied Pace Chasers,174,,,,,
+red,Frenzied Late Surgers,174,,,,,
+red,Frenzied End Closers,174,,,,,
+red,Trick (Front),217,,,,,
+red,Trick (Rear),217,,,,,
+red,Subdued Front Runners,217,,,,,
+red,Flustered Front Runners,217,,,,,
+red,Subdued Pace Chasers,217,,,,,
+red,Flustered Pace Chasers,217,,,,,
+red,Subdued Late Surgers,217,,,,,
+red,Flustered Late Surgers,217,,,,,
+red,Subdued End Closers,217,,,,,
+red,Flustered End Closers,217,,,,,
+red,Intimidate,288,288,236,210,183,Sprint
+red,Speed Eater,195,239,195,174,152,Mile
+red,Tether,174,239,195,174,152,Medium
+red,Intense Gaze,152,239,195,174,152,End
+red,Opening Gambit,195,239,195,174,152,Mile
+red,Restart,195,239,195,174,152,Front
+red,Stop Right There!,288,288,236,210,183,Sprint
+red,Murmur,174,239,195,174,152,Medium
+red,Stamina Eater,152,239,195,174,152,Long
+red,Sharp Gaze,195,239,195,174,152,Late
+red,Smoke Screen,90,142,116,103,90,Long
+red,Disorient,94,94,77,68,60,Pace
+gold,Burning Spirit SPD,633,,,,,
+gold,Burning Spirit STA,633,,,,,
+gold,Burning Spirit PWR,633,,,,,
+gold,Burning Spirit GUT,633,,,,,
+gold,Burning Spirit WIT,633,,,,,
+gold,Super Lucky Seven,334,,,,,
+gold,Swinging Maestro,508,,,,,
+gold,Breath of Fresh Air,508,,,,,
+gold,Iron Will,508,,,,,
+gold,Indomitable,508,,,,,
+gold,Unruffled,508,,,,,
+gold,Professor of Curvature,508,,,,,
+gold,Beeline Burst,508,,,,,
+gold,It's On!,508,,,,,
+gold,In Body and Mind,508,,,,,
+gold,Trending in the Charts!,508,,,,,
+gold,Corner Connoisseur,508,,,,,
+gold,Rushing Gale!,508,,,,,
+gold,No Stopping Me!,394,,,,,
+gold,Center Stage,334,,,,,
+gold,Lane Legerdemain,334,,,,,
+gold,Concentration,394,,,,,
+gold,Runaway,333,407,333,296,259,Front
+gold,Calm and Collected,559,559,457,406,356,Pace
+gold,Race Planner,559,559,457,406,356,Pace
+gold,Sleeping Lion,356,559,457,406,356,End
+gold,Keen Eye,457,559,457,406,356,Mile
+gold,Trackblazer,406,559,457,406,356,Medium
+gold,Cooldown,356,559,457,406,356,Long
+gold,Adrenaline Rush,508,559,457,406,356,Long
+gold,Miraculous Step,406,559,457,406,356,Medium
+gold,Restless,457,559,457,406,356,Front
+gold,Gourmand,559,559,457,406,356,Pace
+gold,Relax,457,559,457,406,356,Late
+gold,Go-Home Specialist,356,559,457,406,356,End
+gold,Serenity,356,559,457,406,356,End
+gold,Escape Artist,457,559,457,406,356,Front
+gold,Speed Star,559,559,457,406,356,Pace
+gold,Fast & Furious,457,559,457,406,356,Late
+gold,Rising Dragon,457,559,457,406,356,Late
+gold,Sturm und Drang,356,559,457,406,356,End
+gold,Blinding Flash,559,559,457,406,356,Sprint
+gold,Mile Maven,457,559,457,406,356,Mile
+gold,Killer Tunes,406,559,457,406,356,Medium
+gold,Unyielding,406,559,457,406,356,Medium
+gold,Innate Experience,356,559,457,406,356,Long
+gold,Staggering Lead,559,559,457,406,356,Sprint
+gold,Changing Gears,457,559,457,406,356,Mile
+gold,Big-Sisterly,301,367,301,267,234,Mile
+gold,Vanguard Spirit,356,559,457,406,356,Long
+gold,Overwhelming Pressure,356,559,457,406,356,Long
+gold,"15,000,000 CC",301,367,301,267,234,Late
+gold,Taking the Lead,301,367,301,267,234,Front
+gold,Unrestrained,457,559,457,406,356,Front
+gold,On Your Left!,457,559,457,406,356,Late
+gold,Encroaching Shadow,508,559,457,406,356,End
+gold,Turbo Sprint,559,559,457,406,356,Sprint
+gold,Furious Feat,457,559,457,406,356,Mile
+gold,Plan X,559,559,457,406,356,Sprint
+gold,Step on the Gas!,457,559,457,406,356,Mile
+gold,Technician,367,367,301,267,234,Pace
+gold,Determined Descent,367,367,301,267,234,Pace
+gold,Shatterproof,367,367,301,267,234,Pace
+gold,Hard Worker,301,367,301,267,234,Late
+gold,Perfect Prep!,433,433,355,315,276,Sprint
+gold,Lightning Step,315,433,355,315,276,Medium
+gold,Sixth Sense,301,367,301,267,234,Front
+gold,Clairvoyance,267,367,301,267,234,Medium
+gold,The Bigger Picture,301,367,301,267,234,Late
+gold,The Coast Is Clear!,234,367,301,267,234,End
+gold,Crusader,234,367,301,267,234,End
+gold,Dominator,406,559,457,406,356,Medium
+gold,Petrifying Gaze,356,559,457,406,356,End
+gold,Adored by All,559,559,457,406,356,Sprint
+gold,Battle Formation,457,559,457,406,356,Mile
+gold,Mystifying Murmur,406,559,457,406,356,Medium
+gold,Stamina Siphon,323,507,415,369,323,Long
+gold,All-Seeing Eyes,457,559,457,406,356,Late
+gold,Illusionist,234,367,301,267,234,Long
+gold,Dazzling Disorientation,367,367,301,267,234,Pace
+IUS,U=ma2,180,,,,,
+IUS,Pure Heart,180,,,,,
+IUS,Super-Duper Climax,180,,,,,
+IUS,Certain Victory,180,,,,,
+IUS,Legacy of the Strong,180,,,,,
+IUS,Shooting Star,180,,,,,
+IUS,The View from the Lead Is Mine!,180,,,,,
+IUS,Sky-High Teio Step,180,,,,,
+IUS,Triumphant Pulse,180,,,,,
+IUS,Anchors Aweigh!,180,,,,,
+IUS,Cut and Drive!,180,,,,,
+IUS,Resplendent Red Ace,180,,,,,
+IUS,"Where There's a Will, There's a Way",180,,,,,
+IUS,The Duty of Dignity Calls,180,,,,,
+IUS,Victoria por plancha ☆,180,,,,,
+IUS,This Dance Is for Vittoria!,180,,,,,
+IUS,Behold Thine Emperor's Divine Might,180,,,,,
+IUS,Blazing Pride,180,,,,,
+IUS,∴win Q.E.D.,180,,,,,
+IUS,Flashy☆Landing,180,,,,,
+IUS,G00 1st. F∞;,180,,,,,
+IUS,Blue Rose Closer,180,,,,,
+IUS,Our Ticket to Win!,180,,,,,
+IUS,Genius x Bakushin = Victory,180,,,,,
+IUS,I See Victory in My Future!,180,,,,,
+IUS,Just a Little Farther!,180,,,,,
+IUS,Prideful King,180,,,,,
+IUS,#LookatCurren,180,,,,,
+IUS,Red Shift/LP1211-M,180,,,,,
+IUS,Shooting for Victory!,180,,,,,
+IUS,Let's Pump Some Iron!,180,,,,,
+IUS,Nemesis,180,,,,,
+IUS,SPARKLY☆STARDOM,180,,,,,
+IUS,Shadow Break,180,,,,,
+IUS,Eternal Moments,180,,,,,
+IUS,Flowery☆Maneuver,180,,,,,
+IUS,Angling and Scheming,180,,,,,
+IUS,You and Me! One-on-One!,180,,,,,
+IUS,Condor's Fury,180,,,,,
+IUS,Superior Heal,180,,,,,
+IUS,Lights of Vaudeville,180,,,,,
+IUS,KEEP IT REAL.,180,,,,,
+IUS,Dazzl'n ♪ Diver,180,,,,,
+IUS,A Kiss for Courage,180,,,,,
+IUS,I Never Goof Up!,180,,,,,
+IUS,Schwarzes Schwert,180,,,,,
+IUS,Bountiful Harvest,180,,,,,
+IUS,I'M☆FULL☆SPEED!!,180,,,,,

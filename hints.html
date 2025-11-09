@@ -13,16 +13,18 @@
   </head>
   <body>
     <script>
-    (function () {
-      try {
-        var pref = localStorage.getItem("umasearch-darkmode");
-        var dark = pref ? (pref === "dark")
-                        : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
-        document.documentElement.classList.toggle("dark-mode", dark);
-        document.body.classList.toggle("dark-mode", dark);
-        document.documentElement.style.colorScheme = dark ? "dark" : "light";
-      } catch (e) {}
-    })();
+      (function () {
+        try {
+          var pref = localStorage.getItem("umasearch-darkmode");
+          var dark = pref
+            ? pref === "dark"
+            : window.matchMedia &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.classList.toggle("dark-mode", dark);
+          document.body.classList.toggle("dark-mode", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        } catch (e) {}
+      })();
     </script>
     <div class="container">
       <h1>Uma Support Hint Finder</h1>
@@ -115,41 +117,58 @@
     <script src="nav.js" defer></script>
     <script src="hints.js"></script>
     <script>
-    (function () {
-      function applyTheme(dark, persist) {
-        document.documentElement.classList.toggle("dark-mode", dark);
-        document.body.classList.toggle("dark-mode", dark);
-        document.documentElement.style.colorScheme = dark ? "dark" : "light";
-        if (persist) {
-          try { localStorage.setItem("umasearch-darkmode", dark ? "dark" : "light"); } catch(e) {}
+      (function () {
+        function applyTheme(dark, persist) {
+          document.documentElement.classList.toggle("dark-mode", dark);
+          document.body.classList.toggle("dark-mode", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+          if (persist) {
+            try {
+              localStorage.setItem(
+                "umasearch-darkmode",
+                dark ? "dark" : "light"
+              );
+            } catch (e) {}
+          }
+          var sun = document.getElementById("iconSun");
+          var moon = document.getElementById("iconMoon");
+          if (sun && moon) {
+            sun.style.display = dark ? "none" : "inline";
+            moon.style.display = dark ? "inline" : "none";
+          }
         }
-        var sun = document.getElementById("iconSun");
-        var moon = document.getElementById("iconMoon");
-        if (sun && moon) { sun.style.display = dark ? "none" : "inline"; moon.style.display = dark ? "inline" : "none"; }
-      }
 
-      // On load: reflect the class set by the no-flash script (no write)
-      applyTheme(document.documentElement.classList.contains("dark-mode"), false);
+        // On load: reflect the class set by the no-flash script (no write)
+        applyTheme(
+          document.documentElement.classList.contains("dark-mode"),
+          false
+        );
 
-      // Toggle: apply + persist
-      var btn = document.getElementById("modeToggleBtn");
-      if (btn) btn.addEventListener("click", function () {
-        applyTheme(!document.documentElement.classList.contains("dark-mode"), true);
-      });
+        // Toggle: apply + persist
+        var btn = document.getElementById("modeToggleBtn");
+        if (btn)
+          btn.addEventListener("click", function () {
+            applyTheme(
+              !document.documentElement.classList.contains("dark-mode"),
+              true
+            );
+          });
 
-      // Optional: keep tabs/windows in sync
-      window.addEventListener("storage", function (e) {
-        if (e.key === "umasearch-darkmode") {
-          applyTheme(e.newValue === "dark", false);
-        }
-      });
-    })();
+        // Optional: keep tabs/windows in sync
+        window.addEventListener("storage", function (e) {
+          if (e.key === "umasearch-darkmode") {
+            applyTheme(e.newValue === "dark", false);
+          }
+        });
+      })();
     </script>
     <script>
       window.NAV_ROUTES = [
         { label: "Events", path: "/", file: "/index.html" },
         { label: "Support Hints", path: "/hints", file: "/hints.html" },
-        { label: "Umadle", path: "/umadle", file: "/umadle.html" }
+        { label: "Umadle", path: "/umadle", file: "/umadle.html" },
+        { label: "Randomizer", path: "/random", file: "/random.html" },
+        { label: "Optimizer", path: "/optimizer", file: "/optimizer.html" },
       ];
     </script>
   </body>

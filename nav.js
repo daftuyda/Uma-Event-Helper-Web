@@ -1,8 +1,10 @@
 (function () {
   const DEFAULT_ROUTES = [
-    { label: "Events",        path: "/",       file: "/index.html" },
-    { label: "Support Hints", path: "/hints",  file: "/hints.html" },
-    { label: "Umadle",        path: "/umadle", file: "/umadle.html" },
+    { label: "Events", path: "/", file: "/index.html" },
+    { label: "Support Hints", path: "/hints", file: "/hints.html" },
+    { label: "Umadle", path: "/umadle", file: "/umadle.html" },
+    { label: "Randomizer", path: "/random", file: "/random.html" },
+    { label: "Optimizer", path: "/optimizer", file: "/optimizer.html" },
   ];
   const ROUTES =
     Array.isArray(window.NAV_ROUTES) && window.NAV_ROUTES.length
@@ -11,7 +13,10 @@
 
   // Footer links: override per-page with window.FOOTER_LINKS if you want
   const DEFAULT_FOOTER = [
-    { label: "GitHub",  href: "https://github.com/daftuyda/Uma-Event-Helper-Web" },
+    {
+      label: "GitHub",
+      href: "https://github.com/daftuyda/Uma-Event-Helper-Web",
+    },
     { label: "YouTube", href: "https://youtube.com/@MaybeVoid" },
   ];
   const FOOTER =
@@ -89,9 +94,13 @@
     const test = ROUTES.find((r) => r.path && r.file && r.path !== "/");
     if (test) {
       fetch(test.path, { method: "HEAD" })
-        .then((res) => { if (!res.ok) throw 0; })
+        .then((res) => {
+          if (!res.ok) throw 0;
+        })
         .catch(() => {
-          links.forEach((a) => { if (a.dataset.file) a.href = a.dataset.file; });
+          links.forEach((a) => {
+            if (a.dataset.file) a.href = a.dataset.file;
+          });
         });
     }
 

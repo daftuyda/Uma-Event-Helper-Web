@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UmaTools - Skill Optimizer</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- No-flash dark mode (matches other pages) -->
+    <script>
+      (function () {
+        try {
+          var pref = localStorage.getItem("umasearch-darkmode");
+          var dark = pref
+            ? pref === "dark"
+            : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark-mode", dark);
+          document.body && document.body.classList && document.body.classList.toggle("dark-mode", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <script>
+      (function () {
+        try {
+          var pref = localStorage.getItem("umasearch-darkmode");
+          var dark = pref
+            ? pref === "dark"
+            : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark-mode", dark);
+          document.body.classList.toggle("dark-mode", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        } catch (e) {}
+      })();
+    </script>
+    <!-- Same floating toggle button used across site; nav.js will relocate it into the navbar when present -->
+    <button
+      id="modeToggleBtn"
+      aria-label="Toggle dark/light mode"
+      class="mode-toggle-btn"
+      title="Toggle dark/light mode">
+      <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+      </svg>
+    </button>
+
+    <main class="container">
+      <h1>Skill Optimizer</h1>
+
+      <!-- Budget + library status -->
+      <section class="card">
+        <div class="toolbar" style="align-items:flex-end">
+          <label style="min-width:220px">
+            Skill Points Budget
+            <input id="budget" type="number" min="0" step="1" value="1200" />
+          </label>
+          <div class="spacer"></div>
+          <div id="lib-status" class="status" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- Race configuration (styled like other pages) -->
+      <section class="card race-config-container" aria-labelledby="raceConfigTitle">
+        <h2 id="raceConfigTitle" style="margin:0 0 .5rem">Race Configuration</h2>
+
+        <div class="opt-grid">
+          <div class="kv-row">
+            <div class="k">Track</div>
+            <div class="v row">
+              <label> Turf
+                <select id="cfg-turf">
+                  <option value="S">S</option><option value="A" selected>A</option><option value="B">B</option>
+                  <option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                  <option value="F">F</option><option value="G">G</option>
+                </select>
+              </label>
+              <label> Dirt
+                <select id="cfg-dirt">
+                  <option value="S">S</option><option value="A">A</option><option value="B">B</option>
+                  <option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                  <option value="F">F</option><option value="G" selected>G</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="kv-row">
+            <div class="k">Distance</div>
+            <div class="v row">
+              <label> Sprint
+                <select id="cfg-sprint"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
+              </label>
+              <label> Mile
+                <select id="cfg-mile"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
+              </label>
+              <label> Medium
+                <select id="cfg-medium"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
+              </label>
+              <label> Long
+                <select id="cfg-long"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
+              </label>
+            </div>
+          </div>
+
+          <div class="kv-row">
+            <div class="k">Strategy</div>
+            <div class="v row">
+              <label> Front
+                <select id="cfg-front"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
+              </label>
+              <label> Pace
+                <select id="cfg-pace"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
+              </label>
+              <label> Late
+                <select id="cfg-late"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
+              </label>
+              <label> End
+                <select id="cfg-end"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rows builder (auto-add; live optimize) -->
+      <section class="card">
+        <div class="toolbar" role="group" aria-label="Skill rows">
+          <span class="muted">Tip: pick a category and a skill for each row</span>
+          <div class="spacer"></div>
+          <button id="clear-all" class="btn" type="button">Clear All</button>
+        </div>
+        <div id="rows" class="rows"></div>
+      </section>
+
+      <!-- Results -->
+      <section class="card">
+        <h3 style="margin:.2rem 0 .5rem 0">Results</h3>
+        <div id="results" class="results">
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px;">
+            <div class="pill"><b>Best Score:</b> <span id="best-score">0</span></div>
+            <div class="pill"><b>Used Points:</b> <span id="used-points">0</span></div>
+            <div class="pill"><b>Total Points:</b> <span id="total-points">0</span></div>
+            <div class="pill"><b>Remaining:</b> <span id="remaining-points">0</span></div>
+          </div>
+          <div class="results-list" id="selected-list" style="margin-top:.75rem"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Declare routes so nav.js can render the shared navbar (like other pages) -->
+    <script>
+      window.NAV_ROUTES = [
+        { label: "Events", path: "/", file: "/index.html" },
+        { label: "Support Hints", path: "/hints", file: "/hints.html" },
+        { label: "Umadle", path: "/umadle", file: "/umadle.html" },
+        { label: "Randomizer", path: "/random", file: "/random.html" },
+        { label: "Optimizer", path: "/optimizer", file: "/optimizer.html" }
+      ];
+    </script>
+
+    <script src="nav.js" defer></script>
+    <script>
+      (function () {
+        function applyTheme(dark, persist) {
+          document.documentElement.classList.toggle("dark-mode", dark);
+          document.body.classList.toggle("dark-mode", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+          try { if (persist) localStorage.setItem("umasearch-darkmode", dark ? "dark" : "light"); } catch (e) {}
+          var sun = document.getElementById("iconSun");
+          var moon = document.getElementById("iconMoon");
+          if (sun && moon) { sun.style.display = dark ? "none" : "inline"; moon.style.display = dark ? "inline" : "none"; }
+        }
+        // init based on class set by no-flash block
+        applyTheme(document.documentElement.classList.contains("dark-mode"), false);
+        var btn = document.getElementById("modeToggleBtn");
+        if (btn) btn.addEventListener("click", function(){
+          applyTheme(!document.documentElement.classList.contains("dark-mode"), true);
+        });
+        window.addEventListener("storage", function (e) { if (e.key === "umasearch-darkmode") applyTheme(e.newValue === "dark", false); });
+      })();
+    </script>
+    <script src="optimizer.js" defer></script>
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="Optimize Uma Musume skills for maximum score given a skill points budget." />
+  </body>
+</html>

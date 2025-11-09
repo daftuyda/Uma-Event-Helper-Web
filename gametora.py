@@ -273,6 +273,10 @@ def new_driver(headless: bool = True) -> webdriver.Chrome:
         opts.add_argument("--headless=new")
     opts.add_argument("--window-size=1920,1080")
 
+    opts.add_argument(
+        "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+    )
+
     # Force SwiftShader / software GPU (Chrome 139+)
     opts.add_argument("--enable-unsafe-swiftshader")
     opts.add_argument("--use-gl=swiftshader")
@@ -289,16 +293,21 @@ def new_driver(headless: bool = True) -> webdriver.Chrome:
     opts.set_capability("pageLoadStrategy", "eager")
 
     service = Service(ChromeDriverManager().install())
-    d = webdriver.Chrome(service=service, options=opts)
-    d.set_page_load_timeout(NAV_TIMEOUT)
-    d.set_script_timeout(JS_TIMEOUT)
+    driver = webdriver.Chrome(service=service, options=opts)
+    driver.set_page_load_timeout(NAV_TIMEOUT)
+    driver.set_script_timeout(JS_TIMEOUT)
     
     try:
-        d.command_executor._client_config.timeout = 300
+        driver.command_executor._client_config.timeout = 300
     except Exception:
         pass
-    
-    return d
+
+    try:
+        print("[debug] User-Agent:", driver.execute_script("return navigator.userAgent;"))
+    except Exception:
+        pass
+
+    return driver
 
 def safe_find(driver, by, sel):
     try: return driver.find_element(by, sel)
