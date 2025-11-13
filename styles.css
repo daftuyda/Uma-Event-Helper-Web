@@ -2194,14 +2194,17 @@ body.dark-mode .results-list .result-item.cat-ius, body.dark-mode .results-list 
 .rows { display: grid; gap: 10px; }
 .optimizer-row {
   display: grid;
-  grid-template-columns: minmax(140px, 220px) 1fr 120px auto;
-  gap: 12px;
-  padding: 12px 14px;
+  grid-template-columns: minmax(110px, 0.25fr) minmax(220px, 1fr) minmax(100px, 0.25fr) auto;
+  gap: 14px;
+  padding: 14px 16px;
   border: 1px solid var(--border, #e5e7eb);
-  border-radius: 12px;
+  border-radius: 14px;
   background: var(--card-bg, #fff);
-  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
   align-items: center;
+}
+.optimizer-row > * {
+  min-width: 0;
 }
 /* category accent strip */
 .optimizer-row.cat-gold { border-left: 4px solid #c28f2c; }
@@ -2217,31 +2220,58 @@ body.dark-mode .results-list .result-item.cat-ius, body.dark-mode .results-list 
 .optimizer-row.cat-green { background-color: rgba(52,211,153,.14); }
 .optimizer-row.cat-red { background-color: rgba(248,113,113,.14); }
 .optimizer-row.cat-ius, .optimizer-row.cat-orange { background-color: rgba(251,146,60,.14); }
-.optimizer-row .category,
 .optimizer-row .skill-name,
 .optimizer-row .cost {
+  width: 100%;
   padding: 6px 8px;
   border: 1px solid var(--border, #d1d5db);
   border-radius: 8px;
   font: inherit;
   background: var(--input-bg, #fff);
+  box-sizing: border-box;
 }
+
+.optimizer-row .category-chip {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 1px dashed var(--border, #d1d5db);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .85rem;
+  background: var(--input-bg, #fff);
+  transition: border-color .2s, background-color .2s;
+}
+
+.optimizer-row .category-chip[data-empty="true"] {
+  opacity: .75;
+  font-weight: 500;
+}
+
 /* tint inputs per category */
-.optimizer-row.cat-gold .category, .optimizer-row.cat-gold .skill-name, .optimizer-row.cat-gold .cost { border-color: rgba(194,143,44,.5); }
-.optimizer-row.cat-yellow .category, .optimizer-row.cat-yellow .skill-name, .optimizer-row.cat-yellow .cost { border-color: rgba(250,204,21,.5); }
-.optimizer-row.cat-blue .category, .optimizer-row.cat-blue .skill-name, .optimizer-row.cat-blue .cost { border-color: rgba(96,165,250,.5); }
-.optimizer-row.cat-green .category, .optimizer-row.cat-green .skill-name, .optimizer-row.cat-green .cost { border-color: rgba(52,211,153,.5); }
-.optimizer-row.cat-red .category, .optimizer-row.cat-red .skill-name, .optimizer-row.cat-red .cost { border-color: rgba(248,113,113,.5); }
-.optimizer-row.cat-ius .category, .optimizer-row.cat-ius .skill-name, .optimizer-row.cat-ius .cost,
-.optimizer-row.cat-orange .category, .optimizer-row.cat-orange .skill-name, .optimizer-row.cat-orange .cost { border-color: rgba(251,146,60,.5); }
+.optimizer-row.cat-gold .category-chip, .optimizer-row.cat-gold .skill-name, .optimizer-row.cat-gold .cost { border-color: rgba(194,143,44,.5); }
+.optimizer-row.cat-yellow .category-chip, .optimizer-row.cat-yellow .skill-name, .optimizer-row.cat-yellow .cost { border-color: rgba(250,204,21,.5); }
+.optimizer-row.cat-blue .category-chip, .optimizer-row.cat-blue .skill-name, .optimizer-row.cat-blue .cost { border-color: rgba(96,165,250,.5); }
+.optimizer-row.cat-green .category-chip, .optimizer-row.cat-green .skill-name, .optimizer-row.cat-green .cost { border-color: rgba(52,211,153,.5); }
+.optimizer-row.cat-red .category-chip, .optimizer-row.cat-red .skill-name, .optimizer-row.cat-red .cost { border-color: rgba(248,113,113,.5); }
+.optimizer-row.cat-ius .category-chip, .optimizer-row.cat-ius .skill-name, .optimizer-row.cat-ius .cost,
+.optimizer-row.cat-orange .category-chip, .optimizer-row.cat-orange .skill-name, .optimizer-row.cat-orange .cost { border-color: rgba(251,146,60,.5); }
 .optimizer-row .remove.btn {
   justify-self: end;
+  align-self: center;
+  white-space: nowrap;
+  padding-inline: 14px;
 }
+
 /* Linked lower-skill row variant */
 .optimizer-row.linked-lower {
   border-style: dashed;
   opacity: .95;
 }
+
 .optimizer-row.linked-lower .remove.btn { display: none; }
 
 /* Small labels inside grid cells */
@@ -2253,6 +2283,7 @@ body.dark-mode .optimizer-row {
   border-color: #2b2f36;
   box-shadow: none;
 }
+
 /* strengthen accent strip contrast in dark-mode */
 body.dark-mode .optimizer-row.cat-gold { border-left-color: #f2c56a; }
 body.dark-mode .optimizer-row.cat-yellow { border-left-color: #fde047; }
@@ -2266,7 +2297,7 @@ body.dark-mode .optimizer-row.cat-blue { background-color: rgba(147,197,253,.24)
 body.dark-mode .optimizer-row.cat-green { background-color: rgba(110,231,183,.24); }
 body.dark-mode .optimizer-row.cat-red { background-color: rgba(252,165,165,.24); }
 body.dark-mode .optimizer-row.cat-ius, body.dark-mode .optimizer-row.cat-orange { background-color: rgba(253,186,116,.24); }
-body.dark-mode .optimizer-row .category,
+body.dark-mode .optimizer-row .category-chip,
 body.dark-mode .optimizer-row .skill-name,
 body.dark-mode .optimizer-row .cost {
   background: #0c0d10;
@@ -2274,7 +2305,7 @@ body.dark-mode .optimizer-row .cost {
   color: #e5e7eb;
 }
 /* Compact on narrow screens */
-@media (max-width: 700px) {
+@media (max-width: 960px) {
   .optimizer-row { grid-template-columns: 1fr; }
   .optimizer-row .remove.btn { justify-self: stretch; }
 }
@@ -2347,3 +2378,64 @@ body.dark-mode .race-config-container select {
   background-position: right 10px center;
   background-size: 14px 14px;
 }
+
+/* ===== Light mode visual boost ===== */
+body:not(.dark-mode) {
+  --card-bg: #f9fafb;     /* slightly tinted panel */
+  --border: #9ca3af;      /* stronger border */
+  --muted: #4b5563;       /* darker label text */
+  --input-bg: #ffffff;    /* crisp inputs */
+}
+
+/* Cards pop more */
+body:not(.dark-mode) .card {
+  background: var(--card-bg);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+}
+
+/* Optimizer rows: stronger contrast & shadow */
+body:not(.dark-mode) .optimizer-row {
+  background: #f3f4f6;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.14);
+}
+
+/* Inputs: clearer outlines */
+body:not(.dark-mode) .optimizer-row .skill-name,
+body:not(.dark-mode) .optimizer-row .cost {
+  background: #ffffff;
+}
+
+/* Category chip: filled pill so it stands out */
+body:not(.dark-mode) .optimizer-row .category-chip {
+  background: #111827;
+  color: #f9fafb;
+  border-style: solid;
+}
+
+/* Keep color-coded tints but slightly stronger */
+body:not(.dark-mode) .optimizer-row.cat-gold { background-color: rgba(194, 143, 44, 0.18); }
+body:not(.dark-mode) .optimizer-row.cat-yellow { background-color: rgba(250, 204, 21, 0.18); }
+body:not(.dark-mode) .optimizer-row.cat-blue { background-color: rgba(96, 165, 250, 0.20); }
+body:not(.dark-mode) .optimizer-row.cat-green { background-color: rgba(52, 211, 153, 0.20); }
+body:not(.dark-mode) .optimizer-row.cat-red { background-color: rgba(248, 113, 113, 0.20); }
+body:not(.dark-mode) .optimizer-row.cat-ius,
+body:not(.dark-mode) .optimizer-row.cat-orange { background-color: rgba(251, 146, 60, 0.20); }
+
+/* Results pills: more “badge” feeling */
+body:not(.dark-mode) .pill {
+  background: #dbeafe;
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+/* Buttons: darker + clearer hover */
+body:not(.dark-mode) .btn {
+  background: #111827;
+  color: #f9fafb;
+}
+
+body:not(.dark-mode) .btn:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.35);
+}
+

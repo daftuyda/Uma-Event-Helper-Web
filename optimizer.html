@@ -140,18 +140,8 @@
         </div>
       </section>
 
-      <!-- Rows builder (auto-add; live optimize) -->
-      <section class="card">
-        <div class="toolbar" role="group" aria-label="Skill rows">
-          <span class="muted">Tip: pick a category and a skill for each row</span>
-          <div class="spacer"></div>
-          <button id="clear-all" class="btn" type="button">Clear All</button>
-        </div>
-        <div id="rows" class="rows"></div>
-      </section>
-
       <!-- Results -->
-      <section class="card" style="margin-top:16px">
+      <section class="card" style="margin-bottom:16px">
         <h3 style="margin:.2rem 0 .5rem 0">Results</h3>
         <div id="results" class="results">
           <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px;">
@@ -162,6 +152,16 @@
           </div>
           <div class="results-list" id="selected-list" style="margin-top:.75rem"></div>
         </div>
+      </section>
+
+      <!-- Rows builder (auto-add; live optimize) -->
+      <section class="card">
+        <div class="toolbar" role="group" aria-label="Skill rows">
+          <span class="muted">Tip: just enter the skill name and cost - its type auto-detects</span>
+          <div class="spacer"></div>
+          <button id="clear-all" class="btn" type="button">Clear All</button>
+        </div>
+        <div id="rows" class="rows"></div>
       </section>
     </main>
 

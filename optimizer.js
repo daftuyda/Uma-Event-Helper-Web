@@ -34,6 +34,8 @@
   let skillsByCategory = {};    // category -> [{ name, score, checkType }]
   let categories = [];
   const preferredOrder = ['golden','yellow','blue','green','red','purple','ius'];
+  let skillIndex = new Map();   // normalized name -> { name, score, checkType, category }
+  let allSkillNames = [];
 
   function normalize(str) { return (str || '').toString().trim().toLowerCase(); }
 
@@ -110,6 +112,39 @@
   }
   const autoOptimizeDebounced = debounce(tryAutoOptimize, 120);
 
+  function rebuildSkillCaches() {
+    const nextIndex = new Map();
+    const names = [];
+    Object.entries(skillsByCategory).forEach(([category, list = []]) => {
+      list.forEach(skill => {
+        if (!skill || !skill.name) return;
+        const key = normalize(skill.name);
+        if (!nextIndex.has(key)) {
+          names.push(skill.name);
+        }
+        nextIndex.set(key, { ...skill, category });
+      });
+    });
+    skillIndex = nextIndex;
+    const uniqueNames = Array.from(new Set(names));
+    uniqueNames.sort((a, b) => a.localeCompare(b));
+    allSkillNames = uniqueNames;
+    refreshAllRows();
+  }
+
+  function findSkillByName(name) {
+    const key = normalize(name);
+    return skillIndex.get(key) || null;
+  }
+
+  function formatCategoryLabel(cat) {
+    if (!cat) return 'Auto';
+    const canon = canonicalCategory(cat);
+    if (canon === 'gold') return 'Gold';
+    if (canon === 'ius') return 'Unique';
+    return cat.charAt(0).toUpperCase() + cat.slice(1);
+  }
+
   function applyFallbackSkills(reason) {
     skillsByCategory = {
       golden: [
@@ -123,6 +158,7 @@
       blue: [ { name: 'Stealth Mode', score: { base: 195, good: 195, average: 159, bad: 142, terrible: 124 }, checkType: 'Late' } ]
     };
     categories = Object.keys(skillsByCategory);
+    rebuildSkillCaches();
     libStatus.textContent = `Using fallback skills (${reason})`;
   }
 
@@ -140,6 +176,7 @@
       skillsByCategory[color] = list.map(item => ({ name: item.name, score: item.score, checkType: item['check-type'] || '' }));
     }
     categories.sort((a, b) => { const ia = preferredOrder.indexOf(a), ib = preferredOrder.indexOf(b); if (ia !== -1 || ib !== -1) return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib); return a.localeCompare(b); });
+    rebuildSkillCaches();
     const totalSkills = Object.values(skillsByCategory).reduce((acc, arr) => acc + arr.length, 0);
     if (categories.length === 0 || totalSkills === 0) applyFallbackSkills('empty library'); else libStatus.textContent += ` ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢ ${totalSkills} skills in ${categories.length} categories`;
   }
@@ -177,7 +214,7 @@
     }
     skillsByCategory = catMap; categories = Object.keys(catMap).sort((a,b)=>{const ia=preferredOrder.indexOf(a), ib=preferredOrder.indexOf(b); if(ia!==-1||ib!==-1) return (ia===-1?999:ia) - (ib===-1?999:ib); return a.localeCompare(b)});
     const totalSkills = Object.values(skillsByCategory).reduce((acc, arr) => acc + arr.length, 0);
-    refreshAllRows();
+    rebuildSkillCaches();
     return true;
   }
 
@@ -207,35 +244,9 @@
     return false;
   }
 
-  function buildCategoryOptions(selectEl) {
-    selectEl.innerHTML = '';
-    const blank = document.createElement('option');
-    blank.value = '';
-    blank.textContent = '';
-    selectEl.appendChild(blank);
-    categories.forEach(cat => { const opt = document.createElement('option'); opt.value = cat; opt.textContent = cat; selectEl.appendChild(opt); });
-  }
-
   function isGoldCategory(cat) {
     const v = (cat || '').toLowerCase();
     return v === 'golden' || v === 'gold' || v.includes('gold');
-  }
-
-  function pickLowerCategory() {
-    const allowed = ['yellow','blue','red','green'];
-    for (const a of allowed) { if (categories.includes(a)) return a; }
-    const alt = categories.find(c => !isGoldCategory(c));
-    return alt || '';
-  }
-
-  function buildLowerCategoryOptions(selectEl) {
-    selectEl.innerHTML = '';
-    const allowed = ['yellow','blue','red','green'];
-    const present = allowed.filter(a => categories.includes(a));
-    present.forEach(cat => { const opt = document.createElement('option'); opt.value = cat; opt.textContent = cat; selectEl.appendChild(opt); });
-    if (!present.length) {
-      const opt = document.createElement('option'); opt.value = ''; opt.textContent = ''; selectEl.appendChild(opt);
-    }
   }
 
   function canonicalCategory(cat) {
@@ -260,34 +271,29 @@
     else if (c === 'ius') row.classList.add('cat-ius');
   }
 
-  function populateSkillDatalist(datalistEl, category) {
+  function populateSkillDatalist(datalistEl) {
     datalistEl.innerHTML = '';
-    const list = skillsByCategory[category] || [];
-    list.forEach(item => { const opt = document.createElement('option'); opt.value = item.name; datalistEl.appendChild(opt); });
+    allSkillNames.forEach(name => { const opt = document.createElement('option'); opt.value = name; datalistEl.appendChild(opt); });
   }
 
   function refreshAllRows() {
     const dataRows = rowsEl.querySelectorAll('.optimizer-row');
     dataRows.forEach(row => {
-      const catSel = row.querySelector('.category');
-      const skillInput = row.querySelector('.skill-name');
       const skillList = row.querySelector('datalist[id^="skills-datalist-"]');
-      if (!catSel || !skillInput || !skillList) return;
-      const prevCat = catSel.value, prevSkill = skillInput.value;
-      buildCategoryOptions(catSel);
-      if (prevCat && (prevCat === '' || categories.includes(prevCat))) catSel.value = prevCat;
-      populateSkillDatalist(skillList, catSel.value);
-      if (prevSkill) skillInput.value = prevSkill; // do not auto-fill
+      if (skillList) populateSkillDatalist(skillList);
+      if (typeof row.syncSkillCategory === 'function') {
+        row.syncSkillCategory({ triggerOptimize: false, allowLinking: false });
+      }
     });
   }
 
   function isTopLevelRow(row) { return !row.dataset.parentGoldId; }
   function isRowFilled(row) {
-    const cat = (row.querySelector('.category')?.value || '').trim();
     const name = (row.querySelector('.skill-name')?.value || '').trim();
     const costVal = row.querySelector('.cost')?.value;
     const cost = typeof costVal === 'string' && costVal.length ? parseInt(costVal, 10) : NaN;
-    return !!cat && !!name && !isNaN(cost) && cost >= 0;
+    const skillKnown = !!findSkillByName(name);
+    return skillKnown && !isNaN(cost) && cost >= 0;
   }
   function ensureOneEmptyRow() {
     const rows = Array.from(rowsEl.querySelectorAll('.optimizer-row'))
@@ -321,100 +327,131 @@
     const id = Math.random().toString(36).slice(2);
     row.dataset.rowId = id;
     row.innerHTML = `
-      <select class="category"></select>
+      <div class="type-cell">
+        <label>Type</label>
+        <div class="category-chip" data-empty="true">Auto</div>
+      </div>
       <div>
+        <label>Skill</label>
         <input type="text" class="skill-name" list="skills-datalist-${id}" placeholder="Start typing..." />
         <datalist id="skills-datalist-${id}"></datalist>
       </div>
-      <input type="number" min="0" step="1" class="cost" placeholder="Cost" />
-      <button type="button" class="btn remove">Remove</button>
+      <div>
+        <label>Cost</label>
+        <input type="number" min="0" step="1" class="cost" placeholder="Cost" />
+      </div>
+      <div class="remove-cell">
+        <label class="remove-label">&nbsp;</label>
+        <button type="button" class="btn remove">Remove</button>
+      </div>
     `;
-    row.querySelector('.remove').addEventListener('click', () => {
-      if (row.dataset.lowerRowId) {
-        const linked = rowsEl.querySelector(`.optimizer-row[data-row-id="${row.dataset.lowerRowId}"]`);
-        if (linked) linked.remove();
-        delete row.dataset.lowerRowId;
-      }
-      row.remove();
-      saveState();
-      ensureOneEmptyRow();
-      autoOptimizeDebounced();
-    });
-    const catSel = row.querySelector('.category');
+    const removeBtn = row.querySelector('.remove');
+    if (removeBtn) {
+      removeBtn.addEventListener('click', () => {
+        if (row.dataset.lowerRowId) {
+          const linked = rowsEl.querySelector(`.optimizer-row[data-row-id="${row.dataset.lowerRowId}"]`);
+          if (linked) linked.remove();
+          delete row.dataset.lowerRowId;
+        }
+        row.remove();
+        saveState();
+        ensureOneEmptyRow();
+        autoOptimizeDebounced();
+      });
+    }
     const skillInput = row.querySelector('.skill-name');
     const skillList = row.querySelector(`#skills-datalist-${id}`);
-    buildCategoryOptions(catSel);
-    populateSkillDatalist(skillList, catSel.value);
+    const categoryChip = row.querySelector('.category-chip');
+    if (skillList) populateSkillDatalist(skillList);
 
-    function ensureLinkedLowerForGold() {
-      const isGold = isGoldCategory(catSel.value);
+    function setCategoryDisplay(category) {
+      row.dataset.skillCategory = category || '';
+      if (categoryChip) {
+        if (category) {
+          categoryChip.textContent = formatCategoryLabel(category);
+          categoryChip.dataset.empty = 'false';
+        } else {
+          categoryChip.textContent = 'Auto';
+          categoryChip.dataset.empty = 'true';
+        }
+      }
+      applyCategoryAccent(row, category);
+    }
+
+    function ensureLinkedLowerForGold(category, { allowCreate = true } = {}) {
+      if (row.dataset.parentGoldId) return;
+      const isGold = isGoldCategory(category);
       const currentLinkedId = row.dataset.lowerRowId;
-      applyCategoryAccent(row, catSel.value);
       if (!isGold) {
         if (currentLinkedId) {
           const linked = rowsEl.querySelector(`.optimizer-row[data-row-id="${currentLinkedId}"]`);
           if (linked) linked.remove();
-          delete row.dataset.lowerRowId; saveState();
+          delete row.dataset.lowerRowId;
+          saveState();
+          ensureOneEmptyRow();
+          autoOptimizeDebounced();
         }
         return;
       }
-      if (currentLinkedId) return; // already exists
-      const linked = document.createElement('div'); linked.className = 'optimizer-row linked-lower';
-      const lid = Math.random().toString(36).slice(2);
-      linked.dataset.rowId = lid; linked.dataset.parentGoldId = id;
-      const lowerCat = pickLowerCategory();
-      linked.innerHTML = `
-        <select class="category"></select>
-        <div>
-          <input type="text" class="skill-name" list="skills-datalist-${lid}" placeholder="Lower skill..." />
-          <datalist id="skills-datalist-${lid}"></datalist>
-        </div>
-        <input type="number" min="0" step="1" class="cost" placeholder="Cost" />
-        <button type="button" class="btn remove">Remove</button>
-      `;
+      if (!allowCreate || currentLinkedId) return;
+      const linked = makeRow();
+      linked.classList.add('linked-lower');
+      linked.dataset.parentGoldId = id;
+      const lid = linked.dataset.rowId;
+      const linkedInput = linked.querySelector('.skill-name');
+      if (linkedInput) linkedInput.placeholder = 'Lower skill...';
       const linkedRemove = linked.querySelector('.remove');
-      if (linkedRemove) { linkedRemove.disabled = true; linkedRemove.title = 'Remove the gold row to unlink'; linkedRemove.style.pointerEvents = 'none'; linkedRemove.style.opacity = '0.4'; }
-      const linkedSkillList = linked.querySelector(`#skills-datalist-${lid}`);
-      const lowerSel = linked.querySelector('.category');
-      buildLowerCategoryOptions(lowerSel);
-      if (lowerCat) lowerSel.value = lowerCat;
-      populateSkillDatalist(linkedSkillList, lowerSel.value);
-      applyCategoryAccent(linked, lowerSel.value);
-      lowerSel.addEventListener('change', () => { populateSkillDatalist(linkedSkillList, lowerSel.value); applyCategoryAccent(linked, lowerSel.value); saveState(); });
-      linked.style.background = '#fafafa';
+      if (linkedRemove) {
+        linkedRemove.disabled = true;
+        linkedRemove.title = 'Remove the gold row to unlink';
+        linkedRemove.style.pointerEvents = 'none';
+        linkedRemove.style.opacity = '0.4';
+      }
       rowsEl.insertBefore(linked, row.nextSibling);
       row.dataset.lowerRowId = lid;
+      if (typeof linked.syncSkillCategory === 'function') {
+        linked.syncSkillCategory({ triggerOptimize: false, allowLinking: false });
+      }
       saveState();
       ensureOneEmptyRow();
       autoOptimizeDebounced();
     }
 
-  catSel.addEventListener('change', () => {
-    populateSkillDatalist(skillList, catSel.value);
-    ensureLinkedLowerForGold();
-    ensureOneEmptyRow();
-    autoOptimizeDebounced();
-  });
-  // Ensure proper state if category preset programmatically
-  ensureLinkedLowerForGold();
-  return row;
-}
+    function syncSkillCategory({ triggerOptimize = false, allowLinking = true } = {}) {
+      if (!skillInput) return;
+      const skill = findSkillByName(skillInput.value);
+      const category = skill ? skill.category : '';
+      setCategoryDisplay(category);
+      ensureLinkedLowerForGold(category, { allowCreate: allowLinking });
+      if (triggerOptimize) {
+        saveState();
+        ensureOneEmptyRow();
+        autoOptimizeDebounced();
+      }
+    }
+
+    row.syncSkillCategory = syncSkillCategory;
+    setCategoryDisplay(row.dataset.skillCategory || '');
+    if (skillInput) {
+      skillInput.addEventListener('input', () => syncSkillCategory({ triggerOptimize: true }));
+      skillInput.addEventListener('change', () => syncSkillCategory({ triggerOptimize: true }));
+    }
+    return row;
+  }
 
   function collectItems() {
     const items = []; const rowsMeta = [];
     const rows = rowsEl.querySelectorAll('.optimizer-row');
     rows.forEach(row => {
-      const catSel = row.querySelector('.category');
       const nameInput = row.querySelector('.skill-name');
       const costEl = row.querySelector('.cost');
-      if (!catSel || !nameInput || !costEl) return; // header row
-      const category = catSel.value;
+      if (!nameInput || !costEl) return;
       const name = (nameInput.value || '').trim();
       const cost = parseInt(costEl.value, 10);
       if (!name || isNaN(cost)) return;
-      const list = skillsByCategory[category] || [];
-      const skill = list.find(s => s.name === name);
+      const skill = findSkillByName(name);
       if (!skill) return;
+      const category = skill.category || '';
       const score = evaluateSkillScore(skill);
       const rowId = row.dataset.rowId || Math.random().toString(36).slice(2);
       const parentGoldId = row.dataset.parentGoldId || '';
@@ -496,64 +533,68 @@
     Object.entries(cfg).forEach(([k, el]) => { state.cfg[k] = el ? el.value : 'A'; });
     const rows = rowsEl.querySelectorAll('.optimizer-row');
     rows.forEach(row => {
-      const catSel = row.querySelector('.category');
       const nameInput = row.querySelector('.skill-name');
       const costEl = row.querySelector('.cost');
-      if (!catSel || !nameInput || !costEl) return;
-      state.rows.push({ id: row.dataset.rowId || '', category: catSel.value || '', name: nameInput.value || '', cost: parseInt(costEl.value, 10) || 0, parentGoldId: row.dataset.parentGoldId || '', lowerRowId: row.dataset.lowerRowId || '' });
+      if (!nameInput || !costEl) return;
+      state.rows.push({
+        id: row.dataset.rowId || '',
+        category: row.dataset.skillCategory || '',
+        name: nameInput.value || '',
+        cost: parseInt(costEl.value, 10) || 0,
+        parentGoldId: row.dataset.parentGoldId || '',
+        lowerRowId: row.dataset.lowerRowId || ''
+      });
     });
     try { localStorage.setItem('optimizerState', JSON.stringify(state)); } catch {}
   }
 
   function loadState() {
-  try {
-    const raw = localStorage.getItem('optimizerState'); if (!raw) return false;
-    const state = JSON.parse(raw); if (!state || !Array.isArray(state.rows)) return false;
-    budgetInput.value = state.budget || 0;
-    Object.entries(state.cfg || {}).forEach(([k, v]) => { if (cfg[k]) cfg[k].value = v; });
-    // clear existing rows (keep header)
-    Array.from(rowsEl.querySelectorAll('.optimizer-row')).slice(1).forEach(n => n.remove());
-    const created = new Map();
-    // First pass: create all rows
-    state.rows.forEach(r => {
-      const row = makeRow(); rowsEl.appendChild(row);
-      if (r.id) row.dataset.rowId = r.id;
-      const catSel = row.querySelector('.category');
-      catSel.value = r.category || catSel.value;
-      const skillInput = row.querySelector('.skill-name');
-      const skillList = row.querySelector('datalist[id^="skills-datalist-"]');
-      populateSkillDatalist(skillList, catSel.value);
-      skillInput.value = r.name || '';
-      row.querySelector('.cost').value = r.cost || 0;
-      applyCategoryAccent(row, catSel.value);
-      if (r.parentGoldId) {
-        row.dataset.parentGoldId = r.parentGoldId;
-        // style as linked lower
-        row.classList.add('linked-lower');
-        const linkedCat = row.querySelector('.category');
-        linkedCat.value = r.category || linkedCat.value; const sl2 = row.querySelector('datalist[id^="skills-datalist-"]'); populateSkillDatalist(sl2, linkedCat.value);
-        applyCategoryAccent(row, linkedCat.value);
-      }
-      created.set(row.dataset.rowId, row);
-    });
-    // Second pass: attach lower linkage on parent rows
-    state.rows.forEach(r => {
-      if (r.parentGoldId && created.has(r.parentGoldId)) {
-        const parent = created.get(r.parentGoldId);
-        parent.dataset.lowerRowId = r.id || '';
-        // ensure linked row is just below parent
-        const child = created.get(r.id);
-        if (child && child.previousSibling !== parent) {
-          rowsEl.removeChild(child);
-          rowsEl.insertBefore(child, parent.nextSibling);
+    try {
+      const raw = localStorage.getItem('optimizerState'); if (!raw) return false;
+      const state = JSON.parse(raw); if (!state || !Array.isArray(state.rows)) return false;
+      budgetInput.value = state.budget || 0;
+      Object.entries(state.cfg || {}).forEach(([k, v]) => { if (cfg[k]) cfg[k].value = v; });
+      Array.from(rowsEl.querySelectorAll('.optimizer-row')).forEach(n => n.remove());
+      const created = new Map();
+      let createdAny = false;
+      state.rows.forEach(r => {
+        const row = makeRow(); rowsEl.appendChild(row);
+        createdAny = true;
+        if (r.id) row.dataset.rowId = r.id;
+        if (r.parentGoldId) {
+          row.dataset.parentGoldId = r.parentGoldId;
+          row.classList.add('linked-lower');
+          const linkedInput = row.querySelector('.skill-name');
+          if (linkedInput) linkedInput.placeholder = 'Lower skill...';
         }
-      }
-    });
-    // persist any normalized changes (e.g., after library categories load)
-    saveState();
-    return true;
-  } catch { return false; }
-}
+        const skillInput = row.querySelector('.skill-name');
+        if (skillInput) skillInput.value = r.name || '';
+        const costEl = row.querySelector('.cost');
+        if (costEl) costEl.value = typeof r.cost === 'number' && !isNaN(r.cost) ? r.cost : 0;
+        if (r.category) row.dataset.skillCategory = r.category;
+        if (typeof row.syncSkillCategory === 'function') {
+          row.syncSkillCategory({ triggerOptimize: false, allowLinking: false });
+        } else {
+          applyCategoryAccent(row, r.category || '');
+        }
+        created.set(row.dataset.rowId, row);
+      });
+      state.rows.forEach(r => {
+        if (r.parentGoldId && created.has(r.parentGoldId)) {
+          const parent = created.get(r.parentGoldId);
+          parent.dataset.lowerRowId = r.id || '';
+          const child = created.get(r.id);
+          if (child && child.previousSibling !== parent) {
+            rowsEl.removeChild(child);
+            rowsEl.insertBefore(child, parent.nextSibling);
+          }
+        }
+      });
+      if (!createdAny) return false;
+      saveState();
+      return true;
+    } catch { return false; }
+  }
 
   // events
   if (addRowBtn) addRowBtn.addEventListener('click', () => { rowsEl.appendChild(makeRow()); saveState(); });
