@@ -16,6 +16,11 @@
   const totalPointsEl = document.getElementById('total-points');
   const remainingPointsEl = document.getElementById('remaining-points');
   const selectedListEl = document.getElementById('selected-list');
+  const autoBuildBtn = document.getElementById('auto-build-btn');
+  const autoTargetInputs = document.querySelectorAll('input[name="auto-target"]');
+  const autoBuilderStatus = document.getElementById('auto-builder-status');
+  const copyBuildBtn = document.getElementById('copy-build');
+  const loadBuildBtn = document.getElementById('load-build');
 
   // Race config selects (mirroring main page)
   const cfg = {
@@ -38,6 +43,35 @@
   let allSkillNames = [];
 
   function normalize(str) { return (str || '').toString().trim().toLowerCase(); }
+
+  async function tryWriteClipboard(text) {
+    if (navigator?.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+    return false;
+  }
+
+  async function copyViaFallback(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    ta.style.pointerEvents = 'none';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    const ok = document.execCommand('copy');
+    ta.remove();
+    if (!ok) throw new Error('execCommand copy failed');
+  }
+
+  async function tryReadClipboard() {
+    if (navigator?.clipboard?.readText) {
+      return await navigator.clipboard.readText();
+    }
+    return '';
+  }
 
   function getBucketForGrade(grade) {
     switch ((grade || '').toUpperCase()) {
@@ -87,6 +121,170 @@
     const bucket = getBucketForSkill(skill.checkType);
     const val = skill.score[bucket];
     return typeof val === 'number' ? val : 0;
+  }
+
+  function setAutoStatus(message, isError = false) {
+    if (!autoBuilderStatus) return;
+    autoBuilderStatus.textContent = message || '';
+    autoBuilderStatus.dataset.state = isError ? 'error' : 'info';
+  }
+
+  function getSelectedAutoTargets() {
+    if (!autoTargetInputs || !autoTargetInputs.length) return [];
+    return Array.from(autoTargetInputs)
+      .filter(input => input.checked)
+      .map(input => normalize(input.value))
+      .filter(Boolean);
+  }
+
+  function setAutoTargetSelections(list) {
+    if (!autoTargetInputs || !autoTargetInputs.length) return;
+    const normalized = Array.isArray(list) ? new Set(list.map(v => normalize(v))) : null;
+    autoTargetInputs.forEach(input => {
+      if (!normalized || !normalized.size) {
+        input.checked = true;
+      } else {
+        input.checked = normalized.has(normalize(input.value));
+      }
+    });
+  }
+
+  let autoHighlightTimer = null;
+
+  function matchesAutoTargets(item, targetSet, includeGeneral) {
+    const check = normalize(item.checkType);
+    if (!check) return includeGeneral;
+    if (!targetSet.has(check)) return false;
+    return getBucketForSkill(item.checkType) === 'good';
+  }
+
+  function replaceRowsWithItems(items) {
+    if (!rowsEl) return;
+    clearAutoHighlights();
+    Array.from(rowsEl.querySelectorAll('.optimizer-row')).forEach(n => n.remove());
+    items.forEach(it => {
+      const row = makeRow();
+      rowsEl.appendChild(row);
+      const nameInput = row.querySelector('.skill-name');
+      if (nameInput) nameInput.value = it.name;
+      const costInput = row.querySelector('.cost');
+      if (costInput) costInput.value = it.cost;
+      row.dataset.skillCategory = it.category || '';
+      if (typeof row.syncSkillCategory === 'function') {
+        row.syncSkillCategory({ triggerOptimize: false, allowLinking: false });
+      } else {
+        applyCategoryAccent(row, it.category || '');
+      }
+    });
+    ensureOneEmptyRow();
+    saveState();
+    autoOptimizeDebounced();
+  }
+
+  function clearAutoHighlights() {
+    if (autoHighlightTimer) {
+      clearTimeout(autoHighlightTimer);
+      autoHighlightTimer = null;
+    }
+    if (!rowsEl) return;
+    Array.from(rowsEl.querySelectorAll('.optimizer-row')).forEach(row => {
+      row.classList.remove('auto-picked');
+      row.classList.remove('auto-excluded');
+    });
+  }
+
+  function applyAutoHighlights(selectedIds = [], candidateIds = []) {
+    clearTimeout(autoHighlightTimer);
+    const selected = new Set(selectedIds);
+    const candidates = new Set(candidateIds);
+    Array.from(rowsEl.querySelectorAll('.optimizer-row')).forEach(row => {
+      const id = row.dataset.rowId;
+      if (!id) return;
+      row.classList.remove('auto-picked', 'auto-excluded');
+      if (!candidates.size || !candidates.has(id)) return;
+      if (selected.has(id)) row.classList.add('auto-picked');
+      else row.classList.add('auto-excluded');
+    });
+    autoHighlightTimer = setTimeout(() => clearAutoHighlights(), 4000);
+  }
+
+  function serializeRows() {
+    const rows = [];
+    rowsEl.querySelectorAll('.optimizer-row').forEach(row => {
+      const name = row.querySelector('.skill-name')?.value?.trim();
+      const costVal = row.querySelector('.cost')?.value;
+      const cost = typeof costVal === 'string' && costVal.length ? parseInt(costVal, 10) : NaN;
+      if (!name || isNaN(cost)) return;
+      rows.push(`${name}=${cost}`);
+    });
+    return rows.join('\n');
+  }
+
+  function loadRowsFromString(str) {
+    const normalized = (str || '').replace(/\r\n?/g, '\n');
+    const entries = normalized.split(/\n+/).map(line => line.trim()).filter(Boolean);
+    if (!entries.length) throw new Error('No rows detected.');
+    Array.from(rowsEl.querySelectorAll('.optimizer-row')).forEach(n => n.remove());
+    clearAutoHighlights();
+    entries.forEach(entry => {
+      const [nameRaw, costRaw] = entry.split('=');
+      const name = (nameRaw || '').trim();
+      const cost = parseInt((costRaw || '').trim(), 10);
+      if (!name || isNaN(cost)) return;
+      const row = makeRow();
+      rowsEl.appendChild(row);
+      const nameInput = row.querySelector('.skill-name');
+      const costInput = row.querySelector('.cost');
+      if (nameInput) nameInput.value = name;
+      if (costInput) costInput.value = cost;
+      if (typeof row.syncSkillCategory === 'function') {
+        row.syncSkillCategory({ triggerOptimize: false, allowLinking: false });
+      } else {
+        applyCategoryAccent(row, row.dataset.skillCategory || '');
+      }
+    });
+    ensureOneEmptyRow();
+    saveState();
+    autoOptimizeDebounced();
+  }
+
+  function autoBuildIdealSkills() {
+    if (!categories.length || !Object.keys(skillsByCategory).length) {
+      setAutoStatus('Skill library is still loading. Please try again once it finishes.', true);
+      return;
+    }
+    const targets = getSelectedAutoTargets();
+    if (!targets.length) {
+      setAutoStatus('Select at least one target aptitude before generating a build.', true);
+      return;
+    }
+    const budget = parseInt(budgetInput.value, 10);
+    if (isNaN(budget) || budget <= 0) {
+      setAutoStatus('Enter a valid positive skill points budget first.', true);
+      budgetInput && budgetInput.focus();
+      return;
+    }
+    const { items, rowsMeta } = collectItems();
+    if (!items.length) {
+      setAutoStatus('Add at least one recognized skill with a cost before generating a build.', true);
+      return;
+    }
+    const includeGeneral = targets.includes('general');
+    const targetSet = new Set(targets.filter(t => t !== 'general'));
+    const candidates = items.filter(it => matchesAutoTargets(it, targetSet, includeGeneral));
+    if (!candidates.length) {
+      setAutoStatus('No existing rows match the selected targets with S-A affinity.', true);
+      return;
+    }
+    const groups = buildGroups(candidates, rowsMeta);
+    const result = optimizeGrouped(groups, candidates, budget);
+    if (!result.chosen.length) {
+      setAutoStatus('Budget too low to purchase any of the matching skills you entered.', true);
+      return;
+    }
+    applyAutoHighlights(result.chosen.map(it => it.id), candidates.map(it => it.id));
+    renderResults(result, budget);
+    setAutoStatus(`Highlighted ${result.chosen.length}/${candidates.length} matching skills (cost ${result.used}/${budget}).`);
   }
 
   function clearResults() {
@@ -456,7 +654,7 @@
       const rowId = row.dataset.rowId || Math.random().toString(36).slice(2);
       const parentGoldId = row.dataset.parentGoldId || '';
       const lowerRowId = row.dataset.lowerRowId || '';
-      items.push({ id: rowId, name: skill.name, cost, score, category, parentGoldId, lowerRowId });
+      items.push({ id: rowId, name: skill.name, cost, score, category, parentGoldId, lowerRowId, checkType: skill.checkType || '' });
       rowsMeta.push({ id: rowId, category, parentGoldId, lowerRowId });
     });
     return { items, rowsMeta };
@@ -529,8 +727,13 @@
 
   // persistence
   function saveState() {
-    const state = { budget: parseInt(budgetInput.value, 10) || 0, cfg: {}, rows: [] };
+    const state = { budget: parseInt(budgetInput.value, 10) || 0, cfg: {}, rows: [], autoTargets: [] };
     Object.entries(cfg).forEach(([k, el]) => { state.cfg[k] = el ? el.value : 'A'; });
+    if (autoTargetInputs && autoTargetInputs.length) {
+      state.autoTargets = Array.from(autoTargetInputs)
+        .filter(input => input.checked)
+        .map(input => input.value);
+    }
     const rows = rowsEl.querySelectorAll('.optimizer-row');
     rows.forEach(row => {
       const nameInput = row.querySelector('.skill-name');
@@ -554,6 +757,11 @@
       const state = JSON.parse(raw); if (!state || !Array.isArray(state.rows)) return false;
       budgetInput.value = state.budget || 0;
       Object.entries(state.cfg || {}).forEach(([k, v]) => { if (cfg[k]) cfg[k].value = v; });
+      if (Array.isArray(state.autoTargets) && state.autoTargets.length) {
+        setAutoTargetSelections(state.autoTargets);
+      } else {
+        setAutoTargetSelections(null);
+      }
       Array.from(rowsEl.querySelectorAll('.optimizer-row')).forEach(n => n.remove());
       const created = new Map();
       let createdAny = false;
@@ -607,6 +815,50 @@
     renderResults(result, budget); saveState();
   });
   if (clearAllBtn) clearAllBtn.addEventListener('click', () => { clearAllRows(); });
+  if (copyBuildBtn) {
+    copyBuildBtn.addEventListener('click', async () => {
+      const data = serializeRows();
+      if (!data) { setAutoStatus('No rows to copy.', true); return; }
+      try {
+        let copied = false;
+        try {
+          copied = await tryWriteClipboard(data);
+        } catch (err) {
+          console.warn('Clipboard API write failed', err);
+        }
+        if (!copied) {
+          await copyViaFallback(data);
+        }
+        setAutoStatus('Build copied to clipboard.');
+      } catch (err) {
+        console.error('Copy failed', err);
+        alert('Unable to copy build automatically. Select rows manually and copy them.');
+      }
+    });
+  }
+  if (loadBuildBtn) {
+    loadBuildBtn.addEventListener('click', async () => {
+      let payload = '';
+      try {
+        payload = await tryReadClipboard();
+      } catch (err) {
+        console.warn('Clipboard read failed', err);
+      }
+      if (!payload || !payload.trim()) {
+        const manual = window.prompt('Paste build string (Skill=Cost per line):', '');
+        if (!manual) return;
+        payload = manual;
+      }
+      try {
+        loadRowsFromString(payload);
+        setAutoStatus('Build loaded from clipboard.');
+      } catch (err) {
+        console.error('Failed to load build', err);
+        alert('Could not parse build string. Use lines like "Skill Name=120".');
+      }
+    });
+  }
+  if (autoBuildBtn) autoBuildBtn.addEventListener('click', autoBuildIdealSkills);
 
   // CSV loader
   const csvFileInput = document.getElementById('csv-file');
@@ -616,8 +868,7 @@
     csvFileInput.addEventListener('change', () => { const file = csvFileInput.files && csvFileInput.files[0]; if (!file) return; const reader = new FileReader(); reader.onload = () => { const ok = loadFromCSVContent(reader.result || ''); if (!ok) alert('CSV not recognized. Expected headers: skill_type,name,base_value,S_A,B_C,D_E_F,G,affinity_role'); saveState(); }; reader.readAsText(file); });
   }
 
-  // Init: prefer CSV by default
-  loadSkillsCSV().then(() => {
+  function finishInit() {
     const had = loadState();
     if (!had) {
       rowsEl.appendChild(makeRow());
@@ -625,13 +876,28 @@
     updateAffinityStyles();
     ensureOneEmptyRow();
     autoOptimizeDebounced();
-  });
+  }
+
+  // Init: prefer CSV by default
+  loadSkillsCSV()
+    .then(finishInit)
+    .catch(err => {
+      console.error('Initialization failed', err);
+      finishInit();
+    });
   const persistIfRelevant = (e) => {
     const t = e.target; if (!t) return;
     if (t.closest('.race-config-container')) updateAffinityStyles();
+    if (t.closest('.auto-targets')) {
+      saveState();
+      clearAutoHighlights();
+      autoOptimizeDebounced();
+      return;
+    }
     if (t.closest('.optimizer-row') || t.id === 'budget' || t.closest('.race-config-container')) {
       saveState();
       ensureOneEmptyRow();
+      clearAutoHighlights();
       autoOptimizeDebounced();
     }
   };

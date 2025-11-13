@@ -800,6 +800,14 @@ body.dark-mode .cell.match {
 .btn.primary:hover {
   filter: brightness(0.98);
 }
+.btn.btn-secondary {
+  background: #f8fafc;
+  color: #1f2937;
+  border-color: #cbd5e0;
+}
+.btn.btn-secondary:hover {
+  background: #e2e8f0;
+}
 body.dark-mode .modal {
   background: #1e1e1e;
   color: #e5e7eb;
@@ -817,6 +825,67 @@ body.dark-mode .btn.primary {
   background: #4299e1;
   border-color: #4299e1;
   color: #fff;
+}
+body.dark-mode .btn.btn-secondary {
+  background: #2a303c;
+  color: #e2e8f0;
+  border-color: #3f4758;
+}
+body.dark-mode .btn.btn-secondary:hover {
+  background: #353c4a;
+}
+
+.auto-targets {
+  gap: 8px !important;
+}
+.target-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border: 1px solid var(--border, #d1d5db);
+  border-radius: 999px;
+  background: var(--card-bg, #fff);
+  font-size: .9rem;
+  cursor: pointer;
+  transition: border-color .15s ease, background .15s ease;
+}
+.target-check input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #94a3b8;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  background: transparent;
+  transition: border-color .15s ease, background .15s ease;
+}
+.target-check input[type="checkbox"]:checked {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+.target-check input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+body.dark-mode .target-check {
+  background: #1f2530;
+  border-color: #3f4a60;
+}
+body.dark-mode .target-check input[type="checkbox"] {
+  border-color: #94a3b8;
+}
+body.dark-mode .target-check input[type="checkbox"]:checked {
+  background: #7c9dff;
+  border-color: #7c9dff;
 }
 
 #guess-form {
@@ -2202,6 +2271,14 @@ body.dark-mode .results-list .result-item.cat-ius, body.dark-mode .results-list 
   background: var(--card-bg, #fff);
   box-shadow: 0 2px 4px rgba(0,0,0,.05);
   align-items: center;
+  transition: outline-color .18s ease, opacity .2s ease;
+}
+.optimizer-row.auto-picked {
+  outline: 2px solid var(--accent, #2563eb);
+  outline-offset: 0;
+}
+.optimizer-row.auto-excluded {
+  opacity: 0.45;
 }
 .optimizer-row > * {
   min-width: 0;
@@ -2282,6 +2359,9 @@ body.dark-mode .optimizer-row {
   background: #101214;
   border-color: #2b2f36;
   box-shadow: none;
+}
+body.dark-mode .optimizer-row.auto-picked {
+  outline-color: #60a5fa;
 }
 
 /* strengthen accent strip contrast in dark-mode */

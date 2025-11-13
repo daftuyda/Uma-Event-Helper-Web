@@ -140,6 +140,39 @@
         </div>
       </section>
 
+      <!-- Auto builder -->
+      <section class="card" aria-labelledby="autoBuilderTitle">
+        <div class="toolbar" style="align-items:flex-start;gap:12px;">
+          <div>
+            <h2 id="autoBuilderTitle" style="margin:0 0 4px 0;">Ideal Skill Builder</h2>
+            <p class="muted" style="margin:0;">
+              Re-optimize the skills you have entered, prioritizing rows whose selected aptitudes are S–A. Matching rows are highlighted while everything stays put for easy comparison.
+            </p>
+          </div>
+          <div class="spacer"></div>
+          <button id="auto-build-btn" class="btn" type="button">Generate Build</button>
+        </div>
+        <div class="opt-grid" style="margin-top:8px;">
+          <div class="kv-row">
+            <div class="k">Targets</div>
+            <div class="v row auto-targets" style="flex-wrap:wrap;gap:10px;">
+              <label class="target-check"><input type="checkbox" name="auto-target" value="turf" checked /> Turf</label>
+              <label class="target-check"><input type="checkbox" name="auto-target" value="dirt" checked /> Dirt</label>
+              <label class="target-check"><input type="checkbox" name="auto-target" value="sprint" checked /> Sprint</label>
+              <label class="target-check"><input type="checkbox" name="auto-target" value="mile" checked /> Mile</label>
+              <label class="target-check"><input type="checkbox" name="auto-target" value="medium" checked /> Medium</label>
+              <label class="target-check"><input type="checkbox" name="auto-target" value="long" checked /> Long</label>
+              <label class="target-check"><input type="checkbox" name="auto-target" value="front" checked /> Front</label>
+              <label class="target-check"><input type="checkbox" name="auto-target" value="pace" checked /> Pace</label>
+              <label class="target-check"><input type="checkbox" name="auto-target" value="late" checked /> Late</label>
+              <label class="target-check"><input type="checkbox" name="auto-target" value="end" checked /> End</label>
+              <label class="target-check"><input type="checkbox" name="auto-target" value="general" checked /> General</label>
+            </div>
+          </div>
+        </div>
+        <div id="auto-builder-status" class="status muted" aria-live="polite"></div>
+      </section>
+
       <!-- Results -->
       <section class="card" style="margin-bottom:16px">
         <h3 style="margin:.2rem 0 .5rem 0">Results</h3>
@@ -159,6 +192,8 @@
         <div class="toolbar" role="group" aria-label="Skill rows">
           <span class="muted">Tip: just enter the skill name and cost - its type auto-detects</span>
           <div class="spacer"></div>
+          <button id="copy-build" class="btn btn-secondary" type="button">Copy Build</button>
+          <button id="load-build" class="btn btn-secondary" type="button">Load Build</button>
           <button id="clear-all" class="btn" type="button">Clear All</button>
         </div>
         <div id="rows" class="rows"></div>
