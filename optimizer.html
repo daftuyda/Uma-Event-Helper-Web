@@ -66,9 +66,9 @@
       <h1>Skill Optimizer</h1>
 
       <!-- Budget + library status -->
-      <section class="card">
+      <section class="card card-elevated">
         <div class="toolbar" style="align-items:flex-end">
-          <label style="min-width:220px">
+          <label class="labelTitle" style="min-width:220px">
             Skill Points Budget
             <input id="budget" type="number" min="0" step="1" value="1200" />
           </label>
@@ -77,104 +77,220 @@
         </div>
       </section>
 
-      <!-- Race configuration (styled like other pages) -->
-      <section class="card race-config-container" aria-labelledby="raceConfigTitle">
-        <h2 id="raceConfigTitle" style="margin:0 0 .5rem">Race Configuration</h2>
+      <!-- Race configuration + Ideal builder -->
+      <section class="card card-elevated race-config-container" aria-labelledby="raceConfigTitle">
+        <div class="race-card-grid">
+          <div class="race-config-pane">
+            <div class="race-card-header">
+              <h2 id="raceConfigTitle">Race Configuration</h2>
+              <p class="muted">Set your target affinities so the optimizer scores skills appropriately.</p>
+            </div>
+            <div class="opt-grid">
+              <div class="kv-row">
+                <div class="k">Track</div>
+                <div class="v row">
+                  <label> Turf
+                    <select id="cfg-turf">
+                      <option value="S">S</option><option value="A" selected>A</option><option value="B">B</option>
+                      <option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                      <option value="F">F</option><option value="G">G</option>
+                    </select>
+                  </label>
+                  <label> Dirt
+                    <select id="cfg-dirt">
+                      <option value="S">S</option><option value="A">A</option><option value="B">B</option>
+                      <option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                      <option value="F">F</option><option value="G" selected>G</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
 
-        <div class="opt-grid">
-          <div class="kv-row">
-            <div class="k">Track</div>
-            <div class="v row">
-              <label> Turf
-                <select id="cfg-turf">
-                  <option value="S">S</option><option value="A" selected>A</option><option value="B">B</option>
-                  <option value="C">C</option><option value="D">D</option><option value="E">E</option>
-                  <option value="F">F</option><option value="G">G</option>
-                </select>
-              </label>
-              <label> Dirt
-                <select id="cfg-dirt">
-                  <option value="S">S</option><option value="A">A</option><option value="B">B</option>
-                  <option value="C">C</option><option value="D">D</option><option value="E">E</option>
-                  <option value="F">F</option><option value="G" selected>G</option>
-                </select>
-              </label>
+              <div class="kv-row">
+                <div class="k">Distance</div>
+                <div class="v row">
+                  <label> Sprint
+                    <select id="cfg-sprint">
+                      <option value="S">S</option><option value="A">A</option><option value="B">B</option>
+                      <option value="C">C</option><option value="D" selected>D</option><option value="E">E</option>
+                      <option value="F">F</option><option value="G">G</option>
+                    </select>
+                  </label>
+                  <label> Mile
+                    <select id="cfg-mile">
+                      <option value="S">S</option><option value="A">A</option><option value="B">B</option>
+                      <option value="C" selected>C</option><option value="D">D</option><option value="E">E</option>
+                      <option value="F">F</option><option value="G">G</option>
+                    </select>
+                  </label>
+                  <label> Medium
+                    <select id="cfg-medium">
+                      <option value="S">S</option><option value="A" selected>A</option><option value="B">B</option>
+                      <option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                      <option value="F">F</option><option value="G">G</option>
+                    </select>
+                  </label>
+                  <label> Long
+                    <select id="cfg-long">
+                      <option value="S">S</option><option value="A">A</option><option value="B" selected>B</option>
+                      <option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                      <option value="F">F</option><option value="G">G</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+
+              <div class="kv-row">
+                <div class="k">Strategy</div>
+                <div class="v row">
+                  <label> Front
+                    <select id="cfg-front">
+                      <option value="S">S</option><option value="A" selected>A</option><option value="B">B</option>
+                      <option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                      <option value="F">F</option><option value="G">G</option>
+                    </select>
+                  </label>
+                  <label> Pace
+                    <select id="cfg-pace">
+                      <option value="S">S</option><option value="A">A</option><option value="B" selected>B</option>
+                      <option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                      <option value="F">F</option><option value="G">G</option>
+                    </select>
+                  </label>
+                  <label> Late
+                    <select id="cfg-late">
+                      <option value="S">S</option><option value="A">A</option><option value="B">B</option>
+                      <option value="C" selected>C</option><option value="D">D</option><option value="E">E</option>
+                      <option value="F">F</option><option value="G">G</option>
+                    </select>
+                  </label>
+                  <label> End
+                    <select id="cfg-end">
+                      <option value="S">S</option><option value="A">A</option><option value="B" selected>B</option>
+                      <option value="C">C</option><option value="D">D</option><option value="E">E</option>
+                      <option value="F">F</option><option value="G">G</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="kv-row">
-            <div class="k">Distance</div>
-            <div class="v row">
-              <label> Sprint
-                <select id="cfg-sprint"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
-              </label>
-              <label> Mile
-                <select id="cfg-mile"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
-              </label>
-              <label> Medium
-                <select id="cfg-medium"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
-              </label>
-              <label> Long
-                <select id="cfg-long"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
-              </label>
+          <div class="ideal-builder-pane">
+            <div class="ideal-header">
+              <h3 id="autoBuilderTitle">Ideal Skill Builder</h3>
+              <p class="muted">Pick the aptitudes you care about &mdash; matching rows will be highlighted.</p>
             </div>
-          </div>
-
-          <div class="kv-row">
-            <div class="k">Strategy</div>
-            <div class="v row">
-              <label> Front
-                <select id="cfg-front"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
-              </label>
-              <label> Pace
-                <select id="cfg-pace"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
-              </label>
-              <label> Late
-                <select id="cfg-late"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
-              </label>
-              <label> End
-                <select id="cfg-end"><option>S</option><option selected>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option></select>
-              </label>
+            <div class="ideal-target-groups">
+              <div>
+                <div class="target-group-title">Track</div>
+                <div class="ideal-targets auto-targets">
+                  <label class="target-check"><input type="checkbox" name="auto-target" value="turf" checked /> Turf</label>
+                  <label class="target-check"><input type="checkbox" name="auto-target" value="dirt" checked /> Dirt</label>
+                </div>
+              </div>
+              <div>
+                <div class="target-group-title">Distance</div>
+                <div class="ideal-targets auto-targets">
+                  <label class="target-check"><input type="checkbox" name="auto-target" value="sprint" checked /> Sprint</label>
+                  <label class="target-check"><input type="checkbox" name="auto-target" value="mile" checked /> Mile</label>
+                  <label class="target-check"><input type="checkbox" name="auto-target" value="medium" checked /> Medium</label>
+                  <label class="target-check"><input type="checkbox" name="auto-target" value="long" checked /> Long</label>
+                </div>
+              </div>
+              <div>
+                <div class="target-group-title">Strategy</div>
+                <div class="ideal-targets auto-targets">
+                  <label class="target-check"><input type="checkbox" name="auto-target" value="front" checked /> Front</label>
+                  <label class="target-check"><input type="checkbox" name="auto-target" value="pace" checked /> Pace</label>
+                  <label class="target-check"><input type="checkbox" name="auto-target" value="late" checked /> Late</label>
+                  <label class="target-check"><input type="checkbox" name="auto-target" value="end" checked /> End</label>
+                </div>
+              </div>
+            </div>
+            <div class="ideal-actions">
+              <label class="target-check general-check"><input type="checkbox" name="auto-target" value="general" checked /> General</label>
+              <button id="auto-build-btn" class="btn" type="button">Generate Build</button>
+              <div id="auto-builder-status" class="status muted" aria-live="polite"></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Auto builder -->
-      <section class="card" aria-labelledby="autoBuilderTitle">
-        <div class="toolbar" style="align-items:flex-start;gap:12px;">
-          <div>
-            <h2 id="autoBuilderTitle" style="margin:0 0 4px 0;">Ideal Skill Builder</h2>
-            <p class="muted" style="margin:0;">
-              Re-optimize the skills you have entered, prioritizing rows whose selected aptitudes are S–A. Matching rows are highlighted while everything stays put for easy comparison.
+      <!-- Rating calculator -->
+      <!-- Rating calculator -->
+      <section class="card card-elevated" id="rating-card" aria-labelledby="ratingCalcTitle">
+        <div class="toolbar rating-card-toolbar">
+          <div class="rating-card-header">
+            <h2 id="ratingCalcTitle">Rating Calculator</h2>
+            <p class="muted">
+              Enter your Uma's final stats, star rarity, and unique skill level.
+              The optimized skill score fills in automatically to project the final evaluation.
             </p>
           </div>
           <div class="spacer"></div>
-          <button id="auto-build-btn" class="btn" type="button">Generate Build</button>
-        </div>
-        <div class="opt-grid" style="margin-top:8px;">
-          <div class="kv-row">
-            <div class="k">Targets</div>
-            <div class="v row auto-targets" style="flex-wrap:wrap;gap:10px;">
-              <label class="target-check"><input type="checkbox" name="auto-target" value="turf" checked /> Turf</label>
-              <label class="target-check"><input type="checkbox" name="auto-target" value="dirt" checked /> Dirt</label>
-              <label class="target-check"><input type="checkbox" name="auto-target" value="sprint" checked /> Sprint</label>
-              <label class="target-check"><input type="checkbox" name="auto-target" value="mile" checked /> Mile</label>
-              <label class="target-check"><input type="checkbox" name="auto-target" value="medium" checked /> Medium</label>
-              <label class="target-check"><input type="checkbox" name="auto-target" value="long" checked /> Long</label>
-              <label class="target-check"><input type="checkbox" name="auto-target" value="front" checked /> Front</label>
-              <label class="target-check"><input type="checkbox" name="auto-target" value="pace" checked /> Pace</label>
-              <label class="target-check"><input type="checkbox" name="auto-target" value="late" checked /> Late</label>
-              <label class="target-check"><input type="checkbox" name="auto-target" value="end" checked /> End</label>
-              <label class="target-check"><input type="checkbox" name="auto-target" value="general" checked /> General</label>
-            </div>
+          <div class="pill rating-total-pill">
+            <div class="label">Projected Rating</div>
+            <div id="rating-total" class="value">0</div>
+          </div>
+          <div class="rating-badge" id="rating-badge">
+            <div id="rating-badge-sprite" class="rating-badge-sprite" role="img"
+                 aria-label="Projected rank badge"></div>
           </div>
         </div>
-        <div id="auto-builder-status" class="status muted" aria-live="polite"></div>
+        <div class="rating-grid">
+          <label>Speed
+            <input id="stat-speed" type="number" min="0" max="1600" step="1" value="0" inputmode="numeric" />
+          </label>
+          <label>Stamina
+            <input id="stat-stamina" type="number" min="0" max="1600" step="1" value="0" inputmode="numeric" />
+          </label>
+          <label>Power
+            <input id="stat-power" type="number" min="0" max="1600" step="1" value="0" inputmode="numeric" />
+          </label>
+          <label>Guts
+            <input id="stat-guts" type="number" min="0" max="1600" step="1" value="0" inputmode="numeric" />
+          </label>
+          <label>Wisdom
+            <input id="stat-wisdom" type="number" min="0" max="1600" step="1" value="0" inputmode="numeric" />
+          </label>
+          <label>Star Level
+            <select id="star-level">
+              <option value="1">★1</option>
+              <option value="2">★2</option>
+              <option value="3" selected>★3</option>
+              <option value="4">★4</option>
+              <option value="5">★5</option>
+            </select>
+          </label>
+          <label>Unique Skill Level
+            <select id="unique-level">
+              <option value="1">Lv1</option>
+              <option value="2">Lv2</option>
+              <option value="3" selected>Lv3</option>
+              <option value="4">Lv4</option>
+              <option value="5">Lv5</option>
+              <option value="6">Lv6</option>
+            </select>
+          </label>
+        </div>
+        <div class="rating-summary">
+          <div class="pill">
+            <div class="label">Stats Score</div>
+            <div id="rating-stats-score" class="value">0</div>
+          </div>
+          <div class="pill">
+            <div class="label">Skill Score</div>
+            <div id="rating-skills-score" class="value">0</div>
+          </div>
+          <div class="pill">
+            <div class="label">Unique Bonus</div>
+            <div id="rating-unique-bonus" class="value">0</div>
+          </div>
+        </div>
       </section>
 
       <!-- Results -->
-      <section class="card" style="margin-bottom:16px">
+      <section class="card card-elevated" style="margin-bottom:16px">
         <h3 style="margin:.2rem 0 .5rem 0">Results</h3>
         <div id="results" class="results">
           <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px;">
@@ -188,7 +304,7 @@
       </section>
 
       <!-- Rows builder (auto-add; live optimize) -->
-      <section class="card">
+      <section class="card card-elevated">
         <div class="toolbar" role="group" aria-label="Skill rows">
           <span class="muted">Tip: just enter the skill name and cost - its type auto-detects</span>
           <div class="spacer"></div>

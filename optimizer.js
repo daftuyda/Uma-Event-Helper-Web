@@ -22,6 +22,30 @@
   const copyBuildBtn = document.getElementById('copy-build');
   const loadBuildBtn = document.getElementById('load-build');
 
+  const ratingInputs = {
+    speed: document.getElementById('stat-speed'),
+    stamina: document.getElementById('stat-stamina'),
+    power: document.getElementById('stat-power'),
+    guts: document.getElementById('stat-guts'),
+    wisdom: document.getElementById('stat-wisdom'),
+    star: document.getElementById('star-level'),
+    unique: document.getElementById('unique-level')
+  };
+  const ratingDisplays = {
+    stats: document.getElementById('rating-stats-score'),
+    skills: document.getElementById('rating-skills-score'),
+    unique: document.getElementById('rating-unique-bonus'),
+    total: document.getElementById('rating-total'),
+    badgeSprite: document.getElementById('rating-badge-sprite')
+  };
+  const MAX_STAT_VALUE = 2000;
+  const STAT_BLOCK_SIZE = 50;
+  const STAT_MULTIPLIERS = [
+    0.5, 0.8, 1, 1.3, 1.6, 1.8, 2.1, 2.4, 2.6, 2.8, 2.9, 3, 3.1, 3.3, 3.4,
+    3.5, 3.9, 4.1, 4.2, 4.3, 5.2, 5.5, 6.6, 6.8, 6.9
+  ];
+  let lastSkillScore = 0;
+
   // Race config selects (mirroring main page)
   const cfg = {
     turf: document.getElementById('cfg-turf'),
@@ -121,6 +145,195 @@
     const bucket = getBucketForSkill(skill.checkType);
     const val = skill.score[bucket];
     return typeof val === 'number' ? val : 0;
+  }
+
+  function clampStatValue(value) {
+    if (typeof value !== 'number' || isNaN(value)) return 0;
+    return Math.max(0, Math.min(MAX_STAT_VALUE, value));
+  }
+
+  function getCurrentStarLevel() {
+    const raw = ratingInputs.star ? parseInt(ratingInputs.star.value, 10) : 0;
+    return isNaN(raw) ? 0 : raw;
+  }
+
+  function getCurrentUniqueLevel() {
+    const raw = ratingInputs.unique ? parseInt(ratingInputs.unique.value, 10) : 0;
+    return isNaN(raw) ? 0 : raw;
+  }
+
+  function calcUniqueBonus(starLevel, uniqueLevel) {
+    const lvl = typeof uniqueLevel === 'number' && uniqueLevel > 0 ? uniqueLevel : 0;
+    if (!lvl) return 0;
+    const multiplier = starLevel === 1 || starLevel === 2 ? 120 : 170;
+    return lvl * multiplier;
+  }
+
+  const RATING_SPRITE = {
+    url: 'assets/rank_badges.png',
+    columns: 6,
+    rows: 6,
+    tileWidth: 125,
+    tileHeight: 125,
+    loaded: false
+  };
+
+  const RATING_BADGES = [
+    { threshold: 300, label: 'G', sprite: { col: 0, row: 0 } },
+    { threshold: 600, label: 'G+', sprite: { col: 0, row: 1 } },
+    { threshold: 900, label: 'F', sprite: { col: 0, row: 2 } },
+    { threshold: 1300, label: 'F+', sprite: { col: 0, row: 3 } },
+    { threshold: 1800, label: 'E', sprite: { col: 0, row: 4 } },
+    { threshold: 2300, label: 'E+', sprite: { col: 0, row: 5 } },
+    { threshold: 2900, label: 'D', sprite: { col: 1, row: 0 } },
+    { threshold: 3500, label: 'D+', sprite: { col: 1, row: 1 } },
+    { threshold: 4900, label: 'C', sprite: { col: 1, row: 2 } },
+    { threshold: 6500, label: 'C+', sprite: { col: 1, row: 3 } },
+    { threshold: 8200, label: 'B', sprite: { col: 1, row: 4 } },
+    { threshold: 10000, label: 'B+', sprite: { col: 1, row: 5 } },
+    { threshold: 12100, label: 'A', sprite: { col: 2, row: 0 } },
+    { threshold: 14500, label: 'A+', sprite: { col: 2, row: 1 } },
+    { threshold: 15900, label: 'S', sprite: { col: 2, row: 2 } },
+    { threshold: 17500, label: 'S+', sprite: { col: 2, row: 3 } },
+    { threshold: 19200, label: 'SS', sprite: { col: 2, row: 4 } },
+    { threshold: 19600, label: 'SS+', sprite: { col: 2, row: 5 } },
+    { threshold: Infinity, label: 'SS+', sprite: { col: 2, row: 5 } },
+  ];
+
+  function getRatingBadge(totalScore) {
+    for (const badge of RATING_BADGES) {
+      if (totalScore < badge.threshold) return badge;
+    }
+    return RATING_BADGES[RATING_BADGES.length - 1];
+  }
+
+  function loadRatingSprite() {
+    if (!ratingDisplays.badgeSprite) return;
+    const spriteUrl = `${RATING_SPRITE.url}?v=${Date.now()}`;
+    const img = new Image();
+    img.onload = () => {
+      const sheetWidth = img.naturalWidth;
+      const sheetHeight = img.naturalHeight;
+      RATING_SPRITE.tileWidth = sheetWidth / RATING_SPRITE.columns;
+      RATING_SPRITE.tileHeight = sheetHeight / RATING_SPRITE.rows;
+      RATING_SPRITE.loaded = true;
+
+    const badgeWidth = ratingDisplays.badgeSprite.clientWidth || RATING_SPRITE.tileWidth;
+    const badgeHeight = ratingDisplays.badgeSprite.clientHeight || RATING_SPRITE.tileHeight;
+    const scaleX = badgeWidth / RATING_SPRITE.tileWidth;
+    const scaleY = badgeHeight / RATING_SPRITE.tileHeight;
+    const bgWidth = sheetWidth * scaleX;
+    const bgHeight = sheetHeight * scaleY;
+
+    ratingDisplays.badgeSprite.style.backgroundImage = `url(${spriteUrl})`;
+    ratingDisplays.badgeSprite.style.backgroundSize = `${bgWidth}px ${bgHeight}px`;
+    updateRatingDisplay();
+  };
+    img.onerror = () => {
+      RATING_SPRITE.loaded = false;
+      ratingDisplays.badgeSprite.textContent = '';
+    };
+    img.src = spriteUrl;
+  }
+
+  function readRatingStats() {
+    return {
+      speed: clampStatValue(parseInt(ratingInputs.speed?.value, 10)),
+      stamina: clampStatValue(parseInt(ratingInputs.stamina?.value, 10)),
+      power: clampStatValue(parseInt(ratingInputs.power?.value, 10)),
+      guts: clampStatValue(parseInt(ratingInputs.guts?.value, 10)),
+      wisdom: clampStatValue(parseInt(ratingInputs.wisdom?.value, 10))
+    };
+  }
+
+  function getMultiplierForBlock(blockIndex) {
+    if (blockIndex < STAT_MULTIPLIERS.length) {
+      return STAT_MULTIPLIERS[blockIndex];
+    }
+    return STAT_MULTIPLIERS[STAT_MULTIPLIERS.length - 1];
+  }
+
+  function calcStatScore(statValue) {
+    const value = clampStatValue(statValue);
+    const blocks = Math.floor(value / STAT_BLOCK_SIZE);
+    let blockSum = 0;
+    for (let i = 0; i < blocks && i < STAT_MULTIPLIERS.length; i++) {
+      blockSum += STAT_MULTIPLIERS[i] * STAT_BLOCK_SIZE;
+    }
+    const remainder = value % STAT_BLOCK_SIZE;
+    const multiplier = getMultiplierForBlock(blocks);
+    const remainderSum = multiplier * (remainder + 1);
+    return Math.floor(blockSum + remainderSum);
+  }
+
+  function calculateRatingBreakdown(skillScoreOverride) {
+    if (typeof skillScoreOverride === 'number' && !isNaN(skillScoreOverride)) {
+      lastSkillScore = Math.max(0, Math.round(skillScoreOverride));
+    }
+    const stats = readRatingStats();
+    const statsScore = Object.values(stats).reduce((sum, val) => sum + calcStatScore(val), 0);
+    const starLevel = getCurrentStarLevel();
+    const uniqueLevel = getCurrentUniqueLevel();
+    const uniqueBonus = calcUniqueBonus(starLevel, uniqueLevel);
+    const total = statsScore + uniqueBonus + lastSkillScore;
+    return { statsScore, uniqueBonus, skillScore: lastSkillScore, total };
+  }
+
+  function updateRatingDisplay(skillScoreOverride) {
+    const breakdown = calculateRatingBreakdown(skillScoreOverride);
+    if (ratingDisplays.stats) ratingDisplays.stats.textContent = breakdown.statsScore.toString();
+    if (ratingDisplays.skills) ratingDisplays.skills.textContent = breakdown.skillScore.toString();
+    if (ratingDisplays.unique) ratingDisplays.unique.textContent = breakdown.uniqueBonus.toString();
+    if (ratingDisplays.total) ratingDisplays.total.textContent = breakdown.total.toString();
+    if (ratingDisplays.badgeSprite) {
+      const badge = getRatingBadge(breakdown.total);
+      if (RATING_SPRITE.loaded && badge.sprite) {
+        const badgeWidth = ratingDisplays.badgeSprite.clientWidth || RATING_SPRITE.tileWidth;
+        const badgeHeight = ratingDisplays.badgeSprite.clientHeight || RATING_SPRITE.tileHeight;
+        const offsetX = badge.sprite.col * badgeWidth;
+        const offsetY = badge.sprite.row * badgeHeight;
+        ratingDisplays.badgeSprite.style.backgroundPosition = `-${offsetX}px -${offsetY}px`;
+        ratingDisplays.badgeSprite.textContent = '';
+      } else {
+        ratingDisplays.badgeSprite.style.backgroundImage = 'none';
+        ratingDisplays.badgeSprite.textContent = badge.label;
+      }
+    }
+  }
+
+  function readRatingState() {
+    const stats = readRatingStats();
+    return {
+      stats,
+      star: getCurrentStarLevel(),
+      unique: getCurrentUniqueLevel()
+    };
+  }
+
+  function applyRatingState(data) {
+    if (!data || typeof data !== 'object') return;
+    const stats = data.stats || {};
+    if (ratingInputs.speed && typeof stats.speed === 'number') ratingInputs.speed.value = stats.speed;
+    if (ratingInputs.stamina && typeof stats.stamina === 'number') ratingInputs.stamina.value = stats.stamina;
+    if (ratingInputs.power && typeof stats.power === 'number') ratingInputs.power.value = stats.power;
+    if (ratingInputs.guts && typeof stats.guts === 'number') ratingInputs.guts.value = stats.guts;
+    if (ratingInputs.wisdom && typeof stats.wisdom === 'number') ratingInputs.wisdom.value = stats.wisdom;
+    if (ratingInputs.star && typeof data.star === 'number') ratingInputs.star.value = String(data.star);
+    if (ratingInputs.unique && typeof data.unique === 'number') ratingInputs.unique.value = String(data.unique);
+  }
+
+  function handleRatingInputChange() {
+    updateRatingDisplay();
+    saveState();
+  }
+
+  function initRatingInputs() {
+    Object.values(ratingInputs).forEach(input => {
+      if (!input) return;
+      input.addEventListener('input', handleRatingInputChange);
+      input.addEventListener('change', handleRatingInputChange);
+    });
+    updateRatingDisplay();
   }
 
   function setAutoStatus(message, isError = false) {
@@ -723,11 +936,12 @@
       li.innerHTML = `<span class="res-name">${it.name}</span> <span class="res-meta">- cost ${it.cost}, score ${it.score}</span>`;
       selectedListEl.appendChild(li);
     });
+    updateRatingDisplay(result.best);
   }
 
   // persistence
   function saveState() {
-    const state = { budget: parseInt(budgetInput.value, 10) || 0, cfg: {}, rows: [], autoTargets: [] };
+    const state = { budget: parseInt(budgetInput.value, 10) || 0, cfg: {}, rows: [], autoTargets: [], rating: readRatingState() };
     Object.entries(cfg).forEach(([k, el]) => { state.cfg[k] = el ? el.value : 'A'; });
     if (autoTargetInputs && autoTargetInputs.length) {
       state.autoTargets = Array.from(autoTargetInputs)
@@ -761,6 +975,12 @@
         setAutoTargetSelections(state.autoTargets);
       } else {
         setAutoTargetSelections(null);
+      }
+      if (state.rating) {
+        applyRatingState(state.rating);
+        updateRatingDisplay();
+      } else {
+        updateRatingDisplay();
       }
       Array.from(rowsEl.querySelectorAll('.optimizer-row')).forEach(n => n.remove());
       const created = new Map();
@@ -873,6 +1093,8 @@
     if (!had) {
       rowsEl.appendChild(makeRow());
     }
+    initRatingInputs();
+     loadRatingSprite();
     updateAffinityStyles();
     ensureOneEmptyRow();
     autoOptimizeDebounced();

@@ -34126,5 +34126,229 @@
       }
     ],
     "UmaEvents": []
+  },
+  {
+    "UmaKey": "Hishi Akebono :: [Buono ☆ Alla Moda]",
+    "UmaName": "Hishi Akebono",
+    "UmaNickname": "[Buono ☆ Alla Moda]",
+    "UmaSlug": "102801-hishi-akebono",
+    "UmaId": "102801",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 99,
+        "Stamina": 60,
+        "Power": 108,
+        "Guts": 91,
+        "Wit": 92
+      },
+      "5★": {
+        "Speed": 120,
+        "Stamina": 74,
+        "Power": 132,
+        "Guts": 111,
+        "Wit": 113
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 0,
+      "Stamina": 0,
+      "Power": 20,
+      "Guts": 10,
+      "Wit": 0
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "F"
+      },
+      "Distance": {
+        "Short": "A",
+        "Mile": "B",
+        "Medium": "F",
+        "Long": "G"
+      },
+      "Strategy": {
+        "Front": "B",
+        "Pace": "A",
+        "Late": "C",
+        "End": "G"
+      }
+    },
+    "UmaHeightCm": 180,
+    "UmaThreeSizes": {
+      "B": 99,
+      "W": 64,
+      "H": 88
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "2. Have at least 3000 fans",
+        "Turn": "Turn 23 (previous + 10)",
+        "Time": "Junior Class, Early December",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "3. Have at least 10000 fans",
+        "Turn": "Turn 37 (previous + 13)",
+        "Time": "Classic Class, Early July",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "4. Place 3rd or better in the Sprinters Stakes",
+        "Turn": "Turn 42 (previous + 4)",
+        "Time": "Classic Class, Late September",
+        "ObjectiveCondition": "G1 – Turf – 1200m – Short"
+      },
+      {
+        "ObjectiveName": "5. Place 3rd or better in the Swan Stakes",
+        "Turn": "Turn 44 (previous + 1)",
+        "Time": "Classic Class, Late October",
+        "ObjectiveCondition": "G2 – Turf – 1400m – Short"
+      },
+      {
+        "ObjectiveName": "6. Place 3rd or better in the Mile Championship",
+        "Turn": "Turn 46 (previous + 1)",
+        "Time": "Classic Class, Late November",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "7. Place 1st in the Takamatsunomiya Kinen",
+        "Turn": "Turn 54 (previous + 7)",
+        "Time": "Senior Class, Late March",
+        "ObjectiveCondition": "G1 – Turf – 1200m – Short"
+      },
+      {
+        "ObjectiveName": "8. Place 2nd or better in the Yasuda Kinen",
+        "Turn": "Turn 59 (previous + 4)",
+        "Time": "Senior Class, Early June",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "9. Place 1st in the Sprinters Stakes",
+        "Turn": "Turn 66 (previous + 6)",
+        "Time": "Senior Class, Late September",
+        "ObjectiveCondition": "G1 – Turf – 1200m – Short"
+      },
+      {
+        "ObjectiveName": "10. Place 1st in the Mile Championship",
+        "Turn": "Turn 70 (previous + 3)",
+        "Time": "Senior Class, Late November",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      }
+    ],
+    "UmaEvents": []
+  },
+  {
+    "UmaKey": "Grass Wonder :: [Saintly Jade Cleric ]",
+    "UmaName": "Grass Wonder",
+    "UmaNickname": "[Saintly Jade Cleric ]",
+    "UmaSlug": "101102-grass-wonder",
+    "UmaId": "101102",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 91,
+        "Stamina": 83,
+        "Power": 97,
+        "Guts": 79,
+        "Wit": 100
+      },
+      "5★": {
+        "Speed": 111,
+        "Stamina": 101,
+        "Power": 119,
+        "Guts": 96,
+        "Wit": 123
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 0,
+      "Stamina": 15,
+      "Power": 0,
+      "Guts": 0,
+      "Wit": 15
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "G"
+      },
+      "Distance": {
+        "Short": "G",
+        "Mile": "A",
+        "Medium": "B",
+        "Long": "A"
+      },
+      "Strategy": {
+        "Front": "F",
+        "Pace": "A",
+        "Late": "A",
+        "End": "F"
+      }
+    },
+    "UmaHeightCm": 152,
+    "UmaThreeSizes": {
+      "B": 77,
+      "W": 53,
+      "H": 84
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 1800m – Mile"
+      },
+      {
+        "ObjectiveName": "2. Place 5th or better in the Asahi Hai Futurity Stakes",
+        "Turn": "Turn 23 (previous + 10)",
+        "Time": "Junior Class, Early December",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "3. Place 5th or better in the Tokyo Yushun (Japanese Derby)",
+        "Turn": "Turn 34 (previous + 10)",
+        "Time": "Classic Class, Late May",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "4. Place 5th or better in the Japan Cup",
+        "Turn": "Turn 46 (previous + 11)",
+        "Time": "Classic Class, Late November",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "5. Place 3rd or better in the Arima Kinen",
+        "Turn": "Turn 48 (previous + 1)",
+        "Time": "Classic Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      },
+      {
+        "ObjectiveName": "6. Place 3rd or better in the Takarazuka Kinen",
+        "Turn": "Turn 60 (previous + 11)",
+        "Time": "Senior Class, Late June",
+        "ObjectiveCondition": "G1 – Turf – 2200m – Medium"
+      },
+      {
+        "ObjectiveName": "7. Place 1st in the Mainichi Okan",
+        "Turn": "Turn 67 (previous + 6)",
+        "Time": "Senior Class, Early October",
+        "ObjectiveCondition": "G2 – Turf – 1800m – Mile"
+      },
+      {
+        "ObjectiveName": "8. Place 1st in the Arima Kinen",
+        "Turn": "Turn 72 (previous + 4)",
+        "Time": "Senior Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      }
+    ],
+    "UmaEvents": []
   }
 ]
