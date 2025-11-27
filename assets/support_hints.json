@@ -5810,5 +5810,195 @@
         "HintLevel": null
       }
     ]
+  },
+  {
+    "SupportSlug": "30063-ikuno-dictus",
+    "SupportId": "30063",
+    "SupportName": "Ikuno Dictus (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30063-ikuno-dictus.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hawkeye",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Studious",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sharp Gaze",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30064-tamamo-cross",
+    "SupportId": "30064",
+    "SupportName": "Tamamo Cross (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30064-tamamo-cross.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Rosy Outlook",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "1,500,000 CC",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Thunderbolt Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered Late Surgers",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30065-zenno-rob-roy",
+    "SupportId": "30065",
+    "SupportName": "Zenno Rob Roy (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30065-zenno-rob-roy.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shrewd Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prudent Positioning",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Studious",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30066-mihono-bourbon",
+    "SupportId": "30066",
+    "SupportName": "Mihono Bourbon (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30066-mihono-bourbon.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Snowy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "20037-fine-motion",
+    "SupportId": "20037",
+    "SupportName": "Fine Motion (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20037-fine-motion.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Right-Handed ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fall Runner ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      }
+    ]
   }
 ]
