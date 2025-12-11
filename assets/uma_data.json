@@ -34662,5 +34662,235 @@
       }
     ],
     "UmaEvents": []
+  },
+  {
+    "UmaKey": "Manhattan Cafe :: [Creeping Shadow]",
+    "UmaName": "Manhattan Cafe",
+    "UmaNickname": "[Creeping Shadow]",
+    "UmaSlug": "102501-manhattan-cafe",
+    "UmaId": "102501",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 83,
+        "Stamina": 98,
+        "Power": 94,
+        "Guts": 86,
+        "Wit": 89
+      },
+      "5★": {
+        "Speed": 101,
+        "Stamina": 120,
+        "Power": 115,
+        "Guts": 105,
+        "Wit": 109
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 0,
+      "Stamina": 30,
+      "Power": 0,
+      "Guts": 0,
+      "Wit": 0
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "G"
+      },
+      "Distance": {
+        "Short": "G",
+        "Mile": "F",
+        "Medium": "B",
+        "Long": "A"
+      },
+      "Strategy": {
+        "Front": "G",
+        "Pace": "C",
+        "Late": "A",
+        "End": "C"
+      }
+    },
+    "UmaHeightCm": 155,
+    "UmaThreeSizes": {
+      "B": 73,
+      "W": 54,
+      "H": 78
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "2. Have at least 4000 fans",
+        "Turn": "Turn 26 (previous + 13)",
+        "Time": "Classic Class, Late January",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "3. Place 5th or better in the Yayoi Sho",
+        "Turn": "Turn 29 (previous + 2)",
+        "Time": "Classic Class, Early March",
+        "ObjectiveCondition": "G2 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "4. Place 3rd or better in the St. Lite Kinen",
+        "Turn": "Turn 42 (previous + 12)",
+        "Time": "Classic Class, Late September",
+        "ObjectiveCondition": "G2 – Turf – 2200m – Medium"
+      },
+      {
+        "ObjectiveName": "5. Place 3rd or better in the Kikuka Sho",
+        "Turn": "Turn 44 (previous + 1)",
+        "Time": "Classic Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 3000m – Long"
+      },
+      {
+        "ObjectiveName": "6. Place 3rd or better in the Arima Kinen",
+        "Turn": "Turn 48 (previous + 3)",
+        "Time": "Classic Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      },
+      {
+        "ObjectiveName": "7. Place 3rd or better in the Tenno Sho (Spring)",
+        "Turn": "Turn 56 (previous + 7)",
+        "Time": "Senior Class, Late April",
+        "ObjectiveCondition": "G1 – Turf – 3200m – Long"
+      },
+      {
+        "ObjectiveName": "8. Place 3rd or better in the Takarazuka Kinen",
+        "Turn": "Turn 60 (previous + 3)",
+        "Time": "Senior Class, Late June",
+        "ObjectiveCondition": "G1 – Turf – 2200m – Medium"
+      },
+      {
+        "ObjectiveName": "9. Place 3rd or better in the Japan Cup",
+        "Turn": "Turn 70 (previous + 9)",
+        "Time": "Senior Class, Late November",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "10. Place 1st in the Arima Kinen",
+        "Turn": "Turn 72 (previous + 1)",
+        "Time": "Senior Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      }
+    ],
+    "UmaEvents": []
+  },
+  {
+    "UmaKey": "Kawakami Princess :: [Princess of Pink]",
+    "UmaName": "Kawakami Princess",
+    "UmaNickname": "[Princess of Pink]",
+    "UmaSlug": "103901-kawakami-princess",
+    "UmaId": "103901",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 100,
+        "Stamina": 71,
+        "Power": 107,
+        "Guts": 82,
+        "Wit": 90
+      },
+      "5★": {
+        "Speed": 122,
+        "Stamina": 87,
+        "Power": 131,
+        "Guts": 101,
+        "Wit": 109
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 0,
+      "Stamina": 0,
+      "Power": 10,
+      "Guts": 20,
+      "Wit": 0
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "G"
+      },
+      "Distance": {
+        "Short": "D",
+        "Mile": "B",
+        "Medium": "A",
+        "Long": "F"
+      },
+      "Strategy": {
+        "Front": "G",
+        "Pace": "C",
+        "Late": "A",
+        "End": "D"
+      }
+    },
+    "UmaHeightCm": 154,
+    "UmaThreeSizes": {
+      "B": 91,
+      "W": 57,
+      "H": 87
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "2. Have at least 7000 fans",
+        "Turn": "Turn 31 (previous + 18)",
+        "Time": "Classic Class, Early April",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "3. Place 5th or better in the Japanese Oaks",
+        "Turn": "Turn 34 (previous + 2)",
+        "Time": "Classic Class, Late May",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "4. Place 3rd or better in the Shuka Sho",
+        "Turn": "Turn 44 (previous + 9)",
+        "Time": "Classic Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "5. Place 3rd or better in the Queen Elizabeth II Cup",
+        "Turn": "Turn 45",
+        "Time": "Classic Class, Early November",
+        "ObjectiveCondition": "G1 – Turf – 2200m – Medium"
+      },
+      {
+        "ObjectiveName": "6. Place 3rd or better in the Kinko Sho",
+        "Turn": "Turn 53 (previous + 7)",
+        "Time": "Senior Class, Early March",
+        "ObjectiveCondition": "G2 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "7. Place 3rd or better in the Victoria Mile",
+        "Turn": "Turn 57 (previous + 3)",
+        "Time": "Senior Class, Early May",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "8. Place 3rd or better in the Takarazuka Kinen",
+        "Turn": "Turn 60 (previous + 2)",
+        "Time": "Senior Class, Late June",
+        "ObjectiveCondition": "G1 – Turf – 2200m – Medium"
+      },
+      {
+        "ObjectiveName": "9. Place 1st in the Queen Elizabeth II Cup",
+        "Turn": "Turn 69 (previous + 8)",
+        "Time": "Senior Class, Early November",
+        "ObjectiveCondition": "G1 – Turf – 2200m – Medium"
+      }
+    ],
+    "UmaEvents": []
   }
 ]

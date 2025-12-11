@@ -6000,5 +6000,171 @@
         "HintLevel": null
       }
     ]
+  },
+  {
+    "SupportSlug": "30043-nakayama-festa",
+    "SupportId": "30043",
+    "SupportName": "Nakayama Festa (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30043-nakayama-festa.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lucky Seven",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "All I've Got",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slick Surge",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sharp Gaze",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "20038-sirius-symboli",
+    "SupportId": "20038",
+    "SupportName": "Sirius Symboli (SR) Support Card",
+    "SupportRarity": "SR",
+    "SupportImage": "/assets/support_thumbs/20038-sirius-symboli.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Lone Wolf",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "10067-nakayama-festa",
+    "SupportId": "10067",
+    "SupportName": "Nakayama Festa (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10067-nakayama-festa.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lucky Seven",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "All I've Got",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slick Surge",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sharp Gaze",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "10071-sirius-symboli",
+    "SupportId": "10071",
+    "SupportName": "Sirius Symboli (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10071-sirius-symboli.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Lone Wolf",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      }
+    ]
   }
 ]
