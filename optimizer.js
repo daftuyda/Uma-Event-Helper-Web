@@ -64,9 +64,19 @@
   let categories = [];
   const preferredOrder = ['golden','yellow','blue','green','red','purple','ius'];
   let skillIndex = new Map();   // normalized name -> { name, score, checkType, category }
+  let skillIdIndex = new Map(); // id string -> skill object
   let allSkillNames = [];
+  const HINT_DISCOUNT_STEP = 0.10;
+  const HINT_LEVELS = [0, 1, 2, 3, 4, 5];
+  const skillCostMapNormalized = new Map(); // punctuation-stripped key -> meta
+  const skillCostMapExact = new Map(); // exact lowercased name -> meta
+  const skillCostById = new Map(); // skillId -> base cost
+  const skillMetaById = new Map(); // skillId -> { cost, versions, parents }
 
   function normalize(str) { return (str || '').toString().trim().toLowerCase(); }
+  function normalizeCostKey(str) {
+    return normalize(str).replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim();
+  }
 
   async function tryWriteClipboard(text) {
     if (navigator?.clipboard?.writeText) {
@@ -145,6 +155,54 @@
     const bucket = getBucketForSkill(skill.checkType);
     const val = skill.score[bucket];
     return typeof val === 'number' ? val : 0;
+  }
+
+  function calculateDiscountedCost(baseCost, hintLevel) {
+    if (typeof baseCost !== 'number' || isNaN(baseCost)) return NaN;
+    const lvl = Math.max(0, Math.min(5, parseInt(hintLevel, 10) || 0));
+    const multiplier = 1 - (HINT_DISCOUNT_STEP * lvl);
+    return Math.max(0, Math.floor(baseCost * multiplier));
+  }
+
+  async function loadSkillCostsJSON() {
+    const candidates = ['/assets/skills_all.json', './assets/skills_all.json'];
+    for (const url of candidates) {
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const list = await res.json();
+        if (!Array.isArray(list) || !list.length) continue;
+        list.forEach(entry => {
+          const name = entry?.name_en || entry?.enname;
+          if (!name) return;
+          const exactKey = normalize(name);
+          const key = normalizeCostKey(name);
+          const cost = (() => {
+            if (entry?.gene_version && typeof entry.gene_version.cost === 'number') return entry.gene_version.cost;
+            if (typeof entry?.cost === 'number') return entry.cost;
+            return null;
+          })();
+          const parents = Array.isArray(entry?.parent_skills) ? entry.parent_skills : [];
+          const versions = Array.isArray(entry?.versions) ? entry.versions : [];
+          const id = entry?.id;
+          if (cost !== null) {
+            const meta = { cost, id, parents, versions };
+            if (id !== undefined && id !== null) {
+              const sid = String(id);
+              if (!skillCostById.has(sid)) skillCostById.set(sid, cost);
+              if (!skillMetaById.has(sid)) skillMetaById.set(sid, { cost, parents, versions });
+            }
+            if (!skillCostMapExact.has(exactKey)) skillCostMapExact.set(exactKey, meta);
+            if (!skillCostMapNormalized.has(key)) skillCostMapNormalized.set(key, meta);
+          }
+        });
+        console.log(`Loaded skill costs from ${url}: ${skillCostMapExact.size} exact, ${skillCostMapNormalized.size} normalized`);
+        return true;
+      } catch (err) {
+        console.warn('Failed loading skill costs', url, err);
+      }
+    }
+    return false;
   }
 
   function clampStatValue(value) {
@@ -384,7 +442,7 @@
       if (costInput) costInput.value = it.cost;
       row.dataset.skillCategory = it.category || '';
       if (typeof row.syncSkillCategory === 'function') {
-        row.syncSkillCategory({ triggerOptimize: false, allowLinking: false });
+        row.syncSkillCategory({ triggerOptimize: false, allowLinking: false, updateCost: false });
       } else {
         applyCategoryAccent(row, it.category || '');
       }
@@ -451,7 +509,7 @@
       if (nameInput) nameInput.value = name;
       if (costInput) costInput.value = cost;
       if (typeof row.syncSkillCategory === 'function') {
-        row.syncSkillCategory({ triggerOptimize: false, allowLinking: false });
+        row.syncSkillCategory({ triggerOptimize: false, allowLinking: false, updateCost: false });
       } else {
         applyCategoryAccent(row, row.dataset.skillCategory || '');
       }
@@ -507,6 +565,8 @@
     if (totalPointsEl) totalPointsEl.textContent = String(parseInt(budgetInput.value || '0', 10) || 0);
     if (remainingPointsEl) remainingPointsEl.textContent = totalPointsEl.textContent;
     if (selectedListEl) selectedListEl.innerHTML = '';
+    lastSkillScore = 0;
+    updateRatingDisplay(0);
   }
 
   // ---------- Live optimize helpers ----------
@@ -525,18 +585,25 @@
 
   function rebuildSkillCaches() {
     const nextIndex = new Map();
+    const nextIdIndex = new Map();
     const names = [];
     Object.entries(skillsByCategory).forEach(([category, list = []]) => {
       list.forEach(skill => {
         if (!skill || !skill.name) return;
         const key = normalize(skill.name);
+        const enriched = { ...skill, category };
         if (!nextIndex.has(key)) {
           names.push(skill.name);
         }
-        nextIndex.set(key, { ...skill, category });
+        nextIndex.set(key, enriched);
+        if (skill.skillId) {
+          const sid = String(skill.skillId);
+          if (!nextIdIndex.has(sid)) nextIdIndex.set(sid, enriched);
+        }
       });
     });
     skillIndex = nextIndex;
+    skillIdIndex = nextIdIndex;
     const uniqueNames = Array.from(new Set(names));
     uniqueNames.sort((a, b) => a.localeCompare(b));
     allSkillNames = uniqueNames;
@@ -559,14 +626,14 @@
   function applyFallbackSkills(reason) {
     skillsByCategory = {
       golden: [
-        { name: 'Concentration', score: { base: 508, good: 508, average: 415, bad: 369, terrible: 323 }, checkType: 'End' },
-        { name: 'Professor of Curvature', score: { base: 508, good: 508, average: 415, bad: 369, terrible: 323 }, checkType: 'Medium' }
+        { name: 'Concentration', score: { base: 508, good: 508, average: 415, bad: 369, terrible: 323 }, baseCost: 508, checkType: 'End' },
+        { name: 'Professor of Curvature', score: { base: 508, good: 508, average: 415, bad: 369, terrible: 323 }, baseCost: 508, checkType: 'Medium' }
       ],
       yellow: [
-        { name: 'Groundwork', score: { base: 217, good: 217, average: 177, bad: 158, terrible: 138 }, checkType: 'Front' },
-        { name: 'Corner Recovery', score: { base: 217, good: 217, average: 177, bad: 158, terrible: 138 }, checkType: 'Late' }
+        { name: 'Groundwork', score: { base: 217, good: 217, average: 177, bad: 158, terrible: 138 }, baseCost: 217, checkType: 'Front' },
+        { name: 'Corner Recovery', score: { base: 217, good: 217, average: 177, bad: 158, terrible: 138 }, baseCost: 217, checkType: 'Late' }
       ],
-      blue: [ { name: 'Stealth Mode', score: { base: 195, good: 195, average: 159, bad: 142, terrible: 124 }, checkType: 'Late' } ]
+      blue: [ { name: 'Stealth Mode', score: { base: 195, good: 195, average: 159, bad: 142, terrible: 124 }, baseCost: 195, checkType: 'Late' } ]
     };
     categories = Object.keys(skillsByCategory);
     rebuildSkillCaches();
@@ -584,7 +651,12 @@
     for (const [color, list] of Object.entries(lib)) {
       if (!Array.isArray(list)) continue;
       categories.push(color);
-      skillsByCategory[color] = list.map(item => ({ name: item.name, score: item.score, checkType: item['check-type'] || '' }));
+      skillsByCategory[color] = list.map(item => ({
+        name: item.name,
+        score: item.score,
+        baseCost: item.baseCost || item.base || item.cost,
+        checkType: item['check-type'] || ''
+      }));
     }
     categories.sort((a, b) => { const ia = preferredOrder.indexOf(a), ib = preferredOrder.indexOf(b); if (ia !== -1 || ib !== -1) return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib); return a.localeCompare(b); });
     rebuildSkillCaches();
@@ -607,21 +679,70 @@
   function loadFromCSVContent(csvText) {
     const rows = parseCSV(csvText); if (!rows.length) return false;
     const header = rows[0].map(h => (h || '').toString().trim().toLowerCase());
-    const idx = { type: header.indexOf('skill_type'), name: header.indexOf('name'), base: header.indexOf('base_value'), sa: header.indexOf('s_a'), bc: header.indexOf('b_c'), def: header.indexOf('d_e_f'), g: header.indexOf('g'), check: header.indexOf('affinity_role') };
+    const idx = {
+      type: header.indexOf('skill_type'),
+      name: header.indexOf('name'),
+      base: header.indexOf('base_value'),
+      baseCost: header.indexOf('base'),        // new CSV uses `base` for raw cost
+      sa: header.indexOf('s_a'),
+      bc: header.indexOf('b_c'),
+      def: header.indexOf('d_e_f'),
+      g: header.indexOf('g'),
+      apt1: header.indexOf('apt_1'),
+      apt2: header.indexOf('apt_2'),
+      apt3: header.indexOf('apt_3'),
+      apt4: header.indexOf('apt_4'),
+      check: header.indexOf('affinity_role'),
+      checkAlt: header.indexOf('affinity')
+    };
     if (idx.name === -1) return false;
     const catMap = {};
     for (let r = 1; r < rows.length; r++) {
       const cols = rows[r]; if (!cols || !cols.length) continue;
       const name = (cols[idx.name] || '').trim(); if (!name) continue;
       const type = idx.type !== -1 ? (cols[idx.type] || '').trim().toLowerCase() : 'misc';
+      const baseCost = idx.baseCost !== -1 ? parseInt(cols[idx.baseCost] || '', 10) : NaN;
       const base = idx.base !== -1 ? parseInt(cols[idx.base] || '', 10) : NaN;
       const sa = idx.sa !== -1 ? parseInt(cols[idx.sa] || '', 10) : NaN;
       const bc = idx.bc !== -1 ? parseInt(cols[idx.bc] || '', 10) : NaN;
       const def = idx.def !== -1 ? parseInt(cols[idx.def] || '', 10) : NaN;
       const g = idx.g !== -1 ? parseInt(cols[idx.g] || '', 10) : NaN;
-      const checkType = idx.check !== -1 ? (cols[idx.check] || '').trim() : '';
-      const score = {}; if (!isNaN(base)) score.base = base; if (!isNaN(sa)) score.good = sa; if (!isNaN(bc)) score.average = bc; if (!isNaN(def)) score.bad = def; if (!isNaN(g)) score.terrible = g;
-      if (!catMap[type]) catMap[type] = []; catMap[type].push({ name, score, checkType });
+      // Alt columns used by the shipped CSV (apt_1..apt_4 for bucketed values)
+      const apt1 = idx.apt1 !== -1 ? parseInt(cols[idx.apt1] || '', 10) : NaN;
+      const apt2 = idx.apt2 !== -1 ? parseInt(cols[idx.apt2] || '', 10) : NaN;
+      const apt3 = idx.apt3 !== -1 ? parseInt(cols[idx.apt3] || '', 10) : NaN;
+      const apt4 = idx.apt4 !== -1 ? parseInt(cols[idx.apt4] || '', 10) : NaN;
+      const checkTypeRaw = idx.check !== -1 ? (cols[idx.check] || '').trim() : (idx.checkAlt !== -1 ? (cols[idx.checkAlt] || '').trim() : '');
+      const score = {};
+      const baseBucket = !isNaN(base) ? base : (!isNaN(baseCost) ? baseCost : NaN);
+      const goodVal = !isNaN(sa) ? sa : (!isNaN(apt1) ? apt1 : baseBucket);
+      const avgVal = !isNaN(bc) ? bc : (!isNaN(apt2) ? apt2 : goodVal);
+      const badVal = !isNaN(def) ? def : (!isNaN(apt3) ? apt3 : avgVal);
+      const terrVal = !isNaN(g) ? g : (!isNaN(apt4) ? apt4 : badVal);
+      if (!isNaN(baseBucket)) score.base = baseBucket;
+      if (!isNaN(goodVal)) score.good = goodVal;
+      if (!isNaN(avgVal)) score.average = avgVal;
+      if (!isNaN(badVal)) score.bad = badVal;
+      if (!isNaN(terrVal)) score.terrible = terrVal;
+      const exactKey = normalize(name);
+      const lookupKey = normalizeCostKey(name);
+      const meta = skillCostMapExact.get(exactKey) || skillCostMapNormalized.get(lookupKey) || null;
+      const resolvedCost = (meta && typeof meta.cost === 'number')
+        ? meta.cost
+        : (isNaN(baseCost) ? undefined : baseCost);
+      const parents = Array.isArray(meta?.parents) ? meta.parents : [];
+      const lowerSkillId = Array.isArray(meta?.versions) && meta.versions.length ? String(meta.versions[0]) : '';
+      const skillId = meta?.id;
+      if (!catMap[type]) catMap[type] = [];
+      catMap[type].push({
+        name,
+        score,
+        baseCost: resolvedCost,
+        checkType: checkTypeRaw,
+        parentIds: parents,
+        skillId,
+        lowerSkillId
+      });
     }
     skillsByCategory = catMap; categories = Object.keys(catMap).sort((a,b)=>{const ia=preferredOrder.indexOf(a), ib=preferredOrder.indexOf(b); if(ia!==-1||ib!==-1) return (ia===-1?999:ia) - (ib===-1?999:ib); return a.localeCompare(b)});
     const totalSkills = Object.values(skillsByCategory).reduce((acc, arr) => acc + arr.length, 0);
@@ -693,7 +814,7 @@
       const skillList = row.querySelector('datalist[id^="skills-datalist-"]');
       if (skillList) populateSkillDatalist(skillList);
       if (typeof row.syncSkillCategory === 'function') {
-        row.syncSkillCategory({ triggerOptimize: false, allowLinking: false });
+        row.syncSkillCategory({ triggerOptimize: false, allowLinking: false, updateCost: false });
       }
     });
   }
@@ -747,6 +868,15 @@
         <input type="text" class="skill-name" list="skills-datalist-${id}" placeholder="Start typing..." />
         <datalist id="skills-datalist-${id}"></datalist>
       </div>
+      <div class="hint-cell">
+        <label>Hint Discount</label>
+        <div class="hint-controls">
+          <select class="hint-level">
+            ${HINT_LEVELS.map(lvl => `<option value="${lvl}">Lv${lvl} (${lvl * 10}% off)</option>`).join('')}
+          </select>
+          <div class="base-cost" data-empty="true">Base ?</div>
+        </div>
+      </div>
       <div>
         <label>Cost</label>
         <input type="number" min="0" step="1" class="cost" placeholder="Cost" />
@@ -773,7 +903,46 @@
     const skillInput = row.querySelector('.skill-name');
     const skillList = row.querySelector(`#skills-datalist-${id}`);
     const categoryChip = row.querySelector('.category-chip');
+    const hintSelect = row.querySelector('.hint-level');
+    const baseCostDisplay = row.querySelector('.base-cost');
+    const costInput = row.querySelector('.cost');
     if (skillList) populateSkillDatalist(skillList);
+
+    function getHintLevel() {
+      if (!hintSelect) return 0;
+      const val = parseInt(hintSelect.value, 10);
+      return isNaN(val) ? 0 : val;
+    }
+
+    function updateBaseCostDisplay(skill) {
+      if (!baseCostDisplay) return;
+      const baseCost = skill && typeof skill.baseCost === 'number' && !isNaN(skill.baseCost) ? skill.baseCost : NaN;
+      const baseScore = skill && skill.score && typeof skill.score === 'object' ? skill.score.base : NaN;
+      if (!isNaN(baseCost)) row.dataset.baseCost = String(baseCost); else delete row.dataset.baseCost;
+      const displayScore = !isNaN(baseScore) ? baseScore : evaluateSkillScore(skill || {});
+      if (!isNaN(displayScore)) {
+        baseCostDisplay.textContent = `Score ${displayScore}`;
+        baseCostDisplay.dataset.empty = 'false';
+      } else {
+        baseCostDisplay.textContent = 'Score ?';
+        baseCostDisplay.dataset.empty = 'true';
+      }
+    }
+
+    function applyHintedCost(skill) {
+      if (!costInput) return;
+      const baseCost = (() => {
+        if (skill && typeof skill.baseCost === 'number' && !isNaN(skill.baseCost)) return skill.baseCost;
+        if (row.dataset.baseCost) {
+          const parsed = parseInt(row.dataset.baseCost, 10);
+          return isNaN(parsed) ? NaN : parsed;
+        }
+        return NaN;
+      })();
+      if (isNaN(baseCost)) return;
+      const discounted = calculateDiscountedCost(baseCost, getHintLevel());
+      if (!isNaN(discounted)) costInput.value = discounted;
+    }
 
     function setCategoryDisplay(category) {
       row.dataset.skillCategory = category || '';
@@ -789,11 +958,11 @@
       applyCategoryAccent(row, category);
     }
 
-    function ensureLinkedLowerForGold(category, { allowCreate = true } = {}) {
-      if (row.dataset.parentGoldId) return;
-      const isGold = isGoldCategory(category);
-      const currentLinkedId = row.dataset.lowerRowId;
-      if (!isGold) {
+  function ensureLinkedLowerForGold(category, { allowCreate = true } = {}) {
+    if (row.dataset.parentGoldId) return;
+    const isGold = isGoldCategory(category);
+    const currentLinkedId = row.dataset.lowerRowId;
+    if (!isGold) {
         if (currentLinkedId) {
           const linked = rowsEl.querySelector(`.optimizer-row[data-row-id="${currentLinkedId}"]`);
           if (linked) linked.remove();
@@ -804,48 +973,115 @@
         }
         return;
       }
-      if (!allowCreate || currentLinkedId) return;
+    if (!allowCreate || currentLinkedId) return;
+    const linked = makeRow();
+    linked.classList.add('linked-lower');
+    linked.dataset.parentGoldId = id;
+    const lid = linked.dataset.rowId;
+    const linkedInput = linked.querySelector('.skill-name');
+    if (linkedInput) linkedInput.placeholder = 'Lower skill...';
+    const linkedRemove = linked.querySelector('.remove');
+    if (linkedRemove) {
+      linkedRemove.disabled = true;
+      linkedRemove.title = 'Remove the gold row to unlink';
+      linkedRemove.style.pointerEvents = 'none';
+      linkedRemove.style.opacity = '0.4';
+    }
+    rowsEl.insertBefore(linked, row.nextSibling);
+    row.dataset.lowerRowId = lid;
+    if (typeof linked.syncSkillCategory === 'function') {
+      linked.syncSkillCategory({ triggerOptimize: false, allowLinking: false, updateCost: false });
+    }
+    autofillLinkedLower(linked);
+    saveState();
+    ensureOneEmptyRow();
+    autoOptimizeDebounced();
+  }
+
+    function ensureLinkedLowerForParent(skill, { allowCreate = true } = {}) {
+      if (!skill || !Array.isArray(skill.parentIds) || !skill.parentIds.length) return;
+      if (row.dataset.lowerRowId) {
+        const linked = rowsEl.querySelector(`.optimizer-row[data-row-id="${row.dataset.lowerRowId}"]`);
+        autofillLinkedLower(linked);
+        return;
+      }
+      if (!allowCreate) return;
       const linked = makeRow();
       linked.classList.add('linked-lower');
-      linked.dataset.parentGoldId = id;
+      linked.dataset.parentSkillLink = id;
       const lid = linked.dataset.rowId;
       const linkedInput = linked.querySelector('.skill-name');
       if (linkedInput) linkedInput.placeholder = 'Lower skill...';
       const linkedRemove = linked.querySelector('.remove');
       if (linkedRemove) {
         linkedRemove.disabled = true;
-        linkedRemove.title = 'Remove the gold row to unlink';
+        linkedRemove.title = 'Remove the parent row to unlink';
         linkedRemove.style.pointerEvents = 'none';
         linkedRemove.style.opacity = '0.4';
       }
       rowsEl.insertBefore(linked, row.nextSibling);
       row.dataset.lowerRowId = lid;
-      if (typeof linked.syncSkillCategory === 'function') {
-        linked.syncSkillCategory({ triggerOptimize: false, allowLinking: false });
-      }
+      autofillLinkedLower(linked);
       saveState();
       ensureOneEmptyRow();
       autoOptimizeDebounced();
     }
 
-    function syncSkillCategory({ triggerOptimize = false, allowLinking = true } = {}) {
-      if (!skillInput) return;
+  function syncSkillCategory({ triggerOptimize = false, allowLinking = true, updateCost = false } = {}) {
+    if (!skillInput) return;
+    const skill = findSkillByName(skillInput.value);
+    const category = skill ? skill.category : '';
+    setCategoryDisplay(category);
+    updateBaseCostDisplay(skill);
+    if (updateCost) applyHintedCost(skill);
+    ensureLinkedLowerForGold(category, { allowCreate: allowLinking });
+    ensureLinkedLowerForParent(skill, { allowCreate: allowLinking });
+    if (triggerOptimize) {
+      saveState();
+      ensureOneEmptyRow();
+      autoOptimizeDebounced();
+    }
+  }
+
+    function autofillLinkedLower(linkedRow) {
+      if (!linkedRow || !skillInput) return;
       const skill = findSkillByName(skillInput.value);
-      const category = skill ? skill.category : '';
-      setCategoryDisplay(category);
-      ensureLinkedLowerForGold(category, { allowCreate: allowLinking });
-      if (triggerOptimize) {
-        saveState();
-        ensureOneEmptyRow();
-        autoOptimizeDebounced();
+      if (!skill) return;
+      // Prefer explicit lowerSkillId; otherwise, try parentIds (common for gold -> lower)
+      const candidateId = skill.lowerSkillId || (Array.isArray(skill.parentIds) ? skill.parentIds[0] : '');
+      if (!candidateId) return;
+      const lower = skillIdIndex.get(String(candidateId));
+      if (!lower) return;
+      const lowerInput = linkedRow.querySelector('.skill-name');
+      const lowerCostInput = linkedRow.querySelector('.cost');
+      const lowerHint = linkedRow.querySelector('.hint-level');
+      if (lowerInput && !lowerInput.value) lowerInput.value = lower.name;
+      const baseCost = typeof lower.baseCost === 'number' ? lower.baseCost : skillCostById.get(String(candidateId));
+      if (lowerCostInput && typeof baseCost === 'number') {
+        linkedRow.dataset.baseCost = String(baseCost);
+        const hintLevel = lowerHint ? parseInt(lowerHint.value || '0', 10) || 0 : (hintSelect ? parseInt(hintSelect.value || '0', 10) || 0 : 0);
+        const discounted = calculateDiscountedCost(baseCost, hintLevel);
+        if (!isNaN(discounted)) lowerCostInput.value = discounted;
+      }
+      if (typeof linkedRow.syncSkillCategory === 'function') {
+        linkedRow.syncSkillCategory({ triggerOptimize: false, allowLinking: false, updateCost: true });
       }
     }
 
     row.syncSkillCategory = syncSkillCategory;
     setCategoryDisplay(row.dataset.skillCategory || '');
     if (skillInput) {
-      skillInput.addEventListener('input', () => syncSkillCategory({ triggerOptimize: true }));
-      skillInput.addEventListener('change', () => syncSkillCategory({ triggerOptimize: true }));
+      skillInput.addEventListener('input', () => syncSkillCategory({ triggerOptimize: true, updateCost: true }));
+      skillInput.addEventListener('change', () => syncSkillCategory({ triggerOptimize: true, updateCost: true }));
+    }
+    if (hintSelect) {
+      hintSelect.addEventListener('change', () => {
+        const skill = skillInput ? findSkillByName(skillInput.value) : null;
+        applyHintedCost(skill);
+        saveState();
+        ensureOneEmptyRow();
+        autoOptimizeDebounced();
+      });
     }
     return row;
   }
@@ -856,9 +1092,13 @@
     rows.forEach(row => {
       const nameInput = row.querySelector('.skill-name');
       const costEl = row.querySelector('.cost');
+      const hintEl = row.querySelector('.hint-level');
       if (!nameInput || !costEl) return;
       const name = (nameInput.value || '').trim();
-      const cost = parseInt(costEl.value, 10);
+      const rawCost = parseInt(costEl.value, 10);
+      const hintLevel = parseInt(hintEl?.value || '', 10) || 0;
+      const baseCostStored = row.dataset.baseCost ? parseInt(row.dataset.baseCost, 10) : NaN;
+      const cost = !isNaN(baseCostStored) ? calculateDiscountedCost(baseCostStored, hintLevel) : rawCost;
       if (!name || isNaN(cost)) return;
       const skill = findSkillByName(name);
       if (!skill) return;
@@ -867,24 +1107,82 @@
       const rowId = row.dataset.rowId || Math.random().toString(36).slice(2);
       const parentGoldId = row.dataset.parentGoldId || '';
       const lowerRowId = row.dataset.lowerRowId || '';
-      items.push({ id: rowId, name: skill.name, cost, score, category, parentGoldId, lowerRowId, checkType: skill.checkType || '' });
+      const parentSkillIds = Array.isArray(skill.parentIds) && skill.parentIds.length ? skill.parentIds : [];
+      const lowerSkillId = skill.lowerSkillId || '';
+      const skillId = skill.skillId || skill.id || '';
+      items.push({ id: rowId, name: skill.name, cost, score, category, parentGoldId, lowerRowId, checkType: skill.checkType || '', parentSkillIds, lowerSkillId, skillId, hintLevel });
       rowsMeta.push({ id: rowId, category, parentGoldId, lowerRowId });
+    });
+    const presentSkillIds = new Set(items.map(it => String(it.skillId || '')));
+    // Adjust standalone upgrades (double-circle or similar): if parent is missing, include its cost with same discount and use upgraded score.
+    items.forEach(it => {
+      const missingParentId = (() => {
+        if (it.parentSkillIds && it.parentSkillIds.length) {
+          const pid = it.parentSkillIds.find(pid => !presentSkillIds.has(String(pid)));
+          if (pid !== undefined) return String(pid);
+        }
+        if (it.lowerSkillId && !presentSkillIds.has(String(it.lowerSkillId))) {
+          return String(it.lowerSkillId);
+        }
+        return null;
+      })();
+      if (!missingParentId) return;
+      const parentCostBase = skillCostById.get(String(missingParentId));
+      if (typeof parentCostBase !== 'number') return;
+      const parentCostDiscounted = calculateDiscountedCost(parentCostBase, it.hintLevel || 0);
+      if (isNaN(parentCostDiscounted)) return;
+      it.cost = Math.max(0, Math.floor(parentCostDiscounted + it.cost));
+      it.upgradeStandalone = true;
+      it.parentSkillId = String(missingParentId);
     });
     return { items, rowsMeta };
   }
 
   function buildGroups(items, rowsMeta) {
     const idToIndex = new Map(items.map((it, i) => [it.id, i]));
+    const skillIdToIndex = new Map();
+    items.forEach((it, i) => {
+      if (it.skillId) skillIdToIndex.set(String(it.skillId), i);
+      if (it.lowerSkillId) skillIdToIndex.set(String(it.lowerSkillId), i);
+    });
     const used = new Array(items.length).fill(false);
     const groups = [];
     for (let i = 0; i < items.length; i++) {
       if (used[i]) continue;
       const it = items[i];
+      let handled = false;
+
+      // Dependency: if item has a parent (single-circle) present, offer choices (none, parent only, parent+child).
+      const parentCandidates = [];
+      if (Array.isArray(it.parentSkillIds) && it.parentSkillIds.length) parentCandidates.push(...it.parentSkillIds);
+      if (it.lowerSkillId) parentCandidates.push(it.lowerSkillId);
+      const pid = parentCandidates.find(pid => skillIdToIndex.has(String(pid)));
+      if (pid !== undefined) {
+        const j = skillIdToIndex.get(String(pid));
+        if (!used[j]) {
+          const parent = items[j];
+          groups.push([
+            { none: true },
+            { combo: [j], cost: parent.cost, score: parent.score },
+            // Upgraded (double-circle): pay both costs, only upgraded score counts.
+            { combo: [j, i], cost: parent.cost + it.cost, score: it.score }
+          ]);
+          used[j] = used[i] = true;
+          handled = true;
+        }
+      }
+      if (handled) continue;
+
       const isGold = isGoldCategory(it.category);
       if (isGold && it.lowerRowId && idToIndex.has(it.lowerRowId)) {
         const j = idToIndex.get(it.lowerRowId);
         if (!used[j]) {
-          groups.push([ { none: true }, { pick: i, cost: it.cost, score: it.score }, { pick: j, cost: items[j].cost, score: items[j].score } ]);
+          // gold requires lower: offer none, lower only, or gold with lower cost included
+          groups.push([
+            { none: true },
+            { pick: j, cost: items[j].cost, score: items[j].score },
+            { combo: [j, i], cost: items[j].cost + it.cost, score: it.score }
+          ]);
           used[i] = used[j] = true;
           continue;
         }
@@ -914,7 +1212,28 @@
     }
     // reconstruct
     let b = B; const chosen = [];
-    for (let g = G; g >= 1; g--) { const k = choice[g][b]; if (k > 0) { const o = groups[g - 1][k]; chosen.push(items[o.pick]); b -= Math.max(0, Math.floor(o.cost)); } }
+    for (let g = G; g >= 1; g--) {
+      const k = choice[g][b];
+      if (k > 0) {
+        const o = groups[g - 1][k];
+        const picks = o.combo || (typeof o.pick === 'number' ? [o.pick] : []);
+        if (o.combo) {
+          const lastIdx = picks[picks.length - 1];
+          const baseItem = items[lastIdx];
+          chosen.push({
+            ...baseItem,
+            id: baseItem.id,
+            cost: o.cost,
+            score: o.score,
+            combo: true,
+            components: picks.map(idx => items[idx]?.id).filter(Boolean)
+          });
+        } else {
+          picks.forEach(idx => chosen.push(items[idx]));
+        }
+        b -= Math.max(0, Math.floor(o.cost));
+      }
+    }
     chosen.reverse();
     const used = chosen.reduce((sum, it) => sum + Math.max(0, Math.floor(it.cost)), 0);
     return { best: dp[G][B], chosen, used };
@@ -952,12 +1271,15 @@
     rows.forEach(row => {
       const nameInput = row.querySelector('.skill-name');
       const costEl = row.querySelector('.cost');
+      const hintEl = row.querySelector('.hint-level');
       if (!nameInput || !costEl) return;
       state.rows.push({
         id: row.dataset.rowId || '',
         category: row.dataset.skillCategory || '',
         name: nameInput.value || '',
         cost: parseInt(costEl.value, 10) || 0,
+        hintLevel: parseInt(hintEl?.value, 10) || 0,
+        baseCost: row.dataset.baseCost || '',
         parentGoldId: row.dataset.parentGoldId || '',
         lowerRowId: row.dataset.lowerRowId || ''
       });
@@ -999,9 +1321,12 @@
         if (skillInput) skillInput.value = r.name || '';
         const costEl = row.querySelector('.cost');
         if (costEl) costEl.value = typeof r.cost === 'number' && !isNaN(r.cost) ? r.cost : 0;
+        const hintEl = row.querySelector('.hint-level');
+        if (hintEl) hintEl.value = typeof r.hintLevel === 'number' && !isNaN(r.hintLevel) ? r.hintLevel : 0;
+        if (r.baseCost) row.dataset.baseCost = r.baseCost; else delete row.dataset.baseCost;
         if (r.category) row.dataset.skillCategory = r.category;
         if (typeof row.syncSkillCategory === 'function') {
-          row.syncSkillCategory({ triggerOptimize: false, allowLinking: false });
+          row.syncSkillCategory({ triggerOptimize: false, allowLinking: false, updateCost: true });
         } else {
           applyCategoryAccent(row, r.category || '');
         }
@@ -1085,7 +1410,7 @@
   const loadCsvBtn = document.getElementById('load-csv');
   if (loadCsvBtn && csvFileInput) {
     loadCsvBtn.addEventListener('click', () => csvFileInput.click());
-    csvFileInput.addEventListener('change', () => { const file = csvFileInput.files && csvFileInput.files[0]; if (!file) return; const reader = new FileReader(); reader.onload = () => { const ok = loadFromCSVContent(reader.result || ''); if (!ok) alert('CSV not recognized. Expected headers: skill_type,name,base_value,S_A,B_C,D_E_F,G,affinity_role'); saveState(); }; reader.readAsText(file); });
+    csvFileInput.addEventListener('change', () => { const file = csvFileInput.files && csvFileInput.files[0]; if (!file) return; const reader = new FileReader(); reader.onload = () => { const ok = loadFromCSVContent(reader.result || ''); if (!ok) alert('CSV not recognized. Expected headers like: skill_type,name,base/base_value,S_A/B_C/D_E_F/G or apt_1..apt_4,affinity'); saveState(); }; reader.readAsText(file); });
   }
 
   function finishInit() {
@@ -1101,8 +1426,10 @@
   }
 
   // Init: prefer CSV by default
-  loadSkillsCSV()
-    .then(finishInit)
+  loadSkillCostsJSON()
+    .catch(err => { console.warn('Skill cost JSON load failed', err); })
+    .then(() => loadSkillsCSV())
+    .then(() => finishInit())
     .catch(err => {
       console.error('Initialization failed', err);
       finishInit();
