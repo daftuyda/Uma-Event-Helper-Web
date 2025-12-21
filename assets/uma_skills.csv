@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 skill_type,name,base,apt_1,apt_2,apt_3,apt_4,affinity
+=======
+skill_type,name,base_value,S_A,B_C,D_E_F,G,affinity_role
+>>>>>>> Stashed changes
 gold,Burning Spirit SPD,633,,,,,
 gold,Burning Spirit STA,633,,,,,
 gold,Burning Spirit PWR,633,,,,,
