@@ -6166,5 +6166,151 @@
         "HintLevel": null
       }
     ]
+  },
+  {
+    "SupportSlug": "30068-curren-chan",
+    "SupportId": "30068",
+    "SupportName": "Curren Chan (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30068-curren-chan.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sprint Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprinting Gear",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Meticulous Measures",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Disorient",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30069-narita-brian",
+    "SupportId": "30069",
+    "SupportName": "Narita Brian (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30069-narita-brian.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Right-Handed ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inside Scoop",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Straightaways ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30070-yukino-bijin",
+    "SupportId": "30070",
+    "SupportName": "Yukino Bijin (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30070-yukino-bijin.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Winter Runner ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "10073-curren-chan",
+    "SupportId": "10073",
+    "SupportName": "Curren Chan (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10073-curren-chan.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sprint Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprinting Gear",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Meticulous Measures",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Disorient",
+        "HintLevel": null
+      }
+    ]
   }
 ]
