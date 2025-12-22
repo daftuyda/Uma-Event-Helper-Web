@@ -2266,7 +2266,7 @@ body.dark-mode .results-list .result-item.cat-ius, body.dark-mode .results-list 
 .rows { display: grid; gap: 10px; }
 .optimizer-row {
   display: grid;
-  grid-template-columns: minmax(110px, 0.25fr) minmax(220px, 1fr) minmax(100px, 0.25fr) auto;
+  grid-template-columns: minmax(110px, 0.24fr) minmax(220px, 1fr) minmax(170px, 0.32fr) minmax(110px, 0.22fr) auto;
   gap: 14px;
   padding: 14px 16px;
   border: 1px solid var(--border, #e5e7eb);
@@ -2301,6 +2301,7 @@ body.dark-mode .results-list .result-item.cat-ius, body.dark-mode .results-list 
 .optimizer-row.cat-red { background-color: rgba(248,113,113,.14); }
 .optimizer-row.cat-ius, .optimizer-row.cat-orange { background-color: rgba(251,146,60,.14); }
 .optimizer-row .skill-name,
+.optimizer-row .hint-level,
 .optimizer-row .cost {
   width: 100%;
   padding: 6px 8px;
@@ -2309,6 +2310,29 @@ body.dark-mode .results-list .result-item.cat-ius, body.dark-mode .results-list 
   font: inherit;
   background: var(--input-bg, #fff);
   box-sizing: border-box;
+}
+.optimizer-row .hint-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.optimizer-row .hint-level {
+  min-width: 120px;
+  background: var(--input-bg, #fff);
+}
+.optimizer-row .base-cost {
+  padding: 6px 10px;
+  border: 1px dashed var(--border, #d1d5db);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: .9rem;
+  white-space: nowrap;
+  background: var(--input-bg, #fff);
+}
+.optimizer-row .base-cost[data-empty="true"] {
+  opacity: .7;
+  font-weight: 500;
 }
 
 .optimizer-row .category-chip {
@@ -2332,13 +2356,13 @@ body.dark-mode .results-list .result-item.cat-ius, body.dark-mode .results-list 
 }
 
 /* tint inputs per category */
-.optimizer-row.cat-gold .category-chip, .optimizer-row.cat-gold .skill-name, .optimizer-row.cat-gold .cost { border-color: rgba(194,143,44,.5); }
-.optimizer-row.cat-yellow .category-chip, .optimizer-row.cat-yellow .skill-name, .optimizer-row.cat-yellow .cost { border-color: rgba(250,204,21,.5); }
-.optimizer-row.cat-blue .category-chip, .optimizer-row.cat-blue .skill-name, .optimizer-row.cat-blue .cost { border-color: rgba(96,165,250,.5); }
-.optimizer-row.cat-green .category-chip, .optimizer-row.cat-green .skill-name, .optimizer-row.cat-green .cost { border-color: rgba(52,211,153,.5); }
-.optimizer-row.cat-red .category-chip, .optimizer-row.cat-red .skill-name, .optimizer-row.cat-red .cost { border-color: rgba(248,113,113,.5); }
-.optimizer-row.cat-ius .category-chip, .optimizer-row.cat-ius .skill-name, .optimizer-row.cat-ius .cost,
-.optimizer-row.cat-orange .category-chip, .optimizer-row.cat-orange .skill-name, .optimizer-row.cat-orange .cost { border-color: rgba(251,146,60,.5); }
+.optimizer-row.cat-gold .category-chip, .optimizer-row.cat-gold .skill-name, .optimizer-row.cat-gold .cost, .optimizer-row.cat-gold .hint-level { border-color: rgba(194,143,44,.5); }
+.optimizer-row.cat-yellow .category-chip, .optimizer-row.cat-yellow .skill-name, .optimizer-row.cat-yellow .cost, .optimizer-row.cat-yellow .hint-level { border-color: rgba(250,204,21,.5); }
+.optimizer-row.cat-blue .category-chip, .optimizer-row.cat-blue .skill-name, .optimizer-row.cat-blue .cost, .optimizer-row.cat-blue .hint-level { border-color: rgba(96,165,250,.5); }
+.optimizer-row.cat-green .category-chip, .optimizer-row.cat-green .skill-name, .optimizer-row.cat-green .cost, .optimizer-row.cat-green .hint-level { border-color: rgba(52,211,153,.5); }
+.optimizer-row.cat-red .category-chip, .optimizer-row.cat-red .skill-name, .optimizer-row.cat-red .cost, .optimizer-row.cat-red .hint-level { border-color: rgba(248,113,113,.5); }
+.optimizer-row.cat-ius .category-chip, .optimizer-row.cat-ius .skill-name, .optimizer-row.cat-ius .cost, .optimizer-row.cat-ius .hint-level,
+.optimizer-row.cat-orange .category-chip, .optimizer-row.cat-orange .skill-name, .optimizer-row.cat-orange .cost, .optimizer-row.cat-orange .hint-level { border-color: rgba(251,146,60,.5); }
 .optimizer-row .remove.btn {
   justify-self: end;
   align-self: center;
@@ -2382,7 +2406,13 @@ body.dark-mode .optimizer-row.cat-red { background-color: rgba(252,165,165,.24);
 body.dark-mode .optimizer-row.cat-ius, body.dark-mode .optimizer-row.cat-orange { background-color: rgba(253,186,116,.24); }
 body.dark-mode .optimizer-row .category-chip,
 body.dark-mode .optimizer-row .skill-name,
+body.dark-mode .optimizer-row .hint-level,
 body.dark-mode .optimizer-row .cost {
+  background: #0c0d10;
+  border-color: #2b2f36;
+  color: #e5e7eb;
+}
+body.dark-mode .optimizer-row .base-cost {
   background: #0c0d10;
   border-color: #2b2f36;
   color: #e5e7eb;
