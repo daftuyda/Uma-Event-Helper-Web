@@ -67,7 +67,15 @@
   let skillIdIndex = new Map(); // id string -> skill object
   let allSkillNames = [];
   const HINT_DISCOUNT_STEP = 0.10;
+  const HINT_DISCOUNTS = { 0: 0.0, 1: 0.10, 2: 0.20, 3: 0.30, 4: 0.35, 5: 0.40 };
   const HINT_LEVELS = [0, 1, 2, 3, 4, 5];
+
+  function getHintDiscountPct(lvl) {
+    const discount = Object.prototype.hasOwnProperty.call(HINT_DISCOUNTS, lvl)
+      ? HINT_DISCOUNTS[lvl]
+      : (HINT_DISCOUNT_STEP * lvl);
+    return Math.round(discount * 100);
+  }
   const skillCostMapNormalized = new Map(); // punctuation-stripped key -> meta
   const skillCostMapExact = new Map(); // exact lowercased name -> meta
   const skillCostById = new Map(); // skillId -> base cost
@@ -160,7 +168,10 @@
   function calculateDiscountedCost(baseCost, hintLevel) {
     if (typeof baseCost !== 'number' || isNaN(baseCost)) return NaN;
     const lvl = Math.max(0, Math.min(5, parseInt(hintLevel, 10) || 0));
-    const multiplier = 1 - (HINT_DISCOUNT_STEP * lvl);
+    const discount = Object.prototype.hasOwnProperty.call(HINT_DISCOUNTS, lvl)
+      ? HINT_DISCOUNTS[lvl]
+      : (HINT_DISCOUNT_STEP * lvl);
+    const multiplier = 1 - discount;
     return Math.max(0, Math.floor(baseCost * multiplier));
   }
 
@@ -485,8 +496,11 @@
       const name = row.querySelector('.skill-name')?.value?.trim();
       const costVal = row.querySelector('.cost')?.value;
       const cost = typeof costVal === 'string' && costVal.length ? parseInt(costVal, 10) : NaN;
+      const hintVal = row.querySelector('.hint-level')?.value;
+      const hintLevel = parseInt(hintVal, 10);
       if (!name || isNaN(cost)) return;
-      rows.push(`${name}=${cost}`);
+      const hintSuffix = !isNaN(hintLevel) ? `|H${hintLevel}` : '';
+      rows.push(`${name}=${cost}${hintSuffix}`);
     });
     return rows.join('\n');
   }
@@ -500,14 +514,23 @@
     entries.forEach(entry => {
       const [nameRaw, costRaw] = entry.split('=');
       const name = (nameRaw || '').trim();
-      const cost = parseInt((costRaw || '').trim(), 10);
+      let costText = (costRaw || '').trim();
+      let hintLevel = 0;
+      const hintMatch = costText.match(/\|H?\s*([0-5])\s*$/i);
+      if (hintMatch) {
+        hintLevel = parseInt(hintMatch[1], 10) || 0;
+        costText = costText.slice(0, hintMatch.index).trim();
+      }
+      const cost = parseInt(costText, 10);
       if (!name || isNaN(cost)) return;
       const row = makeRow();
       rowsEl.appendChild(row);
       const nameInput = row.querySelector('.skill-name');
       const costInput = row.querySelector('.cost');
+      const hintSelect = row.querySelector('.hint-level');
       if (nameInput) nameInput.value = name;
       if (costInput) costInput.value = cost;
+      if (hintSelect) hintSelect.value = String(hintLevel);
       if (typeof row.syncSkillCategory === 'function') {
         row.syncSkillCategory({ triggerOptimize: false, allowLinking: false, updateCost: false });
       } else {
@@ -730,8 +753,9 @@
       const resolvedCost = (meta && typeof meta.cost === 'number')
         ? meta.cost
         : (isNaN(baseCost) ? undefined : baseCost);
-      const parents = Array.isArray(meta?.parents) ? meta.parents : [];
-      const lowerSkillId = Array.isArray(meta?.versions) && meta.versions.length ? String(meta.versions[0]) : '';
+      const isUnique = type === 'ius' || type.includes('ius');
+      const parents = !isUnique && Array.isArray(meta?.parents) ? meta.parents : [];
+      const lowerSkillId = !isUnique && Array.isArray(meta?.versions) && meta.versions.length ? String(meta.versions[0]) : '';
       const skillId = meta?.id;
       if (!catMap[type]) catMap[type] = [];
       catMap[type].push({
@@ -872,7 +896,7 @@
         <label>Hint Discount</label>
         <div class="hint-controls">
           <select class="hint-level">
-            ${HINT_LEVELS.map(lvl => `<option value="${lvl}">Lv${lvl} (${lvl * 10}% off)</option>`).join('')}
+            ${HINT_LEVELS.map(lvl => `<option value="${lvl}">Lv${lvl} (${getHintDiscountPct(lvl)}% off)</option>`).join('')}
           </select>
           <div class="base-cost" data-empty="true">Base ?</div>
         </div>
@@ -1098,7 +1122,9 @@
       const rawCost = parseInt(costEl.value, 10);
       const hintLevel = parseInt(hintEl?.value || '', 10) || 0;
       const baseCostStored = row.dataset.baseCost ? parseInt(row.dataset.baseCost, 10) : NaN;
-      const cost = !isNaN(baseCostStored) ? calculateDiscountedCost(baseCostStored, hintLevel) : rawCost;
+      const cost = !isNaN(rawCost)
+        ? rawCost
+        : (!isNaN(baseCostStored) ? calculateDiscountedCost(baseCostStored, hintLevel) : NaN);
       if (!name || isNaN(cost)) return;
       const skill = findSkillByName(name);
       if (!skill) return;
@@ -1112,28 +1138,6 @@
       const skillId = skill.skillId || skill.id || '';
       items.push({ id: rowId, name: skill.name, cost, score, category, parentGoldId, lowerRowId, checkType: skill.checkType || '', parentSkillIds, lowerSkillId, skillId, hintLevel });
       rowsMeta.push({ id: rowId, category, parentGoldId, lowerRowId });
-    });
-    const presentSkillIds = new Set(items.map(it => String(it.skillId || '')));
-    // Adjust standalone upgrades (double-circle or similar): if parent is missing, include its cost with same discount and use upgraded score.
-    items.forEach(it => {
-      const missingParentId = (() => {
-        if (it.parentSkillIds && it.parentSkillIds.length) {
-          const pid = it.parentSkillIds.find(pid => !presentSkillIds.has(String(pid)));
-          if (pid !== undefined) return String(pid);
-        }
-        if (it.lowerSkillId && !presentSkillIds.has(String(it.lowerSkillId))) {
-          return String(it.lowerSkillId);
-        }
-        return null;
-      })();
-      if (!missingParentId) return;
-      const parentCostBase = skillCostById.get(String(missingParentId));
-      if (typeof parentCostBase !== 'number') return;
-      const parentCostDiscounted = calculateDiscountedCost(parentCostBase, it.hintLevel || 0);
-      if (isNaN(parentCostDiscounted)) return;
-      it.cost = Math.max(0, Math.floor(parentCostDiscounted + it.cost));
-      it.upgradeStandalone = true;
-      it.parentSkillId = String(missingParentId);
     });
     return { items, rowsMeta };
   }
@@ -1390,7 +1394,7 @@
         console.warn('Clipboard read failed', err);
       }
       if (!payload || !payload.trim()) {
-        const manual = window.prompt('Paste build string (Skill=Cost per line):', '');
+        const manual = window.prompt('Paste build string (Skill=Cost|H# per line):', '');
         if (!manual) return;
         payload = manual;
       }
@@ -1399,7 +1403,7 @@
         setAutoStatus('Build loaded from clipboard.');
       } catch (err) {
         console.error('Failed to load build', err);
-        alert('Could not parse build string. Use lines like "Skill Name=120".');
+        alert('Could not parse build string. Use lines like "Skill Name=120|H3".');
       }
     });
   }
