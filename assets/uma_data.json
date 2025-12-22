@@ -34892,5 +34892,347 @@
       }
     ],
     "UmaEvents": []
+  },
+  {
+    "UmaKey": "Tosen Jordan :: [Jokester ☆ Vibes]",
+    "UmaName": "Tosen Jordan",
+    "UmaNickname": "[Jokester ☆ Vibes]",
+    "UmaSlug": "104801-tosen-jordan",
+    "UmaId": "104801",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 89,
+        "Stamina": 98,
+        "Power": 75,
+        "Guts": 101,
+        "Wit": 87
+      },
+      "5★": {
+        "Speed": 109,
+        "Stamina": 120,
+        "Power": 92,
+        "Guts": 123,
+        "Wit": 106
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 10,
+      "Stamina": 0,
+      "Power": 10,
+      "Guts": 10,
+      "Wit": 0
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "G"
+      },
+      "Distance": {
+        "Short": "G",
+        "Mile": "F",
+        "Medium": "A",
+        "Long": "B"
+      },
+      "Strategy": {
+        "Front": "C",
+        "Pace": "A",
+        "Late": "B",
+        "End": "G"
+      }
+    },
+    "UmaHeightCm": 157,
+    "UmaThreeSizes": {
+      "B": 82,
+      "W": 56,
+      "H": 84
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "2. Place 5th or better in the Hopeful Stakes",
+        "Turn": "Turn 24 (previous + 11)",
+        "Time": "Junior Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "3. Place 5th or better in the Satsuki Sho",
+        "Turn": "Turn 31 (previous + 6)",
+        "Time": "Classic Class, Early April",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "4. Place 3rd or better in the Copa Republica Argentina",
+        "Turn": "Turn 45 (previous + 13)",
+        "Time": "Classic Class, Early November",
+        "ObjectiveCondition": "G2 – Turf – 2500m – Long"
+      },
+      {
+        "ObjectiveName": "5. Participate in the Arima Kinen",
+        "Turn": "Turn 48 (previous + 2)",
+        "Time": "Classic Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      },
+      {
+        "ObjectiveName": "6. Place 3rd or better in the Osaka Hai",
+        "Turn": "Turn 54 (previous + 5)",
+        "Time": "Senior Class, Late March",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "7. Place 3rd or better in the Tenno Sho (Spring)",
+        "Turn": "Turn 56 (previous + 1)",
+        "Time": "Senior Class, Late April",
+        "ObjectiveCondition": "G1 – Turf – 3200m – Long"
+      },
+      {
+        "ObjectiveName": "8. Place 3rd or better in the Takarazuka Kinen",
+        "Turn": "Turn 60 (previous + 3)",
+        "Time": "Senior Class, Late June",
+        "ObjectiveCondition": "G1 – Turf – 2200m – Medium"
+      },
+      {
+        "ObjectiveName": "9. Place 1st in the Tenno Sho (Autumn)",
+        "Turn": "Turn 68 (previous + 7)",
+        "Time": "Senior Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      }
+    ],
+    "UmaEvents": []
+  },
+  {
+    "UmaKey": "Symboli Rudolf :: [Archer by Moonlight]",
+    "UmaName": "Symboli Rudolf",
+    "UmaNickname": "[Archer by Moonlight]",
+    "UmaSlug": "101702-symboli-rudolf",
+    "UmaId": "101702",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 83,
+        "Stamina": 87,
+        "Power": 90,
+        "Guts": 90,
+        "Wit": 100
+      },
+      "5★": {
+        "Speed": 101,
+        "Stamina": 107,
+        "Power": 110,
+        "Guts": 110,
+        "Wit": 122
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 8,
+      "Stamina": 14,
+      "Power": 0,
+      "Guts": 0,
+      "Wit": 8
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "G"
+      },
+      "Distance": {
+        "Short": "E",
+        "Mile": "C",
+        "Medium": "A",
+        "Long": "A"
+      },
+      "Strategy": {
+        "Front": "B",
+        "Pace": "A",
+        "Late": "A",
+        "End": "C"
+      }
+    },
+    "UmaHeightCm": 165,
+    "UmaThreeSizes": {
+      "B": 86,
+      "W": 59,
+      "H": 85
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "2. Place 5th or better in the Saudi Arabia Royal Cup",
+        "Turn": "Turn 19 (previous + 6)",
+        "Time": "Junior Class, Early October",
+        "ObjectiveCondition": "G3 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "3. Place 5th or better in the Satsuki Sho",
+        "Turn": "Turn 31 (previous + 11)",
+        "Time": "Classic Class, Early April",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "4. Place 5th or better in the Tokyo Yushun (Japanese Derby)",
+        "Turn": "Turn 34 (previous + 2)",
+        "Time": "Classic Class, Late May",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "5. Place 3rd or better in the Kikuka Sho",
+        "Turn": "Turn 44 (previous + 9)",
+        "Time": "Classic Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 3000m – Long"
+      },
+      {
+        "ObjectiveName": "6. Place 3rd or better in the Arima Kinen",
+        "Turn": "Turn 48 (previous + 3)",
+        "Time": "Classic Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      },
+      {
+        "ObjectiveName": "7. Place 3rd or better in the Tenno Sho (Spring)",
+        "Turn": "Turn 56 (previous + 7)",
+        "Time": "Senior Class, Late April",
+        "ObjectiveCondition": "G1 – Turf – 3200m – Long"
+      },
+      {
+        "ObjectiveName": "8. Place 2nd or better in the Japan Cup",
+        "Turn": "Turn 70 (previous + 13)",
+        "Time": "Senior Class, Late November",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "9. Place 1st in the Arima Kinen",
+        "Turn": "Turn 72 (previous + 1)",
+        "Time": "Senior Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      }
+    ],
+    "UmaEvents": []
+  },
+  {
+    "UmaKey": "Gold City :: [Autumn Cosmos]",
+    "UmaName": "Gold City",
+    "UmaNickname": "[Autumn Cosmos]",
+    "UmaSlug": "104002-gold-city",
+    "UmaId": "104002",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 86,
+        "Stamina": 98,
+        "Power": 86,
+        "Guts": 98,
+        "Wit": 82
+      },
+      "5★": {
+        "Speed": 105,
+        "Stamina": 120,
+        "Power": 105,
+        "Guts": 119,
+        "Wit": 101
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 8,
+      "Stamina": 0,
+      "Power": 8,
+      "Guts": 0,
+      "Wit": 14
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "D"
+      },
+      "Distance": {
+        "Short": "F",
+        "Mile": "A",
+        "Medium": "B",
+        "Long": "B"
+      },
+      "Strategy": {
+        "Front": "F",
+        "Pace": "A",
+        "Late": "A",
+        "End": "F"
+      }
+    },
+    "UmaHeightCm": 158,
+    "UmaThreeSizes": {
+      "B": 85,
+      "W": 58,
+      "H": 82
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 1500m – Mile"
+      },
+      {
+        "ObjectiveName": "2. Place 5th or better in the Hanshin Juvenile Fillies",
+        "Turn": "Turn 23 (previous + 10)",
+        "Time": "Junior Class, Early December",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "3. Place 5th or better in the Satsuki Sho",
+        "Turn": "Turn 31 (previous + 7)",
+        "Time": "Classic Class, Early April",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "4. Place 5th or better in the Tokyo Yushun (Japanese Derby)",
+        "Turn": "Turn 34 (previous + 2)",
+        "Time": "Classic Class, Late May",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "5. Place 3rd or better in the Kikuka Sho",
+        "Turn": "Turn 44 (previous + 9)",
+        "Time": "Classic Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 3000m – Long"
+      },
+      {
+        "ObjectiveName": "6. Place 3rd or better in the Arima Kinen",
+        "Turn": "Turn 48 (previous + 3)",
+        "Time": "Classic Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      },
+      {
+        "ObjectiveName": "7. Place 3rd or better in the Osaka Hai",
+        "Turn": "Turn 54 (previous + 5)",
+        "Time": "Senior Class, Late March",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "8. Place 3rd or better in the Tenno Sho (Spring)",
+        "Turn": "Turn 56 (previous + 1)",
+        "Time": "Senior Class, Late April",
+        "ObjectiveCondition": "G1 – Turf – 3200m – Long"
+      },
+      {
+        "ObjectiveName": "9. Place 3rd or better in the Takarazuka Kinen",
+        "Turn": "Turn 60 (previous + 3)",
+        "Time": "Senior Class, Late June",
+        "ObjectiveCondition": "G1 – Turf – 2200m – Medium"
+      },
+      {
+        "ObjectiveName": "10. Place 1st in the Japan Cup",
+        "Turn": "Turn 70 (previous + 9)",
+        "Time": "Senior Class, Late November",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      }
+    ],
+    "UmaEvents": []
   }
 ]

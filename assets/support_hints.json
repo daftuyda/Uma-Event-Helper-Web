@@ -35,6 +35,41 @@
         "SkillId": "",
         "Name": "Acceleration",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Competitive Spirit ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Running Idle",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rising Dragon",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
       }
     ]
   },
@@ -63,6 +98,21 @@
       {
         "SkillId": "",
         "Name": "Tactical Tweak",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tether",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Center Stage",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
         "HintLevel": null
       }
     ]
@@ -103,6 +153,26 @@
         "SkillId": "",
         "Name": "Meticulous Measures",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Gap Closer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sixth Sense",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Dodging Danger",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprinting Gear",
+        "HintLevel": null
       }
     ]
   },
@@ -137,6 +207,16 @@
         "SkillId": "",
         "Name": "Steadfast",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "The Bigger Picture",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Unyielding Spirit",
+        "HintLevel": null
       }
     ]
   },
@@ -165,6 +245,26 @@
       {
         "SkillId": "",
         "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Speed Star",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Spring Runner ○",
         "HintLevel": null
       }
     ]
@@ -200,6 +300,31 @@
         "SkillId": "",
         "Name": "Tail Held High",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Subdued Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Playtime's Over!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "It's On!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
       }
     ]
   },
@@ -234,6 +359,16 @@
         "SkillId": "",
         "Name": "Slick Surge",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "In Body and Mind",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Corners ○",
+        "HintLevel": null
       }
     ]
   },
@@ -262,6 +397,26 @@
       {
         "SkillId": "",
         "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inner Post Proficiency ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "No Stopping Me!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Acceleration ○",
         "HintLevel": null
       }
     ]
@@ -312,6 +467,16 @@
         "SkillId": "",
         "Name": "Focus",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Professor of Curvature",
+        "HintLevel": null
       }
     ]
   },
@@ -356,6 +521,21 @@
         "SkillId": "",
         "Name": "Flustered Front Runners",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "All I've Got",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Iron Will",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Front Runners",
+        "HintLevel": null
       }
     ]
   },
@@ -389,6 +569,21 @@
       {
         "SkillId": "",
         "Name": "Fighter",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Unruffled",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Subdued Front Runners",
         "HintLevel": null
       }
     ]
@@ -434,6 +629,41 @@
         "SkillId": "",
         "Name": "Flustered Pace Chasers",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Strategy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Front Runner Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Keeping the Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Vanguard Spirit",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lone Wolf",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
       }
     ]
   },
@@ -472,6 +702,16 @@
       {
         "SkillId": "",
         "Name": "Early Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Taking the Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Watchful Eye",
         "HintLevel": null
       }
     ]
@@ -532,6 +772,26 @@
         "SkillId": "",
         "Name": "Focus",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Furious Feat",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
       }
     ]
   },
@@ -576,6 +836,21 @@
         "SkillId": "",
         "Name": "Steadfast",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shake It Out",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Gourmand",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Extra Tank",
+        "HintLevel": null
       }
     ]
   },
@@ -619,6 +894,26 @@
       {
         "SkillId": "",
         "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straight Descent",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "In Body and Mind",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Extra Tank",
         "HintLevel": null
       }
     ]
@@ -674,6 +969,21 @@
         "SkillId": "",
         "Name": "Focus",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Restart",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Unrestrained",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Left-Handed ○",
+        "HintLevel": null
       }
     ]
   },
@@ -712,6 +1022,16 @@
       {
         "SkillId": "",
         "Name": "Thunderbolt Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rushing Gale!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Straightaways ○",
         "HintLevel": null
       }
     ]
@@ -792,6 +1112,26 @@
         "SkillId": "",
         "Name": "Smoke Screen",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Start",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Connoisseur",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Risky Business",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
+        "HintLevel": null
       }
     ]
   },
@@ -846,6 +1186,16 @@
         "SkillId": "",
         "Name": "Updrafters",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Breath of Fresh Air",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
       }
     ]
   },
@@ -895,6 +1245,26 @@
         "SkillId": "",
         "Name": "Flustered Pace Chasers",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Furious Feat",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Target in Sight ○",
+        "HintLevel": null
       }
     ]
   },
@@ -939,6 +1309,16 @@
         "SkillId": "",
         "Name": "Hawkeye",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Killer Tunes",
+        "HintLevel": null
       }
     ]
   },
@@ -977,6 +1357,31 @@
       {
         "SkillId": "",
         "Name": "Trick (Front)",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Dodging Danger",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Second Wind",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fast-Paced",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Escape Artist",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Keeping the Lead",
         "HintLevel": null
       }
     ]
@@ -1022,6 +1427,21 @@
         "SkillId": "",
         "Name": "Flustered Late Surgers",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tail Held High",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fast & Furious",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
+        "HintLevel": null
       }
     ]
   },
@@ -1055,6 +1475,21 @@
       {
         "SkillId": "",
         "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Speed Star",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Adept ○",
         "HintLevel": null
       }
     ]
@@ -1090,6 +1525,16 @@
         "SkillId": "",
         "Name": "Speed Eater",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Restless",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fast-Paced",
+        "HintLevel": null
       }
     ]
   },
@@ -1124,6 +1569,21 @@
         "SkillId": "",
         "Name": "Slick Surge",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fighter",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "On Your Left!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Corners ○",
+        "HintLevel": null
       }
     ]
   },
@@ -1148,6 +1608,26 @@
         "SkillId": "",
         "Name": "Strategist",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Intense Gaze",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Spurt",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Unyielding",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Strategy",
+        "HintLevel": null
       }
     ]
   },
@@ -1171,6 +1651,21 @@
       {
         "SkillId": "",
         "Name": "Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Keen Eye",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "A Small Breather",
         "HintLevel": null
       }
     ]
@@ -1221,6 +1716,16 @@
         "SkillId": "",
         "Name": "Flustered Front Runners",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Turbo Sprint",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Gap Closer",
+        "HintLevel": null
       }
     ]
   },
@@ -1254,6 +1759,16 @@
       {
         "SkillId": "",
         "Name": "Hesitant Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Swinging Maestro",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Deep Breaths",
         "HintLevel": null
       }
     ]
@@ -1304,6 +1819,36 @@
         "SkillId": "",
         "Name": "Restart",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Groundwork",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Focus",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Top Pick",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prudent Positioning",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Center Stage",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Final Push",
+        "HintLevel": null
       }
     ]
   },
@@ -1338,6 +1883,21 @@
         "SkillId": "",
         "Name": "Updrafters",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Countermeasure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Beeline Burst",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
       }
     ]
   },
@@ -1347,7 +1907,18 @@
     "SupportName": "Haru Urara (SSR) Support Card",
     "SupportRarity": "SSR",
     "SupportImage": "/assets/support_thumbs/30019-haru-urara.png",
-    "SupportHints": []
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Unruffled",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
+        "HintLevel": null
+      }
+    ]
   },
   {
     "SupportSlug": "30020-biko-pegasus",
@@ -1390,6 +1961,16 @@
         "SkillId": "",
         "Name": "Stop Right There!",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Plan X",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprint Straightaways ○",
+        "HintLevel": null
       }
     ]
   },
@@ -1399,7 +1980,28 @@
     "SupportName": "Tazuna Hayakawa (SSR) Support Card",
     "SupportRarity": "SSR",
     "SupportImage": "/assets/support_thumbs/30021-tazuna-hayakawa.png",
-    "SupportHints": []
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Watchful Eye",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Focus",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Concentration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tail Held High",
+        "HintLevel": null
+      }
+    ]
   },
   {
     "SupportSlug": "30022-mejiro-mcqueen",
@@ -1457,6 +2059,16 @@
         "SkillId": "",
         "Name": "Inside Scoop",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cooldown",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
+        "HintLevel": null
       }
     ]
   },
@@ -1511,6 +2123,21 @@
         "SkillId": "",
         "Name": "Disorient",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Extra Tank",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Adrenaline Rush",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
       }
     ]
   },
@@ -1539,6 +2166,16 @@
       {
         "SkillId": "",
         "Name": "Hesitant Front Runners",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shifting Gears",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Unyielding Spirit",
         "HintLevel": null
       }
     ]
@@ -1578,6 +2215,21 @@
       {
         "SkillId": "",
         "Name": "Sprinting Gear",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lucky Seven",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shifting Gears",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Uma Stan",
         "HintLevel": null
       }
     ]
@@ -1628,6 +2280,16 @@
         "SkillId": "",
         "Name": "Studious",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sharp Gaze",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
       }
     ]
   },
@@ -1661,6 +2323,16 @@
       {
         "SkillId": "",
         "Name": "Updrafters",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Acceleration",
         "HintLevel": null
       }
     ]
@@ -1711,6 +2383,16 @@
         "SkillId": "",
         "Name": "Sharp Gaze",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
       }
     ]
   },
@@ -1744,6 +2426,21 @@
       {
         "SkillId": "",
         "Name": "Sharp Gaze",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Front Runners",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied End Closers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Rear)",
         "HintLevel": null
       }
     ]
@@ -1789,6 +2486,21 @@
         "SkillId": "",
         "Name": "Speed Eater",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straight Descent",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Watchful Eye",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
+        "HintLevel": null
       }
     ]
   },
@@ -1833,6 +2545,26 @@
         "SkillId": "",
         "Name": "Murmur",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lucky Seven",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Maverick ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Levelheaded",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lone Wolf",
+        "HintLevel": null
       }
     ]
   },
@@ -1866,6 +2598,16 @@
       {
         "SkillId": "",
         "Name": "Trick (Front)",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Flustered End Closers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
         "HintLevel": null
       }
     ]
@@ -1906,6 +2648,16 @@
         "SkillId": "",
         "Name": "Shifting Gears",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tactical Tweak",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
       }
     ]
   },
@@ -1939,6 +2691,16 @@
       {
         "SkillId": "",
         "Name": "Straightaway Spurt",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Masterful Gambit",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant End Closers",
         "HintLevel": null
       }
     ]
@@ -1979,6 +2741,16 @@
         "SkillId": "",
         "Name": "Flustered End Closers",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
       }
     ]
   },
@@ -2018,6 +2790,21 @@
         "SkillId": "",
         "Name": "Opening Gambit",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied End Closers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rainy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
       }
     ]
   },
@@ -2051,6 +2838,16 @@
       {
         "SkillId": "",
         "Name": "Frenzied End Closers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pressure",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inside Scoop",
         "HintLevel": null
       }
     ]
@@ -2091,6 +2888,11 @@
         "SkillId": "",
         "Name": "Go with the Flow",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Focus",
+        "HintLevel": null
       }
     ]
   },
@@ -2130,6 +2932,16 @@
         "SkillId": "",
         "Name": "Stamina Eater",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Studious",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Non-Standard Distance ○",
+        "HintLevel": null
       }
     ]
   },
@@ -2158,6 +2970,16 @@
       {
         "SkillId": "",
         "Name": "Early Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Recovery ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Focus",
         "HintLevel": null
       }
     ]
@@ -2188,6 +3010,16 @@
         "SkillId": "",
         "Name": "Medium Straightaways ○",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Strategy",
+        "HintLevel": null
       }
     ]
   },
@@ -2217,6 +3049,11 @@
         "SkillId": "",
         "Name": "Medium Corners ○",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Acceleration ○",
+        "HintLevel": null
       }
     ]
   },
@@ -2245,6 +3082,16 @@
       {
         "SkillId": "",
         "Name": "Tether",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Subdued Front Runners",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Savvy ○",
         "HintLevel": null
       }
     ]
@@ -2279,6 +3126,16 @@
       {
         "SkillId": "",
         "Name": "Fighter",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Target in Sight ○",
         "HintLevel": null
       }
     ]
@@ -2324,6 +3181,16 @@
         "SkillId": "",
         "Name": "Intense Gaze",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "I Can See Right Through You",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pressure",
+        "HintLevel": null
       }
     ]
   },
@@ -2357,6 +3224,11 @@
       {
         "SkillId": "",
         "Name": "Hesitant Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
         "HintLevel": null
       }
     ]
@@ -2402,6 +3274,11 @@
         "SkillId": "",
         "Name": "Trick (Rear)",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Right-Handed ○",
+        "HintLevel": null
       }
     ]
   },
@@ -2446,6 +3323,16 @@
         "SkillId": "",
         "Name": "Hawkeye",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Prepared to Pass",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Corners ○",
+        "HintLevel": null
       }
     ]
   },
@@ -2479,6 +3366,16 @@
       {
         "SkillId": "",
         "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slick Surge",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Unyielding Spirit",
         "HintLevel": null
       }
     ]
@@ -2529,6 +3426,16 @@
         "SkillId": "",
         "Name": "Sharp Gaze",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Extra Tank",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
       }
     ]
   },
@@ -2568,6 +3475,11 @@
         "SkillId": "",
         "Name": "Gap Closer",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
       }
     ]
   },
@@ -2577,7 +3489,33 @@
     "SupportName": "Aoi Kiryuin (SR) Support Card",
     "SupportRarity": "SR",
     "SupportImage": "/assets/support_thumbs/20021-aoi-kiryuin.png",
-    "SupportHints": []
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Maverick ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Subdued Front Runners",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant End Closers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shake It Out",
+        "HintLevel": null
+      }
+    ]
   },
   {
     "SupportSlug": "10065-bamboo-memory",
@@ -2615,6 +3553,11 @@
         "SkillId": "",
         "Name": "Acceleration",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Standard Distance ○",
+        "HintLevel": null
       }
     ]
   },
@@ -2644,6 +3587,11 @@
         "SkillId": "",
         "Name": "Hesitant Front Runners",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Unyielding Spirit",
+        "HintLevel": null
       }
     ]
   },
@@ -2672,6 +3620,11 @@
       {
         "SkillId": "",
         "Name": "Tactical Tweak",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
         "HintLevel": null
       }
     ]
@@ -2712,6 +3665,11 @@
         "SkillId": "",
         "Name": "Meticulous Measures",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprinting Gear",
+        "HintLevel": null
       }
     ]
   },
@@ -2751,6 +3709,11 @@
         "SkillId": "",
         "Name": "Sprinting Gear",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Uma Stan",
+        "HintLevel": null
       }
     ]
   },
@@ -2779,6 +3742,11 @@
       {
         "SkillId": "",
         "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Spring Runner ○",
         "HintLevel": null
       }
     ]
@@ -2813,6 +3781,11 @@
       {
         "SkillId": "",
         "Name": "Tail Held High",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
         "HintLevel": null
       }
     ]
@@ -2862,6 +3835,11 @@
       {
         "SkillId": "",
         "Name": "Studious",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
         "HintLevel": null
       }
     ]
@@ -2956,6 +3934,11 @@
         "SkillId": "",
         "Name": "Flustered Front Runners",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Front Runners",
+        "HintLevel": null
       }
     ]
   },
@@ -2990,6 +3973,11 @@
         "SkillId": "",
         "Name": "Fighter",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Subdued Front Runners",
+        "HintLevel": null
       }
     ]
   },
@@ -3023,6 +4011,11 @@
       {
         "SkillId": "",
         "Name": "Sharp Gaze",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Rear)",
         "HintLevel": null
       }
     ]
@@ -3067,6 +4060,11 @@
       {
         "SkillId": "",
         "Name": "Flustered Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
         "HintLevel": null
       }
     ]
@@ -3150,6 +4148,11 @@
       {
         "SkillId": "",
         "Name": "Speed Eater",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
         "HintLevel": null
       }
     ]
@@ -3239,6 +4242,11 @@
         "SkillId": "",
         "Name": "Steadfast",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Extra Tank",
+        "HintLevel": null
       }
     ]
   },
@@ -3293,6 +4301,11 @@
         "SkillId": "",
         "Name": "Focus",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Left-Handed ○",
+        "HintLevel": null
       }
     ]
   },
@@ -3331,6 +4344,11 @@
       {
         "SkillId": "",
         "Name": "Thunderbolt Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Straightaways ○",
         "HintLevel": null
       }
     ]
@@ -3425,6 +4443,11 @@
         "SkillId": "",
         "Name": "Focus",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
       }
     ]
   },
@@ -3504,6 +4527,11 @@
         "SkillId": "",
         "Name": "Smoke Screen",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
+        "HintLevel": null
       }
     ]
   },
@@ -3557,6 +4585,11 @@
       {
         "SkillId": "",
         "Name": "Updrafters",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
         "HintLevel": null
       }
     ]
@@ -3646,6 +4679,16 @@
         "SkillId": "",
         "Name": "Flustered Pace Chasers",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Target in Sight ○",
+        "HintLevel": null
       }
     ]
   },
@@ -3694,6 +4737,11 @@
       {
         "SkillId": "",
         "Name": "Disorient",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
         "HintLevel": null
       }
     ]
@@ -3783,6 +4831,11 @@
         "SkillId": "",
         "Name": "Studious",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Non-Standard Distance ○",
+        "HintLevel": null
       }
     ]
   },
@@ -3832,6 +4885,11 @@
         "SkillId": "",
         "Name": "Subdued End Closers",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rainy Days ○",
+        "HintLevel": null
       }
     ]
   },
@@ -3870,6 +4928,11 @@
       {
         "SkillId": "",
         "Name": "Trick (Front)",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Keeping the Lead",
         "HintLevel": null
       }
     ]
@@ -3925,6 +4988,11 @@
         "SkillId": "",
         "Name": "Disorient",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
       }
     ]
   },
@@ -3959,6 +5027,11 @@
         "SkillId": "",
         "Name": "Slick Surge",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Corners ○",
+        "HintLevel": null
       }
     ]
   },
@@ -3982,6 +5055,11 @@
       {
         "SkillId": "",
         "Name": "Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "A Small Breather",
         "HintLevel": null
       }
     ]
@@ -4032,6 +5110,11 @@
         "SkillId": "",
         "Name": "Flustered Front Runners",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Gap Closer",
+        "HintLevel": null
       }
     ]
   },
@@ -4066,6 +5149,11 @@
         "SkillId": "",
         "Name": "Hesitant Pace Chasers",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Deep Breaths",
+        "HintLevel": null
       }
     ]
   },
@@ -4075,7 +5163,13 @@
     "SupportName": "Haru Urara (R) Support Card",
     "SupportRarity": "R",
     "SupportImage": "/assets/support_thumbs/10020-haru-urara.png",
-    "SupportHints": []
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
+        "HintLevel": null
+      }
+    ]
   },
   {
     "SupportSlug": "10021-tazuna-hayakawa",
@@ -4083,7 +5177,23 @@
     "SupportName": "Tazuna Hayakawa (R) Support Card",
     "SupportRarity": "R",
     "SupportImage": "/assets/support_thumbs/10021-tazuna-hayakawa.png",
-    "SupportHints": []
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Watchful Eye",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Focus",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tail Held High",
+        "HintLevel": null
+      }
+    ]
   },
   {
     "SupportSlug": "10022-aoi-kiryuin",
@@ -4091,7 +5201,33 @@
     "SupportName": "Aoi Kiryuin (R) Support Card",
     "SupportRarity": "R",
     "SupportImage": "/assets/support_thumbs/10022-aoi-kiryuin.png",
-    "SupportHints": []
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Maverick ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Subdued Front Runners",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant End Closers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shake It Out",
+        "HintLevel": null
+      }
+    ]
   },
   {
     "SupportSlug": "10023-daiwa-scarlet",
@@ -4129,6 +5265,11 @@
         "SkillId": "",
         "Name": "Shifting Gears",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
       }
     ]
   },
@@ -4162,6 +5303,11 @@
       {
         "SkillId": "",
         "Name": "Straightaway Spurt",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant End Closers",
         "HintLevel": null
       }
     ]
@@ -5127,6 +6273,21 @@
         "SkillId": "",
         "Name": "Trick (Front)",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Frenzied Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Vanguard Spirit",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Keeping the Lead",
+        "HintLevel": null
       }
     ]
   },
@@ -5165,6 +6326,26 @@
       {
         "SkillId": "",
         "Name": "Gap Closer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stop Right There!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Uma Stan",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Blinding Flash",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Homestretch Haste",
         "HintLevel": null
       }
     ]
@@ -5245,6 +6426,26 @@
         "SkillId": "",
         "Name": "Smoke Screen",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Innate Experience",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Maverick ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
+        "HintLevel": null
       }
     ]
   },
@@ -5273,6 +6474,21 @@
       {
         "SkillId": "",
         "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Savvy ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Unyielding",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Strategy",
         "HintLevel": null
       }
     ]
@@ -5308,6 +6524,11 @@
         "SkillId": "",
         "Name": "Pace Chaser Corners ○",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Pace Chasers",
+        "HintLevel": null
       }
     ]
   },
@@ -5341,6 +6562,11 @@
       {
         "SkillId": "",
         "Name": "Pace Chaser Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Pace Chasers",
         "HintLevel": null
       }
     ]
@@ -5391,6 +6617,16 @@
         "SkillId": "",
         "Name": "Long Straightaways ○",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shatterproof",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lone Wolf",
+        "HintLevel": null
       }
     ]
   },
@@ -5435,6 +6671,16 @@
         "SkillId": "",
         "Name": "Murmur",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Spurt",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Crusader",
+        "HintLevel": null
       }
     ]
   },
@@ -5468,6 +6714,36 @@
       {
         "SkillId": "",
         "Name": "Slick Surge",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Triple 7s",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "1,500,000 CC",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Maverick ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hard Worker",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Late Surger Corners ○",
         "HintLevel": null
       }
     ]
@@ -5507,6 +6783,16 @@
       {
         "SkillId": "",
         "Name": "Shifting Gears",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Race Planner",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
         "HintLevel": null
       }
     ]
@@ -5562,6 +6848,26 @@
         "SkillId": "",
         "Name": "Focus",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Concentration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Left-Handed ○",
+        "HintLevel": null
       }
     ]
   },
@@ -5611,6 +6917,16 @@
         "SkillId": "",
         "Name": "Sharp Gaze",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "On Your Left!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
       }
     ]
   },
@@ -5649,6 +6965,16 @@
       {
         "SkillId": "",
         "Name": "Pace Chaser Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lucky Seven",
         "HintLevel": null
       }
     ]
@@ -5704,6 +7030,21 @@
         "SkillId": "",
         "Name": "Disorient",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Passing Pro",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Swinging Maestro",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Firm Conditions ○",
+        "HintLevel": null
       }
     ]
   },
@@ -5713,7 +7054,33 @@
     "SupportName": "Riko Kashimoto (SSR) Support Card",
     "SupportRarity": "SSR",
     "SupportImage": "/assets/support_thumbs/30036-riko-kashimoto.png",
-    "SupportHints": []
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Maverick ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lone Wolf",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Rushing Gale!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sympathy",
+        "HintLevel": null
+      }
+    ]
   },
   {
     "SupportSlug": "10060-riko-kashimoto",
@@ -5721,7 +7088,33 @@
     "SupportName": "Riko Kashimoto (R) Support Card",
     "SupportRarity": "R",
     "SupportImage": "/assets/support_thumbs/10060-riko-kashimoto.png",
-    "SupportHints": []
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Maverick ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lone Wolf",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Acceleration",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sympathy",
+        "HintLevel": null
+      }
+    ]
   },
   {
     "SupportSlug": "10070-tosen-jordan",
@@ -5758,6 +7151,11 @@
       {
         "SkillId": "",
         "Name": "Pace Chaser Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lucky Seven",
         "HintLevel": null
       }
     ]
@@ -5808,6 +7206,11 @@
         "SkillId": "",
         "Name": "Long Straightaways ○",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lone Wolf",
+        "HintLevel": null
       }
     ]
   },
@@ -5841,6 +7244,21 @@
       {
         "SkillId": "",
         "Name": "Sharp Gaze",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "The Bigger Picture",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Trick (Rear)",
         "HintLevel": null
       }
     ]
@@ -5885,6 +7303,21 @@
       {
         "SkillId": "",
         "Name": "Flustered Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Wet Conditions ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "15,000,000 CC",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
         "HintLevel": null
       }
     ]
@@ -5935,6 +7368,26 @@
         "SkillId": "",
         "Name": "Studious",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Right-Handed ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Left-Handed ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lie in Wait",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
       }
     ]
   },
@@ -5963,6 +7416,21 @@
       {
         "SkillId": "",
         "Name": "Early Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Moxie",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Taking the Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Focus",
         "HintLevel": null
       }
     ]
@@ -5997,6 +7465,16 @@
       {
         "SkillId": "",
         "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Adept ○",
         "HintLevel": null
       }
     ]
@@ -6052,6 +7530,26 @@
         "SkillId": "",
         "Name": "Sharp Gaze",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Uma Stan",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Come What May",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
+        "HintLevel": null
       }
     ]
   },
@@ -6080,6 +7578,16 @@
       {
         "SkillId": "",
         "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shrewd Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Disorient",
         "HintLevel": null
       }
     ]
@@ -6135,6 +7643,16 @@
         "SkillId": "",
         "Name": "Sharp Gaze",
         "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
+        "HintLevel": null
       }
     ]
   },
@@ -6163,6 +7681,217 @@
       {
         "SkillId": "",
         "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Disorient",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30068-curren-chan",
+    "SupportId": "30068",
+    "SupportName": "Curren Chan (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30068-curren-chan.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sprint Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprinting Gear",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Meticulous Measures",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Disorient",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stop Right There!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Playtime's Over!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Perfect Prep!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Intimidate",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30069-narita-brian",
+    "SupportId": "30069",
+    "SupportName": "Narita Brian (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30069-narita-brian.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Right-Handed ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Preferred Position",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hydrate",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Outer Swell",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Inside Scoop",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Up-Tempo",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Beeline Burst",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lone Wolf",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30070-yukino-bijin",
+    "SupportId": "30070",
+    "SupportName": "Yukino Bijin (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30070-yukino-bijin.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Winter Runner ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nakayama Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Steadfast",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Medium Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Snowy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Playtime's Over!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Connoisseur",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Acceleration ○",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "10073-curren-chan",
+    "SupportId": "10073",
+    "SupportName": "Curren Chan (R) Support Card",
+    "SupportRarity": "R",
+    "SupportImage": "/assets/support_thumbs/10073-curren-chan.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sprint Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sprinting Gear",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Meticulous Measures",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Late Surgers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Disorient",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Intimidate",
         "HintLevel": null
       }
     ]

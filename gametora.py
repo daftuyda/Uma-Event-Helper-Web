@@ -501,19 +501,22 @@ def parse_hint_level_from_text(text: str) -> Optional[int]:
 
 def parse_support_hints_on_page(d) -> List[Dict[str, Any]]:
     """
-    Collect only the tiles that appear after the 'Support hints' caption
+    Collect tiles that appear after the 'Support hints' or 'Skills from events' captions
     and before the very next caption block (class startswith 'supports_infobox_caption__'),
-    regardless of nesting. Prevents mixing in 'Skills from events'.
+    regardless of nesting.
     """
     hints: List[Dict[str, Any]] = []
     seen_names = set()
 
-    # Find visible "Support hints" captions
-    captions = d.find_elements(
-        By.XPATH,
-        "//*[contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'support hints')]"
-    )
-    captions = [c for c in captions if is_visible(d, c)]
+    # Find visible "Support hints" and "Skills from events" captions
+    captions: List[Any] = []
+    for label in ("support hints", "skills from events"):
+        found = d.find_elements(
+            By.XPATH,
+            "//*[contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),"
+            f"'{label}')]"
+        )
+        captions.extend([c for c in found if is_visible(d, c)])
     if not captions:
         return hints
 
@@ -690,6 +693,7 @@ def scrape_characters(save_path: str, server: str, headless: bool = True):
             href = a.get_attribute("href") or ""
             if href and href not in urls: urls.append(href)
 
+        urls = list(reversed(urls))
         total = len(urls)
         for i, url in enumerate(urls, 1):
             for attempt in range(RETRIES + 1):

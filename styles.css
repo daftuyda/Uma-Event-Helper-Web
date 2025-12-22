@@ -1225,10 +1225,12 @@ body.dark-mode .badge.badge-R {
 
 /* Support card header with optional thumbnail */
 .card.card-support {
-  display: grid;
-  gap: 0.75rem 0.9rem;
-  align-items: center;
-}
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 0.75rem 0.9rem;
+    align-items: start;
+    align-content: start;
+  }
 .card-support .card-thumb {
   width: 64px;
   height: 64px;
