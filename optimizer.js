@@ -172,7 +172,7 @@
       ? HINT_DISCOUNTS[lvl]
       : (HINT_DISCOUNT_STEP * lvl);
     const multiplier = 1 - discount;
-    return Math.max(0, Math.floor(baseCost * multiplier));
+    return Math.max(0, Math.ceil(baseCost * multiplier));
   }
 
   async function loadSkillCostsJSON() {
