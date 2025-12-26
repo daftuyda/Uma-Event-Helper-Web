@@ -498,9 +498,11 @@
       const cost = typeof costVal === 'string' && costVal.length ? parseInt(costVal, 10) : NaN;
       const hintVal = row.querySelector('.hint-level')?.value;
       const hintLevel = parseInt(hintVal, 10);
+      const required = row.querySelector('.required-skill')?.checked;
       if (!name || isNaN(cost)) return;
       const hintSuffix = !isNaN(hintLevel) ? `|H${hintLevel}` : '';
-      rows.push(`${name}=${cost}${hintSuffix}`);
+      const reqSuffix = required ? '|R' : '';
+      rows.push(`${name}=${cost}${hintSuffix}${reqSuffix}`);
     });
     return rows.join('\n');
   }
@@ -516,6 +518,11 @@
       const name = (nameRaw || '').trim();
       let costText = (costRaw || '').trim();
       let hintLevel = 0;
+      let required = false;
+      if (/\|R\b/i.test(costText)) {
+        required = true;
+        costText = costText.replace(/\|R\b/ig, '').trim();
+      }
       const hintMatch = costText.match(/\|H?\s*([0-5])\s*$/i);
       if (hintMatch) {
         hintLevel = parseInt(hintMatch[1], 10) || 0;
@@ -528,9 +535,14 @@
       const nameInput = row.querySelector('.skill-name');
       const costInput = row.querySelector('.cost');
       const hintSelect = row.querySelector('.hint-level');
+      const requiredToggle = row.querySelector('.required-skill');
       if (nameInput) nameInput.value = name;
       if (costInput) costInput.value = cost;
       if (hintSelect) hintSelect.value = String(hintLevel);
+      if (requiredToggle) {
+        requiredToggle.checked = required;
+        row.classList.toggle('required', required);
+      }
       if (typeof row.syncSkillCategory === 'function') {
         row.syncSkillCategory({ triggerOptimize: false, allowLinking: false, updateCost: false });
       } else {
@@ -563,22 +575,40 @@
       setAutoStatus('Add at least one recognized skill with a cost before generating a build.', true);
       return;
     }
+    const requiredSummary = expandRequired(items);
+    if (requiredSummary.requiredCost > budget) {
+      setAutoStatus('Required skills exceed the current budget.', true);
+      renderResults({ best: 0, chosen: [], used: 0, error: 'required_unreachable' }, budget);
+      return;
+    }
     const includeGeneral = targets.includes('general');
     const targetSet = new Set(targets.filter(t => t !== 'general'));
-    const candidates = items.filter(it => matchesAutoTargets(it, targetSet, includeGeneral));
+    const optionalCandidates = items.filter(it => !requiredSummary.requiredIds.has(it.id) && matchesAutoTargets(it, targetSet, includeGeneral));
+    const candidates = optionalCandidates.concat(requiredSummary.requiredItems);
     if (!candidates.length) {
       setAutoStatus('No existing rows match the selected targets with S-A affinity.', true);
       return;
     }
-    const groups = buildGroups(candidates, rowsMeta);
-    const result = optimizeGrouped(groups, candidates, budget);
+    const groups = buildGroups(optionalCandidates, rowsMeta);
+    const result = optimizeGrouped(groups, optionalCandidates, budget - requiredSummary.requiredCost);
+    if (result.error === 'required_unreachable') {
+      setAutoStatus('Required skills exceed the current budget.', true);
+      renderResults(result, budget);
+      return;
+    }
     if (!result.chosen.length) {
       setAutoStatus('Budget too low to purchase any of the matching skills you entered.', true);
       return;
     }
-    applyAutoHighlights(result.chosen.map(it => it.id), candidates.map(it => it.id));
-    renderResults(result, budget);
-    setAutoStatus(`Highlighted ${result.chosen.length}/${candidates.length} matching skills (cost ${result.used}/${budget}).`);
+    const mergedResult = {
+      ...result,
+      chosen: requiredSummary.requiredItems.concat(result.chosen),
+      used: result.used + requiredSummary.requiredCost,
+      best: result.best + requiredSummary.requiredScore
+    };
+    applyAutoHighlights(mergedResult.chosen.map(it => it.id), candidates.map(it => it.id));
+    renderResults(mergedResult, budget);
+    setAutoStatus(`Highlighted ${mergedResult.chosen.length}/${candidates.length} matching skills (cost ${mergedResult.used}/${budget}).`);
   }
 
   function clearResults() {
@@ -600,9 +630,21 @@
     if (isNaN(budget) || budget < 0) return;
     const { items, rowsMeta } = collectItems();
     if (!items.length) return;
-    const groups = buildGroups(items, rowsMeta);
-    const result = optimizeGrouped(groups, items, budget);
-    renderResults(result, budget);
+    const requiredSummary = expandRequired(items);
+    if (requiredSummary.requiredCost > budget) {
+      renderResults({ best: 0, chosen: [], used: 0, error: 'required_unreachable' }, budget);
+      return;
+    }
+    const optionalItems = items.filter(it => !requiredSummary.requiredIds.has(it.id));
+    const groups = buildGroups(optionalItems, rowsMeta);
+    const result = optimizeGrouped(groups, optionalItems, budget - requiredSummary.requiredCost);
+    const mergedResult = {
+      ...result,
+      chosen: requiredSummary.requiredItems.concat(result.chosen),
+      used: result.used + requiredSummary.requiredCost,
+      best: result.best + requiredSummary.requiredScore
+    };
+    renderResults(mergedResult, budget);
   }
   const autoOptimizeDebounced = debounce(tryAutoOptimize, 120);
 
@@ -905,6 +947,13 @@
         <label>Cost</label>
         <input type="number" min="0" step="1" class="cost" placeholder="Cost" />
       </div>
+      <div class="required-cell">
+        <label>Must Buy</label>
+        <label class="required-toggle">
+          <input type="checkbox" class="required-skill" />
+          Lock
+        </label>
+      </div>
       <div class="remove-cell">
         <label class="remove-label">&nbsp;</label>
         <button type="button" class="btn remove">Remove</button>
@@ -930,6 +979,7 @@
     const hintSelect = row.querySelector('.hint-level');
     const baseCostDisplay = row.querySelector('.base-cost');
     const costInput = row.querySelector('.cost');
+    const requiredToggle = row.querySelector('.required-skill');
     if (skillList) populateSkillDatalist(skillList);
 
     function getHintLevel() {
@@ -953,6 +1003,32 @@
       }
     }
 
+    function getLowerDiscountedCost(skill) {
+      let lowerBaseCost = NaN;
+      let lowerHintLevel = 0;
+      if (row.dataset.lowerRowId) {
+        const linked = rowsEl.querySelector(`.optimizer-row[data-row-id="${row.dataset.lowerRowId}"]`);
+        if (linked) {
+          const hintEl = linked.querySelector('.hint-level');
+          const hintVal = parseInt(hintEl?.value || '0', 10);
+          lowerHintLevel = isNaN(hintVal) ? 0 : hintVal;
+          if (linked.dataset.baseCost) {
+            const parsed = parseInt(linked.dataset.baseCost, 10);
+            if (!isNaN(parsed)) lowerBaseCost = parsed;
+          }
+        }
+      }
+      if (isNaN(lowerBaseCost)) {
+        const candidateId = skill.lowerSkillId || (Array.isArray(skill.parentIds) ? skill.parentIds[0] : '');
+        if (candidateId) {
+          const lower = skillIdIndex.get(String(candidateId));
+          if (lower && typeof lower.baseCost === 'number') lowerBaseCost = lower.baseCost;
+        }
+      }
+      if (isNaN(lowerBaseCost)) return NaN;
+      return calculateDiscountedCost(lowerBaseCost, lowerHintLevel);
+    }
+
     function applyHintedCost(skill) {
       if (!costInput) return;
       const baseCost = (() => {
@@ -965,7 +1041,16 @@
       })();
       if (isNaN(baseCost)) return;
       const discounted = calculateDiscountedCost(baseCost, getHintLevel());
-      if (!isNaN(discounted)) costInput.value = discounted;
+      if (isNaN(discounted)) return;
+      const isGoldRow = isGoldCategory(row.dataset.skillCategory || '');
+      if (isGoldRow && skill) {
+        const lowerDiscounted = getLowerDiscountedCost(skill);
+        if (!isNaN(lowerDiscounted)) {
+          costInput.value = discounted + lowerDiscounted;
+          return;
+        }
+      }
+      costInput.value = discounted;
     }
 
     function setCategoryDisplay(category) {
@@ -1051,21 +1136,21 @@
       autoOptimizeDebounced();
     }
 
-  function syncSkillCategory({ triggerOptimize = false, allowLinking = true, updateCost = false } = {}) {
-    if (!skillInput) return;
-    const skill = findSkillByName(skillInput.value);
-    const category = skill ? skill.category : '';
-    setCategoryDisplay(category);
-    updateBaseCostDisplay(skill);
-    if (updateCost) applyHintedCost(skill);
-    ensureLinkedLowerForGold(category, { allowCreate: allowLinking });
-    ensureLinkedLowerForParent(skill, { allowCreate: allowLinking });
-    if (triggerOptimize) {
-      saveState();
-      ensureOneEmptyRow();
-      autoOptimizeDebounced();
+    function syncSkillCategory({ triggerOptimize = false, allowLinking = true, updateCost = false } = {}) {
+      if (!skillInput) return;
+      const skill = findSkillByName(skillInput.value);
+      const category = skill ? skill.category : '';
+      setCategoryDisplay(category);
+      updateBaseCostDisplay(skill);
+      ensureLinkedLowerForGold(category, { allowCreate: allowLinking });
+      ensureLinkedLowerForParent(skill, { allowCreate: allowLinking });
+      if (updateCost) applyHintedCost(skill);
+      if (triggerOptimize) {
+        saveState();
+        ensureOneEmptyRow();
+        autoOptimizeDebounced();
+      }
     }
-  }
 
     function autofillLinkedLower(linkedRow) {
       if (!linkedRow || !skillInput) return;
@@ -1102,6 +1187,39 @@
       hintSelect.addEventListener('change', () => {
         const skill = skillInput ? findSkillByName(skillInput.value) : null;
         applyHintedCost(skill);
+        if (row.dataset.parentGoldId) {
+          const parent = rowsEl.querySelector(`.optimizer-row[data-row-id="${row.dataset.parentGoldId}"]`);
+          if (parent && typeof parent.syncSkillCategory === 'function') {
+            parent.syncSkillCategory({ triggerOptimize: false, allowLinking: false, updateCost: true });
+          }
+        }
+        saveState();
+        ensureOneEmptyRow();
+        autoOptimizeDebounced();
+      });
+    }
+    if (requiredToggle) {
+      requiredToggle.addEventListener('change', () => {
+        row.classList.toggle('required', requiredToggle.checked);
+        if (requiredToggle.checked) {
+          const isGoldRow = isGoldCategory(row.dataset.skillCategory || '');
+          if (isGoldRow) {
+            let linked = null;
+            if (row.dataset.lowerRowId) {
+              linked = rowsEl.querySelector(`.optimizer-row[data-row-id="${row.dataset.lowerRowId}"]`);
+            }
+            if (!linked) {
+              linked = rowsEl.querySelector(`.optimizer-row[data-parent-gold-id="${id}"]`);
+            }
+            if (linked) {
+              const linkedToggle = linked.querySelector('.required-skill');
+              if (linkedToggle) {
+                linkedToggle.checked = true;
+                linked.classList.add('required');
+              }
+            }
+          }
+        }
         saveState();
         ensureOneEmptyRow();
         autoOptimizeDebounced();
@@ -1117,10 +1235,12 @@
       const nameInput = row.querySelector('.skill-name');
       const costEl = row.querySelector('.cost');
       const hintEl = row.querySelector('.hint-level');
+      const requiredEl = row.querySelector('.required-skill');
       if (!nameInput || !costEl) return;
       const name = (nameInput.value || '').trim();
       const rawCost = parseInt(costEl.value, 10);
       const hintLevel = parseInt(hintEl?.value || '', 10) || 0;
+      const required = !!requiredEl?.checked;
       const baseCostStored = row.dataset.baseCost ? parseInt(row.dataset.baseCost, 10) : NaN;
       const cost = !isNaN(rawCost)
         ? rawCost
@@ -1136,7 +1256,7 @@
       const parentSkillIds = Array.isArray(skill.parentIds) && skill.parentIds.length ? skill.parentIds : [];
       const lowerSkillId = skill.lowerSkillId || '';
       const skillId = skill.skillId || skill.id || '';
-      items.push({ id: rowId, name: skill.name, cost, score, category, parentGoldId, lowerRowId, checkType: skill.checkType || '', parentSkillIds, lowerSkillId, skillId, hintLevel });
+      items.push({ id: rowId, name: skill.name, cost, score, baseCost: baseCostStored, category, parentGoldId, lowerRowId, checkType: skill.checkType || '', parentSkillIds, lowerSkillId, skillId, hintLevel, required });
       rowsMeta.push({ id: rowId, category, parentGoldId, lowerRowId });
     });
     return { items, rowsMeta };
@@ -1165,11 +1285,15 @@
         const j = skillIdToIndex.get(String(pid));
         if (!used[j]) {
           const parent = items[j];
+          const childIsGold = isGoldCategory(it.category);
+          const parentId = parent.id;
+          const parentMatchesLower = it.lowerRowId && it.lowerRowId === parentId;
+          const comboCost = (childIsGold && parentMatchesLower) ? it.cost : parent.cost + it.cost;
           groups.push([
-            { none: true },
-            { combo: [j], cost: parent.cost, score: parent.score },
+            { none: true, items: [] },
+            { pick: j, cost: parent.cost, score: parent.score, items: [j] },
             // Upgraded (double-circle): pay both costs, only upgraded score counts.
-            { combo: [j, i], cost: parent.cost + it.cost, score: it.score }
+            { combo: [j, i], cost: comboCost, score: it.score, items: [j, i] }
           ]);
           used[j] = used[i] = true;
           handled = true;
@@ -1183,16 +1307,16 @@
         if (!used[j]) {
           // gold requires lower: offer none, lower only, or gold with lower cost included
           groups.push([
-            { none: true },
-            { pick: j, cost: items[j].cost, score: items[j].score },
-            { combo: [j, i], cost: items[j].cost + it.cost, score: it.score }
+            { none: true, items: [] },
+            { pick: j, cost: items[j].cost, score: items[j].score, items: [j] },
+            { combo: [j, i], cost: it.cost, score: it.score, items: [j, i] }
           ]);
           used[i] = used[j] = true;
           continue;
         }
       }
       // If this is a lower-linked row, and its parent gold appears later, it will be grouped there.
-      groups.push([ { none: true }, { pick: i, cost: it.cost, score: it.score } ]);
+      groups.push([ { none: true, items: [] }, { pick: i, cost: it.cost, score: it.score, items: [i] } ]);
       used[i] = true;
     }
     return groups;
@@ -1200,26 +1324,63 @@
 
   function optimizeGrouped(groups, items, budget) {
     const B = Math.max(0, Math.floor(budget));
-    const G = groups.length;
-    const dp = Array.from({ length: G + 1 }, () => new Array(B + 1).fill(0));
+    const requiredSet = new Set();
+    items.forEach((it, idx) => { if (it.required) requiredSet.add(idx); });
+    const filteredGroups = groups.map(opts => {
+      const reqInGroup = new Set();
+      opts.forEach(o => {
+        (o.items || []).forEach(idx => {
+          if (requiredSet.has(idx)) reqInGroup.add(idx);
+        });
+      });
+      if (!reqInGroup.size) return opts;
+      return opts.filter(o => {
+        const present = o.items || [];
+        for (const reqIdx of reqInGroup) {
+          if (!present.includes(reqIdx)) return false;
+        }
+        return true;
+      });
+    });
+    if (filteredGroups.some(opts => !opts.length)) {
+      return { best: 0, chosen: [], used: 0, error: 'required_unreachable' };
+    }
+    const G = filteredGroups.length;
+    const NEG = -1e15;
+    const dp = Array.from({ length: G + 1 }, () => new Array(B + 1).fill(NEG));
     const choice = Array.from({ length: G + 1 }, () => new Array(B + 1).fill(-1));
+    for (let b = 0; b <= B; b++) dp[0][b] = 0;
     for (let g = 1; g <= G; g++) {
-      const opts = groups[g - 1];
+      const opts = filteredGroups[g - 1];
+      const hasNone = opts.some(o => o.none);
       for (let b = 0; b <= B; b++) {
-        dp[g][b] = dp[g - 1][b]; choice[g][b] = -1;
+        if (hasNone) {
+          dp[g][b] = dp[g - 1][b];
+          choice[g][b] = -1;
+        } else {
+          dp[g][b] = NEG;
+          choice[g][b] = -1;
+        }
         for (let k = 0; k < opts.length; k++) {
           const o = opts[k]; if (o.none) continue;
           const w = Math.max(0, Math.floor(o.cost)); const v = Math.max(0, Math.floor(o.score));
-          if (w <= b) { const cand = dp[g - 1][b - w] + v; if (cand > dp[g][b]) { dp[g][b] = cand; choice[g][b] = k; } }
+          if (w <= b && dp[g - 1][b - w] > NEG / 2) {
+            const cand = dp[g - 1][b - w] + v;
+            if (cand > dp[g][b]) { dp[g][b] = cand; choice[g][b] = k; }
+          }
         }
       }
+    }
+    if (dp[G][B] <= NEG / 2) {
+      return { best: 0, chosen: [], used: 0, error: 'required_unreachable' };
     }
     // reconstruct
     let b = B; const chosen = [];
     for (let g = G; g >= 1; g--) {
+      const opts = filteredGroups[g - 1];
       const k = choice[g][b];
       if (k > 0) {
-        const o = groups[g - 1][k];
+        const o = opts[k];
         const picks = o.combo || (typeof o.pick === 'number' ? [o.pick] : []);
         if (o.combo) {
           const lastIdx = picks[picks.length - 1];
@@ -1232,6 +1393,18 @@
             combo: true,
             components: picks.map(idx => items[idx]?.id).filter(Boolean)
           });
+          const comboParentName = baseItem.name;
+          picks.slice(0, -1).forEach(idx => {
+            const comp = items[idx];
+            if (!comp) return;
+            chosen.push({
+              ...comp,
+              cost: 0,
+              score: 0,
+              comboComponent: true,
+              comboParentName
+            });
+          });
         } else {
           picks.forEach(idx => chosen.push(items[idx]));
         }
@@ -1239,8 +1412,117 @@
       }
     }
     chosen.reverse();
-    const used = chosen.reduce((sum, it) => sum + Math.max(0, Math.floor(it.cost)), 0);
-    return { best: dp[G][B], chosen, used };
+    const idToIndex = new Map(items.map((it, idx) => [it.id, idx]));
+    const chosenIds = new Set(chosen.map(it => it.id));
+    let addedScore = 0;
+    let addedCost = 0;
+    requiredSet.forEach(idx => {
+      const it = items[idx];
+      if (!it || chosenIds.has(it.id)) return;
+      chosen.push({ ...it, forced: true });
+      chosenIds.add(it.id);
+      addedScore += Math.max(0, Math.floor(it.score || 0));
+      addedCost += Math.max(0, Math.floor(it.cost || 0));
+      if (it.lowerRowId && idToIndex.has(it.lowerRowId)) {
+        const lower = items[idToIndex.get(it.lowerRowId)];
+        if (lower && !chosenIds.has(lower.id)) {
+          chosen.push({ ...lower, forced: true });
+          chosenIds.add(lower.id);
+          addedScore += Math.max(0, Math.floor(lower.score || 0));
+          addedCost += Math.max(0, Math.floor(lower.cost || 0));
+        }
+      }
+    });
+    const used = chosen.reduce((sum, it) => it.comboComponent ? sum : sum + Math.max(0, Math.floor(it.cost)), 0);
+    const best = dp[G][B] + addedScore;
+    if (used > B) {
+      return { best: 0, chosen: [], used: 0, error: 'required_unreachable' };
+    }
+    return { best, chosen, used };
+  }
+
+  function expandRequired(items) {
+    const idToIndex = new Map(items.map((it, idx) => [it.id, idx]));
+    const skillIdToIndex = new Map();
+    const parentGoldToChild = new Map();
+    items.forEach((it, idx) => {
+      if (it.skillId !== undefined && it.skillId !== null) {
+        skillIdToIndex.set(String(it.skillId), idx);
+      }
+      if (it.parentGoldId) {
+        parentGoldToChild.set(it.parentGoldId, idx);
+      }
+    });
+    const requiredIds = new Set(items.filter(it => it.required).map(it => it.id));
+    let changed = true;
+    while (changed) {
+      changed = false;
+      Array.from(requiredIds).forEach(id => {
+        const idx = idToIndex.get(id);
+        if (idx === undefined) return;
+        const it = items[idx];
+        if (it.lowerRowId && idToIndex.has(it.lowerRowId) && !requiredIds.has(it.lowerRowId)) {
+          requiredIds.add(it.lowerRowId);
+          changed = true;
+        }
+        if (it.lowerSkillId !== undefined && it.lowerSkillId !== null) {
+          const lowerIdx = skillIdToIndex.get(String(it.lowerSkillId));
+          if (lowerIdx !== undefined) {
+            const lowerId = items[lowerIdx]?.id;
+            if (lowerId && !requiredIds.has(lowerId)) {
+              requiredIds.add(lowerId);
+              changed = true;
+            }
+          }
+        }
+        const parents = Array.isArray(it.parentSkillIds) ? it.parentSkillIds : [];
+        parents.forEach(pid => {
+          const pidx = skillIdToIndex.get(String(pid));
+          if (pidx === undefined) return;
+          const pidId = items[pidx]?.id;
+          if (pidId && !requiredIds.has(pidId)) {
+            requiredIds.add(pidId);
+            changed = true;
+          }
+        });
+        if (it.id && parentGoldToChild.has(it.id)) {
+          const childIdx = parentGoldToChild.get(it.id);
+          const childId = items[childIdx]?.id;
+          if (childId && !requiredIds.has(childId)) {
+            requiredIds.add(childId);
+            changed = true;
+          }
+        }
+      });
+    }
+    const requiredItems = items.filter(it => requiredIds.has(it.id));
+    const requiredGoldIds = new Set(requiredItems.filter(it => isGoldCategory(it.category)).map(it => it.id));
+    const lowerIncludedIds = new Set();
+    requiredItems.forEach(it => {
+      if (!requiredGoldIds.has(it.id)) return;
+      if (it.lowerRowId && requiredIds.has(it.lowerRowId)) lowerIncludedIds.add(it.lowerRowId);
+      if (it.lowerSkillId !== undefined && it.lowerSkillId !== null) {
+        const lowerIdx = skillIdToIndex.get(String(it.lowerSkillId));
+        if (lowerIdx !== undefined) {
+          const lowerId = items[lowerIdx]?.id;
+          if (lowerId && requiredIds.has(lowerId)) lowerIncludedIds.add(lowerId);
+        }
+      }
+      if (it.id && parentGoldToChild.has(it.id)) {
+        const childIdx = parentGoldToChild.get(it.id);
+        const childId = items[childIdx]?.id;
+        if (childId && requiredIds.has(childId)) lowerIncludedIds.add(childId);
+      }
+    });
+    const requiredCost = requiredItems.reduce((sum, it) => {
+      if (lowerIncludedIds.has(it.id)) return sum;
+      return sum + Math.max(0, Math.floor(it.cost));
+    }, 0);
+    const requiredScore = requiredItems.reduce((sum, it) => {
+      if (lowerIncludedIds.has(it.id)) return sum;
+      return sum + Math.max(0, Math.floor(it.score));
+    }, 0);
+    return { requiredIds, requiredItems, requiredCost, requiredScore };
   }
 
   function renderResults(result, budget) {
@@ -1250,13 +1532,60 @@
     totalPointsEl.textContent = String(budget);
     remainingPointsEl.textContent = String(Math.max(0, budget - result.used));
     selectedListEl.innerHTML = '';
-    result.chosen.forEach(it => {
+    if (result.error === 'required_unreachable') {
+      const li = document.createElement('li');
+      li.className = 'result-item';
+      li.textContent = 'Required skills cannot fit within the current budget.';
+      selectedListEl.appendChild(li);
+      updateRatingDisplay(result.best);
+      return;
+    }
+    const ordered = Array.isArray(result.chosen) ? [...result.chosen] : [];
+    const indexMap = new Map(ordered.map((it, idx) => [it.id, idx]));
+    const byId = new Map(ordered.map(it => [it.id, it]));
+    const bySkillId = new Map();
+    ordered.forEach(it => {
+      if (it.skillId !== undefined && it.skillId !== null) {
+        bySkillId.set(String(it.skillId), it);
+      }
+    });
+    const lowerToGold = new Map();
+    const goldToLower = new Map();
+    ordered.forEach(it => {
+      if (!isGoldCategory(it.category)) return;
+      if (it.lowerRowId && byId.has(it.lowerRowId)) {
+        lowerToGold.set(it.lowerRowId, it);
+        goldToLower.set(it.id, byId.get(it.lowerRowId));
+        return;
+      }
+      if (it.lowerSkillId !== undefined && it.lowerSkillId !== null) {
+        const lower = bySkillId.get(String(it.lowerSkillId));
+        if (lower) {
+          lowerToGold.set(lower.id, it);
+          goldToLower.set(it.id, lower);
+        }
+      }
+    });
+    ordered.sort((a, b) => {
+      const ag = lowerToGold.get(a.id);
+      const bg = lowerToGold.get(b.id);
+      if (ag && ag.id === b.id) return 1;
+      if (bg && bg.id === a.id) return -1;
+      return (indexMap.get(a.id) || 0) - (indexMap.get(b.id) || 0);
+    });
+    ordered.forEach(it => {
       const li = document.createElement('li');
       li.className = 'result-item';
       const cat = it.category || 'unknown';
       const canon = (function(v){ v=(v||'').toLowerCase(); if(v.includes('gold')) return 'gold'; if(v==='ius'||v.includes('ius')) return 'ius'; return v; })(cat);
       if (canon) li.classList.add(`cat-${canon}`);
-      li.innerHTML = `<span class="res-name">${it.name}</span> <span class="res-meta">- cost ${it.cost}, score ${it.score}</span>`;
+      const includedWith = it.comboComponent
+        ? it.comboParentName
+        : (lowerToGold.has(it.id) ? lowerToGold.get(it.id)?.name : '');
+      const meta = includedWith
+        ? `- included with ${includedWith}`
+        : `- cost ${it.cost}, score ${it.score}`;
+      li.innerHTML = `<span class="res-name">${it.name}</span> <span class="res-meta">${meta}</span>`;
       selectedListEl.appendChild(li);
     });
     updateRatingDisplay(result.best);
@@ -1276,6 +1605,7 @@
       const nameInput = row.querySelector('.skill-name');
       const costEl = row.querySelector('.cost');
       const hintEl = row.querySelector('.hint-level');
+      const requiredEl = row.querySelector('.required-skill');
       if (!nameInput || !costEl) return;
       state.rows.push({
         id: row.dataset.rowId || '',
@@ -1283,6 +1613,7 @@
         name: nameInput.value || '',
         cost: parseInt(costEl.value, 10) || 0,
         hintLevel: parseInt(hintEl?.value, 10) || 0,
+        required: !!requiredEl?.checked,
         baseCost: row.dataset.baseCost || '',
         parentGoldId: row.dataset.parentGoldId || '',
         lowerRowId: row.dataset.lowerRowId || ''
@@ -1327,6 +1658,11 @@
         if (costEl) costEl.value = typeof r.cost === 'number' && !isNaN(r.cost) ? r.cost : 0;
         const hintEl = row.querySelector('.hint-level');
         if (hintEl) hintEl.value = typeof r.hintLevel === 'number' && !isNaN(r.hintLevel) ? r.hintLevel : 0;
+        const requiredEl = row.querySelector('.required-skill');
+        if (requiredEl) {
+          requiredEl.checked = !!r.required;
+          row.classList.toggle('required', !!r.required);
+        }
         if (r.baseCost) row.dataset.baseCost = r.baseCost; else delete row.dataset.baseCost;
         if (r.category) row.dataset.skillCategory = r.category;
         if (typeof row.syncSkillCategory === 'function') {
@@ -1359,9 +1695,22 @@
   if (optimizeBtn) optimizeBtn.addEventListener('click', () => {
     const budget = parseInt(budgetInput.value, 10); if (isNaN(budget) || budget < 0) { alert('Please enter a valid skill points budget.'); return; }
     const { items, rowsMeta } = collectItems(); if (!items.length) { alert('Add at least one skill with a valid cost.'); return; }
-    const groups = buildGroups(items, rowsMeta);
-    const result = optimizeGrouped(groups, items, budget);
-    renderResults(result, budget); saveState();
+    const requiredSummary = expandRequired(items);
+    if (requiredSummary.requiredCost > budget) {
+      renderResults({ best: 0, chosen: [], used: 0, error: 'required_unreachable' }, budget);
+      saveState();
+      return;
+    }
+    const optionalItems = items.filter(it => !requiredSummary.requiredIds.has(it.id));
+    const groups = buildGroups(optionalItems, rowsMeta);
+    const result = optimizeGrouped(groups, optionalItems, budget - requiredSummary.requiredCost);
+    const mergedResult = {
+      ...result,
+      chosen: requiredSummary.requiredItems.concat(result.chosen),
+      used: result.used + requiredSummary.requiredCost,
+      best: result.best + requiredSummary.requiredScore
+    };
+    renderResults(mergedResult, budget); saveState();
   });
   if (clearAllBtn) clearAllBtn.addEventListener('click', () => { clearAllRows(); });
   if (copyBuildBtn) {
