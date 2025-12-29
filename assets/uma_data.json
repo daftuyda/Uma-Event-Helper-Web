@@ -35234,5 +35234,123 @@
       }
     ],
     "UmaEvents": []
+  },
+  {
+    "UmaKey": "Mejiro Dober :: [Off the Line]",
+    "UmaName": "Mejiro Dober",
+    "UmaNickname": "[Off the Line]",
+    "UmaSlug": "105901-mejiro-dober",
+    "UmaId": "105901",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 96,
+        "Stamina": 85,
+        "Power": 97,
+        "Guts": 75,
+        "Wit": 97
+      },
+      "5★": {
+        "Speed": 117,
+        "Stamina": 104,
+        "Power": 119,
+        "Guts": 92,
+        "Wit": 118
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 10,
+      "Stamina": 0,
+      "Power": 0,
+      "Guts": 0,
+      "Wit": 20
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "G"
+      },
+      "Distance": {
+        "Short": "E",
+        "Mile": "A",
+        "Medium": "A",
+        "Long": "F"
+      },
+      "Strategy": {
+        "Front": "C",
+        "Pace": "B",
+        "Late": "A",
+        "End": "G"
+      }
+    },
+    "UmaHeightCm": 157,
+    "UmaThreeSizes": {
+      "B": 83,
+      "W": 57,
+      "H": 81
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "2. Place 5th or better in the Hanshin Juvenile Fillies",
+        "Turn": "Turn 23 (previous + 10)",
+        "Time": "Junior Class, Early December",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "3. Place 5th or better in the Oka Sho",
+        "Turn": "Turn 31 (previous + 7)",
+        "Time": "Classic Class, Early April",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "4. Place 5th or better in the Japanese Oaks",
+        "Turn": "Turn 34 (previous + 2)",
+        "Time": "Classic Class, Late May",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "5. Place 3rd or better in the Shuka Sho",
+        "Turn": "Turn 44 (previous + 9)",
+        "Time": "Classic Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "6. Participate in the Arima Kinen",
+        "Turn": "Turn 48 (previous + 3)",
+        "Time": "Classic Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      },
+      {
+        "ObjectiveName": "7. Place 3rd or better in the Osaka Hai",
+        "Turn": "Turn 54 (previous + 5)",
+        "Time": "Senior Class, Late March",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "8. Place 3rd or better in the Takarazuka Kinen",
+        "Turn": "Turn 60 (previous + 5)",
+        "Time": "Senior Class, Late June",
+        "ObjectiveCondition": "G1 – Turf – 2200m – Medium"
+      },
+      {
+        "ObjectiveName": "9. Place 1st in the Fuchu Umamusume Stakes",
+        "Turn": "Turn 67 (previous + 6)",
+        "Time": "Senior Class, Early October",
+        "ObjectiveCondition": "G2 – Turf – 1800m – Mile"
+      },
+      {
+        "ObjectiveName": "10. Place 1st in the Queen Elizabeth II Cup",
+        "Turn": "Turn 69 (previous + 1)",
+        "Time": "Senior Class, Early November",
+        "ObjectiveCondition": "G1 – Turf – 2200m – Medium"
+      }
+    ],
+    "UmaEvents": []
   }
 ]

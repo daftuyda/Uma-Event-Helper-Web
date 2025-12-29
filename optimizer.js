@@ -8,6 +8,7 @@
   const optimizeBtn = document.getElementById('optimize');
   const clearAllBtn = document.getElementById('clear-all');
   const budgetInput = document.getElementById('budget');
+  const fastLearnerToggle = document.getElementById('fast-learner');
   const libStatus = document.getElementById('lib-status');
 
   const resultsEl = document.getElementById('results');
@@ -70,11 +71,22 @@
   const HINT_DISCOUNTS = { 0: 0.0, 1: 0.10, 2: 0.20, 3: 0.30, 4: 0.35, 5: 0.40 };
   const HINT_LEVELS = [0, 1, 2, 3, 4, 5];
 
+  function getFastLearnerDiscount() {
+    return fastLearnerToggle && fastLearnerToggle.checked ? 0.10 : 0;
+  }
+
   function getHintDiscountPct(lvl) {
     const discount = Object.prototype.hasOwnProperty.call(HINT_DISCOUNTS, lvl)
       ? HINT_DISCOUNTS[lvl]
       : (HINT_DISCOUNT_STEP * lvl);
     return Math.round(discount * 100);
+  }
+
+  function getTotalHintDiscountPct(lvl) {
+    const base = Object.prototype.hasOwnProperty.call(HINT_DISCOUNTS, lvl)
+      ? HINT_DISCOUNTS[lvl]
+      : (HINT_DISCOUNT_STEP * lvl);
+    return Math.round((base + getFastLearnerDiscount()) * 100);
   }
   const skillCostMapNormalized = new Map(); // punctuation-stripped key -> meta
   const skillCostMapExact = new Map(); // exact lowercased name -> meta
@@ -171,12 +183,32 @@
     const discount = Object.prototype.hasOwnProperty.call(HINT_DISCOUNTS, lvl)
       ? HINT_DISCOUNTS[lvl]
       : (HINT_DISCOUNT_STEP * lvl);
-    const multiplier = 1 - discount;
+    const multiplier = Math.max(0, 1 - discount - getFastLearnerDiscount());
     const rawCost = baseCost * multiplier;
     const frac = rawCost - Math.floor(rawCost);
     const epsilon = 1e-9;
     const rounded = Math.abs(frac - 0.5) < epsilon ? Math.floor(rawCost) : Math.ceil(rawCost);
     return Math.max(0, rounded);
+  }
+
+  function updateHintOptionLabels() {
+    const selects = rowsEl ? rowsEl.querySelectorAll('.hint-level') : [];
+    selects.forEach(select => {
+      Array.from(select.options).forEach(opt => {
+        const lvl = parseInt(opt.value, 10);
+        if (isNaN(lvl)) return;
+        opt.textContent = `Lv${lvl} (${getTotalHintDiscountPct(lvl)}% off)`;
+      });
+    });
+  }
+
+  function refreshAllRowCosts() {
+    const dataRows = rowsEl ? rowsEl.querySelectorAll('.optimizer-row') : [];
+    dataRows.forEach(row => {
+      if (typeof row.syncSkillCategory === 'function') {
+        row.syncSkillCategory({ triggerOptimize: false, allowLinking: false, updateCost: true });
+      }
+    });
   }
 
   async function loadSkillCostsJSON() {
@@ -942,7 +974,7 @@
         <label>Hint Discount</label>
         <div class="hint-controls">
           <select class="hint-level">
-            ${HINT_LEVELS.map(lvl => `<option value="${lvl}">Lv${lvl} (${getHintDiscountPct(lvl)}% off)</option>`).join('')}
+            ${HINT_LEVELS.map(lvl => `<option value="${lvl}">Lv${lvl} (${getTotalHintDiscountPct(lvl)}% off)</option>`).join('')}
           </select>
           <div class="base-cost" data-empty="true">Base ?</div>
         </div>
@@ -1597,7 +1629,7 @@
 
   // persistence
   function saveState() {
-    const state = { budget: parseInt(budgetInput.value, 10) || 0, cfg: {}, rows: [], autoTargets: [], rating: readRatingState() };
+    const state = { budget: parseInt(budgetInput.value, 10) || 0, cfg: {}, rows: [], autoTargets: [], rating: readRatingState(), fastLearner: !!fastLearnerToggle?.checked };
     Object.entries(cfg).forEach(([k, el]) => { state.cfg[k] = el ? el.value : 'A'; });
     if (autoTargetInputs && autoTargetInputs.length) {
       state.autoTargets = Array.from(autoTargetInputs)
@@ -1631,6 +1663,7 @@
       const raw = localStorage.getItem('optimizerState'); if (!raw) return false;
       const state = JSON.parse(raw); if (!state || !Array.isArray(state.rows)) return false;
       budgetInput.value = state.budget || 0;
+      if (fastLearnerToggle) fastLearnerToggle.checked = !!state.fastLearner;
       Object.entries(state.cfg || {}).forEach(([k, v]) => { if (cfg[k]) cfg[k].value = v; });
       if (Array.isArray(state.autoTargets) && state.autoTargets.length) {
         setAutoTargetSelections(state.autoTargets);
@@ -1688,6 +1721,8 @@
         }
       });
       if (!createdAny) return false;
+      updateHintOptionLabels();
+      refreshAllRowCosts();
       saveState();
       return true;
     } catch { return false; }
@@ -1761,6 +1796,14 @@
     });
   }
   if (autoBuildBtn) autoBuildBtn.addEventListener('click', autoBuildIdealSkills);
+  if (fastLearnerToggle) {
+    fastLearnerToggle.addEventListener('change', () => {
+      updateHintOptionLabels();
+      refreshAllRowCosts();
+      saveState();
+      autoOptimizeDebounced();
+    });
+  }
 
   // CSV loader
   const csvFileInput = document.getElementById('csv-file');
@@ -1778,6 +1821,8 @@
     initRatingInputs();
      loadRatingSprite();
     updateAffinityStyles();
+    updateHintOptionLabels();
+    refreshAllRowCosts();
     ensureOneEmptyRow();
     autoOptimizeDebounced();
   }

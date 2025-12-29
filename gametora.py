@@ -1,4 +1,4 @@
-import argparse, json, os, sys, time, re, requests
+import argparse, json, os, sys, time, re, requests, random, threading, queue
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urlparse
 from urllib3.exceptions import ReadTimeoutError
@@ -20,6 +20,9 @@ RETRIES = 3
 NAV_TIMEOUT = 45
 JS_TIMEOUT  = 45
 
+JSON_LOCK = threading.Lock()
+THUMB_LOCK = threading.Lock()
+
 
 def _read_json_list(path: str) -> List[Any]:
     if not os.path.exists(path):
@@ -39,30 +42,32 @@ def _atomic_write(path: str, data: List[Any]) -> None:
     os.replace(tmp, path)
 
 def append_json_item(path: str, item: Dict[str, Any], dedup_key: Optional[Tuple[str, ...]] = None) -> bool:
-    data = _read_json_list(path)
-    if dedup_key:
-        def pluck(d: Dict[str, Any], dotted: str) -> Any:
-            cur: Any = d
-            for part in dotted.split("."):
-                cur = cur.get(part, None) if isinstance(cur, dict) else None
-            return cur
-        probe = tuple(str(pluck(item, k)) for k in dedup_key)
-        for existing in data:
-            if tuple(str(pluck(existing, k)) for k in dedup_key) == probe:
-                return False
-    data.append(item)
-    _atomic_write(path, data)
-    return True
+    with JSON_LOCK:
+        data = _read_json_list(path)
+        if dedup_key:
+            def pluck(d: Dict[str, Any], dotted: str) -> Any:
+                cur: Any = d
+                for part in dotted.split("."):
+                    cur = cur.get(part, None) if isinstance(cur, dict) else None
+                return cur
+            probe = tuple(str(pluck(item, k)) for k in dedup_key)
+            for existing in data:
+                if tuple(str(pluck(existing, k)) for k in dedup_key) == probe:
+                    return False
+        data.append(item)
+        _atomic_write(path, data)
+        return True
 
 def upsert_json_item(path: str, match_key: str, match_value: str, patch: Dict[str, Any]) -> None:
-    data = _read_json_list(path)
-    for obj in data:
-        if isinstance(obj, dict) and obj.get(match_key) == match_value:
-            obj.update(patch)
-            _atomic_write(path, data)
-            return
-    data.append({match_key: match_value, **patch})
-    _atomic_write(path, data)
+    with JSON_LOCK:
+        data = _read_json_list(path)
+        for obj in data:
+            if isinstance(obj, dict) and obj.get(match_key) == match_value:
+                obj.update(patch)
+                _atomic_write(path, data)
+                return
+        data.append({match_key: match_value, **patch})
+        _atomic_write(path, data)
 
 def _make_uma_key(name: str, nickname: str | None, slug: str | None) -> str:
     """Stable key to disambiguate variants."""
@@ -234,15 +239,16 @@ def _save_thumb(url: str, thumbs_dir: str, slug: Optional[str], sup_id: Optional
     safe = re.sub(r"[^a-z0-9\-_.]", "-", base.lower())
     fname = f"{safe}{ext}"
     dest = Path(thumbs_dir) / fname
-    if not dest.exists() or dest.stat().st_size == 0:
-        try:
-            r = requests.get(url, timeout=20)
-            r.raise_for_status()
-            dest.write_bytes(r.content)
-            time.sleep(0.05)  # be polite
-        except Exception as e:
-            print(f"[thumb] failed {url}: {e}")
-            return ""
+    with THUMB_LOCK:
+        if not dest.exists() or dest.stat().st_size == 0:
+            try:
+                r = requests.get(url, timeout=20)
+                r.raise_for_status()
+                dest.write_bytes(r.content)
+                time.sleep(0.05)  # be polite
+            except Exception as e:
+                print(f"[thumb] failed {url}: {e}")
+                return ""
     # return site-relative path for the front-end
     rel = "/" + str(dest.as_posix()).lstrip("/")
     # normalize to your site’s assets folder form:
@@ -251,10 +257,10 @@ def _save_thumb(url: str, thumbs_dir: str, slug: Optional[str], sup_id: Optional
 
 def collect_support_previews(driver, thumbs_dir: str) -> dict[str, dict]:
     previews: dict[str, dict] = {}
-    anchors = filter_visible(
-        driver,
-        safe_find_all(driver, By.CSS_SELECTOR, "main main div:last-child a[href*='/umamusume/supports/']")
-    )
+    anchors = _wait_support_cards(driver)
+    if not anchors:
+        _scroll_page_until_stable(driver)
+        anchors = _wait_support_cards(driver, timeout_s=4.0)
     for a in anchors:
         href = a.get_attribute("href") or ""
         slug, sid = _slug_and_id_from_url(href)
@@ -265,6 +271,26 @@ def collect_support_previews(driver, thumbs_dir: str) -> dict[str, dict]:
         local = _save_thumb(src, thumbs_dir, slug, sid)
         previews[slug] = {"SupportImage": local or src, "SupportId": sid or _id_from_img_src(src)}
     return previews
+
+
+class RateLimiter:
+    def __init__(self, min_interval_s: float = 0.9, jitter_s: float = 0.25):
+        self.min_interval_s = max(0.0, float(min_interval_s))
+        self.jitter_s = max(0.0, float(jitter_s))
+        self._lock = threading.Lock()
+        self._next_time = 0.0
+
+    def wait(self) -> None:
+        sleep_for = 0.0
+        with self._lock:
+            now = time.monotonic()
+            if now < self._next_time:
+                sleep_for = self._next_time - now
+            self._next_time = max(self._next_time, now) + self.min_interval_s
+        if sleep_for > 0:
+            time.sleep(sleep_for)
+        if self.jitter_s > 0:
+            time.sleep(random.uniform(0.0, self.jitter_s))
 
 
 def new_driver(headless: bool = True) -> webdriver.Chrome:
@@ -368,6 +394,60 @@ def is_visible(driver, el) -> bool:
 
 def filter_visible(driver, elements: List[Any]) -> List[Any]:
     return [e for e in elements if is_visible(driver, e)]
+
+def _scroll_page_until_stable(driver, max_rounds: int = 10, delay: float = 0.2) -> None:
+    """Scroll to trigger lazy-loaded content; stop when height stabilizes."""
+    try:
+        last_height = driver.execute_script("return document.body.scrollHeight")
+    except Exception:
+        return
+    for _ in range(max_rounds):
+        try:
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        except Exception:
+            break
+        time.sleep(delay)
+        try:
+            new_height = driver.execute_script("return document.body.scrollHeight")
+        except Exception:
+            break
+        if new_height == last_height:
+            break
+        last_height = new_height
+    try:
+        driver.execute_script("window.scrollTo(0, 0);")
+    except Exception:
+        pass
+
+def _collect_support_card_anchors(driver) -> List[Any]:
+    anchors: List[Any] = []
+    # Prefer anchors that include support card images.
+    for img in safe_find_all(driver, By.CSS_SELECTOR, "img[src*='/images/umamusume/supports/']"):
+        try:
+            a = img.find_element(By.XPATH, "./ancestor::a[1]")
+        except Exception:
+            continue
+        if a not in anchors:
+            anchors.append(a)
+    if anchors:
+        return filter_visible(driver, anchors)
+
+    # Fallback to any support link that is not the list page itself.
+    for a in safe_find_all(driver, By.CSS_SELECTOR, "a[href*='/umamusume/supports/']"):
+        href = a.get_attribute("href") or ""
+        if re.search(r"/umamusume/supports/?$", href):
+            continue
+        anchors.append(a)
+    return filter_visible(driver, anchors)
+
+def _wait_support_cards(driver, timeout_s: float = 8.0) -> List[Any]:
+    end = time.time() + timeout_s
+    while time.time() < end:
+        anchors = _collect_support_card_anchors(driver)
+        if anchors:
+            return anchors
+        time.sleep(0.2)
+    return []
 
 
 def _click(driver, css) -> bool:
@@ -821,7 +901,19 @@ def scrape_characters(save_path: str, server: str, headless: bool = True):
         except Exception: pass
 
 
-def scrape_supports(out_events_path: str, out_hints_path: str, server: str, headless: bool = True, thumbs_dir: str = "assets/support_thumbs"):
+def scrape_supports(out_events_path: str, out_hints_path: str, server: str, headless: bool = True,
+                    thumbs_dir: str = "assets/support_thumbs", workers: int = 2,
+                    min_interval: float = 0.9, jitter: float = 0.25):
+    return scrape_supports_threaded(
+        out_events_path,
+        out_hints_path,
+        server=server,
+        headless=headless,
+        thumbs_dir=thumbs_dir,
+        workers=workers,
+        min_interval=min_interval,
+        jitter=jitter
+    )
     d = new_driver(headless=headless)
     try:
         with_retries(nav, d, "https://gametora.com/umamusume/supports", "main main")
@@ -830,7 +922,10 @@ def scrape_supports(out_events_path: str, out_hints_path: str, server: str, head
         # NEW: collect preview thumbnails by slug/id once
         previews = collect_support_previews(d, thumbs_dir)
 
-        cards = filter_visible(d, safe_find_all(d, By.CSS_SELECTOR, "main main div:last-child a[href*='/umamusume/supports/']"))
+        cards = _wait_support_cards(d)
+        if not cards:
+            _scroll_page_until_stable(d)
+            cards = _wait_support_cards(d, timeout_s=4.0)
         urls = []
         for a in cards:
             try:
@@ -843,6 +938,8 @@ def scrape_supports(out_events_path: str, out_hints_path: str, server: str, head
                 urls.append(href)
 
         total = len(urls)
+        if total == 0:
+            print("[support] No support cards found on list page; site layout may have changed.")
         for i, url in enumerate(urls, 1):
             for attempt in range(RETRIES + 1):
                 try:
@@ -928,7 +1025,159 @@ def scrape_supports(out_events_path: str, out_hints_path: str, server: str, head
     finally:
         try: d.quit()
         except Exception: pass
-        
+
+
+def _scrape_support_detail(d, url: str, previews: dict, thumbs_dir: str,
+                           out_events_path: str, out_hints_path: str) -> tuple[str, str, Optional[str], int, int]:
+    slug, sup_id = _slug_and_id_from_url(url)
+
+    name_el = safe_find(d, By.CSS_SELECTOR, 'h1, div[class*=supports_infobox_] [class*="name"], [class*="support_name"]')
+    sname = txt(name_el) or url.rstrip("/").split("/")[-1]
+
+    m = re.search(r"\((SSR|SR|R)\)", sname, flags=re.I)
+    rarity = m.group(1).upper() if m else "UNKNOWN"
+
+    added = 0
+
+    hints = parse_support_hints_on_page(d)
+
+    img_url = ""
+    if slug in previews:
+        img_url = previews[slug].get("SupportImage", "") or ""
+        if not sup_id:
+            sup_id = previews[slug].get("SupportId", None)
+    if not img_url:
+        big = safe_find(d, By.CSS_SELECTOR, "img[src*='/images/umamusume/supports/']")
+        src = _abs_url(d, big.get_attribute("src") or "") if big else ""
+        img_url = _save_thumb(src, thumbs_dir, slug, sup_id)
+
+    for elist in safe_find_all(d, By.CSS_SELECTOR, 'div[class*=eventhelper_elist]'):
+        if not is_visible(d, elist):
+            continue
+        for it in elist.find_elements(By.CSS_SELECTOR, 'div[class*=compatibility_viewer_item]'):
+            if not is_visible(d, it):
+                continue
+            ev_name = txt(it)
+            if not ev_name:
+                continue
+            pop = tippy_show_and_get_popper(d, it)
+            try:
+                rows = parse_event_from_tippy_popper(pop)
+                for kv in rows:
+                    if append_json_item(
+                        out_events_path,
+                        make_support_card(ev_name, kv),
+                        dedup_key=("EventName", "EventOptions")
+                    ):
+                        added += 1
+            finally:
+                tippy_hide(d, it)
+
+    upsert_json_item(out_hints_path, "SupportSlug", slug or sname, {
+        "SupportSlug": slug or sname,
+        "SupportId": sup_id,
+        "SupportName": sname,
+        "SupportRarity": rarity,
+        "SupportImage": img_url,
+        "SupportHints": hints,
+    })
+
+    return sname, slug, sup_id, added, len(hints)
+
+
+def scrape_supports_threaded(out_events_path: str, out_hints_path: str, server: str, headless: bool = True,
+                             thumbs_dir: str = "assets/support_thumbs", workers: int = 2,
+                             min_interval: float = 0.9, jitter: float = 0.25) -> None:
+    d = new_driver(headless=headless)
+    try:
+        with_retries(nav, d, "https://gametora.com/umamusume/supports", "main main")
+        ensure_server(d, server=server, keep_raw_en=True)
+
+        # collect preview thumbnails by slug/id once
+        previews = collect_support_previews(d, thumbs_dir)
+
+        cards = _wait_support_cards(d)
+        if not cards:
+            _scroll_page_until_stable(d)
+            cards = _wait_support_cards(d, timeout_s=4.0)
+        urls = []
+        for a in cards:
+            try:
+                inner = a.find_element(By.CSS_SELECTOR, "div")
+                if not is_visible(d, inner):
+                    continue
+            except Exception:
+                pass
+            href = a.get_attribute("href") or ""
+            if href and href not in urls:
+                urls.append(href)
+
+        total = len(urls)
+        if total == 0:
+            print("[support] No support cards found on list page; site layout may have changed.")
+            return
+    finally:
+        try: d.quit()
+        except Exception: pass
+
+    worker_count = max(1, min(int(workers), total))
+    rate_limiter = RateLimiter(min_interval_s=min_interval, jitter_s=jitter)
+    q = queue.Queue()
+    for i, url in enumerate(urls, 1):
+        q.put((i, url))
+
+    def worker_loop(worker_id: int) -> None:
+        d_local = new_driver(headless=headless)
+        try:
+            with_retries(nav, d_local, "https://gametora.com/umamusume/supports", "main main")
+            ensure_server(d_local, server=server, keep_raw_en=True)
+            while True:
+                try:
+                    idx, url = q.get_nowait()
+                except queue.Empty:
+                    return
+                try:
+                    for attempt in range(RETRIES + 1):
+                        try:
+                            rate_limiter.wait()
+                            ok = with_retries(nav, d_local, url, "body")
+                            if not ok:
+                                raise TimeoutException("no body")
+                            sname, slug, sup_id, added, hint_count = _scrape_support_detail(
+                                d_local, url, previews, thumbs_dir, out_events_path, out_hints_path
+                            )
+                            print(f"[{idx}/{total}] SUPPORT {sname} (slug:{slug or '-'} id:{sup_id or '-'} "
+                                  f"+{added} events, {hint_count} hints)")
+                            break
+                        except (TimeoutException, WebDriverException, StaleElementReferenceException, ReadTimeoutError) as e:
+                            if attempt < RETRIES:
+                                try: d_local.quit()
+                                except Exception: pass
+                                d_local = new_driver(headless=headless)
+                                with_retries(nav, d_local, "https://gametora.com/umamusume/supports", "main main")
+                                ensure_server(d_local, server=server, keep_raw_en=True)
+                                time.sleep(0.5 * (2 ** attempt))
+                                continue
+                            else:
+                                print(f"[{idx}/{total}] SUPPORT ERROR {url}: {e}")
+                                break
+                finally:
+                    q.task_done()
+        finally:
+            try: d_local.quit()
+            except Exception: pass
+
+    threads = []
+    for wid in range(worker_count):
+        t = threading.Thread(target=worker_loop, args=(wid,), daemon=True)
+        t.start()
+        threads.append(t)
+
+    q.join()
+    for t in threads:
+        t.join()
+
+
 def scrape_career(save_path: str, server: str, headless: bool = True):
     d = new_driver(headless=headless)
     try:
@@ -1097,6 +1346,9 @@ def main():
     ap.add_argument("--what", choices=["uma","supports","career","races","all"], default="all")
     ap.add_argument("--server", choices=["global","japan"], default="global")
     ap.add_argument("--headful", action="store_true")
+    ap.add_argument("--supports-workers", type=int, default=2, help="Parallel workers for support scraping (1 disables threading)")
+    ap.add_argument("--supports-min-interval", type=float, default=0.9, help="Min seconds between support page navigations across workers")
+    ap.add_argument("--supports-jitter", type=float, default=0.25, help="Random jitter added to support navigation delays")
     args = ap.parse_args()
     headless = not args.headful
 
@@ -1106,7 +1358,16 @@ def main():
             scrape_characters(args.out_uma, server=args.server, headless=headless)
         if args.what in ("supports","all"):
             print("\n=== Supports (events + support hints) ===")
-            scrape_supports(args.out_supports, args.out_support_hints, server=args.server, headless=headless)
+            scrape_supports(
+                args.out_supports,
+                args.out_support_hints,
+                server=args.server,
+                headless=headless,
+                thumbs_dir=args.thumb_dir,
+                workers=args.supports_workers,
+                min_interval=args.supports_min_interval,
+                jitter=args.supports_jitter
+            )
         if args.what in ("career","all"):
             print("\n=== Career ===")
             scrape_career(args.out_career, server=args.server, headless=headless)
