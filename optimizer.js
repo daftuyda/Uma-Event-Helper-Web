@@ -37,7 +37,11 @@
     skills: document.getElementById('rating-skills-score'),
     unique: document.getElementById('rating-unique-bonus'),
     total: document.getElementById('rating-total'),
-    badgeSprite: document.getElementById('rating-badge-sprite')
+    badgeSprite: document.getElementById('rating-badge-sprite'),
+    nextLabel: document.getElementById('rating-next-label'),
+    nextNeeded: document.getElementById('rating-next-needed'),
+    progressFill: document.getElementById('rating-progress-fill'),
+    progressBar: document.querySelector('.rating-progress-bar')
   };
   const MAX_STAT_VALUE = 2000;
   const STAT_BLOCK_SIZE = 50;
@@ -330,6 +334,13 @@
     return RATING_BADGES[RATING_BADGES.length - 1];
   }
 
+  function getRatingBadgeIndex(totalScore) {
+    for (let i = 0; i < RATING_BADGES.length; i++) {
+      if (totalScore < RATING_BADGES[i].threshold) return i;
+    }
+    return RATING_BADGES.length - 1;
+  }
+
   function loadRatingSprite() {
     if (!ratingDisplays.badgeSprite) return;
     const spriteUrl = `${RATING_SPRITE.url}?v=${Date.now()}`;
@@ -420,6 +431,28 @@
       } else {
         ratingDisplays.badgeSprite.style.backgroundImage = 'none';
         ratingDisplays.badgeSprite.textContent = badge.label;
+      }
+    }
+    if (ratingDisplays.progressFill && ratingDisplays.nextLabel && ratingDisplays.nextNeeded) {
+      const idx = getRatingBadgeIndex(breakdown.total);
+      const current = RATING_BADGES[idx];
+      const prevThreshold = idx === 0 ? 0 : RATING_BADGES[idx - 1].threshold;
+      const nextThreshold = current.threshold;
+      const hasNext = Number.isFinite(nextThreshold);
+      const range = hasNext ? Math.max(1, nextThreshold - prevThreshold) : 1;
+      const clampedTotal = Math.max(prevThreshold, breakdown.total);
+      const progress = hasNext
+        ? Math.min(1, Math.max(0, (clampedTotal - prevThreshold) / range))
+        : 1;
+      const nextBadge = hasNext ? RATING_BADGES[idx + 1] : current;
+      const needed = hasNext ? Math.max(0, nextThreshold - breakdown.total) : 0;
+      ratingDisplays.progressFill.style.width = `${Math.round(progress * 100)}%`;
+      ratingDisplays.nextLabel.textContent = hasNext
+        ? `Next: ${nextBadge?.label || current.label} at ${nextThreshold}`
+        : 'Max rank reached';
+      ratingDisplays.nextNeeded.textContent = hasNext ? `+${needed}` : '';
+      if (ratingDisplays.progressBar) {
+        ratingDisplays.progressBar.setAttribute('aria-valuenow', String(Math.round(progress * 100)));
       }
     }
   }
