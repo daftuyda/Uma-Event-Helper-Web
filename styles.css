@@ -2704,9 +2704,40 @@ body.dark-mode .rating-summary .pill {
   background: linear-gradient(120deg, #334155, #0f172a);
   color: #f8fafc;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 10px 20px rgba(15,23,42,0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 .rating-total-pill .value {
   font-size: 2rem;
+}
+.rating-total-pill .label,
+.rating-total-pill .value {
+  align-self: flex-end;
+}
+.rating-progress {
+  width: 100%;
+}
+.rating-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(248, 250, 252, 0.82);
+}
+.rating-progress-bar {
+  position: relative;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.25);
+  overflow: hidden;
+}
+.rating-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  transition: width 0.2s ease-out;
 }
 .rating-badge {
   display: flex;
