@@ -2214,6 +2214,14 @@ body.dark-mode .dropdown-item.active {
   .dropdown-item {
     padding: 0.5rem 0.6rem;
   }
+  .toolbar .labelTitle {
+    min-width: 0 !important;
+    width: 100%;
+  }
+  .toolbar .labelTitle input {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 /* focus-visible accessibility */
@@ -2266,7 +2274,7 @@ body.dark-mode .results-list .result-item.cat-ius, body.dark-mode .results-list 
 .rows { display: grid; gap: 10px; }
 .optimizer-row {
   display: grid;
-  grid-template-columns: minmax(110px, 0.22fr) minmax(220px, 1fr) minmax(170px, 0.32fr) minmax(110px, 0.18fr) minmax(120px, 0.18fr) auto;
+  grid-template-columns: minmax(110px, 0.22fr) minmax(220px, 1fr) minmax(170px, 0.32fr) minmax(110px, 0.18fr) minmax(160px, 0.24fr);
   gap: 14px;
   padding: 14px 16px;
   border: 1px solid var(--border, #e5e7eb);
@@ -2367,9 +2375,18 @@ body.dark-mode .results-list .result-item.cat-ius, body.dark-mode .results-list 
 .optimizer-row.cat-red .category-chip, .optimizer-row.cat-red .skill-name, .optimizer-row.cat-red .cost, .optimizer-row.cat-red .hint-level { border-color: rgba(248,113,113,.5); }
 .optimizer-row.cat-ius .category-chip, .optimizer-row.cat-ius .skill-name, .optimizer-row.cat-ius .cost, .optimizer-row.cat-ius .hint-level,
 .optimizer-row.cat-orange .category-chip, .optimizer-row.cat-orange .skill-name, .optimizer-row.cat-orange .cost, .optimizer-row.cat-orange .hint-level { border-color: rgba(251,146,60,.5); }
+.optimizer-row .actions-cell {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 15px;
+}
+.optimizer-row .actions-cell > div {
+  display: flex;
+  flex-direction: column;
+}
 .optimizer-row .remove.btn {
-  justify-self: end;
-  align-self: center;
   white-space: nowrap;
   padding-inline: 14px;
 }
@@ -2390,6 +2407,25 @@ body.dark-mode .results-list .result-item.cat-ius, body.dark-mode .results-list 
   width: 18px;
   height: 18px;
   accent-color: #f59e0b;
+}
+.optimizer-row .dup-warning {
+  display: none;
+  margin-top: 6px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  background: #fee2e2;
+  font-size: 0.8rem;
+  color: #b91c1c;
+  line-height: 1.2;
+}
+.optimizer-row .dup-warning.visible {
+  display: block;
+}
+body.dark-mode .optimizer-row .dup-warning {
+  border-color: rgba(248, 113, 113, 0.6);
+  background: rgba(127, 29, 29, 0.35);
+  color: #fca5a5;
 }
 
 /* Linked lower-skill row variant */
@@ -2443,9 +2479,83 @@ body.dark-mode .optimizer-row .base-cost {
   color: #e5e7eb;
 }
 /* Compact on narrow screens */
+@media (max-width: 1200px) {
+  .optimizer-row {
+    grid-template-columns: minmax(90px, 0.2fr) minmax(160px, 1fr) minmax(150px, 0.32fr) minmax(90px, 0.18fr) minmax(140px, 0.24fr);
+    gap: 10px;
+  }
+  .optimizer-row .hint-controls {
+    flex-wrap: wrap;
+  }
+}
 @media (max-width: 960px) {
   .optimizer-row { grid-template-columns: 1fr; }
-  .optimizer-row .remove.btn { justify-self: stretch; }
+  .optimizer-row .actions-cell { justify-content: space-between; }
+  .optimizer-row .remove.btn { width: 100%; }
+}
+@media (max-width: 700px) {
+  .rows { gap: 6px; }
+  .optimizer-row {
+    padding: 10px;
+    gap: 8px;
+    border-radius: 10px;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+  .optimizer-row .type-cell,
+  .optimizer-row .skill-cell,
+  .optimizer-row .cost-cell {
+    grid-column: 1 / -1;
+  }
+  .optimizer-row .hint-cell {
+    grid-column: 1 / 2;
+  }
+  .optimizer-row .actions-cell {
+    grid-column: 1 / -1;
+    align-self: stretch;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+  .optimizer-row > div > label {
+    font-size: 0.75rem;
+    margin-bottom: 2px;
+  }
+  .optimizer-row .skill-name,
+  .optimizer-row .hint-level,
+  .optimizer-row .cost {
+    padding: 5px 6px;
+    font-size: 0.9rem;
+  }
+  .optimizer-row .hint-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .optimizer-row .hint-level {
+    min-width: 0;
+    width: 100%;
+  }
+  .optimizer-row .base-cost {
+    align-self: flex-start;
+  }
+  .optimizer-row .category-chip {
+    min-height: 26px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+  }
+  .optimizer-row .required-toggle {
+    gap: 6px;
+    font-size: 0.85rem;
+  }
+  .optimizer-row .required-toggle input {
+    width: 16px;
+    height: 16px;
+  }
+  .optimizer-row .remove.btn {
+    padding: 6px 10px;
+    width: auto;
+  }
 }
 
 /* ===== Race Config Affinities (global) ===== */
@@ -2760,6 +2870,90 @@ body.dark-mode .rating-badge {
   background: rgba(17,24,39,0.9);
   border-color: rgba(71,85,105,0.8);
   box-shadow: 0 18px 36px rgba(0,0,0,0.6);
+}
+
+.rating-float {
+  position: fixed;
+  top: 86px;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.45);
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 18px 35px rgba(15,23,42,0.18);
+  z-index: 70;
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+.rating-float.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.rating-float-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(15,23,42,0.08);
+  display: grid;
+  place-items: center;
+}
+.rating-float-badge-sprite {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #0f172a;
+  display: grid;
+  place-items: center;
+}
+.rating-float-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.05;
+}
+.rating-float-meta .label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.6rem;
+  color: rgba(15,23,42,0.6);
+  font-weight: 700;
+}
+.rating-float-meta .value {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+body.dark-mode .rating-float {
+  background: rgba(15,23,42,0.92);
+  border-color: rgba(71,85,105,0.8);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+}
+body.dark-mode .rating-float-badge {
+  background: rgba(148,163,184,0.18);
+}
+body.dark-mode .rating-float-badge-sprite {
+  color: #f8fafc;
+}
+body.dark-mode .rating-float-meta .label {
+  color: rgba(226,232,240,0.7);
+}
+body.dark-mode .rating-float-meta .value {
+  color: #f8fafc;
+}
+@media (max-width: 900px) {
+  .rating-float {
+    top: 72px;
+    right: 0.75rem;
+  }
 }
 
 .rating-card-header h2 {
