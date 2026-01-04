@@ -191,10 +191,8 @@
       : (HINT_DISCOUNT_STEP * lvl);
     const multiplier = Math.max(0, 1 - discount - getFastLearnerDiscount());
     const rawCost = baseCost * multiplier;
-    const frac = rawCost - Math.floor(rawCost);
     const epsilon = 1e-9;
-    const rounded = Math.abs(frac - 0.5) < epsilon ? Math.floor(rawCost) : Math.ceil(rawCost);
-    return Math.max(0, rounded);
+    return Math.max(0, Math.floor(rawCost + epsilon));
   }
 
   function updateHintOptionLabels() {
