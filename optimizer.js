@@ -38,6 +38,8 @@
     unique: document.getElementById('rating-unique-bonus'),
     total: document.getElementById('rating-total'),
     badgeSprite: document.getElementById('rating-badge-sprite'),
+    floatTotal: document.getElementById('rating-float-total'),
+    floatBadgeSprite: document.getElementById('rating-float-badge-sprite'),
     nextLabel: document.getElementById('rating-next-label'),
     nextNeeded: document.getElementById('rating-next-needed'),
     progressFill: document.getElementById('rating-progress-fill'),
@@ -341,8 +343,20 @@
     return RATING_BADGES.length - 1;
   }
 
+  function applyBadgeSpriteStyles(target, spriteUrl, sheetWidth, sheetHeight) {
+    if (!target) return;
+    const badgeWidth = target.clientWidth || RATING_SPRITE.tileWidth;
+    const badgeHeight = target.clientHeight || RATING_SPRITE.tileHeight;
+    const scaleX = badgeWidth / RATING_SPRITE.tileWidth;
+    const scaleY = badgeHeight / RATING_SPRITE.tileHeight;
+    const bgWidth = sheetWidth * scaleX;
+    const bgHeight = sheetHeight * scaleY;
+    target.style.backgroundImage = `url(${spriteUrl})`;
+    target.style.backgroundSize = `${bgWidth}px ${bgHeight}px`;
+  }
+
   function loadRatingSprite() {
-    if (!ratingDisplays.badgeSprite) return;
+    if (!ratingDisplays.badgeSprite && !ratingDisplays.floatBadgeSprite) return;
     const spriteUrl = `${RATING_SPRITE.url}?v=${Date.now()}`;
     const img = new Image();
     img.onload = () => {
@@ -351,21 +365,14 @@
       RATING_SPRITE.tileWidth = sheetWidth / RATING_SPRITE.columns;
       RATING_SPRITE.tileHeight = sheetHeight / RATING_SPRITE.rows;
       RATING_SPRITE.loaded = true;
-
-    const badgeWidth = ratingDisplays.badgeSprite.clientWidth || RATING_SPRITE.tileWidth;
-    const badgeHeight = ratingDisplays.badgeSprite.clientHeight || RATING_SPRITE.tileHeight;
-    const scaleX = badgeWidth / RATING_SPRITE.tileWidth;
-    const scaleY = badgeHeight / RATING_SPRITE.tileHeight;
-    const bgWidth = sheetWidth * scaleX;
-    const bgHeight = sheetHeight * scaleY;
-
-    ratingDisplays.badgeSprite.style.backgroundImage = `url(${spriteUrl})`;
-    ratingDisplays.badgeSprite.style.backgroundSize = `${bgWidth}px ${bgHeight}px`;
-    updateRatingDisplay();
-  };
+      applyBadgeSpriteStyles(ratingDisplays.badgeSprite, spriteUrl, sheetWidth, sheetHeight);
+      applyBadgeSpriteStyles(ratingDisplays.floatBadgeSprite, spriteUrl, sheetWidth, sheetHeight);
+      updateRatingDisplay();
+    };
     img.onerror = () => {
       RATING_SPRITE.loaded = false;
-      ratingDisplays.badgeSprite.textContent = '';
+      if (ratingDisplays.badgeSprite) ratingDisplays.badgeSprite.textContent = '';
+      if (ratingDisplays.floatBadgeSprite) ratingDisplays.floatBadgeSprite.textContent = '';
     };
     img.src = spriteUrl;
   }
@@ -413,26 +420,31 @@
     return { statsScore, uniqueBonus, skillScore: lastSkillScore, total };
   }
 
+  function updateBadgeSprite(target, badge) {
+    if (!target) return;
+    if (RATING_SPRITE.loaded && badge.sprite) {
+      const badgeWidth = target.clientWidth || RATING_SPRITE.tileWidth;
+      const badgeHeight = target.clientHeight || RATING_SPRITE.tileHeight;
+      const offsetX = badge.sprite.col * badgeWidth;
+      const offsetY = badge.sprite.row * badgeHeight;
+      target.style.backgroundPosition = `-${offsetX}px -${offsetY}px`;
+      target.textContent = '';
+    } else {
+      target.style.backgroundImage = 'none';
+      target.textContent = badge.label;
+    }
+  }
+
   function updateRatingDisplay(skillScoreOverride) {
     const breakdown = calculateRatingBreakdown(skillScoreOverride);
     if (ratingDisplays.stats) ratingDisplays.stats.textContent = breakdown.statsScore.toString();
     if (ratingDisplays.skills) ratingDisplays.skills.textContent = breakdown.skillScore.toString();
     if (ratingDisplays.unique) ratingDisplays.unique.textContent = breakdown.uniqueBonus.toString();
     if (ratingDisplays.total) ratingDisplays.total.textContent = breakdown.total.toString();
-    if (ratingDisplays.badgeSprite) {
-      const badge = getRatingBadge(breakdown.total);
-      if (RATING_SPRITE.loaded && badge.sprite) {
-        const badgeWidth = ratingDisplays.badgeSprite.clientWidth || RATING_SPRITE.tileWidth;
-        const badgeHeight = ratingDisplays.badgeSprite.clientHeight || RATING_SPRITE.tileHeight;
-        const offsetX = badge.sprite.col * badgeWidth;
-        const offsetY = badge.sprite.row * badgeHeight;
-        ratingDisplays.badgeSprite.style.backgroundPosition = `-${offsetX}px -${offsetY}px`;
-        ratingDisplays.badgeSprite.textContent = '';
-      } else {
-        ratingDisplays.badgeSprite.style.backgroundImage = 'none';
-        ratingDisplays.badgeSprite.textContent = badge.label;
-      }
-    }
+    if (ratingDisplays.floatTotal) ratingDisplays.floatTotal.textContent = breakdown.total.toString();
+    const badge = getRatingBadge(breakdown.total);
+    updateBadgeSprite(ratingDisplays.badgeSprite, badge);
+    updateBadgeSprite(ratingDisplays.floatBadgeSprite, badge);
     if (ratingDisplays.progressFill && ratingDisplays.nextLabel && ratingDisplays.nextNeeded) {
       const idx = getRatingBadgeIndex(breakdown.total);
       const current = RATING_BADGES[idx];
@@ -980,6 +992,18 @@
     const skillKnown = !!findSkillByName(name);
     return skillKnown && !isNaN(cost) && cost >= 0;
   }
+  function scrollRowIntoView(row, { focus = true } = {}) {
+    if (!row) return;
+    const input = row.querySelector('.skill-name');
+    const target = input || row;
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (focus && input) input.focus({ preventScroll: true });
+    });
+  }
+  function shouldAutoScrollNewRow() {
+    return rowsEl && rowsEl.contains(document.activeElement);
+  }
   function ensureOneEmptyRow() {
     const rows = Array.from(rowsEl.querySelectorAll('.optimizer-row'))
       .filter(isTopLevelRow);
@@ -987,7 +1011,9 @@
     const last = rows[rows.length - 1];
     const lastFilled = isRowFilled(last);
     if (lastFilled) {
-      rowsEl.appendChild(makeRow());
+      const newRow = makeRow();
+      rowsEl.appendChild(newRow);
+      if (shouldAutoScrollNewRow()) scrollRowIntoView(newRow);
     } else {
       // Remove extra trailing empty top-level rows, keep exactly one empty
       for (let i = rows.length - 2; i >= 0; i--) {
@@ -1016,10 +1042,11 @@
         <label>Type</label>
         <div class="category-chip" data-empty="true">Auto</div>
       </div>
-      <div>
+      <div class="skill-cell">
         <label>Skill</label>
         <input type="text" class="skill-name" list="skills-datalist-${id}" placeholder="Start typing..." />
         <datalist id="skills-datalist-${id}"></datalist>
+        <div class="dup-warning" role="status" aria-live="polite"></div>
       </div>
       <div class="hint-cell">
         <label>Hint Discount</label>
@@ -1030,20 +1057,22 @@
           <div class="base-cost" data-empty="true">Base ?</div>
         </div>
       </div>
-      <div>
+      <div class="cost-cell">
         <label>Cost</label>
         <input type="number" min="0" step="1" class="cost" placeholder="Cost" />
       </div>
-      <div class="required-cell">
-        <label>Must Buy</label>
-        <label class="required-toggle">
-          <input type="checkbox" class="required-skill" />
-          Lock
-        </label>
-      </div>
-      <div class="remove-cell">
-        <label class="remove-label">&nbsp;</label>
-        <button type="button" class="btn remove">Remove</button>
+      <div class="actions-cell">
+        <div class="required-cell">
+          <label>Must Buy</label>
+          <label class="required-toggle">
+            <input type="checkbox" class="required-skill" />
+            Lock
+          </label>
+        </div>
+        <div class="remove-cell">
+          <label class="remove-label">&nbsp;</label>
+          <button type="button" class="btn remove">Remove</button>
+        </div>
       </div>
     `;
     const removeBtn = row.querySelector('.remove');
@@ -1064,6 +1093,8 @@
     const skillList = row.querySelector(`#skills-datalist-${id}`);
     const categoryChip = row.querySelector('.category-chip');
     const hintSelect = row.querySelector('.hint-level');
+    const dupWarning = row.querySelector('.dup-warning');
+    let dupWarningTimer = null;
     const baseCostDisplay = row.querySelector('.base-cost');
     const costInput = row.querySelector('.cost');
     const requiredToggle = row.querySelector('.required-skill');
@@ -1154,6 +1185,56 @@
       applyCategoryAccent(row, category);
     }
 
+    function getSkillIdentity(name) {
+      const skill = findSkillByName(name);
+      const id = skill?.skillId ?? skill?.id ?? '';
+      const canonicalName = skill?.name || name;
+      return { id: id ? String(id) : '', name: canonicalName, skill };
+    }
+
+    function isDuplicateSkill(identity) {
+      if (!rowsEl || !identity || !identity.name) return false;
+      const primaryKey = identity.id || normalize(identity.name);
+      if (!primaryKey) return false;
+      const rows = rowsEl.querySelectorAll('.optimizer-row');
+      for (const other of rows) {
+        if (other === row) continue;
+        const otherName = other.querySelector('.skill-name')?.value?.trim();
+        if (!otherName) continue;
+        const otherIdentity = getSkillIdentity(otherName);
+        const otherKey = otherIdentity.id || normalize(otherIdentity.name);
+        if (otherKey && otherKey === primaryKey) return true;
+      }
+      return false;
+    }
+
+    function showDupWarning(message) {
+      if (!dupWarning) return;
+      dupWarning.textContent = message;
+      dupWarning.classList.add('visible');
+      row.dataset.dupWarningHold = '1';
+      if (dupWarningTimer) window.clearTimeout(dupWarningTimer);
+      dupWarningTimer = window.setTimeout(() => {
+        if (dupWarning) {
+          dupWarning.textContent = '';
+          dupWarning.classList.remove('visible');
+        }
+        delete row.dataset.dupWarningHold;
+        dupWarningTimer = null;
+      }, 2500);
+    }
+
+    function clearDupWarning() {
+      if (!dupWarning) return;
+      if (row.dataset.dupWarningHold) return;
+      if (dupWarningTimer) {
+        window.clearTimeout(dupWarningTimer);
+        dupWarningTimer = null;
+      }
+      dupWarning.textContent = '';
+      dupWarning.classList.remove('visible');
+    }
+
   function ensureLinkedLowerForGold(category, { allowCreate = true } = {}) {
     if (row.dataset.parentGoldId) return;
     const isGold = isGoldCategory(category);
@@ -1225,7 +1306,37 @@
 
     function syncSkillCategory({ triggerOptimize = false, allowLinking = true, updateCost = false } = {}) {
       if (!skillInput) return;
-      const skill = findSkillByName(skillInput.value);
+      const rawName = (skillInput.value || '').trim();
+      if (!rawName) {
+        delete row.dataset.lastSkillName;
+        if (!row.dataset.dupWarningHold) clearDupWarning();
+      }
+      const identity = getSkillIdentity(rawName);
+      const skill = identity.skill;
+      if (rawName) {
+        const canonical = identity.name || rawName;
+        if (isDuplicateSkill(identity)) {
+          showDupWarning('This skill has already been added.');
+          const fallback = row.dataset.lastSkillName || '';
+          if (fallback) {
+            skillInput.value = fallback;
+            const prev = findSkillByName(fallback);
+            const prevCategory = prev ? prev.category : '';
+            setCategoryDisplay(prevCategory);
+            updateBaseCostDisplay(prev);
+            if (updateCost) applyHintedCost(prev);
+          } else {
+            skillInput.value = '';
+            setCategoryDisplay('');
+            updateBaseCostDisplay(null);
+            if (costInput) costInput.value = '';
+            delete row.dataset.baseCost;
+          }
+          return;
+        }
+        row.dataset.lastSkillName = canonical;
+      }
+      clearDupWarning();
       const category = skill ? skill.category : '';
       setCategoryDisplay(category);
       updateBaseCostDisplay(skill);
@@ -1267,8 +1378,32 @@
     row.syncSkillCategory = syncSkillCategory;
     setCategoryDisplay(row.dataset.skillCategory || '');
     if (skillInput) {
-      skillInput.addEventListener('input', () => syncSkillCategory({ triggerOptimize: true, updateCost: true }));
-      skillInput.addEventListener('change', () => syncSkillCategory({ triggerOptimize: true, updateCost: true }));
+      const syncFromInput = () => syncSkillCategory({ triggerOptimize: true, updateCost: true });
+      skillInput.addEventListener('input', syncFromInput);
+      skillInput.addEventListener('change', syncFromInput);
+      skillInput.addEventListener('blur', syncFromInput);
+      skillInput.addEventListener('keyup', (event) => {
+        if (event.key === 'Enter') syncFromInput();
+      });
+      let monitorId = null;
+      const startMonitor = () => {
+        if (monitorId) return;
+        let lastValue = skillInput.value;
+        monitorId = window.setInterval(() => {
+          if (!document.body.contains(skillInput)) return;
+          if (skillInput.value !== lastValue) {
+            lastValue = skillInput.value;
+            syncFromInput();
+          }
+        }, 120);
+      };
+      const stopMonitor = () => {
+        if (!monitorId) return;
+        window.clearInterval(monitorId);
+        monitorId = null;
+      };
+      skillInput.addEventListener('focus', startMonitor);
+      skillInput.addEventListener('blur', stopMonitor);
     }
     if (hintSelect) {
       hintSelect.addEventListener('change', () => {
@@ -1780,7 +1915,12 @@
   }
 
   // events
-  if (addRowBtn) addRowBtn.addEventListener('click', () => { rowsEl.appendChild(makeRow()); saveState(); });
+  if (addRowBtn) addRowBtn.addEventListener('click', () => {
+    const newRow = makeRow();
+    rowsEl.appendChild(newRow);
+    scrollRowIntoView(newRow);
+    saveState();
+  });
 
   if (optimizeBtn) optimizeBtn.addEventListener('click', () => {
     const budget = parseInt(budgetInput.value, 10); if (isNaN(budget) || budget < 0) { alert('Please enter a valid skill points budget.'); return; }
@@ -1864,13 +2004,28 @@
     csvFileInput.addEventListener('change', () => { const file = csvFileInput.files && csvFileInput.files[0]; if (!file) return; const reader = new FileReader(); reader.onload = () => { const ok = loadFromCSVContent(reader.result || ''); if (!ok) alert('CSV not recognized. Expected headers like: skill_type,name,base/base_value,S_A/B_C/D_E_F/G or apt_1..apt_4,affinity'); saveState(); }; reader.readAsText(file); });
   }
 
+  function initRatingFloat() {
+    const floatRoot = document.getElementById('rating-float');
+    const ratingCard = document.getElementById('rating-card');
+    if (!floatRoot || !ratingCard) return;
+    const updateVisibility = () => {
+      const rect = ratingCard.getBoundingClientRect();
+      const shouldShow = rect.bottom < 0;
+      floatRoot.classList.toggle('is-visible', shouldShow);
+    };
+    updateVisibility();
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+    window.addEventListener('resize', updateVisibility);
+  }
+
   function finishInit() {
     const had = loadState();
     if (!had) {
       rowsEl.appendChild(makeRow());
     }
     initRatingInputs();
-     loadRatingSprite();
+    loadRatingSprite();
+    initRatingFloat();
     updateAffinityStyles();
     updateHintOptionLabels();
     refreshAllRowCosts();
