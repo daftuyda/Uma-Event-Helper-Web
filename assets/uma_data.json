@@ -35352,5 +35352,223 @@
       }
     ],
     "UmaEvents": []
+  },
+  {
+    "UmaKey": "Biwa Hayahide :: [Rouge Caroler]",
+    "UmaName": "Biwa Hayahide",
+    "UmaNickname": "[Rouge Caroler]",
+    "UmaSlug": "102302-biwa-hayahide",
+    "UmaId": "102302",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 83,
+        "Stamina": 99,
+        "Power": 76,
+        "Guts": 96,
+        "Wit": 96
+      },
+      "5★": {
+        "Speed": 102,
+        "Stamina": 121,
+        "Power": 93,
+        "Guts": 117,
+        "Wit": 117
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 0,
+      "Stamina": 12,
+      "Power": 12,
+      "Guts": 0,
+      "Wit": 6
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "F"
+      },
+      "Distance": {
+        "Short": "F",
+        "Mile": "C",
+        "Medium": "A",
+        "Long": "A"
+      },
+      "Strategy": {
+        "Front": "E",
+        "Pace": "A",
+        "Late": "B",
+        "End": "E"
+      }
+    },
+    "UmaHeightCm": 171,
+    "UmaThreeSizes": {
+      "B": 93,
+      "W": 61,
+      "H": 88
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "2. Place 5th or better in the Asahi Hai Futurity Stakes",
+        "Turn": "Turn 23 (previous + 10)",
+        "Time": "Junior Class, Early December",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "3. Place 5th or better in the Satsuki Sho",
+        "Turn": "Turn 31 (previous + 7)",
+        "Time": "Classic Class, Early April",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "4. Place 5th or better in the Tokyo Yushun (Japanese Derby)",
+        "Turn": "Turn 34 (previous + 2)",
+        "Time": "Classic Class, Late May",
+        "ObjectiveCondition": "G1 – Turf – 2400m – Medium"
+      },
+      {
+        "ObjectiveName": "5. Place 3rd or better in the Kikuka Sho",
+        "Turn": "Turn 44 (previous + 9)",
+        "Time": "Classic Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 3000m – Long"
+      },
+      {
+        "ObjectiveName": "6. Place 3rd or better in the Tenno Sho (Spring)",
+        "Turn": "Turn 56 (previous + 11)",
+        "Time": "Senior Class, Late April",
+        "ObjectiveCondition": "G1 – Turf – 3200m – Long"
+      },
+      {
+        "ObjectiveName": "7. Place 1st in the Takarazuka Kinen",
+        "Turn": "Turn 60 (previous + 3)",
+        "Time": "Senior Class, Late June",
+        "ObjectiveCondition": "G1 – Turf – 2200m – Medium"
+      },
+      {
+        "ObjectiveName": "8. Place 3rd or better in the Tenno Sho (Autumn)",
+        "Turn": "Turn 68 (previous + 7)",
+        "Time": "Senior Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "9. Place 1st in the Arima Kinen",
+        "Turn": "Turn 72 (previous + 3)",
+        "Time": "Senior Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      }
+    ],
+    "UmaEvents": []
+  },
+  {
+    "UmaKey": "Oguri Cap :: [Ashen Miracle]",
+    "UmaName": "Oguri Cap",
+    "UmaNickname": "[Ashen Miracle]",
+    "UmaSlug": "100602-oguri-cap",
+    "UmaId": "100602",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 94,
+        "Stamina": 91,
+        "Power": 111,
+        "Guts": 76,
+        "Wit": 78
+      },
+      "5★": {
+        "Speed": 115,
+        "Stamina": 111,
+        "Power": 136,
+        "Guts": 93,
+        "Wit": 95
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 15,
+      "Stamina": 15,
+      "Power": 0,
+      "Guts": 0,
+      "Wit": 0
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "B"
+      },
+      "Distance": {
+        "Short": "E",
+        "Mile": "A",
+        "Medium": "A",
+        "Long": "B"
+      },
+      "Strategy": {
+        "Front": "F",
+        "Pace": "A",
+        "Late": "A",
+        "End": "D"
+      }
+    },
+    "UmaHeightCm": 167,
+    "UmaThreeSizes": {
+      "B": 82,
+      "W": 57,
+      "H": 82
+    },
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "1. Participate in the Junior Make Debut",
+        "Turn": "Turn 12",
+        "Time": "Junior Class, Late June",
+        "ObjectiveCondition": "Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "2. Have at least 3000 fans",
+        "Turn": "Turn 24 (previous + 11)",
+        "Time": "Junior Class, Late December",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "3. Place 5th or better in the NHK Mile Cup",
+        "Turn": "Turn 33 (previous + 8)",
+        "Time": "Classic Class, Early May",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "4. Place 3rd or better in the Mile Championship",
+        "Turn": "Turn 46 (previous + 12)",
+        "Time": "Classic Class, Late November",
+        "ObjectiveCondition": "G1 – Turf – 1600m – Mile"
+      },
+      {
+        "ObjectiveName": "5. Place 3rd or better in the Arima Kinen",
+        "Turn": "Turn 48 (previous + 1)",
+        "Time": "Classic Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      },
+      {
+        "ObjectiveName": "6. Place 3rd or better in 2 G1 races",
+        "Turn": "Turn 60 (previous + 11)",
+        "Time": "Senior Class, Late June",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "7. Place 1st in the Tenno Sho (Autumn)",
+        "Turn": "Turn 68 (previous + 7)",
+        "Time": "Senior Class, Late October",
+        "ObjectiveCondition": "G1 – Turf – 2000m – Medium"
+      },
+      {
+        "ObjectiveName": "8. Place 1st in the Arima Kinen",
+        "Turn": "Turn 72 (previous + 3)",
+        "Time": "Senior Class, Late December",
+        "ObjectiveCondition": "G1 – Turf – 2500m – Long"
+      }
+    ],
+    "UmaEvents": []
   }
 ]

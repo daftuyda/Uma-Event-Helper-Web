@@ -7108,6 +7108,11 @@
       },
       {
         "SkillId": "",
+        "Name": "Kyoto Racecourse ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
         "Name": "Deep Breaths",
         "HintLevel": null
       },
@@ -7819,12 +7824,32 @@
       },
       {
         "SkillId": "",
+        "Name": "Meticulous Measures",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
         "Name": "Hesitant Late Surgers",
         "HintLevel": null
       },
       {
         "SkillId": "",
+        "Name": "Disorient",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stop Right There!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
         "Name": "Playtime's Over!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Perfect Prep!",
         "HintLevel": null
       },
       {
@@ -7992,7 +8017,68 @@
     "SupportName": "Daitaku Helios (SSR) Support Card",
     "SupportRarity": "SSR",
     "SupportImage": "/assets/support_thumbs/30071-daitaku-helios.png",
-    "SupportHints": []
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Sympathy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Stamina to Spare",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Mile Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Shifting Gears",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Slipstream",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Speed Eater",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Early Lead",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pace Chaser Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Escape Artist",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fast-Paced",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Long Shot ○",
+        "HintLevel": null
+      }
+    ]
   },
   {
     "SupportSlug": "20039-vodka",
@@ -8054,6 +8140,178 @@
       {
         "SkillId": "",
         "Name": "Nimble Navigator",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30072-mayano-top-gun",
+    "SupportId": "30072",
+    "SupportName": "Mayano Top Gun (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30072-mayano-top-gun.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Non-Standard Distance ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Recovery",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Corner Adept ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Nimble Navigator",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Go with the Flow",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Head-On",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Competitive Spirit ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Restless",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30073-narita-taishin",
+    "SupportId": "30073",
+    "SupportName": "Narita Taishin (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30073-narita-taishin.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Lone Wolf",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Lay Low",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Calm in a Crowd",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Standing By",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Masterful Gambit",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "End Closer Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Intense Gaze",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Soft Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Passing Pro",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Sleeping Lion",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Pressure",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30074-marvelous-sunday",
+    "SupportId": "30074",
+    "SupportName": "Marvelous Sunday (SSR) Support Card",
+    "SupportRarity": "SSR",
+    "SupportImage": "/assets/support_thumbs/30074-marvelous-sunday.png",
+    "SupportHints": [
+      {
+        "SkillId": "",
+        "Name": "Straightaway Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Ramp Up",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Tail Held High",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Front Runners",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hesitant Pace Chasers",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Cloudy Days ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Fast & Furious",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Position Pilfer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Hanshin Racecourse ○",
         "HintLevel": null
       }
     ]
