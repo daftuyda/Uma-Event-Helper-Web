@@ -3319,38 +3319,38 @@
     }
   },
   {
-    "EventName": "空想してみましょう",
+    "EventName": "Let's Use Our Imaginations",
     "EventOptions": {
       "Top Option": "Energy +15",
       "Bottom Option": "Speed +15"
     }
   },
   {
-    "EventName": "きかせてあげましょう",
+    "EventName": "Let's Read a Story",
     "EventOptions": {
       "": "Speed +10\nSkill Pts +5\nBond +5"
     }
   },
   {
-    "EventName": "体験してみましょう",
+    "EventName": "Let's Learn Through Immersion",
     "EventOptions": {
       "": "Speed +10\nRace Planner hint +1\nBond +5"
     }
   },
   {
-    "EventName": "一、己を見つめ",
+    "EventName": "First, Know Thyself",
     "EventOptions": {
       "": "Speed +10\nPower +10\nGuts +10\nHydrate hint +1\nBond +5\nSpeed +5\nPower +5\nGuts +5\nBond +5"
     }
   },
   {
-    "EventName": "二、為すべきを定め",
+    "EventName": "Second, Know Thy Duty",
     "EventOptions": {
       "": "Skill Pts +40\nLeft-Handed ○ hint +3\nBond +5\nSkill Pts +15\nLeft-Handed ○ hint +1\nBond +5"
     }
   },
   {
-    "EventName": "三、魅せるは闘志",
+    "EventName": "Third, Show Thy Spirit",
     "EventOptions": {
       "": "Speed +7\nPower +7\nGuts +7\nSkill Pts +15\nKiller Tunes hint +3\nSpeed +7\nSkill Pts +15\nKiller Tunes hint +2\nSkill Pts +15\nKiller Tunes hint +1"
     }
@@ -3796,20 +3796,20 @@
     }
   },
   {
-    "EventName": "ありがとうが聞きたくて",
+    "EventName": "Fostering Gratitude",
     "EventOptions": {
       "": "Skill Pts +30\nBond +5"
     }
   },
   {
-    "EventName": "喜ぶ顔に変えたくて",
+    "EventName": "Creating Smiles",
     "EventOptions": {
       "Top Option": "Energy +30\nSpeed +10\nTriple 7s hint +1\nBond +5\nEnergy +10\nBond +5",
       "Bottom Option": "Speed +7\nWit +7\nSkill Pts +20\nBond +5"
     }
   },
   {
-    "EventName": "みんなと笑顔になりたくて",
+    "EventName": "Sharing Happiness",
     "EventOptions": {
       "": "Speed +10\nWit +10\nSkill Pts +20\nSolid Strike hint +3\nBond +5\nSpeed +7\nWit +7\nSkill Pts +15\nSolid Strike hint +1\nBond +5"
     }

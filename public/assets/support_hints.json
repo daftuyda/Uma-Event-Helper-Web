@@ -78483,7 +78483,7 @@
     "SupportName": "Mejiro Ardan (SSR)",
     "SupportNameJP": "メジロアルダン (SSR)",
     "SupportRarity": "SSR",
-    "SupportServer": "jp",
+    "SupportServer": "global",
     "SupportType": "Speed",
     "SupportEffects": [
       {
@@ -78669,7 +78669,7 @@
     "SupportName": "Yaeno Muteki (SSR)",
     "SupportNameJP": "ヤエノムテキ (SSR)",
     "SupportRarity": "SSR",
-    "SupportServer": "jp",
+    "SupportServer": "global",
     "SupportType": "Guts",
     "SupportEffects": [
       {
@@ -84728,7 +84728,7 @@
     "SupportName": "Oguri Cap (SSR)",
     "SupportNameJP": "オグリキャップ (SSR)",
     "SupportRarity": "SSR",
-    "SupportServer": "jp",
+    "SupportServer": "global",
     "SupportType": "Wit",
     "SupportEffects": [
       {
