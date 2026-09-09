@@ -24,6 +24,7 @@ __pycache__/
 logs/security/
 /docs/superpowers
 /node_modules
+/runtime-assets/
 .claude/settings.local.json
 /reference
 /badges

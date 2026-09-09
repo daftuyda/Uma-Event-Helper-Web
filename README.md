@@ -62,6 +62,14 @@ UmaTools/
 
 `public/` is the deployment root. Browser URLs remain `/optimizer`, `/assets/...`, `/js/...`, and so on; the repository layout does not leak into public URLs.
 
+Vercel excludes `public/` from Python function bundles. `npm run build` runs
+`build:api-assets` to copy the OG icon, font (with its license), and event JSON files
+into the generated `runtime-assets/` directory. The API reads those copies when
+available, and uses `public/assets/` for local development before a build. Rerun
+`npm run build:api-assets` after changing source assets if staged copies exist.
+`npm run test:api` tests the staged API without a `public/` directory (requires
+the Python runtime dependencies and `httpx`, also used by `check:seo`).
+
 See [Architecture](docs/architecture.md) for component ownership, data flow, and maintenance rules.
 
 ## Local development

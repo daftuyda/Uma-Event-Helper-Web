@@ -8,7 +8,8 @@
     "minify:json": "node scripts/build/minify-json.js",
     "build:skills-core": "node scripts/build/generate-skills-core.js",
     "build:badges": "node scripts/build/export-badges.js",
-    "build": "npm run build:guides && npm run build:site && npm run build:skills-core && npm run minify:json && npm run convert:images",
+    "build:api-assets": "node scripts/build/prepare-api-assets.js",
+    "build": "npm run build:guides && npm run build:site && npm run build:skills-core && npm run minify:json && npm run convert:images && npm run build:api-assets",
     "watch:site": "prettier --write ./public/css/air.css",
     "convert:images": "node scripts/build/convert-images-webp.js",
     "sync:skills-all": "node scripts/data/gametora.js --what skills --out-skills public/assets/skills_all.json",
@@ -35,9 +36,10 @@
     "test:team-trials": "node tests/unit/team-trials-optimizer.test.js",
     "test:rating-shared": "node tests/unit/rating-shared.test.js",
     "test:token-planner": "node tests/unit/token-planner.test.js",
+    "test:api": "python -m unittest discover -s tests/unit -p test_api.py",
     "test:data": "node scripts/audit/validate-data.js",
     "test:smoke": "node scripts/audit/smoke-routes.js",
-    "test": "npm run test:team-trials && npm run test:rating-shared && npm run test:token-planner",
+    "test": "npm run test:team-trials && npm run test:rating-shared && npm run test:token-planner && npm run test:api",
     "check": "npm run lint && npm run test && npm run check:guides && npm run check:static && npm run check:seo && npm run test:data && npm run test:smoke"
   },
   "devDependencies": {
