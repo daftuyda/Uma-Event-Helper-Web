@@ -68888,7 +68888,8 @@
       108902,
       109302,
       108202,
-      111602
+      111602,
+      114101
     ],
     "condition_groups": [
       {
@@ -131751,7 +131752,8 @@
     "char_e": [
       111002,
       102802,
-      100603
+      100603,
+      114101
     ],
     "condition_groups": [
       {
@@ -131863,7 +131865,8 @@
     ],
     "char_e": [
       108602,
-      113301
+      113301,
+      114101
     ],
     "condition_groups": [
       {
@@ -157895,6 +157898,9 @@
       112702,
       110301
     ],
+    "char_e": [
+      114101
+    ],
     "condition_groups": [
       {
         "base_time": 24000,
@@ -158309,6 +158315,9 @@
     "char": [
       113501,
       114501
+    ],
+    "char_e": [
+      114101
     ],
     "condition_groups": [
       {
@@ -170534,6 +170543,9 @@
   },
   {
     "activation": 0,
+    "char_e": [
+      114101
+    ],
     "condition_groups": [
       {
         "base_time": -1,
@@ -170566,6 +170578,9 @@
   },
   {
     "activation": 0,
+    "char_e": [
+      114101
+    ],
     "condition_groups": [
       {
         "base_time": 30000,
@@ -170598,6 +170613,9 @@
   },
   {
     "activation": 0,
+    "char_e": [
+      114101
+    ],
     "condition_groups": [
       {
         "base_time": -1,
@@ -170630,6 +170648,9 @@
   },
   {
     "activation": 1,
+    "char_e": [
+      114101
+    ],
     "condition_groups": [
       {
         "base_time": 30000,
