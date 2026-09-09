@@ -11,7 +11,10 @@ from rapidfuzz import fuzz, process
 from starlette.middleware.base import BaseHTTPMiddleware
 
 BASE_DIR = Path(__file__).resolve().parents[1]
-ASSETS = BASE_DIR / "public" / "assets"
+# Vercel excludes public/ from Python bundles. The build stages runtime files
+# separately; direct local development can still use the source assets.
+RUNTIME_ASSETS = BASE_DIR / "runtime-assets"
+ASSETS = RUNTIME_ASSETS if RUNTIME_ASSETS.is_dir() else BASE_DIR / "public" / "assets"
 OG_FONT = ASSETS / "fonts" / "PlusJakartaSans-Variable.ttf"
 OG_ICON = ASSETS / "icon-512.png"
 

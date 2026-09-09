@@ -32,11 +32,6 @@
       "destination": "/api/og?page=:page"
     }
   ],
-  "functions": {
-    "api/[...path].py": {
-      "includeFiles": "public/assets/**"
-    }
-  },
   "headers": [
     {
       "source": "/assets/(.*).json",
