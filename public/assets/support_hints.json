@@ -40469,7 +40469,7 @@
     "SupportName": "Tsurumaru Tsuyoshi (SR)",
     "SupportNameJP": "ツルマルツヨシ (SR)",
     "SupportRarity": "SR",
-    "SupportServer": "jp",
+    "SupportServer": "global",
     "SupportType": "Guts",
     "SupportEffects": [
       {
@@ -78228,7 +78228,7 @@
     "SupportName": "Symboli Kris S (SSR)",
     "SupportNameJP": "シンボリクリスエス (SSR)",
     "SupportRarity": "SSR",
-    "SupportServer": "jp",
+    "SupportServer": "global",
     "SupportType": "Stamina",
     "SupportEffects": [
       {
@@ -78483,7 +78483,7 @@
     "SupportName": "Mejiro Ardan (SSR)",
     "SupportNameJP": "メジロアルダン (SSR)",
     "SupportRarity": "SSR",
-    "SupportServer": "jp",
+    "SupportServer": "global",
     "SupportType": "Speed",
     "SupportEffects": [
       {
@@ -78669,7 +78669,7 @@
     "SupportName": "Yaeno Muteki (SSR)",
     "SupportNameJP": "ヤエノムテキ (SSR)",
     "SupportRarity": "SSR",
-    "SupportServer": "jp",
+    "SupportServer": "global",
     "SupportType": "Guts",
     "SupportEffects": [
       {
@@ -84728,7 +84728,7 @@
     "SupportName": "Oguri Cap (SSR)",
     "SupportNameJP": "オグリキャップ (SSR)",
     "SupportRarity": "SSR",
-    "SupportServer": "jp",
+    "SupportServer": "global",
     "SupportType": "Wit",
     "SupportEffects": [
       {
@@ -129663,7 +129663,7 @@
       },
       {
         "SkillId": "204662",
-        "Name": "砂塵を越えて",
+        "Name": "Through the Sandstorm",
         "HintLevel": null
       },
       {
@@ -129987,12 +129987,12 @@
       },
       {
         "SkillId": "204672",
-        "Name": "ここが狙い目",
+        "Name": "Here's My Chance",
         "HintLevel": null
       },
       {
         "SkillId": "204682",
-        "Name": "元気バクハツ",
+        "Name": "Energy Burst",
         "HintLevel": null
       },
       {
