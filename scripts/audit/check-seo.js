@@ -326,7 +326,7 @@ const canonicalOwners = new Map();
 const pages = [];
 
 function expectedSocialImageForRoute(route) {
-  if (route === '/optimizer') return `${siteOrigin}/api/og?page=optimizer`;
+  if (route === '/optimizer') return `${siteOrigin}/assets/og-default.png`;
   if (route === '/') return `${siteOrigin}/api/og/v1/home.png`;
   if (route === '/404') return `${siteOrigin}/api/og/v1/not-found.png`;
   if (route === '/rank-breakdown') return `${siteOrigin}/api/og/v1/rank.png`;
