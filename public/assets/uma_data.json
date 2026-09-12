@@ -43001,5 +43001,164 @@
       }
     ],
     "UmaImage": "/assets/character_thumbs/112702-fenomeno.png"
+  },
+  {
+    "UmaKey": "Phalaenopsis :: 114901-phalaenopsis",
+    "UmaName": "Phalaenopsis",
+    "UmaNameJP": "ファレノプシス",
+    "UmaNickname": null,
+    "UmaNicknameJP": "絶佳の暁闇",
+    "UmaSlug": "114901-phalaenopsis",
+    "UmaId": "114901",
+    "UmaServer": "jp",
+    "UmaBaseStars": 3,
+    "UmaBaseStats": {
+      "3★": {
+        "Speed": 90,
+        "Stamina": 81,
+        "Power": 92,
+        "Guts": 98,
+        "Wit": 89
+      },
+      "5★": {
+        "Speed": 111,
+        "Stamina": 99,
+        "Power": 113,
+        "Guts": 120,
+        "Wit": 107
+      },
+      "4★": {
+        "Speed": 100,
+        "Stamina": 90,
+        "Power": 103,
+        "Guts": 109,
+        "Wit": 98
+      }
+    },
+    "UmaStatBonuses": {
+      "Speed": 0,
+      "Stamina": 10,
+      "Power": 10,
+      "Guts": 10,
+      "Wit": 0
+    },
+    "UmaAptitudes": {
+      "Surface": {
+        "Turf": "A",
+        "Dirt": "F"
+      },
+      "Distance": {
+        "Short": "D",
+        "Mile": "A",
+        "Medium": "A",
+        "Long": "F"
+      },
+      "Strategy": {
+        "Front": "G",
+        "Pace": "A",
+        "Late": "A",
+        "End": "C"
+      }
+    },
+    "UmaHeightCm": null,
+    "UmaThreeSizes": {},
+    "UmaObjectives": [
+      {
+        "ObjectiveName": "Junior Make Debut",
+        "Turn": "12",
+        "Time": "Junior Year",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "Earn 3,000 fans",
+        "Turn": "23",
+        "Time": "Junior Year",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "Oka Sho",
+        "Turn": "31",
+        "Time": "Classic Year",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "Japanese Oaks",
+        "Turn": "34",
+        "Time": "Classic Year",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "Shuka Sho",
+        "Turn": "44",
+        "Time": "Classic Year",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "Milers Cup",
+        "Turn": "56",
+        "Time": "Senior Year",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "Victoria Mile",
+        "Turn": "57",
+        "Time": "Senior Year",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "Sapporo Kinen",
+        "Turn": "64",
+        "Time": "Senior Year",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "Queen Elizabeth II Cup",
+        "Turn": "69",
+        "Time": "Senior Year",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "URA Preliminary",
+        "Turn": "74",
+        "Time": "Senior Year",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "URA Semi-Final",
+        "Turn": "76",
+        "Time": "Senior Year",
+        "ObjectiveCondition": ""
+      },
+      {
+        "ObjectiveName": "URA Final",
+        "Turn": "78",
+        "Time": "Senior Year",
+        "ObjectiveCondition": ""
+      }
+    ],
+    "UmaEvents": [
+      {
+        "EventName": "黄金七人衆は往く",
+        "EventOptions": {
+          "Top Option": "Power +20",
+          "Bottom Option": "Wit +20"
+        }
+      },
+      {
+        "EventName": "美点は尽きず、相重なり",
+        "EventOptions": {
+          "Top Option": "Stamina +20",
+          "Bottom Option": "Wit +20"
+        }
+      },
+      {
+        "EventName": "仁勇兼備の姫様",
+        "EventOptions": {
+          "Top Option": "Stamina +20",
+          "Bottom Option": "Power +20"
+        }
+      }
+    ],
+    "UmaImage": "/assets/character_thumbs/114901-phalaenopsis.png"
   }
 ]

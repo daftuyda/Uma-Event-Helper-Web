@@ -1267,6 +1267,19 @@
     }
   },
   {
+    "EventName": "答えはいつも物語の中に",
+    "EventOptions": {
+      "Top Option": "Guts +15\nBond +5",
+      "Bottom Option": "Energy +15\nBond +5"
+    }
+  },
+  {
+    "EventName": "癒やしのひととき",
+    "EventOptions": {
+      "": "Energy +10\nGuts +10\nLuminance hint +1\nBond +5"
+    }
+  },
+  {
     "EventName": "Dance in Cleats!",
     "EventOptions": {
       "": "Speed +10\nStamina +10\nSoft Step hint +1"
@@ -6832,6 +6845,26 @@
     "EventName": "ビッグなハート、ビッグなチャレンジ！",
     "EventOptions": {
       "": "Energy +5\nGuts +10\nCrescent Gale hint +1\nBond +5"
+    }
+  },
+  {
+    "EventName": "食は道楽、願いは笑顔",
+    "EventOptions": {
+      "Top Option": "Energy +15\nMotivation +1\nSpeed +10\nBond +10",
+      "Bottom Option": "Motivation +1\nSkill Pts +25\nBond +10"
+    }
+  },
+  {
+    "EventName": "あの日、あの時、あのマチタン",
+    "EventOptions": {
+      "Top Option": "Speed +15\nStamina +10\nSkill Pts +10\nCrucial Stage hint +1\nBond +5",
+      "Bottom Option": "Energy +10\nSpeed +10\nSkill Pts +30\nBond +5"
+    }
+  },
+  {
+    "EventName": "小さな成長譚",
+    "EventOptions": {
+      "": "Energy +10\nMotivation +1\nSpeed +10\nPower +10\nRampaging Passion hint +1\nA Rousing Shout hint +2\nBond +5"
     }
   }
 ]

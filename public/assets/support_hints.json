@@ -52415,6 +52415,236 @@
     ]
   },
   {
+    "SupportSlug": "20101-zenno-rob-roy",
+    "SupportId": "20101",
+    "SupportName": "Zenno Rob Roy (SR)",
+    "SupportNameJP": "ゼンノロブロイ (SR)",
+    "SupportRarity": "SR",
+    "SupportServer": "jp",
+    "SupportType": "Guts",
+    "SupportEffects": [
+      {
+        "id": 1,
+        "name": "Friendship Bonus",
+        "symbol": "percent",
+        "values": [
+          10,
+          12,
+          15,
+          18,
+          21,
+          25,
+          26,
+          27,
+          28,
+          30,
+          30
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Mood Effect",
+        "symbol": "percent",
+        "values": [
+          10,
+          10,
+          10,
+          15,
+          20,
+          20,
+          23,
+          26,
+          30,
+          30,
+          30
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Guts Bonus",
+        "symbol": "none",
+        "values": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Training Effectiveness",
+        "symbol": "percent",
+        "values": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          5,
+          5
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Initial Friendship Gauge",
+        "symbol": "none",
+        "values": [
+          10,
+          11,
+          13,
+          15,
+          17,
+          20,
+          21,
+          22,
+          23,
+          25,
+          25
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Hint Levels",
+        "symbol": "level",
+        "values": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Hint Frequency",
+        "symbol": "percent",
+        "values": [
+          5,
+          5,
+          11,
+          17,
+          23,
+          30,
+          32,
+          35,
+          37,
+          40,
+          40
+        ]
+      },
+      {
+        "id": 19,
+        "name": "Specialty Priority",
+        "symbol": "none",
+        "values": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          30,
+          45,
+          60,
+          60,
+          60
+        ]
+      }
+    ],
+    "SupportUnique": {
+      "level": 0,
+      "effects": [
+        {
+          "id": 5,
+          "name": "Power Bonus",
+          "symbol": "none",
+          "value": 1
+        },
+        {
+          "id": 12,
+          "name": "Initial Guts",
+          "symbol": "none",
+          "value": 20
+        }
+      ]
+    },
+    "SupportImage": "/assets/support_thumbs/20101-zenno-rob-roy.png",
+    "SupportHints": [
+      {
+        "SkillId": "200472",
+        "Name": "Pace Strategy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "200512",
+        "Name": "Homestretch Haste",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "201631",
+        "Name": "Sympathy",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "202662",
+        "Name": "Rising Heat",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "202792",
+        "Name": "Middle Leg Adept",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "203032",
+        "Name": "An Honest Step",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "203652",
+        "Name": "Find a Way!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "204142",
+        "Name": "Overflowing Vitality",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Initial Speed bonus",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Initial Power bonus",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Initial Guts bonus",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
     "SupportSlug": "30001-special-week",
     "SupportId": "30001",
     "SupportName": "Special Week (SSR)",
@@ -130255,6 +130485,327 @@
       {
         "SkillId": "",
         "Name": "Initial Guts bonus",
+        "HintLevel": null
+      }
+    ]
+  },
+  {
+    "SupportSlug": "30317-matikanetannhauser",
+    "SupportId": "30317",
+    "SupportName": "Matikanetannhauser (SSR)",
+    "SupportNameJP": "マチカネタンホイザ (SSR)",
+    "SupportRarity": "SSR",
+    "SupportServer": "jp",
+    "SupportType": "Speed",
+    "SupportEffects": [
+      {
+        "id": 1,
+        "name": "Friendship Bonus",
+        "symbol": "percent",
+        "values": [
+          10,
+          11,
+          13,
+          15,
+          17,
+          20,
+          25,
+          26,
+          27,
+          28,
+          30
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Mood Effect",
+        "symbol": "percent",
+        "values": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          20,
+          40,
+          40,
+          40
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Power Bonus",
+        "symbol": "none",
+        "values": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Training Effectiveness",
+        "symbol": "percent",
+        "values": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          8,
+          10,
+          12,
+          15,
+          17,
+          20
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Initial Power",
+        "symbol": "none",
+        "values": [
+          10,
+          12,
+          14,
+          17,
+          19,
+          22,
+          25,
+          26,
+          27,
+          28,
+          30
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Initial Friendship Gauge",
+        "symbol": "none",
+        "values": [
+          10,
+          12,
+          14,
+          17,
+          19,
+          22,
+          25,
+          27,
+          30,
+          32,
+          35
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Race Bonus",
+        "symbol": "percent",
+        "values": [
+          1,
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          6,
+          7,
+          8,
+          10
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Fan Bonus",
+        "symbol": "percent",
+        "values": [
+          1,
+          1,
+          1,
+          4,
+          7,
+          10,
+          10,
+          12,
+          15,
+          17,
+          20
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Hint Levels",
+        "symbol": "level",
+        "values": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Hint Frequency",
+        "symbol": "percent",
+        "values": [
+          10,
+          16,
+          25,
+          34,
+          42,
+          51,
+          60,
+          70,
+          80,
+          90,
+          100
+        ]
+      },
+      {
+        "id": 19,
+        "name": "Specialty Priority",
+        "symbol": "none",
+        "values": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          60,
+          120
+        ]
+      },
+      {
+        "id": 30,
+        "name": "Skill Point Bonus",
+        "symbol": "none",
+        "values": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ]
+      }
+    ],
+    "SupportUnique": {
+      "level": 0,
+      "effects": [
+        {
+          "id": 101,
+          "name": "Effect #101",
+          "symbol": "",
+          "value": 80
+        }
+      ]
+    },
+    "SupportImage": "/assets/support_thumbs/30317-matikanetannhauser.png",
+    "SupportHints": [
+      {
+        "SkillId": "200592",
+        "Name": "Position Pilfer",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "201382",
+        "Name": "Late Surger Straightaways ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "201392",
+        "Name": "Late Surger Corners ○",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "201412",
+        "Name": "1,500,000 CC",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "202452",
+        "Name": "Pedal to the Metal",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "202612",
+        "Name": "Unrestrained Passion",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "202622",
+        "Name": "Start the Charge",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "203322",
+        "Name": "Descent",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "203332",
+        "Name": "Preliminary Preparation",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "203592",
+        "Name": "Pushing Through!",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "203672",
+        "Name": "Simmering Heat",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "204432",
+        "Name": "Faster Than Shadow",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "204442",
+        "Name": "Tracking",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "204712",
+        "Name": "Raise Your Spirits",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Initial Speed bonus",
+        "HintLevel": null
+      },
+      {
+        "SkillId": "",
+        "Name": "Initial Power bonus",
         "HintLevel": null
       }
     ]
